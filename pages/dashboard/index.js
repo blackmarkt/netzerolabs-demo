@@ -19,10 +19,19 @@ const Dashboard = ({ mapData }) => {
             <p>0xEA123</p>
             <div className={styles.flexGrid}>
                 <div className={styles.grid}>
+                    <div className={styles.topDashboard}>2,000</div>
+                    <div className={styles.subHeader}>tCO&#8322;</div>
+                    <p className={styles.subDashboard}>Your CO&#8322; Footprint</p>
                 </div>
                 <div className={styles.grid}>
+                    <div id='usdConvert' className={styles.topDashboard}>$10,000</div>
+                    <div id="ethConvert" className={styles.ethContribute}></div>
+                    <p className={styles.subDashboard}>Your CO&#8322; Offset ($)</p>
                 </div>
                 <div className={styles.grid}>
+                    <div className={styles.topDashboard}>0</div>
+                    <div className={styles.subHeader}>tCO&#8322;</div>
+                    <p className={styles.subDashboard}>Your CO&#8322; Offset (tCO&#8322;)</p>
                 </div>
             </div>
             <div className={styles.dashboardContainer}>
