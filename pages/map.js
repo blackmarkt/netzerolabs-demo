@@ -27,6 +27,10 @@ const Map = ({ mapData }) => {
                 // interactive: false,
                 attributionControl: false
             });
+
+            // disable map zoom when using scroll
+            map.scrollZoom.disable();
+            
             setData(mapData);
             setMap(mapContainer.current);
             console.log('DATA', data);

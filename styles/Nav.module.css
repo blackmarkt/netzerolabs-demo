@@ -11,9 +11,6 @@
 }
 .btnLaunch {
     float:right;
-    /* position: absolute; */
-    /* top:90%; */
-    /* bottom:0; */
     transform: translateY(-50%);
     right:0;
     margin-top:3rem;
@@ -24,9 +21,6 @@
     color:white;
     font-size:0.9rem;
     font-weight: bold;
-    /* text-shadow:0 0 10px white; */
-    /* box-shadow: 0 1px 1px white, 0 0 8px white; */
-    /* cursor: pointer; */
     opacity:0.25;
 }
 .headerRight {
@@ -42,8 +36,8 @@
     padding:0.7rem 0.8rem;
     background-color: transparent;
     border-radius: 6px;
-    color:gray;
-    opacity:0.3;
+    color:darkgray;
+    opacity:0.4;
     font-size:0.9rem;
     font-weight: bold;
     /* text-shadow:0 0 10px #fff; */

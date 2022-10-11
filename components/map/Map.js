@@ -26,6 +26,9 @@ const Map = ({ mapData }) => {
 
             map.on("load", function () {
 
+                // disable map zoom when using scroll
+                map.scrollZoom.disable();
+                
                 map.resize();
 
                 // map.addSource('node-source', {
