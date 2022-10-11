@@ -4,6 +4,7 @@ import styles from '../../styles/dashboard.module.css';
 import Image from 'next/image';
 import Ethereum from '../../public/blockchains/ethereum.png';
 import TransactionsChart from '../../components/charts/TransactionsChart';
+import CumulativeTransactionsChart from '../../components/charts/CumulativeTransactionsChart';
 
 const Dashboard = ({ mapData }) => {
 
@@ -64,25 +65,43 @@ const Dashboard = ({ mapData }) => {
             <div className={styles.dashboardSubContainer}>
                 <div className={styles.subStatsContainer}>
                     <p className={styles.subHeaderTxt}>Stats</p>
-                    <ul className={styles.subEmissionsBar}>
+                    <ul className={styles.subStatsBar}>
                         <li>
-                            <div className={styles.subEmissionsTxt}>0</div>
+                            <div className={styles.subEmissionsTxt}>11.57</div>
                             <div className={styles.subHeader}>tCO&#8322;</div>
                             <p className={styles.footnotes}>Median Daily tCO&#8322;</p>
                         </li>
                     </ul>
-                    {/* <hr className={styles.subHeaderDivider}></hr> */}
-                    {/* <p className={styles.subHeaderTxt}>Operations</p> */}
-                    <ul className={styles.subEmissionsBar}>
+                    <ul className={styles.subStatsBar}>
                         <li>
-                            <div className={styles.subEmissionsTxt}>0</div>
-                            <div className={styles.subHeader}>tCO&#8322;</div>
+                            <div className={styles.subEmissionsTxt}>1,157,465.5</div>
+                            {/* <div className={styles.subHeader}>Tx</div> */}
                             <p className={styles.footnotes}>Median Daily Tx</p>
+                        </li>
+                    </ul>
+                    <hr className={styles.subHeaderDivider}></hr>
+                    <ul className={styles.subStatsBar}>
+                        <li>
+                            <div className={styles.subEmissionsTxt}>304.58</div>
+                            <div className={styles.subHeader}>tCO&#8322;</div>
+                            <p className={styles.footnotes}>YTD tCO&#8322;</p>
+                        </li>
+                    </ul>
+                    <ul className={styles.subStatsBar}>
+                        <li>
+                            <div className={styles.subEmissionsTxt}>30,457,818</div>
+                            {/* <div className={styles.subHeader}>tCO&#8322;</div> */}
+                            <p className={styles.footnotes}>YTD Tx</p>
                         </li>
                     </ul>
                 </div>
                 <div className={styles.subChartContainer}>
-                    <TransactionsChart />
+                    <div className={styles.stackChartContainer}>
+                        <TransactionsChart />
+                    </div>
+                    <div className={styles.stackChartContainer}>
+                        <CumulativeTransactionsChart />
+                    </div>
                 </div>
             </div>
             <h4 className={styles.dashboardHeader}>Operations</h4>

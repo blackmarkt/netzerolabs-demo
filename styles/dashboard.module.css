@@ -9,6 +9,7 @@
     /* max-width: 1000px; */
     /* height:fit-content; */
     min-height:400px;
+    max-height:600px;
     border-radius: 6px;
     box-shadow: 0 1px 1px #61668B, 0 0 10px #61668B;
     margin:0.5rem 0 1rem;
@@ -32,6 +33,11 @@
     /* box-shadow: 0 1px 1px #CDCDCD, 0 0 8px #CDCDCD; */
     box-shadow: 0 1px 1px #61668B, 0 0 10px #61668B;
 }
+.gridVertical {
+    width:100%;
+    text-align: center;
+    flex-wrap: wrap;
+}
 .subContainer, .subStatsContainer {
     display: inline-block;
     width:28%;
@@ -39,7 +45,7 @@
     vertical-align: top;
 }
 .subStatsContainer {
-    width:18%;
+    width:23%;
     height:100%;
 }
 .subMapContainer {
@@ -48,19 +54,28 @@
 }
 .subChartContainer {
     display: inline-block;
-    width:80%;
+    width:75%;
+    height:100%;
     text-shadow: none!important;
     opacity:0.8
+}
+.stackChartContainer {
+    display: inline-block;
+    height:49%;
+    width: 100%;
 }
 .transactions-chart {
     text-shadow: none!important;
     font-weight:bold!important;
 }
-.subEmissionsBar {
+.subEmissionsBar, .subStatsBar {
     list-style: none!important;
     list-style-type: none!important;
     margin: 0;
     padding: 0;
+}
+.subStatsBar {
+    padding: 0.7rem 0;
 }
 .topDashboard, .subEmissionsTxt {
     display: inline-block;
