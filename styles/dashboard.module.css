@@ -1,6 +1,12 @@
 .dashboardContainer {
+    width:100%;
+    max-width: 1000px;
+    margin:0 auto;
+}
+.dashboardSubContainer {
     position: relative;
     width:100%;
+    /* max-width: 1000px; */
     /* height:fit-content; */
     min-height:400px;
     border-radius: 6px;

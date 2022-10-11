@@ -7,7 +7,7 @@ import Ethereum from '../../public/blockchains/ethereum.png';
 const Dashboard = ({ mapData }) => {
 
     return (
-        <div>
+        <div className={styles.dashboardContainer}>
             <h2>Ethereum
                 <Image
                     src={Ethereum}
@@ -35,7 +35,7 @@ const Dashboard = ({ mapData }) => {
                     <p className={styles.subDashboard}>CO&#8322; Offset (tCO&#8322;)</p>
                 </div>
             </div>
-            <div className={styles.dashboardContainer}>
+            <div className={styles.dashboardSubContainer}>
                 <div className={styles.subContainer}>
 
                 </div>
