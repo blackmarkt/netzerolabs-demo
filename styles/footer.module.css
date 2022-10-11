@@ -1,0 +1,26 @@
+.footerContainer {
+    position:relative;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:0 auto;
+    margin-top:8rem;
+    display: flex;
+    flex: 1;
+    padding: 3rem 0 4rem;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    text-shadow:0 0 10px lime;
+}
+
+.footerIcon {
+    width:fit-content;
+    height:fit-content;
+    margin:0 auto;
+    opacity:0.6;
+    text-shadow:0 0 10px white;
+    -webkit-filter: drop-shadow(0px 0px 10px aqua);
+    filter: drop-shadow(0px 0px 10px aqua);
+    transition: all .2s ease-in-out;
+}

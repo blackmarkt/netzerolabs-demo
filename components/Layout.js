@@ -1,6 +1,7 @@
 import Nav from './Nav'
 import Meta from './Meta'
 import DemoHeader from './DemoHeader'
+import Footer from './Footer'
 import styles from '../styles/Layout.module.css'
 
 const Layout = ({ children }) => {
@@ -13,8 +14,9 @@ const Layout = ({ children }) => {
         <main className={styles.main}>
           {/* <Header /> */}
           {children}
-        </main>
+        </main>  
       </div>
+      <Footer />
     </>
   )
 }
