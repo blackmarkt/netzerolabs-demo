@@ -18,14 +18,14 @@ const Nav = () => {
                     Dashboard
                 </button>
             </Link>
-            <Link href="/partners">
+            <Link href="/providers">
                 <button className={navStyles.buttonHead}>
                     Providers
                 </button>
             </Link>
-            <div className={navStyles.btnLaunch}>
-            Launching Soon
-            </div>
+                <button className={navStyles.btnLaunch}>
+                    Launching Soon
+                </button>
         </div>
     </nav>
   )

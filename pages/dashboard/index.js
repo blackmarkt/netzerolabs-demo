@@ -8,30 +8,31 @@ const Dashboard = ({ mapData }) => {
 
     return (
         <div>
-            <h1>Ethereum
+            <h2>Ethereum
                 <Image
                     src={Ethereum}
                     alt='Ethereum Logo'
-                    width={50}
-                    height={50}                
+                    width={38}
+                    height={38}
+                    margin-left={'0.5rem'}               
                 />
-                </h1>
+            </h2>
             <p>0xEA123</p>
             <div className={styles.flexGrid}>
                 <div className={styles.grid}>
                     <div className={styles.topDashboard}>2,000</div>
                     <div className={styles.subHeader}>tCO&#8322;</div>
-                    <p className={styles.subDashboard}>Your CO&#8322; Footprint</p>
+                    <p className={styles.subDashboard}>CO&#8322; Footprint</p>
                 </div>
                 <div className={styles.grid}>
                     <div id='usdConvert' className={styles.topDashboard}>$10,000</div>
                     <div id="ethConvert" className={styles.ethContribute}></div>
-                    <p className={styles.subDashboard}>Your CO&#8322; Offset ($)</p>
+                    <p className={styles.subDashboard}>CO&#8322; Offset ($)</p>
                 </div>
                 <div className={styles.grid}>
                     <div className={styles.topDashboard}>0</div>
                     <div className={styles.subHeader}>tCO&#8322;</div>
-                    <p className={styles.subDashboard}>Your CO&#8322; Offset (tCO&#8322;)</p>
+                    <p className={styles.subDashboard}>CO&#8322; Offset (tCO&#8322;)</p>
                 </div>
             </div>
             <div className={styles.dashboardContainer}>
@@ -56,7 +57,6 @@ export const getStaticProps = async () => {
     props: {
         mapData: data.data,
     },
-    // revalidate: 10,
   };
 };
 
