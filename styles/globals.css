@@ -1,3 +1,12 @@
+@media only screen and (max-width:46em) {
+  html,
+  body {
+    width:100vw!important;
+    height:100vh!important;
+    /* position: absolute!important; */
+  }
+}
+
 html,
 body {
   height:100vh;

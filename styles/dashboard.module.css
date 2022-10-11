@@ -32,16 +32,27 @@
 .subContainer {
     display: inline-block;
     width:28%;
+    text-align: center;
+    vertical-align: top;
 }
 .subMapContainer {
     display: inline-block;
     width:70%;
 }
-.topDashboard {
+.subEmissionsBar {
+    list-style: none!important;
+    list-style-type: none!important;
+    margin: 0;
+    padding: 0;
+}
+.topDashboard, .subEmissionsTxt {
     display: inline-block;
     font-size:2rem;
     padding:0.8rem 0 0rem;
     text-shadow:0 0 10px white;
+}
+.subEmissionsTxt {
+    font-size:1.4rem;
 }
 .subDashboard {
     padding: 0rem 0 1rem
@@ -51,9 +62,27 @@
     display: inline-block;
     margin-left:0.5rem
 }
+.subHeaderTxt {
+    /* float:left; */
+    width:100%;
+    color:darkgray!important;
+    text-shadow: none;
+    opacity:0.5!important;
+    font-size:1rem;
+    margin:2rem 0 1rem;
+}
+.subHeaderDivider {
+    margin:2rem 1.5rem;
+    border-top: 3px solid darkgray;
+    opacity:0.1;
+    border-radius: 6px;
+}
 .ethContribute {
     display:inline-block;
     font-size:0.5rem;
     margin-left:0.3rem
+}
+.footnotes {
+    font-size:0.6rem
 }
   

@@ -25,23 +25,51 @@ const Dashboard = ({ mapData }) => {
                     <p className={styles.subDashboard}>CO&#8322; Footprint</p>
                 </div>
                 <div className={styles.grid}>
-                    <div id='usdConvert' className={styles.topDashboard}>$10,000</div>
-                    <div id="ethConvert" className={styles.ethContribute}></div>
-                    <p className={styles.subDashboard}>CO&#8322; Offset ($)</p>
-                </div>
-                <div className={styles.grid}>
                     <div className={styles.topDashboard}>0</div>
                     <div className={styles.subHeader}>tCO&#8322;</div>
                     <p className={styles.subDashboard}>CO&#8322; Offset (tCO&#8322;)</p>
                 </div>
+                <div className={styles.grid}>
+                    <div id='usdConvert' className={styles.topDashboard}>$0</div>
+                    <div id="ethConvert" className={styles.ethContribute}></div>
+                    <p className={styles.subDashboard}>CO&#8322; Offset ($)</p>
+                </div>
             </div>
             <div className={styles.dashboardSubContainer}>
                 <div className={styles.subContainer}>
-
+                    <p className={styles.subHeaderTxt}>Network</p>
+                    <ul className={styles.subEmissionsBar}>
+                        <li>
+                            <div className={styles.subEmissionsTxt}>0</div>
+                            <div className={styles.subHeader}>tCO&#8322;</div>
+                            {/* <p className={styles.footnotes}>Group Validators</p> */}
+                        </li>
+                    </ul>
+                    <hr className={styles.subHeaderDivider}></hr>
+                    <p className={styles.subHeaderTxt}>Operations</p>
+                    <ul className={styles.subEmissionsBar}>
+                        <li>
+                            <div className={styles.subEmissionsTxt}>0</div>
+                            <div className={styles.subHeader}>tCO&#8322;</div>
+                            {/* <p className={styles.footnotes}>Group Validators</p> */}
+                        </li>
+                    </ul>
                 </div>
                 <div className={styles.subMapContainer}>
                     <Map mapData={mapData}/>
                 </div>
+            </div>
+            <h4>Network</h4>
+            <div className={styles.dashboardSubContainer}>
+
+            </div>
+            <h4>Operations</h4>
+            <div className={styles.dashboardSubContainer}>
+
+            </div>
+            <h4>Carbon Offsets</h4>
+            <div className={styles.dashboardSubContainer}>
+
             </div>
         </div>
     );
