@@ -3,6 +3,7 @@ import Axios from "axios";
 import styles from '../../styles/dashboard.module.css';
 import Image from 'next/image';
 import Ethereum from '../../public/blockchains/ethereum.png';
+import TransactionsChart from '../../components/charts/TransactionsChart';
 
 const Dashboard = ({ mapData }) => {
 
@@ -61,7 +62,28 @@ const Dashboard = ({ mapData }) => {
             </div>
             <h4 className={styles.dashboardHeader}>Network</h4>
             <div className={styles.dashboardSubContainer}>
-
+                <div className={styles.subStatsContainer}>
+                    <p className={styles.subHeaderTxt}>Stats</p>
+                    <ul className={styles.subEmissionsBar}>
+                        <li>
+                            <div className={styles.subEmissionsTxt}>0</div>
+                            <div className={styles.subHeader}>tCO&#8322;</div>
+                            <p className={styles.footnotes}>Median Daily tCO&#8322;</p>
+                        </li>
+                    </ul>
+                    {/* <hr className={styles.subHeaderDivider}></hr> */}
+                    {/* <p className={styles.subHeaderTxt}>Operations</p> */}
+                    <ul className={styles.subEmissionsBar}>
+                        <li>
+                            <div className={styles.subEmissionsTxt}>0</div>
+                            <div className={styles.subHeader}>tCO&#8322;</div>
+                            <p className={styles.footnotes}>Median Daily Tx</p>
+                        </li>
+                    </ul>
+                </div>
+                <div className={styles.subChartContainer}>
+                    <TransactionsChart />
+                </div>
             </div>
             <h4 className={styles.dashboardHeader}>Operations</h4>
             <div className={styles.dashboardSubContainer}>

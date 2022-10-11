@@ -24,9 +24,9 @@ const Nav = () => {
                     Dashboard
                 </button>
             </Link>
-            <Link href="/providers">
+            <Link href="/partners">
                 <button className={navStyles.buttonHead}>
-                    Providers
+                    Partners
                 </button>
             </Link>
                 <button className={navStyles.btnLaunch}>
