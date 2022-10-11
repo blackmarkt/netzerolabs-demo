@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/Image'
-import styles from '../styles/footer.module.css'
+import styles from '../styles/Footer.module.css'
 import Twitter from '../public/social_media/twitter.png'
 
 const Footer = () => {

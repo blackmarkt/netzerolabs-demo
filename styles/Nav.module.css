@@ -1,13 +1,22 @@
+@media only screen and (max-width:46em) {
+    .imgHeader {
+        margin-left:0.8rem!important;
+        height:50px!important
+    }
+}   
 .nav {
     position:relative;
+    height:80px;
     width: 90%;
     margin: 0 auto;
     max-width: 2000px;
 }
-.logoHeader {
-    /* width:50%!important; */
-    max-width:180px;
+.net0LabsLogo {
+    max-width: 160px;
     cursor: pointer;
+}
+.imgHeader {
+    float:left
 }
 .btnLaunch {
     float:right;

@@ -1,4 +1,4 @@
-import styles from '../styles/demo.module.css';
+import styles from '../styles/Demo.module.css';
 
 const DemoHeader = () => {
     return (

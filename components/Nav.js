@@ -1,15 +1,21 @@
 import Link from 'next/link'
-import Image from 'next/Image'
+// import Image from 'next/Image'
 import navStyles from '../styles/Nav.module.css'
-import Net0LabsLogo from '../public/net0labs/net0labs_header.png'
+// import Net0LabsLogo from '../public/net0labs/net0labs_header.png'
 
 const Nav = () => {
   return (
     <nav className={navStyles.nav}>
         <Link href='/'>
-            <Image
+            {/* <Image
                 src={Net0LabsLogo}
                 alt='Net0Labs'
+                className={navStyles.net0LabsLogo}
+            /> */}
+            <img className={navStyles.imgHeader}
+                height='70px'
+                src='/net0labs/netzero_header_v3.png' 
+                alt='NetZero' 
             />
         </Link>
         <div className={navStyles.headerRight}>
