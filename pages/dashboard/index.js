@@ -59,15 +59,15 @@ const Dashboard = ({ mapData }) => {
                     <Map mapData={mapData}/>
                 </div>
             </div>
-            <h4>Network</h4>
+            <h4 className={styles.dashboardHeader}>Network</h4>
             <div className={styles.dashboardSubContainer}>
 
             </div>
-            <h4>Operations</h4>
+            <h4 className={styles.dashboardHeader}>Operations</h4>
             <div className={styles.dashboardSubContainer}>
 
             </div>
-            <h4>Carbon Offsets</h4>
+            <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>
             <div className={styles.dashboardSubContainer}>
 
             </div>
