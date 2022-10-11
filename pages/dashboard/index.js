@@ -17,7 +17,7 @@ const Dashboard = ({ mapData }) => {
                     margin-left={'0.5rem'}               
                 />
             </h2>
-            <p>0xEA123</p>
+            <p style={{"margin":"0"}}>0xEA123</p>
             <div className={styles.flexGrid}>
                 <div className={styles.grid}>
                     <div className={styles.topDashboard}>2,000</div>
