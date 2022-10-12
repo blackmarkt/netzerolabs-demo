@@ -108,7 +108,7 @@ const options = {
                 className: 'line-class1',
                 data: operationsOfficeData,
                 color: '#3F4153',
-                // type: 'area',
+                type: 'area',
                 shadow: {
                     color: '#3F4153',
                         width: 12,
@@ -129,7 +129,7 @@ const options = {
                 className: 'line-class1',
                 data: operationsTransportData,
                 color: '#2D3042',
-                // type: 'area',
+                type: 'area',
                 shadow: {
                     color: '#2D3042',
                         width: 12,
@@ -150,7 +150,7 @@ const options = {
                 className: 'line-class1',
                 data: operationsSuppliesData,
                 color: '#3C3E50',
-                // type: 'area',
+                type: 'area',
                 shadow: {
                     color: '#3C3E50',
                         width: 12,
@@ -171,7 +171,7 @@ const options = {
                 className: 'line-class1',
                 data: operationsMiscData,
                 color: '#333333',
-                // type: 'area',
+                type: 'area',
                 shadow: {
                     color: '#333333',
                         width: 12,

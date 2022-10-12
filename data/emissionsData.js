@@ -22,6 +22,21 @@ const operationsdata = [
             { name: 'Misc', y: 100 },
 ]
 
+const ethereumOfficesData = [
+                             {title: 'Ethereum HQ', 
+                              address: 'Zeughausgasse 7A, 6300 Zug, Switzerland',
+                              geocoordinates: [8.5161, 47.1671],
+                              sq_ft: 0,
+                              energy_consumption: 0,
+                              emissions: 0},
+                              {title: 'Ethereum Office', 
+                              address: '6 Oranienstraße, Berlin, Germany',
+                              geocoordinates: [13.4205832, 52.4998606],
+                              sq_ft: 0,
+                              energy_consumption: 0,
+                              emissions: 0},
+                            ]
+
 const operationsOfficeData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 const operationsTransportData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 const operationsSuppliesData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -45,6 +60,6 @@ function calculateSum(arr) {
     return sum
 }
 
-export {dateLabels, emissionsData, cumEmissionsData, txData, operationsdata, 
+export {dateLabels, emissionsData, cumEmissionsData, txData, operationsdata, ethereumOfficesData,
         operationsOfficeData, operationsTransportData, operationsSuppliesData, operationsMiscData,
         calculateMedian, calculateSum, numberWithCommas} 

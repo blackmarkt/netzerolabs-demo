@@ -101,7 +101,7 @@ const options = {
             className: 'line-class1',
             data: emissionsData,
             color: 'white',
-            // type: 'area',
+            type: 'area',
             shadow: {
                 color: '#61668B',
                     width: 12,

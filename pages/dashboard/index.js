@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Map from '../../components/map/Map'
+import Offices from '../../components/dashboard/Offices'
 import Axios from "axios"
 import styles from '../../styles/dashboard.module.css'
 import Image from 'next/image'
@@ -8,7 +9,8 @@ import TransactionsChart from '../../components/charts/TransactionsChart'
 import CumulativeTransactionsChart from '../../components/charts/CumulativeTransactionsChart'
 import OperationsBreakdownChart from '../../components/charts/OperationsBreakdownChart'
 import OperationsEmissionChart from '../../components/charts/OperationsEmissionChart'
-import { numberWithCommas, calculateSum, calculateMedian, emissionsData, cumEmissionsData, txData } from '../../data/emissionsData'
+import { numberWithCommas, calculateSum, calculateMedian, emissionsData, cumEmissionsData, 
+         ethereumOfficesData, txData } from '../../data/emissionsData'
 
 const Dashboard = ({ mapData }) => {
     const [footprint, setFootprint] = useState(0)
@@ -126,7 +128,7 @@ const Dashboard = ({ mapData }) => {
                 </div>
             </div>
             <h4 className={styles.dashboardHeader}>Operations</h4>
-            <div className={styles.dashboardSubContainer}>
+            <div className={styles.dashboardOpsSubContainer}>
                 <div className={styles.operationsSubContainer}>
                     <div className={styles.flexGrid}>
                         <div className={styles.innerGrid}>
@@ -159,10 +161,22 @@ const Dashboard = ({ mapData }) => {
                         <OperationsEmissionChart />
                     </div>
                 </div>
+                <div className={styles.operationsSubContainer}>
+                    <div className={styles.flexOfficeGrid}>
+                        {ethereumOfficesData.map((obj, index) => {
+                            // your code here
+                            return <Offices {...obj}/>
+                        })}
+                    </div>
+                </div>
             </div>
             <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>
             <div className={styles.dashboardSubContainer}>
-
+                <div className={styles.dashboardNotActive}></div>
+                <div className={styles.notActiveContainer}>
+                    <span className={styles.notActiveTxt}>Not Active</span>
+                </div>
+                {/* <div className={styles.test}>Test</div> */}
             </div>
         </div>
     );

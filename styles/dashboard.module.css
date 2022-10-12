@@ -3,7 +3,7 @@
     max-width: 1000px;
     margin:0 auto;
 }
-.dashboardSubContainer {
+.dashboardSubContainer, .dashboardOpsSubContainer {
     position: relative;
     width:100%;
     /* max-width: 1000px; */
@@ -14,6 +14,9 @@
     box-shadow: 0 1px 1px #61668B, 0 0 10px #61668B;
     margin:0.5rem 0 1rem;
 }
+.dashboardOpsSubContainer {
+    max-height: 800px;
+}
 .dashboardHeader {
     margin:1rem 0.5rem;
 }
@@ -21,7 +24,10 @@
     display: flex;
     justify-content: space-between;
 }
-.grid, .innerGrid {
+.flexOfficeGrid {
+    display: flex;
+}
+.grid, .innerGrid, .officeGrid {
     text-align: center;
     flex-wrap: wrap;
     width:31%;
@@ -36,6 +42,13 @@
 .innerGrid {
     width:23%;
     box-shadow: none!important;
+}
+.officeGrid {
+    justify-content:revert!important;
+    /* grid-template-columns: repeat(3, 1fr); */
+    box-shadow: none!important;
+    display:inline-block;
+    /* text-align: left; */
 }
 .gridVertical {
     width:100%;
@@ -92,7 +105,7 @@
 }
 .subOpEmissionsTxt {
     padding:0.6rem 0 0rem;
-    font-size: 1.3rem;
+    font-size: 1.5rem;
 }
 .subDashboard {
     padding: 0rem 0 1rem
@@ -102,7 +115,7 @@
     display: inline-block;
     margin-left:0.5rem
 }
-.subHeaderTxt, .subOpHeaderTxt {
+.subHeaderTxt, .subOpHeaderTxt, .officeTitle {
     /* float:left; */
     width:100%;
     color:darkgray!important;
@@ -138,7 +151,7 @@ p.subHeaderTxt {
     height:16%;
 }
 .operationsChartsContainer {
-    height:82%;
+    height:62%;
 }
 .operationsPieChartContainer, .operationsLineChartContainer {
     display: inline-block;
@@ -149,4 +162,50 @@ p.subHeaderTxt {
     width:65%;
     text-shadow: none!important;
 }
-  
+.officeAddress, .officeTitle {
+    margin:0.4rem 0;
+    color:darkgray!important;
+    text-shadow: none!important;
+}
+.officeAddress {
+    font-size:0.6rem;
+    color:darkgray!important;
+    text-shadow: none!important;
+    opacity: 0.5!important;
+}
+.dashboardNotActive {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    backdrop-filter: blur(4px);
+    border-radius: 6px;
+    filter: blur(10px);
+    -webkit-filter: blur(10px);
+    -moz-filter: blur(10px);
+    -o-filter: blur(10px);
+    -ms-filter: blur(10px);
+    z-index:1;
+}
+.notActiveContainer {
+    position: absolute;
+    left: 0;
+    top: 45%;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    z-index:2;
+    display: flex;
+    justify-content:center;
+    margin:0 auto;
+}
+.notActiveTxt {
+    /* display: inline-block; */
+    vertical-align: middle;
+    line-height: normal;
+    font-size:1.4rem;
+    color:darkgray!important;
+    text-shadow: none!important;
+    opacity: 0.3!important;
+}  
