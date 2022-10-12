@@ -2,6 +2,7 @@
     width:100%;
     max-width: 1000px;
     margin:0 auto;
+    margin-top: 3rem;
 }
 .dashboardSubContainer, .dashboardOpsSubContainer {
     position: relative;

@@ -1,0 +1,21 @@
+.dashboardContainer {
+    width:100%;
+    max-width: 1000px;
+    margin:0 auto;
+    margin-top: 3rem;
+}
+.dashboardSubContainer {
+    position: relative;
+    width:100%;
+    min-height:400px;
+    max-height:600px;
+    border-radius: 6px;
+    box-shadow: 1px 1px 1px limegreen, 0 0 13px lightseagreen;
+    margin:0.5rem 0 1rem;
+}
+.dashboardMainHeader {
+    margin:0 0 2rem
+}
+.dashboardHeader {
+    margin:1rem 0.5rem 0.6rem;
+}
