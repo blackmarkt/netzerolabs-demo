@@ -22,7 +22,10 @@ const operationsdata = [
             { name: 'Misc', y: 100 },
 ]
 
-const operationsDailyData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+const operationsOfficeData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+const operationsTransportData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+const operationsSuppliesData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+const operationsMiscData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
 
 function numberWithCommas(x, n=0) {
@@ -42,5 +45,6 @@ function calculateSum(arr) {
     return sum
 }
 
-export {dateLabels, emissionsData, cumEmissionsData, txData, operationsdata, operationsDailyData,
+export {dateLabels, emissionsData, cumEmissionsData, txData, operationsdata, 
+        operationsOfficeData, operationsTransportData, operationsSuppliesData, operationsMiscData,
         calculateMedian, calculateSum, numberWithCommas} 

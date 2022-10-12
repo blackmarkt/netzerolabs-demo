@@ -2,13 +2,14 @@ import React from 'react'
 import Highcharts from 'highcharts'
 // import HighchartsExporting from 'highcharts/modules/exporting'
 import HighchartsReact from 'highcharts-react-official'
-import { dateLabels, operationsDailyData } from '../../data/emissionsData'
+import { dateLabels, operationsOfficeData, operationsTransportData, 
+        operationsSuppliesData, operationsMiscData } from '../../data/emissionsData'
 
 const options = {
     chart: {
         type: 'line',
         backgroundColor: 'transparent',
-        margin: [50,20,50,100]
+        margin: [30,20,50,100]
         // color: "#fff"
     },
     title: {
@@ -24,7 +25,12 @@ const options = {
         enabled: false
     },
     legend: {
-        enabled: false
+        enabled: true,
+        verticalAlign: 'top',
+        style: {
+            fontSize: '0.5rem',
+            color: 'gray',
+        }
     },
     plotOptions: {
         area: {
@@ -36,7 +42,7 @@ const options = {
                     y2: 1
                 },
                 stops: [
-                    [0, '#61668B'],
+                    [0, 'white'],
                     [1, 'transparent']
                 ]
             },
@@ -56,7 +62,7 @@ const options = {
         lineWidth: 0,
         min: 0,
         max:100, 
-        lineColor: 'black',
+        lineColor: 'transparent',
         gridLineWidth: 0,
         gridLineColor: 'transparent',
         title: {
@@ -95,27 +101,92 @@ const options = {
     tooltip: {
         pointFormat: '<b>{point.y:,.2f}</b>',
     },
-    series: [{
-            name: 'Daily tCO2',
-            className: 'line-class1',
-            data: operationsDailyData,
-            color: 'white',
-            // type: 'area',
-            shadow: {
-                color: '#61668B',
-                    width: 12,
-                    offsetX: 0,
-                    offsetY: 0
+    series: [
+            {
+                name: 'Office',
+                className: 'line-class1',
+                data: operationsOfficeData,
+                color: '#3F4153',
+                // type: 'area',
+                shadow: {
+                    color: '#3F4153',
+                        width: 12,
+                        offsetX: 0,
+                        offsetY: 0
+                },
+                lineWidth: 1.2,
+                animation: {
+                    // defer: 1200,
+                    duration: 1000
+                },
+                marker: {
+                    enabled: false
+                }
             },
-            lineWidth: 1.2,
-            animation: {
-                // defer: 1200,
-                duration: 1000
+            {
+                name: 'Transport',
+                className: 'line-class1',
+                data: operationsTransportData,
+                color: '#2D3042',
+                // type: 'area',
+                shadow: {
+                    color: '#2D3042',
+                        width: 12,
+                        offsetX: 0,
+                        offsetY: 0
+                },
+                lineWidth: 1.2,
+                animation: {
+                    // defer: 1200,
+                    duration: 1000
+                },
+                marker: {
+                    enabled: false
+                }
             },
-            marker: {
-                enabled: false
+            {
+                name: 'Supplies',
+                className: 'line-class1',
+                data: operationsSuppliesData,
+                color: '#3C3E50',
+                // type: 'area',
+                shadow: {
+                    color: '#3C3E50',
+                        width: 12,
+                        offsetX: 0,
+                        offsetY: 0
+                },
+                lineWidth: 1.2,
+                animation: {
+                    // defer: 1200,
+                    duration: 1000
+                },
+                marker: {
+                    enabled: false
+                }
+            },
+            {
+                name: 'Misc',
+                className: 'line-class1',
+                data: operationsMiscData,
+                color: '#333333',
+                // type: 'area',
+                shadow: {
+                    color: '#333333',
+                        width: 12,
+                        offsetX: 0,
+                        offsetY: 0
+                },
+                lineWidth: 1.2,
+                animation: {
+                    // defer: 1200,
+                    duration: 1000
+                },
+                marker: {
+                    enabled: false
+                }
             }
-    }]
+    ]
 }
 
 const TransactionsChart = () => {
