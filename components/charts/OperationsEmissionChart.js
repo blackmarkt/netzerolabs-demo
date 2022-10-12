@@ -9,7 +9,7 @@ const options = {
     chart: {
         type: 'line',
         backgroundColor: 'transparent',
-        margin: [30,20,50,100]
+        margin: [50,20,50,100]
         // color: "#fff"
     },
     title: {
@@ -27,6 +27,7 @@ const options = {
     legend: {
         enabled: true,
         verticalAlign: 'top',
+        padding:30,
         style: {
             fontSize: '0.5rem',
             color: 'gray',
