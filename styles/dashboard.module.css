@@ -21,7 +21,7 @@
     display: flex;
     justify-content: space-between;
 }
-.grid {
+.grid, .innerGrid {
     text-align: center;
     flex-wrap: wrap;
     width:31%;
@@ -32,6 +32,10 @@
     font-size: 0.8rem;
     /* box-shadow: 0 1px 1px #CDCDCD, 0 0 8px #CDCDCD; */
     box-shadow: 0 1px 1px #61668B, 0 0 10px #61668B;
+}
+.innerGrid {
+    width:23%;
+    box-shadow: none!important;
 }
 .gridVertical {
     width:100%;
@@ -77,7 +81,7 @@
 .subStatsBar {
     padding: 0.7rem 0;
 }
-.topDashboard, .subEmissionsTxt {
+.topDashboard, .subEmissionsTxt, .subOpEmissionsTxt {
     display: inline-block;
     font-size:2rem;
     padding:0.8rem 0 0rem;
@@ -86,15 +90,19 @@
 .subEmissionsTxt {
     font-size:1.4rem;
 }
+.subOpEmissionsTxt {
+    padding:0.6rem 0 0rem;
+    font-size: 1.3rem;
+}
 .subDashboard {
     padding: 0rem 0 1rem
 }
-.subHeader {
+.subHeader, .subOpHeader {
     font-size:0.8rem;
     display: inline-block;
     margin-left:0.5rem
 }
-.subHeaderTxt {
+.subHeaderTxt, .subOpHeaderTxt {
     /* float:left; */
     width:100%;
     color:darkgray!important;
@@ -102,6 +110,13 @@
     opacity:0.5!important;
     font-size:1rem;
     margin:2rem 0 1rem;
+}
+p.subHeaderTxt {
+    font-size: 0.8rem;
+    margin:0.6rem 0;
+}
+.subOpHeader {
+    font-size: 0.6rem;
 }
 .subHeaderDivider {
     margin:2rem 1.5rem;
@@ -116,5 +131,10 @@
 }
 .footnotes {
     font-size:0.6rem
+}
+.operationsSubContainer {
+    width:100%;
+    display: inline-block;
+    height:16%;
 }
   

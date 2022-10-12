@@ -9,10 +9,15 @@ import CumulativeTransactionsChart from '../../components/charts/CumulativeTrans
 import { numberWithCommas, calculateSum, calculateMedian, emissionsData, cumEmissionsData, txData } from '../../data/emissionsData'
 
 const Dashboard = ({ mapData }) => {
-    const [footprint, setFootprint] = useState(null)
-    const [networkFootprint, setNetworkFootprint] = useState(null)
-    const [sumTransactions, setSumTransactions] = useState(null)
-    const [medianDailyTx, setMedianDailyTx] = useState(null)
+    const [footprint, setFootprint] = useState(0)
+    const [networkFootprint, setNetworkFootprint] = useState(0)
+    const [sumTransactions, setSumTransactions] = useState(0)
+    const [medianDailyTx, setMedianDailyTx] = useState(0)
+    const [operationEmissions, setOperationsEmissions] = useState(0)
+    const [officeEmissions, setOfficeEmissions] = useState(0)
+    const [transportEmissions, setTransportEmissions] = useState(0)
+    const [suppliesEmissions, setSuppliesEmissions] = useState(0)
+    const [miscEmissions, setMiscEmissions] = useState(0)
     // console.log('EMISSIONS DATA ', numberWithCommas(calculateSum(txData)));
 
     useEffect(() => {
@@ -78,7 +83,7 @@ const Dashboard = ({ mapData }) => {
             <h4 className={styles.dashboardHeader}>Network</h4>
             <div className={styles.dashboardSubContainer}>
                 <div className={styles.subStatsContainer}>
-                    <p className={styles.subHeaderTxt}>Stats</p>
+                    <h4 className={styles.subHeaderTxt}>Stats</h4>
                     <ul className={styles.subStatsBar}>
                         <li>
                             <div className={styles.subEmissionsTxt}>11.57</div>
@@ -120,7 +125,30 @@ const Dashboard = ({ mapData }) => {
             </div>
             <h4 className={styles.dashboardHeader}>Operations</h4>
             <div className={styles.dashboardSubContainer}>
-
+                <div className={styles.operationsSubContainer}>
+                    <div className={styles.flexGrid}>
+                        <div className={styles.innerGrid}>
+                            <p className={styles.subHeaderTxt}>Offices</p>
+                            <div className={styles.subOpEmissionsTxt}>{ officeEmissions }</div>
+                            <div className={styles.subOpHeader}>tCO&#8322;</div>
+                        </div>
+                        <div className={styles.innerGrid}>
+                            <p className={styles.subHeaderTxt}>Transportation</p>
+                            <div className={styles.subOpEmissionsTxt}>{ transportEmissions }</div>
+                            <div className={styles.subOpHeader}>tCO&#8322;</div>
+                        </div>
+                        <div className={styles.innerGrid}>
+                            <p className={styles.subHeaderTxt}>Supplies</p>
+                            <div className={styles.subOpEmissionsTxt}>{ suppliesEmissions }</div>
+                            <div className={styles.subOpHeader}>tCO&#8322;</div>
+                        </div>
+                        <div className={styles.innerGrid}>
+                            <p className={styles.subHeaderTxt}>Misc</p>
+                            <div className={styles.subOpEmissionsTxt}>{ miscEmissions }</div>
+                            <div className={styles.subOpHeader}>tCO&#8322;</div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>
             <div className={styles.dashboardSubContainer}>
