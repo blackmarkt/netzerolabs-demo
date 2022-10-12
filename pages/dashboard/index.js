@@ -6,6 +6,7 @@ import Image from 'next/image'
 import Ethereum from '../../public/blockchains/ethereum.png'
 import TransactionsChart from '../../components/charts/TransactionsChart'
 import CumulativeTransactionsChart from '../../components/charts/CumulativeTransactionsChart'
+import OperationsBreakdownChart from '../../components/charts/OperationsBreakdownChart'
 import { numberWithCommas, calculateSum, calculateMedian, emissionsData, cumEmissionsData, txData } from '../../data/emissionsData'
 
 const Dashboard = ({ mapData }) => {
@@ -147,6 +148,14 @@ const Dashboard = ({ mapData }) => {
                             <div className={styles.subOpEmissionsTxt}>{ miscEmissions }</div>
                             <div className={styles.subOpHeader}>tCO&#8322;</div>
                         </div>
+                    </div>
+                </div>
+                <div className={styles.operationsChartsContainer}>
+                    <div className={styles.operationsPieChartContainer}>
+                        <OperationsBreakdownChart />
+                    </div>
+                    <div className={styles.operationsLineChartContainer}>
+
                     </div>
                 </div>
             </div>

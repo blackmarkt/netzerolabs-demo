@@ -132,9 +132,20 @@ p.subHeaderTxt {
 .footnotes {
     font-size:0.6rem
 }
-.operationsSubContainer {
+.operationsSubContainer, .operationsChartsContainer {
     width:100%;
     display: inline-block;
     height:16%;
+}
+.operationsChartsContainer {
+    height:82%
+}
+.operationsPieChartContainer, .operationsLineChartContainer {
+    display: inline-block;
+    height:100%;
+    width:33%
+}
+.operationsLineChartContainer {
+    width:65%
 }
   
