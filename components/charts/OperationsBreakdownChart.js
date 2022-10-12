@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
-// import { dateLabels, emissionsData } from '../../data/emissionsData'
+import { operationsdata } from '../../data/emissionsData'
 
 // Data retrieved from https://netmarketshare.com/
 // Make monochrome colors
@@ -27,7 +27,7 @@ const options = {
         plotShadow: false,
         type: 'pie',
         backgroundColor: 'transparent',
-        margin: [40,40,40,40]
+        margin: [40,10,40,40]
     },
     credits: {
         enabled: false
@@ -52,11 +52,14 @@ const options = {
             cursor: 'pointer',
             colors: pieColors,
             borderWidth:0,
-            opacity:0.8,
+            opacity:0.7,
             dataLabels: {
                 enabled: true,
                 format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
-                distance: -50,
+                distance: -30,
+                style: {
+                    textOutline: false 
+                },
                 filter: {
                     property: 'percentage',
                     operator: '>',
@@ -69,14 +72,7 @@ const options = {
         name: 'tCO2 %',
         size: '100%',
         innerSize: '40%',
-        data: [
-            { name: 'Chrome', y: 74.03 },
-            { name: 'Edge', y: 12.66 },
-            { name: 'Firefox', y: 4.96 },
-            { name: 'Safari', y: 2.49 },
-            { name: 'Internet Explorer', y: 2.31 },
-            { name: 'Other', y: 3.398 }
-        ]
+        data: operationsdata
     }]
 }
 

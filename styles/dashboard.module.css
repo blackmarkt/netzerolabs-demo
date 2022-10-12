@@ -138,7 +138,7 @@ p.subHeaderTxt {
     height:16%;
 }
 .operationsChartsContainer {
-    height:82%
+    height:82%;
 }
 .operationsPieChartContainer, .operationsLineChartContainer {
     display: inline-block;
@@ -146,6 +146,7 @@ p.subHeaderTxt {
     width:33%
 }
 .operationsLineChartContainer {
-    width:65%
+    width:65%;
+    text-shadow: none!important;
 }
   

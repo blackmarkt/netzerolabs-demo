@@ -7,6 +7,7 @@ import Ethereum from '../../public/blockchains/ethereum.png'
 import TransactionsChart from '../../components/charts/TransactionsChart'
 import CumulativeTransactionsChart from '../../components/charts/CumulativeTransactionsChart'
 import OperationsBreakdownChart from '../../components/charts/OperationsBreakdownChart'
+import OperationsEmissionChart from '../../components/charts/OperationsEmissionChart'
 import { numberWithCommas, calculateSum, calculateMedian, emissionsData, cumEmissionsData, txData } from '../../data/emissionsData'
 
 const Dashboard = ({ mapData }) => {
@@ -155,7 +156,7 @@ const Dashboard = ({ mapData }) => {
                         <OperationsBreakdownChart />
                     </div>
                     <div className={styles.operationsLineChartContainer}>
-
+                        <OperationsEmissionChart />
                     </div>
                 </div>
             </div>

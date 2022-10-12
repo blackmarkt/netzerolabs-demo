@@ -15,6 +15,15 @@ const txData = [1265640, 1311849, 1322077, 1156893, 1138210, 1149031, 1100130, 1
                 1214294, 1109706, 1129558, 1225886, 1158038, 1163876, 1307142, 1185269, 1169356, 1202667, 1180358, 1180084, 
                 1068531, 1123390]
 
+const operationsdata = [
+            { name: 'Office', y: 100 },
+            { name: 'Transportation', y: 100 },
+            { name: 'Supplies', y: 100 },
+            { name: 'Misc', y: 100 },
+]
+
+const operationsDailyData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
 
 function numberWithCommas(x, n=0) {
     // return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -33,4 +42,5 @@ function calculateSum(arr) {
     return sum
 }
 
-export {dateLabels, emissionsData, cumEmissionsData, txData, calculateMedian, calculateSum, numberWithCommas} 
+export {dateLabels, emissionsData, cumEmissionsData, txData, operationsdata, operationsDailyData,
+        calculateMedian, calculateSum, numberWithCommas} 
