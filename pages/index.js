@@ -172,6 +172,7 @@ export default function Home() {
           <div className={styles.faqContainer}>
             <div className={styles.faqInnerContainer}>
             <h2 className={styles.headerBand}>Climate Commitment</h2>
+              <h3 className={styles.headerTxt}>Join the Movement to Protect Our Planet</h3>
               <h1 className={styles.headerStatementRight}>Reporting</h1>
               <h1 className={styles.headerStatementRight}>Decarbonization</h1>
               <h1 className={styles.headerStatementRight}>Carbon Neutral</h1>

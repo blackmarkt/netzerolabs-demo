@@ -232,7 +232,7 @@
 .headerTxt {
   font-size:1rem;
   text-align: left;
-  padding:1rem 0;
+  padding:0 0 1.4rem;
   text-shadow: none!important;
   color:darkgray;
   opacity:0.5;
