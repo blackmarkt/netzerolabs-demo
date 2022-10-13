@@ -22,6 +22,9 @@ const Blockchains = () => {
                                         Chain
                                     </th>
                                     <th>
+                                        NetZero
+                                    </th>
+                                    <th>
                                         Total Emissions
                                     </th>
                                     <th>

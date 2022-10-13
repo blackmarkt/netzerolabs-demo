@@ -3,11 +3,11 @@
     width:30%;
     height: 100%;
 }
-.logoChain, .txtChain, .topDashboard, .subHeader {
+.logoChain, .txtChain, .topDashboard, .subHeader, .net0Cert {
     display: inline-block;
 }
 .logoChain {
-    padding-left:1rem
+    padding-left:0rem
 }
 .chainRightContainer, .chainLeftContainer {
     display: inline-block;
@@ -57,6 +57,10 @@
 .tableColEmission, .tableColEmissionMatte {
     text-align: center;
     vertical-align: super;
+}
+.tableColCert {
+    text-align: center;
+    vertical-align: revert;
 }
 .emissionsTxtMatte, .emissionsUnitsMatte {
     color:#616161;
