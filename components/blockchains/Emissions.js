@@ -23,16 +23,16 @@ const ChainEmissions = ( props ) => {
                     <div className={styles.emissionsUnits}>tCO&#8322;</div>
                 </td>
                 <td className={styles.tableColEmission}>
-                    <div className={styles.emissionsTxt}>{props.transactions}</div>
+                    <div className={styles.emissionsTxtMatte}>{props.transactions}</div>
                     {/* <div className={styles.emissionsUnits}>tCO&#8322;</div> */}
                 </td>
                 <td className={styles.tableColEmission}>
-                    <div className={styles.emissionsTxt}>{props.network_emissions}</div>
-                    <div className={styles.emissionsUnits}>tCO&#8322;</div>
+                    <div className={styles.emissionsTxtMatte}>{props.network_emissions}</div>
+                    <div className={styles.emissionsUnitsMatte}>tCO&#8322;</div>
                 </td>
                 <td className={styles.tableColEmission}>
-                    <div className={styles.emissionsTxt}>{props.operation_emissions}</div>
-                    <div className={styles.emissionsUnits}>tCO&#8322;</div>
+                    <div className={styles.emissionsTxtMatte}>{props.operation_emissions}</div>
+                    <div className={styles.emissionsUnitsMatte}>tCO&#8322;</div>
                 </td>
             </tr>
     );
