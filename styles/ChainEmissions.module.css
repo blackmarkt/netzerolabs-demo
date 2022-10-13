@@ -1,0 +1,53 @@
+.emissionsLeftContainer {
+    display: inline-block;
+    width:30%;
+    height: 100%;
+}
+.logoChain, .txtChain, .topDashboard, .subHeader {
+    display: inline-block;
+}
+.chainRightContainer, .chainLeftContainer {
+    display: inline-block;
+}
+.chainSubLeftContainer {
+    text-align: left;
+    width: 42%;
+}
+.chainRightContainer {
+    width:56%;
+    text-align: center;
+}
+.chainRow {
+    margin:0;
+    width:100%
+}
+.txtChain {
+    color:darkgray!important;
+    text-shadow: none!important;
+    opacity: 0.5!important;
+    margin-left:0.6rem;
+    font-size:0.9rem;
+    vertical-align: super;
+}
+.chainLeftRow {
+    display: inline-block;
+    text-align: left;
+    width:50%;
+}
+.chainRightRow {
+    display: inline-block;
+    text-align: right;
+    width:48%;
+    vertical-align: super;
+}
+.emissionsTxt {
+    display: inline-block;
+    font-size:1.4rem;
+    padding:0.8rem 0 0rem;
+    text-shadow:0 0 10px white;
+}
+.emissionsUnits {
+    font-size:0.6rem;
+    display: inline-block;
+    margin-left:0.5rem
+}
