@@ -2,20 +2,23 @@ import React from 'react'
 import Highcharts from 'highcharts'
 // import HighchartsExporting from 'highcharts/modules/exporting'
 import HighchartsReact from 'highcharts-react-official'
-import { dateLabels, operationsOfficeData, operationsTransportData, 
-        operationsSuppliesData, operationsMiscData } from '../../data/emissionsData'
+import { dateLabels, cumEmissionsData, emissionsData } from '../../data/emissionsData'
+import { blockchainData, defaultChainEmissionsData } from '../../data/blockchainData'
 
 const options = {
     chart: {
         type: 'line',
         backgroundColor: 'transparent',
-        margin: [50,20,50,100]
+        margin: [20,20,20,100]
         // color: "#fff"
     },
     title: {
-        text: '',
+        text: 'Daily tCO2',
+        floating:true,
+        // y:20,
         style: {
-            color: 'rgb(255,255,255,0.9)',
+            fontSize: '0.7rem',
+            color: '#616161',
         }
     },
     credits: {
@@ -26,8 +29,8 @@ const options = {
     },
     legend: {
         enabled: true,
-        verticalAlign: 'top',
-        padding:30,
+        // verticalAlign: 'top',
+        // padding:30,
         style: {
             fontSize: '0.5rem',
             color: 'gray',
@@ -48,7 +51,7 @@ const options = {
                 ]
             },
             marker: {
-                radius: 2
+                radius: 1
             },
             lineWidth: 1,
             states: {
@@ -62,7 +65,7 @@ const options = {
     yAxis: {
         lineWidth: 0,
         min: 0,
-        max:100, 
+        // max:100, 
         lineColor: 'transparent',
         gridLineWidth: 0,
         gridLineColor: 'transparent',
@@ -70,6 +73,7 @@ const options = {
             text: 'tCO2'
         },
         labels: {
+            step:2,
             style: {
                 fontSize: '0.6rem',
                 color: '#616161',
@@ -104,13 +108,13 @@ const options = {
     },
     series: [
             {
-                name: 'Office',
+                name: blockchainData[0].chain,
                 className: 'line-class1',
-                data: operationsOfficeData,
-                color: '#3F4153',
-                type: 'area',
+                data: emissionsData,
+                color: blockchainData[0].color,
+                // type: 'area',
                 shadow: {
-                    color: '#3F4153',
+                    color:  blockchainData[0].color,
                         width: 12,
                         offsetX: 0,
                         offsetY: 0
@@ -125,13 +129,13 @@ const options = {
                 }
             },
             {
-                name: 'Transport',
+                name:  blockchainData[1].chain,
                 className: 'line-class1',
-                data: operationsTransportData,
-                color: '#2D3042',
-                type: 'area',
+                data: defaultChainEmissionsData,
+                color:  blockchainData[1].color,
+                // type: 'area',
                 shadow: {
-                    color: '#2D3042',
+                    color:  blockchainData[1].color,
                         width: 12,
                         offsetX: 0,
                         offsetY: 0
@@ -146,13 +150,13 @@ const options = {
                 }
             },
             {
-                name: 'Supplies',
+                name: blockchainData[2].chain,
                 className: 'line-class1',
-                data: operationsSuppliesData,
-                color: '#3C3E50',
-                type: 'area',
+                data: defaultChainEmissionsData,
+                color: blockchainData[2].color,
+                // type: 'area',
                 shadow: {
-                    color: '#3C3E50',
+                    color: blockchainData[2].color,
                         width: 12,
                         offsetX: 0,
                         offsetY: 0
@@ -167,13 +171,13 @@ const options = {
                 }
             },
             {
-                name: 'Misc',
+                name: blockchainData[3].chain,
                 className: 'line-class1',
-                data: operationsMiscData,
-                color: '#333333',
-                type: 'area',
+                data: defaultChainEmissionsData,
+                color: blockchainData[3].color,
+                // type: 'area',
                 shadow: {
-                    color: '#333333',
+                    color: blockchainData[3].color,
                         width: 12,
                         offsetX: 0,
                         offsetY: 0
@@ -190,7 +194,7 @@ const options = {
     ]
 }
 
-const TransactionsChart = () => {
+const BlockchainEmissionsChart = () => {
 
     return (
         <div>
@@ -198,11 +202,11 @@ const TransactionsChart = () => {
                 highcharts={Highcharts}
                 constructorType={'chart'}
                 options={options}
-                containerProps={{ className: 'operations-daily-chart',
+                containerProps={{ className: 'blockchain-emissions-chart',
                                   style: { height: "100%" } }} 
             />
         </div>
     )
 }
 
-export default TransactionsChart
+export default BlockchainEmissionsChart

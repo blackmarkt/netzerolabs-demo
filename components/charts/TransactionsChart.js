@@ -66,7 +66,7 @@ const options = {
             labels: {
                 style: {
                     fontSize: '0.6rem',
-                    color: 'darkgray',
+                    color: '#616161',
                 },
                 formatter: function() {
                 return this.value;
@@ -88,7 +88,7 @@ const options = {
             step:4,
             style: {
                 fontSize: '0.5rem',
-                color: 'darkgray',
+                color: '#616161',
             },
             // rotation: -45
         }

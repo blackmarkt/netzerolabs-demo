@@ -24,9 +24,12 @@
     display: inline-block;
     width:30%;
     height: 100%;
+    vertical-align: top;
 }
 .emissionsRightContainer {
-    width: 68%;
+    width: 70%;
+    color:darkgray!important;
+    text-shadow: none!important;
 }
 .logoChain, .txtChain, .topDashboard, .subHeader {
     display: inline-block;
