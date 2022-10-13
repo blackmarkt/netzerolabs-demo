@@ -10,7 +10,7 @@
     min-height:400px;
     max-height:600px;
     border-radius: 6px;
-    box-shadow: 1px 1px 1px limegreen, 0 0 13px lightseagreen;
+    box-shadow: 1px 1px 1px limegreen, 0 0 13px aqua;
     margin:0.5rem 0 1rem;
     padding:1rem 1.6rem;
 }
@@ -28,6 +28,11 @@
 }
 .emissionsRightContainer {
     width: 70%;
+}
+.emissionsChartContainer {
+    display: inline-block;
+    height:49%;
+    width:100%;
     color:darkgray!important;
     text-shadow: none!important;
 }

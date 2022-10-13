@@ -3,22 +3,40 @@ const blockchainData = [
     logo: '/blockchains/ethereum_40x40.png',
     emissions: 305,
     color: '#757B9D',
+    id: 0,
     },
     {chain: 'Celo', 
     logo: '/blockchains/celo_40x40.png',
     emissions: 0,
     color: '#FACA5B',
+    id: 1,
     },
     {chain: 'Solana', 
     logo: '/blockchains/solana_40x40.png',
     emissions: 0,
     color:'#478CC1',
+    id: 2,
     },
     {chain: 'Avalanche', 
     logo: '/blockchains/avalanche_40x40.png',
     emissions: 0,
     color:'#FB2838',
+    id: 3,
     },
-   ]
+    {chain: 'Polygon', 
+    logo: '/blockchains/polygon_40x40.png',
+    emissions: 0,
+    color:'#8B43EE',
+    id: 4,
+    },
+    {chain: 'NEAR', 
+    logo: '/blockchains/near_40x40.png',
+    emissions: 0,
+    color:'#000000',
+    id: 5,
+    },
+]
 
-   export { blockchainData }
+const defaultChainEmissionsData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+
+export { blockchainData, defaultChainEmissionsData }

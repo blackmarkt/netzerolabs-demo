@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Emissions from '../../components/blockchains/Emissions'
 import BlockchainEmissionsChart from '../../components/charts/BlockchainEmissionsChart'
+import CumulativeBlockchainEmissionsChart from '../../components/charts/CumulativeBlockchainEmissionsChart'
 import styles from '../../styles/blockchains.module.css'
 import { blockchainData } from '../../data/blockchainData'
 
@@ -19,7 +20,12 @@ const Blockchains = ({ mapData }) => {
                     </div>
                 </div>
                 <div className={styles.emissionsRightContainer}>
-                    <BlockchainEmissionsChart />
+                    <div className={styles.emissionsChartContainer}>
+                        <BlockchainEmissionsChart />
+                    </div>
+                    <div className={styles.emissionsChartContainer}>
+                        <CumulativeBlockchainEmissionsChart />
+                    </div>
                 </div>
             </div>
             <h4 className={styles.dashboardHeader}>Emissions Activity</h4>
