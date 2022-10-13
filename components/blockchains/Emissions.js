@@ -28,17 +28,20 @@ const ChainEmissions = ( props ) => {
                 <td>
                     <h4 className={styles.txtChain}>{props.chain}</h4>
                 </td>
-                <td className={styles.tableColCert}>
                     {/* <div className={styles.emissionsTxt}>{props.emissions}</div> */}
                     {/* <div className={styles.emissionsUnits}>tCO&#8322;</div> */}
-                    {props.netzero == true ? (  
-                        <img className={styles.net0Cert}
-                            src='/net0labs/netzero_icon.png'
-                            alt='NetZero Certified'
-                            height='30px'
-                        />) 
-                    : (<div>NA</div>)}
-                </td>
+                {props.netzero == true ? (
+                    <td className={styles.tableColCert}>  
+                    <img className={styles.net0Cert}
+                        src='/net0labs/netzero_icon.png'
+                        alt='NetZero Certified'
+                        height='30px'
+                    /></td>
+                ) : (
+                    <td className={styles.tableColCertNA}>  
+                    <div className={styles.emissionsTxtMatte}>NA</div>
+                    </td>
+                )}
                 <td className={styles.tableColEmission}>
                     {/* <div className={styles.emissionsTxt}>{props.emissions}</div> */}
                     {/* <div className={styles.emissionsUnits}>tCO&#8322;</div> */}

@@ -7,7 +7,7 @@
     display: inline-block;
 }
 .logoChain {
-    padding-left:0rem
+    padding-left:0.5rem
 }
 .chainRightContainer, .chainLeftContainer {
     display: inline-block;
@@ -28,7 +28,7 @@
     color:darkgray!important;
     text-shadow: none!important;
     opacity: 0.5!important;
-    /* margin-left:0.6rem; */
+    padding-right:1.4rem;
     font-size:0.8rem;
     vertical-align: super;
 }
@@ -52,15 +52,18 @@
 .emissionsUnits, .emissionsUnitsMatte {
     font-size:0.6rem;
     display: inline-block;
-    margin-left:0.5rem
+    margin-left:0.3rem
 }
 .tableColEmission, .tableColEmissionMatte {
     text-align: center;
     vertical-align: super;
 }
-.tableColCert {
+.tableColCert, .tableColCertNA {
     text-align: center;
     vertical-align: revert;
+}
+.tableColCertNA {
+    vertical-align: super;
 }
 .emissionsTxtMatte, .emissionsUnitsMatte {
     color:#616161;
@@ -75,4 +78,8 @@
 }
 .navChainLink {
     cursor: pointer;
+    border-radius:6;
+}
+.navChainLink:hover {
+    background-color:#272727;
 }

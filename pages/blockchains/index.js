@@ -17,7 +17,7 @@ const Blockchains = () => {
                         <table className={styles.chainTable}>
                             <thead>
                                 <tr className={styles.tableHeader}>
-                                    <th></th>
+                                    <th height="30"></th>
                                     <th>
                                         Chain
                                     </th>
