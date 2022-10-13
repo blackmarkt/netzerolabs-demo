@@ -15,8 +15,8 @@ const Blockchains = ({ mapData }) => {
                 {/* <div className={styles.emissionsLeftContainer}> */}
                     <div className={styles.chainContainer}>
                         <table className={styles.chainTable}>
-                            <thead className={styles.tableHeader}>
-                                <tr>
+                            <thead>
+                                <tr className={styles.tableHeader}>
                                     <th></th>
                                     <th>
                                         Chain

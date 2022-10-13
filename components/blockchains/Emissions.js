@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react"
 import styles from '../../styles/ChainEmissions.module.css'
+import { numberWithCommas } from '../../data/emissionsData'
 
 const ChainEmissions = ( props ) => {
     return (
@@ -23,7 +24,7 @@ const ChainEmissions = ( props ) => {
                     <div className={styles.emissionsUnits}>tCO&#8322;</div>
                 </td>
                 <td className={styles.tableColEmission}>
-                    <div className={styles.emissionsTxtMatte}>{props.transactions}</div>
+                    <div className={styles.emissionsTxtMatte}>{numberWithCommas(props.transactions)}</div>
                     {/* <div className={styles.emissionsUnits}>tCO&#8322;</div> */}
                 </td>
                 <td className={styles.tableColEmission}>
