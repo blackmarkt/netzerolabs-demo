@@ -12,22 +12,49 @@ const Blockchains = ({ mapData }) => {
             <h2 className={styles.dashboardMainHeader}>Blockchain Emissions</h2>
             <h4 className={styles.dashboardHeader}>Total Emissions</h4>
             <div className={styles.dashboardSubContainer}>
-                <div className={styles.emissionsLeftContainer}>
-                    <div className={styles.chainLeftContainer}>
-                        {blockchainData.map((obj, index) => {
-                            // your code here
-                            return <Emissions {...obj}/>
-                        })}
+                {/* <div className={styles.emissionsLeftContainer}> */}
+                    <div className={styles.chainContainer}>
+                        <table className={styles.chainTable}>
+                            <thead className={styles.tableHeader}>
+                                <tr>
+                                    <th></th>
+                                    <th>
+                                        Chain
+                                    </th>
+                                    <th>
+                                        Total Emissions
+                                    </th>
+                                    <th>
+                                        Carbon Offsets
+                                    </th>
+                                    <th>
+                                        Transactions
+                                    </th>
+                                    <th>
+                                        Network Emissions
+                                    </th>
+                                    <th>
+                                        Operation Emissions
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {blockchainData.map((obj, index) => {
+                                    // your code here
+                                    return <Emissions {...obj}/>
+                                })}
+                            </tbody>
+                        </table>
                     </div>
-                </div>
-                <div className={styles.emissionsRightContainer}>
+                {/* </div> */}
+                {/* <div className={styles.emissionsRightContainer}>
                     <div className={styles.emissionsChartContainer}>
                         <BlockchainEmissionsChart />
                     </div>
                     <div className={styles.emissionsChartContainer}>
                         <CumulativeBlockchainEmissionsChart />
                     </div>
-                </div>
+                </div> */}
             </div>
             <h4 className={styles.dashboardHeader}>Network Emissions</h4>
             <div className={styles.dashboardSubContainer}>

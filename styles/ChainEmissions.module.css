@@ -42,7 +42,7 @@
 }
 .emissionsTxt {
     display: inline-block;
-    font-size:1rem;
+    font-size:0.9rem;
     padding:0.8rem 0 0rem;
     text-shadow:0 0 10px white;
 }
@@ -50,4 +50,12 @@
     font-size:0.6rem;
     display: inline-block;
     margin-left:0.5rem
+}
+.tableColEmission {
+    text-align: center;
+    vertical-align: super;
+}
+tr.tableOdd {
+    background: #1e1e1e;
+    border-radius:4px
 }
