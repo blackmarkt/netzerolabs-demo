@@ -62,7 +62,10 @@
     color:#616161;
     text-shadow: none!important;
 }
-tr.tableOdd {
+.emissionsTxtTx {
+    font-size:0.8rem
+}
+.tableOdd {
     background: #1e1e1e;
     border-radius:4px
 }

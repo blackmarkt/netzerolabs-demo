@@ -58,7 +58,12 @@ const Blockchains = ({ mapData }) => {
             </div>
             <h4 className={styles.dashboardHeader}>Network Emissions</h4>
             <div className={styles.dashboardSubContainer}>
-
+                <div className={styles.emissionsChartContainer}>
+                    <BlockchainEmissionsChart />
+                </div>
+                <div className={styles.emissionsChartContainer}>
+                    <CumulativeBlockchainEmissionsChart />
+                </div>
             </div>
             <h4 className={styles.dashboardHeader}>Operations Emissions</h4>
             <div className={styles.dashboardSubContainer}>
