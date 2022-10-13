@@ -19,6 +19,8 @@
     max-height: 800px;
 }
 .dashboardHeader {
+    color:#616161;
+    text-shadow: none!important;
     margin:1rem 0.5rem;
 }
 .flexGrid {

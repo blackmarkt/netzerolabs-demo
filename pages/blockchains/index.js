@@ -10,6 +10,7 @@ const Blockchains = ({ mapData }) => {
     return (
         <div className={styles.dashboardContainer}>
             <h2 className={styles.dashboardMainHeader}>Blockchain Emissions</h2>
+            <h4 className={styles.dashboardHeader}>Total Emissions</h4>
             <div className={styles.dashboardSubContainer}>
                 <div className={styles.emissionsLeftContainer}>
                     <div className={styles.chainLeftContainer}>
@@ -28,11 +29,11 @@ const Blockchains = ({ mapData }) => {
                     </div>
                 </div>
             </div>
-            <h4 className={styles.dashboardHeader}>Emissions Activity</h4>
+            <h4 className={styles.dashboardHeader}>Network Emissions</h4>
             <div className={styles.dashboardSubContainer}>
 
             </div>
-            <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>
+            <h4 className={styles.dashboardHeader}>Operations Emissions</h4>
             <div className={styles.dashboardSubContainer}>
 
             </div>
