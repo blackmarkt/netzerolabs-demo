@@ -5,12 +5,12 @@ import CumulativeBlockchainEmissionsChart from '../../components/charts/Cumulati
 import styles from '../../styles/blockchains.module.css'
 import { blockchainData } from '../../data/blockchainData'
 
-const Blockchains = ({ mapData }) => {
+const Blockchains = () => {
 
     return (
         <div className={styles.dashboardContainer}>
             <h2 className={styles.dashboardMainHeader}>Blockchain Emissions</h2>
-            <h4 className={styles.dashboardHeader}>Total Emissions</h4>
+            {/* <h4 className={styles.dashboardHeader}>Total Emissions</h4> */}
             <div className={styles.dashboardSubContainer}>
                 {/* <div className={styles.emissionsLeftContainer}> */}
                     <div className={styles.chainContainer}>

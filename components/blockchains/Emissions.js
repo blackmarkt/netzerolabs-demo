@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React, { useState, useEffect, useRef } from "react"
 import styles from '../../styles/ChainEmissions.module.css'
 import { numberWithCommas } from '../../data/emissionsData'
@@ -15,7 +16,8 @@ const ChainEmissions = ( props ) => {
             //   ) : (
             //     <tr>
             // )}
-            <tr>
+            <Link href={props.nav}>
+            <tr className={styles.navChainLink}>
                 <td>
                     <img className={styles.logoChain}
                         src={props.logo}
@@ -60,6 +62,7 @@ const ChainEmissions = ( props ) => {
                     {props.operation_emissions != null && <div className={styles.emissionsUnitsMatte}>tCO&#8322;</div>}
                 </td>
             </tr>
+            </Link>
     );
 }
 
