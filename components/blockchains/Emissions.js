@@ -61,7 +61,7 @@ const ChainEmissions = ( props ) => {
                 <td className={styles.tableColEmission}>
                     {/* <div className={[styles.emissionsTxtMatte, styles.emissionsTxtTx].join(" ")}>{numberWithCommas(props.transactions)}</div> */}
                     {/* <div className={styles.emissionsUnits}>tCO&#8322;</div> */}
-                    {props.transactions != null ? (<div className={[styles.emissionsTxtMatte, styles.emissionsTxtTx].join(" ")}>{numberWithCommas(props.transactions)}</div>) 
+                    {props.transactions != null ? (<div className={[styles.emissionsTxtMatte, styles.emissionsTxtTx].join(" ")}>{props.transactions}</div>) 
                     : (<div className={[styles.emissionsTxtMatte, styles.emissionsTxtTx].join(" ")}>NA</div>)}
                 </td>
                 <td className={styles.tableColEmission}>

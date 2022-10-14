@@ -64,7 +64,7 @@ const blockchainData = [
     nav: 'ethereum',
     netzero: false,
     netzero_report_url: null,
-    offices:[ethereumOfficesData],
+    offices:ethereumOfficesData,
     },
     {chain: 'Celo', 
     logo: '/blockchains/celo_40x40.png',
