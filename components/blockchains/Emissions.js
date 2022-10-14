@@ -35,9 +35,9 @@ const ChainEmissions = ( props ) => {
                 {props.netzero == true ? (
                     <td className={styles.tableColCert}>  
                     <img className={styles.net0Cert}
-                        src='/net0labs/netzero_icon.png'
+                        src='/certification/netzero_cert.png'
                         alt='NetZero Certified'
-                        height='30px'
+                        height='25px'
                     /></td>
                 ) : (
                     <td className={styles.tableColCertNA}>  
