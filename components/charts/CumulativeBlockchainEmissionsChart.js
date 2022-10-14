@@ -2,7 +2,8 @@ import React from 'react'
 import Highcharts from 'highcharts'
 // import HighchartsExporting from 'highcharts/modules/exporting'
 import HighchartsReact from 'highcharts-react-official'
-import { dateLabels, cumEmissionsData } from '../../data/emissionsData'
+import { dateLabels, dateUnixLabels, dateUnixCelo, cumEmissionsData, celoCumEmissionData, 
+    combineUnixDataArr, combineUnixFauxDataArr } from '../../data/emissionsData'
 import { blockchainData, defaultChainEmissionsData } from '../../data/blockchainData'
 
 
@@ -36,32 +37,32 @@ const options = {
             color: 'gray',
         }
     },
-    plotOptions: {
-        area: {
-            fillColor: {
-                linearGradient: {
-                    x1: 0,
-                    y1: 0,
-                    x2: 1,
-                    y2: 1
-                },
-                stops: [
-                    [0, '#61668B'],
-                    [1, 'transparent']
-                ]
-            },
-            marker: {
-                radius: 3
-            },
-            lineWidth: 1,
-            states: {
-                hover: {
-                    lineWidth: 1
-                }
-            },
-            threshold: null
-        }
-    },
+    // plotOptions: {
+    //     area: {
+    //         fillColor: {
+    //             linearGradient: {
+    //                 x1: 0,
+    //                 y1: 0,
+    //                 x2: 1,
+    //                 y2: 1
+    //             },
+    //             stops: [
+    //                 [0, '#61668B'],
+    //                 [1, 'transparent']
+    //             ]
+    //         },
+    //         marker: {
+    //             radius: 3
+    //         },
+    //         lineWidth: 1,
+    //         states: {
+    //             hover: {
+    //                 lineWidth: 1
+    //             }
+    //         },
+    //         threshold: null
+    //     }
+    // },
     yAxis: {
         lineWidth: 0,
             lineColor: 'black',
@@ -81,8 +82,8 @@ const options = {
             }
     },
     xAxis: {
-        // type: 'datetime',
-        categories: dateLabels,
+        type: 'datetime',
+        // categories: dateLabels,
         lineWidth: 0,
         lineColor: 'black',
         gridLineWidth: 0,
@@ -92,7 +93,7 @@ const options = {
             rangeDescription: ''
         },
         labels: {
-            step:4,
+            // step:4,
             style: {
                 fontSize: '0.5rem',
                 color: '#616161',
@@ -107,7 +108,7 @@ const options = {
             {
                 name: blockchainData[0].chain,
                 className: 'line-class1',
-                data: cumEmissionsData,
+                data: combineUnixDataArr(dateUnixLabels, cumEmissionsData),
                 color: blockchainData[0].color,
                 type: 'area',
                 shadow: {
@@ -123,12 +124,23 @@ const options = {
                 },
                 marker: {
                     enabled: false
-                }
+                },
+                fillColor: {
+                    linearGradient:  { 
+                        x1: 0,
+                        y1: 0,
+                        x2: 1,
+                        y2: 1},
+                    stops: [
+                        [0, blockchainData[0].color],
+                        [1, 'transparent']
+                    ]
+                },
             },
             {
                 name: blockchainData[1].chain,
                 className: 'line-class1',
-                data: defaultChainEmissionsData,
+                data: combineUnixDataArr(dateUnixCelo, celoCumEmissionData),
                 color: blockchainData[1].color,
                 type: 'area',
                 shadow: {
@@ -144,12 +156,23 @@ const options = {
                 },
                 marker: {
                     enabled: false
-                }
+                },
+                fillColor: {
+                    linearGradient: { 
+                        x1: 0,
+                        y1: 0,
+                        x2: 1,
+                        y2: 1},
+                    stops: [
+                        [0, blockchainData[1].color],
+                        [1, 'transparent']
+                    ]
+                },
             },
             {
                 name: blockchainData[2].chain,
                 className: 'line-class1',
-                data: defaultChainEmissionsData,
+                data:  combineUnixFauxDataArr(dateUnixCelo),
                 color: blockchainData[2].color,
                 type: 'area',
                 shadow: {
@@ -165,12 +188,23 @@ const options = {
                 },
                 marker: {
                     enabled: false
-                }
+                },
+                fillColor: {
+                    linearGradient:  { 
+                        x1: 0,
+                        y1: 0,
+                        x2: 1,
+                        y2: 1},
+                    stops: [
+                        [0, blockchainData[2].color],
+                        [1, 'transparent']
+                    ]
+                },
             },
             {
                 name: blockchainData[3].chain,
                 className: 'line-class1',
-                data: defaultChainEmissionsData,
+                data:  combineUnixFauxDataArr(dateUnixCelo),
                 color: blockchainData[3].color,
                 type: 'area',
                 shadow: {
@@ -186,12 +220,23 @@ const options = {
                 },
                 marker: {
                     enabled: false
-                }
+                },
+                fillColor: {
+                    linearGradient:  { 
+                        x1: 0,
+                        y1: 0,
+                        x2: 1,
+                        y2: 1},
+                    stops: [
+                        [0, blockchainData[3].color],
+                        [1, 'transparent']
+                    ]
+                },
             },
             {
                 name: blockchainData[4].chain,
                 className: 'line-class1',
-                data: defaultChainEmissionsData,
+                data:  combineUnixFauxDataArr(dateUnixCelo),
                 color: blockchainData[4].color,
                 type: 'area',
                 shadow: {
@@ -207,12 +252,23 @@ const options = {
                 },
                 marker: {
                     enabled: false
-                }
+                },
+                fillColor: {
+                    linearGradient:  { 
+                        x1: 0,
+                        y1: 0,
+                        x2: 1,
+                        y2: 1},
+                    stops: [
+                        [0, blockchainData[4].color],
+                        [1, 'transparent']
+                    ]
+                },
             },
             {
                 name: blockchainData[5].chain,
                 className: 'line-class1',
-                data: defaultChainEmissionsData,
+                data:  combineUnixFauxDataArr(dateUnixCelo),
                 color: blockchainData[5].color,
                 type: 'area',
                 shadow: {
@@ -228,7 +284,18 @@ const options = {
                 },
                 marker: {
                     enabled: false
-                }
+                },
+                fillColor: {
+                    linearGradient:  { 
+                        x1: 0,
+                        y1: 0,
+                        x2: 1,
+                        y2: 1},
+                    stops: [
+                        [0, blockchainData[5].color],
+                        [1, 'transparent']
+                    ]
+                },
             },
             ]
 }

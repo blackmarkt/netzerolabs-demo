@@ -2,8 +2,9 @@ import React from 'react'
 import Highcharts from 'highcharts'
 // import HighchartsExporting from 'highcharts/modules/exporting'
 import HighchartsReact from 'highcharts-react-official'
-import { dateLabels, emissionsData } from '../../data/emissionsData'
-import { blockchainData, defaultChainEmissionsData } from '../../data/blockchainData'
+import { dateLabels, emissionsData, dateUnixLabels, dateUnixCelo, celoEmissionsDailyData, 
+    celoCumEmissionData, combineUnixDataArr, combineUnixFauxDataArr} from '../../data/emissionsData'
+import { blockchainData, defaultChainEmissionsData, } from '../../data/blockchainData'
 
 const options = {
     chart: {
@@ -29,12 +30,12 @@ const options = {
     },
     legend: {
         enabled: true,
-        // verticalAlign: 'top',
-        align:'right',
+        verticalAlign: 'top',
+        align:'center',
         padding:30,
         style: {
             fontSize: '0.4rem',
-            color: 'darkgray',
+            color: 'gray',
         }
     },
     plotOptions: {
@@ -85,8 +86,8 @@ const options = {
         }
     },
     xAxis: {
-        // type: 'datetime',
-        categories: dateLabels,
+        type: 'datetime',
+        // categories: dateLabels,
         lineWidth: 0,
         lineColor: 'black',
         gridLineWidth: 0,
@@ -96,7 +97,7 @@ const options = {
             rangeDescription: ''
         },
         labels: {
-            step:4,
+            // step:4,
             style: {
                 fontSize: '0.6rem',
                 color: '#616161',
@@ -111,7 +112,7 @@ const options = {
             {
                 name: blockchainData[0].chain,
                 className: 'line-class1',
-                data: emissionsData,
+                data: combineUnixDataArr(dateUnixLabels, emissionsData),
                 color: blockchainData[0].color,
                 // type: 'area',
                 shadow: {
@@ -132,7 +133,7 @@ const options = {
             {
                 name:  blockchainData[1].chain,
                 className: 'line-class1',
-                data: defaultChainEmissionsData,
+                data: combineUnixDataArr(dateUnixCelo, celoEmissionsDailyData),
                 color:  blockchainData[1].color,
                 // type: 'area',
                 shadow: {
@@ -153,7 +154,7 @@ const options = {
             {
                 name: blockchainData[2].chain,
                 className: 'line-class1',
-                data: defaultChainEmissionsData,
+                data: combineUnixFauxDataArr(dateUnixCelo),
                 color: blockchainData[2].color,
                 // type: 'area',
                 shadow: {
@@ -174,7 +175,7 @@ const options = {
             {
                 name: blockchainData[3].chain,
                 className: 'line-class1',
-                data: defaultChainEmissionsData,
+                data: combineUnixFauxDataArr(dateUnixCelo),
                 color: blockchainData[3].color,
                 // type: 'area',
                 shadow: {
@@ -195,7 +196,7 @@ const options = {
             {
                 name: blockchainData[4].chain,
                 className: 'line-class1',
-                data: defaultChainEmissionsData,
+                data: combineUnixFauxDataArr(dateUnixCelo),
                 color: blockchainData[4].color,
                 // type: 'area',
                 shadow: {
@@ -216,7 +217,7 @@ const options = {
             {
                 name: blockchainData[5].chain,
                 className: 'line-class1',
-                data: defaultChainEmissionsData,
+                data: combineUnixFauxDataArr(dateUnixCelo),
                 color: blockchainData[5].color,
                 // type: 'area',
                 shadow: {
