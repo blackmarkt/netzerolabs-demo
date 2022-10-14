@@ -74,6 +74,10 @@ const Blockchains = () => {
             <div className={styles.dashboardSubContainer}>
                 
             </div>
+            <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>
+            <div className={styles.dashboardSubContainer}>
+                
+            </div>
         </div>
     );
 }
