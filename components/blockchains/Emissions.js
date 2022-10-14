@@ -16,7 +16,7 @@ const ChainEmissions = ( props ) => {
             //   ) : (
             //     <tr>
             // )}
-            <Link href={`/blockchains/${props.nav}`}>
+            <Link href={`/chain/${props.nav}`}>
             <tr className={styles.navChainLink}>
                 <td>
                     <img className={styles.logoChain}
