@@ -19,9 +19,9 @@ const Nav = () => {
             />
         </Link>
         <div className={navStyles.headerRight}>
-            <Link href="/dashboard">
+            <Link href="/blockchains">
                 <button className={navStyles.buttonHead}>
-                    Dashboard
+                    Blockchains
                 </button>
             </Link>
             <Link href="/partners">

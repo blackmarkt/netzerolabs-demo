@@ -1,10 +1,12 @@
+import { numberWithCommas, txData, calculateSum, cumEmissionsData, celoCumEmissionData, celoTxDailyData} from './emissionsData'
+
 const blockchainData = [
     {chain: 'Ethereum', 
     logo: '/blockchains/ethereum_45x45.png',
-    emissions: 305,
+    emissions: numberWithCommas(cumEmissionsData.slice(-1)[0]),
     offsets:null,
-    transactions:1123390,
-    network_emissions:305,
+    transactions: calculateSum(txData),
+    network_emissions: numberWithCommas(cumEmissionsData.slice(-1)[0]),
     operation_emissions:null,
     color: '#757B9D',
     id: 0,
@@ -14,10 +16,10 @@ const blockchainData = [
     },
     {chain: 'Celo', 
     logo: '/blockchains/celo_40x40.png',
-    emissions: null,
+    emissions: numberWithCommas(celoCumEmissionData.slice(-1)[0]),
     offsets:null,
-    transactions:null,
-    network_emissions:null,
+    transactions: calculateSum(celoTxDailyData),
+    network_emissions: numberWithCommas(celoCumEmissionData.slice(-1)[0]),
     operation_emissions:null,
     color: '#FACA5B',
     id: 1,
@@ -131,6 +133,10 @@ const blockchainData = [
     },
 ]
 
+function getBlockchainData() {
+    return blockchainData
+}
+
 const defaultChainEmissionsData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-export { blockchainData, defaultChainEmissionsData }
+export { blockchainData, defaultChainEmissionsData, getBlockchainData }

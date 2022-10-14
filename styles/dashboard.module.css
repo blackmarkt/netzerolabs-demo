@@ -211,4 +211,11 @@ p.subHeaderTxt {
     color:darkgray!important;
     text-shadow: none!important;
     opacity: 0.3!important;
+}
+.footNote {
+    font-size:0.4rem;
+    color:darkgray!important;
+    text-shadow: none!important;
+    opacity: 0.3!important;
+    float:left;
 }  

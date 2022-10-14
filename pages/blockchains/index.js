@@ -3,9 +3,10 @@ import Emissions from '../../components/blockchains/Emissions'
 import BlockchainEmissionsChart from '../../components/charts/BlockchainEmissionsChart'
 import CumulativeBlockchainEmissionsChart from '../../components/charts/CumulativeBlockchainEmissionsChart'
 import styles from '../../styles/blockchains.module.css'
-import { blockchainData } from '../../data/blockchainData'
+import { getBlockchainData } from '../../data/blockchainData'
 
 const Blockchains = () => {
+    const [chainData, setChainData] = useState(getBlockchainData)
 
     return (
         <div className={styles.dashboardContainer}>
@@ -42,7 +43,7 @@ const Blockchains = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {blockchainData.map((obj, index) => {
+                                {chainData.map((obj, index) => {
                                     // your code here
                                     return <Emissions {...obj}/>
                                 })}
@@ -59,6 +60,7 @@ const Blockchains = () => {
                     </div>
                 </div> */}
             </div>
+            <p className={styles.footNote}>&#42; Ethereum since the merge on 9/15/22</p>
             <h4 className={styles.dashboardHeader}>Network Emissions</h4>
             <div className={styles.dashboardSubContainer}>
                 <div className={styles.emissionsChartContainer}>
@@ -70,7 +72,7 @@ const Blockchains = () => {
             </div>
             <h4 className={styles.dashboardHeader}>Operations Emissions</h4>
             <div className={styles.dashboardSubContainer}>
-
+                
             </div>
         </div>
     );

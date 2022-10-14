@@ -26,7 +26,9 @@ const ChainEmissions = ( props ) => {
                     />
                 </td>
                 <td>
-                    <h4 className={styles.txtChain}>{props.chain}</h4>
+                {props.chain == 'Ethereum' ? (<h4 className={styles.txtChain}>{props.chain}&#42;</h4>)
+                : (<h4 className={styles.txtChain}>{props.chain}</h4>)
+                }
                 </td>
                     {/* <div className={styles.emissionsTxt}>{props.emissions}</div> */}
                     {/* <div className={styles.emissionsUnits}>tCO&#8322;</div> */}

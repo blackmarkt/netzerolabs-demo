@@ -66,6 +66,15 @@
     font-size:0.75rem;
     opacity:0.7;
 }
+.footNote {
+    width:100%;
+    margin:0.6rem 0 0;
+    font-size:0.6rem;
+    color:darkgray!important;
+    text-shadow: none!important;
+    opacity: 0.3!important;
+    text-align: right;
+} 
 /* .chainRightContainer {
     width:60%;
     text-align: center;
