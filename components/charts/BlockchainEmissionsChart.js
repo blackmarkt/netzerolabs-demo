@@ -112,7 +112,7 @@ const options = {
             {
                 name: blockchainData[0].chain,
                 className: 'line-class1',
-                data: combineUnixDataArr(dateUnixLabels, emissionsData),
+                data: combineUnixFauxDataArr(dateUnixCelo),
                 color: blockchainData[0].color,
                 // type: 'area',
                 shadow: {
@@ -133,7 +133,7 @@ const options = {
             {
                 name:  blockchainData[1].chain,
                 className: 'line-class1',
-                data: combineUnixDataArr(dateUnixCelo, celoEmissionsDailyData),
+                data: combineUnixDataArr(dateUnixLabels, emissionsData),
                 color:  blockchainData[1].color,
                 // type: 'area',
                 shadow: {
@@ -154,7 +154,7 @@ const options = {
             {
                 name: blockchainData[2].chain,
                 className: 'line-class1',
-                data: combineUnixFauxDataArr(dateUnixCelo),
+                data: combineUnixDataArr(dateUnixCelo, celoEmissionsDailyData),
                 color: blockchainData[2].color,
                 // type: 'area',
                 shadow: {

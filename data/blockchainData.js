@@ -11,7 +11,7 @@ const blockchainData = [
     operation_emissions:null,
     color: '#E78B1A',
     id: 0,
-    row: 'tableEven',
+    row: 'tableOdd',
     nav: '/blockchains/bitcoin',
     netzero: false,
     },
