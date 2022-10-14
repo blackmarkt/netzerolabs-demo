@@ -63,10 +63,12 @@
     width:28%;
     text-align: center;
     vertical-align: top;
+    padding:2rem 0 0;
 }
 .subStatsContainer {
     width:23%;
     height:100%;
+    padding:revert;
 }
 .subMapContainer {
     display: inline-block;
@@ -211,11 +213,4 @@ p.subHeaderTxt {
     color:darkgray!important;
     text-shadow: none!important;
     opacity: 0.3!important;
-}
-.footNote {
-    font-size:0.4rem;
-    color:darkgray!important;
-    text-shadow: none!important;
-    opacity: 0.3!important;
-    float:left;
-}  
+} 

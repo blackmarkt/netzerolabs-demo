@@ -5,13 +5,9 @@ import Axios from "axios";
 import styles from '../styles/Home.module.css'
 
 
-var i = 0;
-
 const Map = ({ mapData }) => {
-    i += 1;
-    console.log(mapData, i);
     const mapContainer = useRef(null);
-    const [zoom, setZoom] = useState(0.5);
+    const [zoom, setZoom] = useState(1);
     const [data, setData] = useState(null);
     const [map, setMap] = useState(null);
 
