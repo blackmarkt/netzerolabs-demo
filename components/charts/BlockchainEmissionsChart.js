@@ -112,7 +112,7 @@ const options = {
             {
                 name: blockchainData[0].chain,
                 className: 'line-class1',
-                data: combineUnixFauxDataArr(dateUnixCelo),
+                data: blockchainData[0].chart_daily_data,
                 color: blockchainData[0].color,
                 // type: 'area',
                 shadow: {
@@ -133,7 +133,7 @@ const options = {
             {
                 name:  blockchainData[1].chain,
                 className: 'line-class1',
-                data: combineUnixDataArr(dateUnixLabels, emissionsData),
+                data: blockchainData[1].chart_daily_data,
                 color:  blockchainData[1].color,
                 // type: 'area',
                 shadow: {
@@ -154,7 +154,7 @@ const options = {
             {
                 name: blockchainData[2].chain,
                 className: 'line-class1',
-                data: combineUnixDataArr(dateUnixCelo, celoEmissionsDailyData),
+                data: blockchainData[2].chart_daily_data,
                 color: blockchainData[2].color,
                 // type: 'area',
                 shadow: {
@@ -175,7 +175,7 @@ const options = {
             {
                 name: blockchainData[3].chain,
                 className: 'line-class1',
-                data: combineUnixFauxDataArr(dateUnixCelo),
+                data: blockchainData[3].chart_daily_data,
                 color: blockchainData[3].color,
                 // type: 'area',
                 shadow: {
@@ -196,7 +196,7 @@ const options = {
             {
                 name: blockchainData[4].chain,
                 className: 'line-class1',
-                data: combineUnixFauxDataArr(dateUnixCelo),
+                data: blockchainData[4].chart_daily_data,
                 color: blockchainData[4].color,
                 // type: 'area',
                 shadow: {
@@ -217,7 +217,7 @@ const options = {
             {
                 name: blockchainData[5].chain,
                 className: 'line-class1',
-                data: combineUnixFauxDataArr(dateUnixCelo),
+                data: blockchainData[5].chart_daily_data,
                 color: blockchainData[5].color,
                 // type: 'area',
                 shadow: {
