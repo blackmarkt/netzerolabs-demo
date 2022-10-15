@@ -23,6 +23,9 @@
     text-shadow: none!important;
     margin:1rem 0.5rem;
 }
+.logoChain {
+    margin-left:0.5rem
+}
 .flexGrid {
     display: flex;
     justify-content: space-between;
@@ -40,7 +43,7 @@
     border-radius: 6px;
     font-size: 0.8rem;
     /* box-shadow: 0 1px 1px #CDCDCD, 0 0 8px #CDCDCD; */
-    box-shadow: 0 1px 1px #61668B, 0 0 10px #61668B;
+    /* box-shadow: 0 1px 1px #61668B, 0 0 10px #61668B; */
 }
 .innerGrid {
     width:23%;
@@ -213,4 +216,34 @@ p.subHeaderTxt {
     color:darkgray!important;
     text-shadow: none!important;
     opacity: 0.3!important;
-} 
+}
+.ethereum {
+    box-shadow: 0 1px 1px #61668B, 0 0 10px #61668B!important;
+}
+.celo {
+    box-shadow: 0 1px 1px #FBCB5C, 0 0 10px #2EB06D!important;
+}
+.bitcoin {
+    box-shadow: 0 1px 1px #F7931A, 0 0 10px #F7931A!important;
+}
+.solana {
+    box-shadow: 0 1px 1px #B838E7, 0 0 10px #27CAAA!important;
+}
+.avalanche {
+    box-shadow: 0 1px 1px #FB2838, 0 0 10px #FB2838!important;
+}
+.polygon {
+    box-shadow: 0 1px 1px #8B42ED, 0 0 10px #8B42ED!important;
+}
+.near {
+    box-shadow: 0 1px 1px white, 0 0 10px white!important;
+}
+.binance {
+    box-shadow: 0 1px 1px #FDB700, 0 0 10px #FDB700!important;
+}
+.cardano {
+    box-shadow: 0 1px 1px #0034B3, 0 0 10px #0034B3!important;
+}
+.polkadot {
+    box-shadow: 0 1px 1px #FB007A, 0 0 10px #FB007A!important;
+}

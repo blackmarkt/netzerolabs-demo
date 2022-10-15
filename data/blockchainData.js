@@ -71,6 +71,10 @@ const blockchainData = [
     chart_daily_data: combineUnixDataArr(dateUnixCelo, celoEmissionsDailyData),
     chart_cum_data: combineUnixDataArr(dateUnixCelo, celoCumEmissionData),
     emissions: numberWithCommas(celoCumEmissionData.slice(-1)[0]),
+    emissions_stats: {
+        median: numberWithCommas(calculateMedian(calculateTxTCO2(celoEmissionsDailyData, 'daily'))),
+        sum: numberWithCommas(calculateSum(calculateTxTCO2(celoEmissionsDailyData, 'daily')))
+    },
     emissions_operations: {
         office:null,
         transportation:null,
@@ -79,6 +83,10 @@ const blockchainData = [
     },
     offsets:null,
     transactions: calculateSum(celoTxDailyData),
+    transaction_stats: {
+        median: numberWithCommas(calculateMedian(celoTxDailyData, 'daily')),
+        sum: numberWithCommas(calculateSum(celoTxDailyData, 'daily'))
+    },
     network_emissions: numberWithCommas(celoCumEmissionData.slice(-1)[0]),
     operation_emissions:null,
     color: '#FACA5B',
@@ -100,8 +108,16 @@ const blockchainData = [
         misc:null,
     },
     emissions: null,
+    emissions_stats: {
+        median: null,
+        sum: null
+    },
     offsets:null,
     transactions:null,
+    transaction_stats: {
+        median: null,
+        sum: null
+    },
     network_emissions:null,
     operation_emissions:null,
     color:'#478CC1',
@@ -123,14 +139,16 @@ const blockchainData = [
         misc:null,
     },
     emissions: null,
-    emissions_operations: {
-        office:null,
-        transportation:null,
-        supplies:null,
-        misc:null,
+    emissions_stats: {
+        median: null,
+        sum: null
     },
     offsets:null,
     transactions:null,
+    transaction_stats: {
+        median: null,
+        sum: null
+    },
     network_emissions:null,
     operation_emissions:null,
     color:'#FB2838',
@@ -146,6 +164,10 @@ const blockchainData = [
     chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
     chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
     emissions: null,
+    emissions_stats: {
+        median: null,
+        sum: null
+    },
     emissions_operations: {
         office:null,
         transportation:null,
@@ -154,6 +176,10 @@ const blockchainData = [
     },
     offsets:null,
     transactions:null,
+    transaction_stats: {
+        median: null,
+        sum: null
+    },
     network_emissions:null,
     operation_emissions:null,
     color:'#8B43EE',
@@ -169,6 +195,10 @@ const blockchainData = [
     chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
     chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
     emissions: null,
+    emissions_stats: {
+        median: null,
+        sum: null
+    },
     emissions_operations: {
         office:null,
         transportation:null,
@@ -177,6 +207,10 @@ const blockchainData = [
     },
     offsets:null,
     transactions:null,
+    transaction_stats: {
+        median: null,
+        sum: null
+    },
     network_emissions:null,
     operation_emissions:null,
     color:'#000000',
@@ -192,6 +226,10 @@ const blockchainData = [
     chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
     chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
     emissions: null,
+    emissions_stats: {
+        median: null,
+        sum: null
+    },
     emissions_operations: {
         office:null,
         transportation:null,
@@ -200,6 +238,10 @@ const blockchainData = [
     },
     offsets:null,
     transactions:null,
+    transaction_stats: {
+        median: null,
+        sum: null
+    },
     network_emissions:null,
     operation_emissions:null,
     color:'#000000',
@@ -215,6 +257,10 @@ const blockchainData = [
     chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
     chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
     emissions: null,
+    emissions_stats: {
+        median: null,
+        sum: null
+    },
     emissions_operations: {
         office:null,
         transportation:null,
@@ -223,6 +269,10 @@ const blockchainData = [
     },
     offsets:null,
     transactions:null,
+    transaction_stats: {
+        median: null,
+        sum: null
+    },
     network_emissions:null,
     operation_emissions:null,
     color:'#000000',
@@ -238,6 +288,10 @@ const blockchainData = [
     chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
     chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
     emissions: null,
+    emissions_stats: {
+        median: null,
+        sum: null
+    },
     emissions_operations: {
         office:null,
         transportation:null,
@@ -246,6 +300,10 @@ const blockchainData = [
     },
     offsets:null,
     transactions:null,
+    transaction_stats: {
+        median: null,
+        sum: null
+    },
     network_emissions:null,
     operation_emissions:null,
     color:'#000000',

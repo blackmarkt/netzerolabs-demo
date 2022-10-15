@@ -17,50 +17,13 @@ const chain = ({ chainData }) => {
 
     console.log('TEST ', chainData);
 
-    // useEffect(() => {
-    //     setEmissionsData(chainData.emissions)
-    // }, [chainData])
-    // const [chainName, setChainName] = useState(null)
-    // const [emissionsData, setEmissionsData] = useState(null)
-    // const [emissionsCumData, setEmissionsCumData] = useState(null)
-    // const [txData, setTxData] = useState(null)
-    // const [footprint, setFootprint] = useState(0)
-    // const [networkFootprint, setNetworkFootprint] = useState(0)
-    // const [sumTransactions, setSumTransactions] = useState(0)
-    // const [medianDailyTx, setMedianDailyTx] = useState(0)
-    // const [operationEmissions, setOperationsEmissions] = useState(0)
-    // const [officeEmissions, setOfficeEmissions] = useState(0)
-    // const [transportEmissions, setTransportEmissions] = useState(0)
-    // const [suppliesEmissions, setSuppliesEmissions] = useState(0)
-    // const [miscEmissions, setMiscEmissions] = useState(0)
-
-    // useEffect(() => {
-        // setChainName({chain})
-        // setChainData(blockchainData)
-        // setFootprint(numberWithCommas(cumEmissionsData.at(-1)))
-        // setNetworkFootprint(numberWithCommas(cumEmissionsData.at(-1), 2))
-        // setSumTransactions(numberWithCommas(calculateSum(txData)))
-        // setMedianDailyTx(numberWithCommas(calculateMedian(txData)))
-    // });
-
-    // console.log('CHAIN DATA ', chainData)
-
-    // console.log('EMISSIONS DATA ', numberWithCommas(calculateSum(txData)));
-
-    // useEffect(() => {
-    //     setFootprint(numberWithCommas(cumEmissionsData.at(-1)))
-    //     setNetworkFootprint(numberWithCommas(cumEmissionsData.at(-1), 2))
-    //     setSumTransactions(numberWithCommas(calculateSum(txData)))
-    //     setMedianDailyTx(numberWithCommas(calculateMedian(txData)))
-    // });
-
     return (
         <div className={styles.dashboardContainer}>
             <h2>{chainData.chain}
                 <img className={styles.logoChain}
                     src={chainData.logo}
                     alt={chainData.chain}
-                    height='40px'
+                    height='35px'
                 />
                 {/* <Image
                     src={Ethereum}
@@ -72,15 +35,15 @@ const chain = ({ chainData }) => {
             </h2>
             <p style={{"margin":"0"}}>0xEA123</p>
             <div className={styles.flexGrid}>
-                <div className={styles.grid}>
+                <div className={`${styles.grid} ${styles[chainData.nav]}`}>
                     {chainData.emissions != null ? (<div className={styles.topDashboard}>{chainData.emissions}</div>) 
                     : (<div className={styles.topDashboard}>NA</div>)}
                     {/* <div className={styles.topDashboard}>{ chainData.emissions }</div> */}
-                    <div className={styles.subHeader}>tCO&#8322;</div>
+                    {/* <div className={styles.subHeader}>tCO&#8322;</div> */}
                     {chainData.emissions != null && <div className={styles.subHeader}>tCO&#8322;</div>}
                     <p className={styles.subDashboard}>CO&#8322; Footprint</p>
                 </div>
-                <div className={styles.grid}>
+                <div className={`${styles.grid} ${styles[chainData.nav]}`}>
                     {/* <div className={styles.topDashboard}>{ chainData.offsets }</div> */}
                     {chainData.offsets != null ? (<div className={styles.topDashboard}>{chainData.offsets}</div>) 
                     : (<div className={styles.topDashboard}>NA</div>)}
@@ -88,13 +51,13 @@ const chain = ({ chainData }) => {
                     {chainData.offsets != null && <div className={styles.subHeader}>tCO&#8322;</div>}
                     <p className={styles.subDashboard}>CO&#8322; Offset (tCO&#8322;)</p>
                 </div>
-                <div className={styles.grid}>
+                <div className={`${styles.grid} ${styles[chainData.nav]}`}>
                     <div id='usdConvert' className={styles.topDashboard}>$0</div>
                     <div id="ethConvert" className={styles.ethContribute}></div>
                     <p className={styles.subDashboard}>CO&#8322; Offset ($)</p>
                 </div>
             </div>
-            <div className={styles.dashboardSubContainer}>
+            <div className={`${styles.dashboardSubContainer} ${styles[chainData.nav]}`}>
                 <div className={styles.subContainer}>
                     <p className={styles.subHeaderTxt}>Network</p>
                     <ul className={styles.subEmissionsBar}>
@@ -126,7 +89,7 @@ const chain = ({ chainData }) => {
                 </div>
             </div>
             <h4 className={styles.dashboardHeader}>Network</h4>
-            <div className={styles.dashboardSubContainer}>
+            <div className={`${styles.dashboardSubContainer} ${styles[chainData.nav]}`}>
                 <div className={styles.subStatsContainer}>
                     <h4 className={styles.subHeaderTxt}>Stats</h4>
                     <ul className={styles.subStatsBar}>
@@ -177,7 +140,7 @@ const chain = ({ chainData }) => {
                 </div>
             </div>
             <h4 className={styles.dashboardHeader}>Operations</h4>
-            <div className={styles.dashboardOpsSubContainer}>
+            <div className={`${styles.dashboardOpsSubContainer} ${styles[chainData.nav]}`}>
                 <div className={styles.operationsSubContainer}>
                     <div className={styles.flexGrid}>
                         <div className={styles.innerGrid}>
@@ -234,7 +197,7 @@ const chain = ({ chainData }) => {
                 </div>
             </div>
             <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>
-            <div className={styles.dashboardSubContainer}>
+            <div className={`${styles.dashboardSubContainer} ${styles[chainData.nav]}`}>
                 <div className={styles.dashboardNotActive}></div>
                 <div className={styles.notActiveContainer}>
                     <span className={styles.notActiveTxt}>Not Active</span>
