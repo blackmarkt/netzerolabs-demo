@@ -83,3 +83,7 @@
 .navChainLink:hover {
     background-color:#272727;
 }
+.emissionsRed {
+    /* color:red!important; */
+    text-shadow:0 0 10px red!important;
+}

@@ -221,6 +221,9 @@ p.subHeaderTxt {
     text-shadow: none!important;
     opacity: 0.3!important;
 }
+.emissionsRed {
+    text-shadow:0 0 10px red!important;
+}
 .ethereum {
     box-shadow: 0 1px 1px #6b6e88, 0 0 10px #61668B!important;
 }

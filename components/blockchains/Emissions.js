@@ -45,22 +45,16 @@ const ChainEmissions = ( props ) => {
                     </td>
                 )}
                 <td className={styles.tableColEmission}>
-                    {/* <div className={styles.emissionsTxt}>{props.emissions}</div> */}
-                    {/* <div className={styles.emissionsUnits}>tCO&#8322;</div> */}
                     {props.emissions != null ? (<div className={styles.emissionsTxt}>{props.emissions}</div>) 
-                    : (<div className={styles.emissionsTxt}>NA</div>)}
+                    : (<div className={[styles.emissionsTxt, styles.emissionsTxtMatte].join(" ")}>NA</div>)}
                     {props.emissions != null && <div className={styles.emissionsUnits}>tCO&#8322;</div>}
                 </td>
                 <td className={styles.tableColEmission}>
-                    {/* <div className={styles.emissionsTxt}>{props.offsets}</div> */}
-                    {/* <div className={styles.emissionsUnits}>tCO&#8322;</div> */}
-                    {props.offsets != null ? (<div className={styles.emissionsTxt}>{props.emissions}</div>) 
-                    : (<div className={styles.emissionsTxt}>NA</div>)}
+                    {props.offsets != null ? (<div className={styles.emissionsTxt}>{props.offsets}</div>) 
+                    : (<div className={[styles.emissionsTxt, styles.emissionsTxtMatte].join(" ")}>NA</div>)}
                     {props.offsets != null && <div className={styles.emissionsUnits}>tCO&#8322;</div>}
                 </td>
                 <td className={styles.tableColEmission}>
-                    {/* <div className={[styles.emissionsTxtMatte, styles.emissionsTxtTx].join(" ")}>{numberWithCommas(props.transactions)}</div> */}
-                    {/* <div className={styles.emissionsUnits}>tCO&#8322;</div> */}
                     {props.transactions != null ? (<div className={[styles.emissionsTxtMatte, styles.emissionsTxtTx].join(" ")}>{props.transactions}</div>) 
                     : (<div className={[styles.emissionsTxtMatte, styles.emissionsTxtTx].join(" ")}>NA</div>)}
                 </td>

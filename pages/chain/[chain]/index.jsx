@@ -38,16 +38,12 @@ const chain = ({ chainData }) => {
                 <div className={`${styles.grid} ${styles[chainData.nav]}`}>
                     {chainData.emissions != null ? (<div className={styles.topDashboard}>{chainData.emissions}</div>) 
                     : (<div className={styles.topDashboard}>NA</div>)}
-                    {/* <div className={styles.topDashboard}>{ chainData.emissions }</div> */}
-                    {/* <div className={styles.subHeader}>tCO&#8322;</div> */}
                     {chainData.emissions != null && <div className={styles.subHeader}>tCO&#8322;</div>}
                     <p className={styles.subDashboard}>CO&#8322; Footprint</p>
                 </div>
                 <div className={`${styles.grid} ${styles[chainData.nav]}`}>
-                    {/* <div className={styles.topDashboard}>{ chainData.offsets }</div> */}
                     {chainData.offsets != null ? (<div className={styles.topDashboard}>{chainData.offsets}</div>) 
-                    : (<div className={styles.topDashboard}>NA</div>)}
-                    {/* <div className={styles.subHeader}>tCO&#8322;</div> */}
+                    : (<div className={[styles.topDashboard, styles.emissionsRed].join(" ")}>NA</div>)}
                     {chainData.offsets != null && <div className={styles.subHeader}>tCO&#8322;</div>}
                     <p className={styles.subDashboard}>CO&#8322; Offset (tCO&#8322;)</p>
                 </div>
