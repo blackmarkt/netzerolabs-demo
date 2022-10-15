@@ -310,7 +310,7 @@ function combineUnixDataArr(dateArr, dataArr) {
     }
 }
 
-function combineUnixFauxDataArr (dateArr) {
+function combineUnixFauxDataArr(dateArr) {
     try {
         var dateDataArr = []; 
         for (let i = 0; i < dateArr.length; i++) {
@@ -342,6 +342,27 @@ function calculateTxTCO2(dataArr, type='daily') {
     }
 }
 
+function calculateTxTCO2Chart(dateArr, dataArr, type='daily') {
+    try {
+        let txTCO2Arr = [];
+        if (type == 'daily') {
+            for (let i = 0; i < dataArr.length; i++) {
+                txTCO2Arr.push({x: dateArr[i], y: dataArr[i]*txTCO2Convert})
+            }
+            return txTCO2Arr
+        } else {
+            let cumTCO2Arr = [];
+            for (let i = 0; i < dataArr.length; i++) {
+                cumTCO2Arr.push(dataArr[i]*txTCO2Convert)
+                txTCO2Arr.push({x: dateArr[i], y: calculateSum(cumTCO2Arr)})
+            }
+            return txTCO2Arr
+        }
+    } catch (error) {
+        console.log('ERROR: ', error)
+    }
+}
+
 function numberWithCommas(x, n=0) {
     return x.toFixed(n).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
 }    
@@ -360,5 +381,5 @@ function calculateSum(arr) {
 export {dateLabels, emissionsData, cumEmissionsData, txData, operationsdata, ethereumOfficesData,
         operationsOfficeData, operationsTransportData, operationsSuppliesData, operationsMiscData,
         dateUnixLabels, dateUnixCelo, celoEmissionsDailyData, celoCumEmissionData, celoOfficeData, 
-        celoTxDailyData, bitcoinUnixData, btcTxData, calculateTxTCO2,
+        celoTxDailyData, bitcoinUnixData, btcTxData, calculateTxTCO2, calculateTxTCO2Chart,
         calculateMedian, calculateSum, numberWithCommas, combineUnixDataArr, combineUnixFauxDataArr} 

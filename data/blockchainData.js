@@ -1,13 +1,19 @@
 import { numberWithCommas, dateUnixLabels, txData, calculateSum, cumEmissionsData, 
     celoCumEmissionData, celoTxDailyData, bitcoinUnixData, btcTxData, calculateTxTCO2, 
     combineUnixDataArr, combineUnixFauxDataArr, dateUnixCelo, emissionsData,
-    celoEmissionsDailyData, calculateMedian, ethereumOfficesData} from './emissionsData'
+    celoEmissionsDailyData, calculateMedian, ethereumOfficesData, calculateTxTCO2Chart} from './emissionsData'
 
 const blockchainData = [
     {chain: 'Bitcoin', 
     logo: '/blockchains/bitcoin_50x50.png',
-    chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
-    chart_cum_data: bitcoinUnixData,
+    chart_data: {
+        chart_daily_data: calculateTxTCO2Chart(dateUnixCelo, btcTxData, 'daily'),
+        chart_cum_data: calculateTxTCO2Chart(dateUnixCelo, btcTxData, 'cum'),
+        chart_tx_daily: combineUnixDataArr(dateUnixLabels, btcTxData),
+        chart_color: '#F7931A', 
+    },
+    // chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
+    // chart_cum_data: bitcoinUnixData,
     emissions: numberWithCommas(calculateTxTCO2(btcTxData, 'cum')),
     emissions_stats: {
         median: numberWithCommas(calculateMedian(calculateTxTCO2(btcTxData, 'daily'))),
@@ -20,14 +26,14 @@ const blockchainData = [
         misc:null,
     },
     offsets:null,
-    transactions: numberWithCommas(calculateSum(btcTxData)),
+    transactions_sum: numberWithCommas(calculateSum(btcTxData)),
     transaction_stats: {
         median: numberWithCommas(calculateMedian(btcTxData, 'daily')),
         sum: numberWithCommas(calculateSum(btcTxData, 'daily'))
     },
     network_emissions: numberWithCommas(calculateTxTCO2(btcTxData, 'cum')),
     operation_emissions:null,
-    color: '#E78B1A',
+    color: '#F7931A',
     id: 0,
     row: 'tableOdd',
     nav: 'bitcoin',
@@ -37,8 +43,16 @@ const blockchainData = [
     },
     {chain: 'Ethereum', 
     logo: '/blockchains/ethereum_45x45.png',
-    chart_daily_data: combineUnixDataArr(dateUnixLabels, emissionsData),
-    chart_cum_data: combineUnixDataArr(dateUnixLabels, cumEmissionsData),
+    chart_data: {
+        chart_daily_data: combineUnixDataArr(dateUnixLabels, emissionsData),
+        chart_cum_data: combineUnixDataArr(dateUnixLabels, cumEmissionsData),
+        chart_tx_daily: combineUnixDataArr(dateUnixLabels, txData),
+        chart_color: '#61668B', 
+    },
+    // chart_daily_data: combineUnixDataArr(dateUnixLabels, emissionsData),
+    // chart_cum_data: combineUnixDataArr(dateUnixLabels, cumEmissionsData),
+    // chart_tx_daily: combineUnixDataArr(dateUnixLabels, txData), 
+    // chart_color: '#61668B',
     emissions: numberWithCommas(cumEmissionsData.slice(-1)[0]),
     emissions_stats: {
         median: numberWithCommas(calculateMedian(calculateTxTCO2(emissionsData, 'daily'))),
@@ -51,7 +65,7 @@ const blockchainData = [
         misc:null,
     },
     offsets:null,
-    transactions: numberWithCommas(calculateSum(txData)),
+    transactions_sum: numberWithCommas(calculateSum(txData)),
     transaction_stats: {
         median: numberWithCommas(calculateMedian(txData, 'daily')),
         sum: numberWithCommas(calculateSum(txData, 'daily'))
@@ -68,8 +82,12 @@ const blockchainData = [
     },
     {chain: 'Celo', 
     logo: '/blockchains/celo_40x40.png',
-    chart_daily_data: combineUnixDataArr(dateUnixCelo, celoEmissionsDailyData),
-    chart_cum_data: combineUnixDataArr(dateUnixCelo, celoCumEmissionData),
+    chart_data: {
+        chart_daily_data: combineUnixDataArr(dateUnixCelo, celoEmissionsDailyData),
+        chart_cum_data: combineUnixDataArr(dateUnixCelo, celoCumEmissionData),
+        chart_tx_daily: combineUnixDataArr(celoEmissionsDailyData, txData),
+        chart_color: '#FBCB5C', 
+    },
     emissions: numberWithCommas(celoCumEmissionData.slice(-1)[0]),
     emissions_stats: {
         median: numberWithCommas(calculateMedian(calculateTxTCO2(celoEmissionsDailyData, 'daily'))),
@@ -82,7 +100,7 @@ const blockchainData = [
         misc:null,
     },
     offsets:null,
-    transactions: calculateSum(celoTxDailyData),
+    transactions_sum: calculateSum(celoTxDailyData),
     transaction_stats: {
         median: numberWithCommas(calculateMedian(celoTxDailyData, 'daily')),
         sum: numberWithCommas(calculateSum(celoTxDailyData, 'daily'))
@@ -99,8 +117,12 @@ const blockchainData = [
     },
     {chain: 'Solana', 
     logo: '/blockchains/solana_40x40.png',
-    chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
-    chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
+    chart_data: {
+        chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
+        chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
+        chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
+        chart_color: '#B838E7', 
+    },
     emissions_operations: {
         office:null,
         transportation:null,
@@ -113,7 +135,7 @@ const blockchainData = [
         sum: null
     },
     offsets:null,
-    transactions:null,
+    transactions_sum:null,
     transaction_stats: {
         median: null,
         sum: null
@@ -130,8 +152,12 @@ const blockchainData = [
     },
     {chain: 'Avalanche', 
     logo: '/blockchains/avalanche_40x40.png',
-    chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
-    chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
+    chart_data: {
+        chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
+        chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
+        chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
+        chart_color: '#FB2838', 
+    },
     emissions_operations: {
         office:null,
         transportation:null,
@@ -144,7 +170,7 @@ const blockchainData = [
         sum: null
     },
     offsets:null,
-    transactions:null,
+    transactions_sum:null,
     transaction_stats: {
         median: null,
         sum: null
@@ -161,8 +187,12 @@ const blockchainData = [
     },
     {chain: 'Polygon', 
     logo: '/blockchains/polygon_40x40.png',
-    chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
-    chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
+    chart_data: {
+        chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
+        chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
+        chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
+        chart_color: '#8B42ED', 
+    },
     emissions: null,
     emissions_stats: {
         median: null,
@@ -175,7 +205,7 @@ const blockchainData = [
         misc:null,
     },
     offsets:null,
-    transactions:null,
+    transactions_sum:null,
     transaction_stats: {
         median: null,
         sum: null
@@ -192,8 +222,12 @@ const blockchainData = [
     },
     {chain: 'NEAR', 
     logo: '/blockchains/near_40x40.png',
-    chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
-    chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
+    chart_data: {
+        chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
+        chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
+        chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
+        chart_color: '#FFFFFF', 
+    },
     emissions: null,
     emissions_stats: {
         median: null,
@@ -206,7 +240,7 @@ const blockchainData = [
         misc:null,
     },
     offsets:null,
-    transactions:null,
+    transactions_sum:null,
     transaction_stats: {
         median: null,
         sum: null
@@ -223,8 +257,12 @@ const blockchainData = [
     },
     {chain: 'Binance', 
     logo: '/blockchains/binance_40x40.png',
-    chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
-    chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
+    chart_data: {
+        chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
+        chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
+        chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
+        chart_color: '#FDB700', 
+    },
     emissions: null,
     emissions_stats: {
         median: null,
@@ -237,7 +275,7 @@ const blockchainData = [
         misc:null,
     },
     offsets:null,
-    transactions:null,
+    transactions_sum:null,
     transaction_stats: {
         median: null,
         sum: null
@@ -254,8 +292,12 @@ const blockchainData = [
     },
     {chain: 'Cardano', 
     logo: '/blockchains/cardano_45x45.png',
-    chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
-    chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
+    chart_data: {
+        chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
+        chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
+        chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
+        chart_color: '#0034B3', 
+    },
     emissions: null,
     emissions_stats: {
         median: null,
@@ -268,7 +310,7 @@ const blockchainData = [
         misc:null,
     },
     offsets:null,
-    transactions:null,
+    transactions_sum:null,
     transaction_stats: {
         median: null,
         sum: null
@@ -285,8 +327,12 @@ const blockchainData = [
     },
     {chain: 'Polkadot', 
     logo: '/blockchains/polkadot_40x40.png',
-    chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
-    chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
+    chart_data: {
+        chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
+        chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
+        chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
+        chart_color: '#FB007A', 
+    },
     emissions: null,
     emissions_stats: {
         median: null,
@@ -299,7 +345,7 @@ const blockchainData = [
         misc:null,
     },
     offsets:null,
-    transactions:null,
+    transactions_sum:null,
     transaction_stats: {
         median: null,
         sum: null
@@ -318,7 +364,7 @@ const blockchainData = [
     // logo: '/blockchains/algorand_40x40.png',
     // emissions: null,
     // offsets:null,
-    // transactions:null,
+    // transactions_sum:null,
     // network_emissions:null,
     // operation_emissions:null,
     // color:'#000000',

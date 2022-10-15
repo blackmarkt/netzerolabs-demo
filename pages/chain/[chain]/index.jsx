@@ -132,10 +132,10 @@ const chain = ({ chainData }) => {
                 </div>
                 <div className={styles.subChartContainer}>
                     <div className={styles.stackChartContainer}>
-                        <TransactionsChart />
+                        <TransactionsChart chartData={chainData}/>
                     </div>
                     <div className={styles.stackChartContainer}>
-                        <CumulativeTransactionsChart />
+                        <CumulativeTransactionsChart chartData={chainData}/>
                     </div>
                 </div>
             </div>
@@ -209,33 +209,14 @@ const chain = ({ chainData }) => {
 }
 
 export async function getServerSideProps(context) {
-    // Fetch data from external API
-    // const router = useRouter()
     const { chain } = context.query
-    // let blockData = getBlockchainData()
-    // let chainData = findChainData({chain, blockData})
 
-    // async function findChainData(chainName) {
-        // try {
-            let chainData = null;
-            // let shouldSkip = false
-            blockchainData.forEach(function(value, index) {
-                // console.log('CHAIN ', chainName, index)
-                if (value.nav == chain ) {
-                    chainData = value
-                    // shouldSkip = true
-                    // setChainData(value)
-                    // return
-                } 
-            })
-            // return arr
-        // } catch (error) {
-        //     console.log('CHAIN ERROR ', error)
-        // }
-    // }
-
-    // Pass data to the page via props
-    // return { props: { chainData: JSON.parse(JSON.stringify(chainData)) } }
+    let chainData = null;
+    blockchainData.forEach(function(value, index) {
+        if (value.nav == chain ) {
+            chainData = value
+        } 
+    })
     return { props: { chainData: chainData }}
 }
 
