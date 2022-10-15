@@ -55,7 +55,7 @@ const ChainEmissions = ( props ) => {
                     {props.offsets != null && <div className={styles.emissionsUnits}>tCO&#8322;</div>}
                 </td>
                 <td className={styles.tableColEmission}>
-                    {props.transactions != null ? (<div className={[styles.emissionsTxtMatte, styles.emissionsTxtTx].join(" ")}>{props.transactions}</div>) 
+                    {props.transactions_sum != null ? (<div className={[styles.emissionsTxtMatte, styles.emissionsTxtTx].join(" ")}>{props.transactions_sum}</div>) 
                     : (<div className={[styles.emissionsTxtMatte, styles.emissionsTxtTx].join(" ")}>NA</div>)}
                 </td>
                 <td className={styles.tableColEmission}>

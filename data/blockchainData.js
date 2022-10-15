@@ -135,7 +135,7 @@ const blockchainData = [
         misc:null,
     },
     offsets:null,
-    transactions_sum: calculateSum(celoTxDailyData),
+    transactions_sum: numberWithCommas(calculateSum(celoTxDailyData)),
     transaction_stats: {
         median: numberWithCommas(calculateMedian(celoTxDailyData, 'daily')),
         sum: numberWithCommas(calculateSum(celoTxDailyData, 'daily'))

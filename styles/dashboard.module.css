@@ -221,6 +221,10 @@ p.subHeaderTxt {
     text-shadow: none!important;
     opacity: 0.3!important;
 }
+.txtNA {
+    color:#616161!important;
+    text-shadow: none!important;
+}
 .emissionsRed {
     text-shadow:0 0 10px red!important;
 }

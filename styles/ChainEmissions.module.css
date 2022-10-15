@@ -65,7 +65,7 @@
 .tableColCertNA {
     vertical-align: super;
 }
-.emissionsTxtMatte, .emissionsUnitsMatte {
+.emissionsTxtMatte, .emissionsUnitsMatte, .txtNA {
     color:#616161;
     text-shadow: none!important;
 }

@@ -37,18 +37,18 @@ const chain = ({ chainData }) => {
             <div className={styles.flexGrid}>
                 <div className={`${styles.grid} ${styles[chainData.nav]}`}>
                     {chainData.emissions != null ? (<div className={styles.topDashboard}>{chainData.emissions}</div>) 
-                    : (<div className={styles.topDashboard}>NA</div>)}
+                    : (<div className={[styles.topDashboard, styles.txtNA].join(" ")}>NA</div>)}
                     {chainData.emissions != null && <div className={styles.subHeader}>tCO&#8322;</div>}
                     <p className={styles.subDashboard}>CO&#8322; Footprint</p>
                 </div>
                 <div className={`${styles.grid} ${styles[chainData.nav]}`}>
                     {chainData.offsets != null ? (<div className={styles.topDashboard}>{chainData.offsets}</div>) 
-                    : (<div className={[styles.topDashboard, styles.emissionsRed].join(" ")}>NA</div>)}
+                    : (<div className={[styles.topDashboard, styles.txtNA].join(" ")}>NA</div>)}
                     {chainData.offsets != null && <div className={styles.subHeader}>tCO&#8322;</div>}
                     <p className={styles.subDashboard}>CO&#8322; Offset (tCO&#8322;)</p>
                 </div>
                 <div className={`${styles.grid} ${styles[chainData.nav]}`}>
-                    <div id='usdConvert' className={styles.topDashboard}>$0</div>
+                    <div id='usdConvert' className={[styles.topDashboard, styles.txtNA].join(" ")}v>$0</div>
                     <div id="ethConvert" className={styles.ethContribute}></div>
                     <p className={styles.subDashboard}>CO&#8322; Offset ($)</p>
                 </div>
@@ -58,9 +58,9 @@ const chain = ({ chainData }) => {
                     <p className={styles.subHeaderTxt}>Network</p>
                     <ul className={styles.subEmissionsBar}>
                         <li>
-                            {/* <div className={styles.subEmissionsTxt}>{ chainData.network_emissions }</div> */}
+                            {/* <div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>{ chainData.network_emissions }</div> */}
                             {chainData.network_emissions != null ? (<div className={styles.subEmissionsTxt}>{chainData.network_emissions}</div>) 
-                            : (<div className={styles.subEmissionsTxt}>NA</div>)}
+                            : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
                             {/* <div className={styles.subHeader}>tCO&#8322;</div> */}
                             {chainData.network_emissions != null && <div className={styles.subHeader}>tCO&#8322;</div>}
                             {/* <p className={styles.footnotes}>Group Validators</p> */}
@@ -70,9 +70,9 @@ const chain = ({ chainData }) => {
                     <p className={styles.subHeaderTxt}>Operations</p>
                     <ul className={styles.subEmissionsBar}>
                         <li>
-                            {/* <div className={styles.subEmissionsTxt}>0</div> */}
+                            {/* <div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>0</div> */}
                             {chainData.operation_emissions != null ? (<div className={styles.subEmissionsTxt}>{chainData.operation_emissions}</div>) 
-                            : (<div className={styles.subEmissionsTxt}>NA</div>)}
+                            : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
                             {/* <div className={styles.subHeader}>tCO&#8322;</div> */}
                             {chainData.operation_emissions != null && <div className={styles.subHeader}>tCO&#8322;</div>}
                             {/* <p className={styles.footnotes}>Group Validators</p> */}
@@ -90,9 +90,9 @@ const chain = ({ chainData }) => {
                     <h4 className={styles.subHeaderTxt}>Stats</h4>
                     <ul className={styles.subStatsBar}>
                         <li>
-                            {/* <div className={styles.subEmissionsTxt}>{ chainData.emissions_stats.median}</div> */}
+                            {/* <div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>{ chainData.emissions_stats.median}</div> */}
                             {chainData.emissions_stats.median != null ? (<div className={styles.subEmissionsTxt}>{chainData.emissions_stats.median}</div>) 
-                            : (<div className={styles.subEmissionsTxt}>NA</div>)}
+                            : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
                             {/* <div className={styles.subHeader}>tCO&#8322;</div> */}
                             {chainData.emissions_stats.median != null && <div className={styles.subHeader}>tCO&#8322;</div>}
                             <p className={styles.footnotes}>Median Daily tCO&#8322;</p>
@@ -100,9 +100,9 @@ const chain = ({ chainData }) => {
                     </ul>
                     <ul className={styles.subStatsBar}>
                         <li>
-                            {/* <div className={styles.subEmissionsTxt}>{ chainData.transaction_stats.median }</div> */}
+                            {/* <div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>{ chainData.transaction_stats.median }</div> */}
                             {chainData.transaction_stats.median != null ? (<div className={styles.subEmissionsTxt}>{chainData.transaction_stats.median}</div>) 
-                            : (<div className={styles.subEmissionsTxt}>NA</div>)}
+                            : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
                             {/* <div className={styles.subHeader}>Tx</div> */}
                             <p className={styles.footnotes}>Median Daily Tx</p>
                         </li>
@@ -110,9 +110,9 @@ const chain = ({ chainData }) => {
                     <hr className={styles.subHeaderDivider}></hr>
                     <ul className={styles.subStatsBar}>
                         <li>
-                            {/* <div className={styles.subEmissionsTxt}>{ chainData.emissions }</div> */}
+                            {/* <div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>{ chainData.emissions }</div> */}
                             {chainData.emissions != null ? (<div className={styles.subEmissionsTxt}>{chainData.emissions}</div>) 
-                            : (<div className={styles.subEmissionsTxt}>NA</div>)}
+                            : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
                             {/* <div className={styles.subHeader}>tCO&#8322;</div> */}
                             {chainData.emissions != null && <div className={styles.subHeader}>tCO&#8322;</div>}
                             <p className={styles.footnotes}>YTD tCO&#8322;</p>
@@ -120,7 +120,10 @@ const chain = ({ chainData }) => {
                     </ul>
                     <ul className={styles.subStatsBar}>
                         <li>
-                            <div className={styles.subEmissionsTxt}>{ chainData.transactions }</div>
+                            {chainData.transactions_sum != null ? (<div className={styles.subEmissionsTxt}>{chainData.transactions_sum}</div>) 
+                            : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
+                            {/* {chainData.transactions_sum != null && <div className={styles.subHeader}>tCO&#8322;</div>} */}
+                            {/* <div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>{ chainData.transactions_sum }</div> */}
                             {/* <div className={styles.subHeader}>tCO&#8322;</div> */}
                             <p className={styles.footnotes}>YTD Tx</p>
                         </li>
@@ -142,25 +145,25 @@ const chain = ({ chainData }) => {
                         <div className={styles.innerGrid}>
                             <p className={styles.subHeaderTxt}>Offices</p>
                             {chainData.emissions_operations.office != null ? (<div className={styles.subOpEmissionsTxt}>{chainData.emissions_operations.office}</div>) 
-                            : (<div className={styles.subOpEmissionsTxt}>NA</div>)}
+                            : (<div className={[styles.subOpEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
                             {chainData.emissions_operations.office != null && <div className={styles.subOpHeader}>tCO&#8322;</div>}
                         </div>
                         <div className={styles.innerGrid}>
                             <p className={styles.subHeaderTxt}>Transportation</p>
                             {chainData.emissions_operations.transportation != null ? (<div className={styles.subOpEmissionsTxt}>{chainData.emissions_operations.transportation}</div>) 
-                            : (<div className={styles.subOpEmissionsTxt}>NA</div>)}
+                            : (<div className={[styles.subOpEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
                             {chainData.emissions_operations.transportation != null && <div className={styles.subOpHeader}>tCO&#8322;</div>}
                         </div>
                         <div className={styles.innerGrid}>
                             <p className={styles.subHeaderTxt}>Supplies</p>
                             {chainData.emissions_operations.supplies != null ? (<div className={styles.subOpEmissionsTxt}>{chainData.emissions_operations.supplies}</div>) 
-                            : (<div className={styles.subOpEmissionsTxt}>NA</div>)}
+                            : (<div className={[styles.subOpEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
                             {chainData.emissions_operations.supplies != null && <div className={styles.subOpHeader}>tCO&#8322;</div>}
                         </div>
                         <div className={styles.innerGrid}>
                             <p className={styles.subHeaderTxt}>Misc</p>
                             {chainData.emissions_operations.misc != null ? (<div className={styles.subOpEmissionsTxt}>{chainData.emissions_operations.misc}</div>) 
-                            : (<div className={styles.subOpEmissionsTxt}>NA</div>)}
+                            : (<div className={[styles.subOpEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
                             {chainData.emissions_operations.misc != null && <div className={styles.subOpHeader}>tCO&#8322;</div>}
                         </div>
                     </div>
