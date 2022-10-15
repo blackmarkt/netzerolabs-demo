@@ -1,6 +1,8 @@
+import Highcharts from 'highcharts'
 import { numberWithCommas, dateUnixLabels, txData, calculateSum, cumEmissionsData, 
     celoCumEmissionData, celoTxDailyData, bitcoinUnixData, btcTxData, calculateTxTCO2, 
     combineUnixDataArr, combineUnixFauxDataArr, dateUnixCelo, emissionsData,
+    operationsOfficeData, operationsTransportData, operationsSuppliesData, operationsMiscData,
     celoEmissionsDailyData, calculateMedian, ethereumOfficesData, calculateTxTCO2Chart} from './emissionsData'
 
 const blockchainData = [
@@ -10,7 +12,18 @@ const blockchainData = [
         chart_daily_data: calculateTxTCO2Chart(dateUnixCelo, btcTxData, 'daily'),
         chart_cum_data: calculateTxTCO2Chart(dateUnixCelo, btcTxData, 'cum'),
         chart_tx_daily: combineUnixDataArr(dateUnixLabels, btcTxData),
-        chart_color: '#F7931A', 
+        chart_color: '#f7b360',
+        operations_data: [
+            { name: 'Office', y: 1},
+            { name: 'Transportation', y: 1},
+            { name: 'Supplies', y: 1},
+            { name: 'Misc', y: 1},
+        ],
+        operations_break: [{name: 'Office', data: operationsOfficeData},
+                           {name: 'Transport', data: operationsTransportData},
+                           {name: 'Supplies', data: operationsSuppliesData},
+                           {name: 'Misc', data: operationsMiscData},
+        ] 
     },
     // chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
     // chart_cum_data: bitcoinUnixData,
@@ -47,7 +60,18 @@ const blockchainData = [
         chart_daily_data: combineUnixDataArr(dateUnixLabels, emissionsData),
         chart_cum_data: combineUnixDataArr(dateUnixLabels, cumEmissionsData),
         chart_tx_daily: combineUnixDataArr(dateUnixLabels, txData),
-        chart_color: '#61668B', 
+        chart_color: '#6b6e88',
+        operations_data: [
+            { name: 'Office', y: 1},
+            { name: 'Transportation', y: 1},
+            { name: 'Supplies', y: 1},
+            { name: 'Misc', y: 1},
+        ],
+        operations_break: [{name: 'Office', data: operationsOfficeData},
+                           {name: 'Transport', data: operationsTransportData},
+                           {name: 'Supplies', data: operationsSuppliesData},
+                           {name: 'Misc', data: operationsMiscData},
+        ]  
     },
     // chart_daily_data: combineUnixDataArr(dateUnixLabels, emissionsData),
     // chart_cum_data: combineUnixDataArr(dateUnixLabels, cumEmissionsData),
@@ -86,7 +110,18 @@ const blockchainData = [
         chart_daily_data: combineUnixDataArr(dateUnixCelo, celoEmissionsDailyData),
         chart_cum_data: combineUnixDataArr(dateUnixCelo, celoCumEmissionData),
         chart_tx_daily: combineUnixDataArr(celoEmissionsDailyData, txData),
-        chart_color: '#FBCB5C', 
+        chart_color: '#FBCB5C',
+        operations_data: [
+            { name: 'Office', y: 1},
+            { name: 'Transportation', y: 1},
+            { name: 'Supplies', y: 1},
+            { name: 'Misc', y: 1},
+        ],
+        operations_break: [{name: 'Office', data: operationsOfficeData},
+                           {name: 'Transport', data: operationsTransportData},
+                           {name: 'Supplies', data: operationsSuppliesData},
+                           {name: 'Misc', data: operationsMiscData},
+        ]  
     },
     emissions: numberWithCommas(celoCumEmissionData.slice(-1)[0]),
     emissions_stats: {
@@ -121,7 +156,18 @@ const blockchainData = [
         chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
-        chart_color: '#B838E7', 
+        chart_color: '#4CB2C3',
+        operations_data: [
+            { name: 'Office', y: 1},
+            { name: 'Transportation', y: 1},
+            { name: 'Supplies', y: 1},
+            { name: 'Misc', y: 1},
+        ],
+        operations_break: [{name: 'Office', data: operationsOfficeData},
+                           {name: 'Transport', data: operationsTransportData},
+                           {name: 'Supplies', data: operationsSuppliesData},
+                           {name: 'Misc', data: operationsMiscData},
+        ]  
     },
     emissions_operations: {
         office:null,
@@ -156,7 +202,18 @@ const blockchainData = [
         chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
-        chart_color: '#FB2838', 
+        chart_color: '#FB2838',
+        operations_data: [
+            { name: 'Office', y: 1},
+            { name: 'Transportation', y: 1},
+            { name: 'Supplies', y: 1},
+            { name: 'Misc', y: 1},
+        ],
+        operations_break: [{name: 'Office', data: operationsOfficeData},
+                           {name: 'Transport', data: operationsTransportData},
+                           {name: 'Supplies', data: operationsSuppliesData},
+                           {name: 'Misc', data: operationsMiscData},
+        ]  
     },
     emissions_operations: {
         office:null,
@@ -191,7 +248,18 @@ const blockchainData = [
         chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
-        chart_color: '#8B42ED', 
+        chart_color: '#8B42ED',
+        operations_data: [
+            { name: 'Office', y: 1},
+            { name: 'Transportation', y: 1},
+            { name: 'Supplies', y: 1},
+            { name: 'Misc', y: 1},
+        ],
+        operations_break: [{name: 'Office', data: operationsOfficeData},
+                           {name: 'Transport', data: operationsTransportData},
+                           {name: 'Supplies', data: operationsSuppliesData},
+                           {name: 'Misc', data: operationsMiscData},
+        ]  
     },
     emissions: null,
     emissions_stats: {
@@ -226,7 +294,18 @@ const blockchainData = [
         chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
-        chart_color: '#FFFFFF', 
+        chart_color: '#FFFFFF',
+        operations_data: [
+            { name: 'Office', y: 1},
+            { name: 'Transportation', y: 1},
+            { name: 'Supplies', y: 1},
+            { name: 'Misc', y: 1},
+        ],
+        operations_break: [{name: 'Office', data: operationsOfficeData},
+                           {name: 'Transport', data: operationsTransportData},
+                           {name: 'Supplies', data: operationsSuppliesData},
+                           {name: 'Misc', data: operationsMiscData},
+        ]  
     },
     emissions: null,
     emissions_stats: {
@@ -261,7 +340,18 @@ const blockchainData = [
         chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
-        chart_color: '#FDB700', 
+        chart_color: '#FFD700',
+        operations_data: [
+            { name: 'Office', y: 1},
+            { name: 'Transportation', y: 1},
+            { name: 'Supplies', y: 1},
+            { name: 'Misc', y: 1},
+        ],
+        operations_break: [{name: 'Office', data: operationsOfficeData},
+                           {name: 'Transport', data: operationsTransportData},
+                           {name: 'Supplies', data: operationsSuppliesData},
+                           {name: 'Misc', data: operationsMiscData},
+        ]  
     },
     emissions: null,
     emissions_stats: {
@@ -296,7 +386,18 @@ const blockchainData = [
         chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
-        chart_color: '#0034B3', 
+        chart_color: '#3263C8',
+        operations_data: [
+            { name: 'Office', y: 1},
+            { name: 'Transportation', y: 1},
+            { name: 'Supplies', y: 1},
+            { name: 'Misc', y: 1},
+        ],
+        operations_break: [{name: 'Office', data: operationsOfficeData},
+                           {name: 'Transport', data: operationsTransportData},
+                           {name: 'Supplies', data: operationsSuppliesData},
+                           {name: 'Misc', data: operationsMiscData},
+        ]  
     },
     emissions: null,
     emissions_stats: {
@@ -331,7 +432,18 @@ const blockchainData = [
         chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
-        chart_color: '#FB007A', 
+        chart_color: '#f682ba',
+        operations_data: [
+            { name: 'Office', y: 1},
+            { name: 'Transportation', y: 1},
+            { name: 'Supplies', y: 1},
+            { name: 'Misc', y: 1},
+        ],
+        operations_break: [{name: 'Office', data: operationsOfficeData},
+                           {name: 'Transport', data: operationsTransportData},
+                           {name: 'Supplies', data: operationsSuppliesData},
+                           {name: 'Misc', data: operationsMiscData},
+        ]  
     },
     emissions: null,
     emissions_stats: {
@@ -378,6 +490,21 @@ const blockchainData = [
 function getBlockchainData() {
     return blockchainData
 }
+
+var pieColors = (function (base) {
+    if (typeof Highcharts === 'object') {
+        var colors = [],
+            // base = ,
+            i;
+
+        for (i = 0; i < 10; i += 1) {
+            // Start out with a darkened base color (negative brighten), and end
+            // up with a much brighter color
+            colors.push(Highcharts.color(base).brighten((i - 3) / 14).get());
+        }
+        return colors;
+    }
+}());
 
 const defaultChainEmissionsData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 

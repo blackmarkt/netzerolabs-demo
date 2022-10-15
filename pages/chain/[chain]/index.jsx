@@ -145,44 +145,36 @@ const chain = ({ chainData }) => {
                     <div className={styles.flexGrid}>
                         <div className={styles.innerGrid}>
                             <p className={styles.subHeaderTxt}>Offices</p>
-                            {/* <div className={styles.subOpEmissionsTxt}>{ chainData.emissions_operations.office }</div> */}
                             {chainData.emissions_operations.office != null ? (<div className={styles.subOpEmissionsTxt}>{chainData.emissions_operations.office}</div>) 
                             : (<div className={styles.subOpEmissionsTxt}>NA</div>)}
-                            {/* <div className={styles.subOpHeader}>tCO&#8322;</div> */}
                             {chainData.emissions_operations.office != null && <div className={styles.subOpHeader}>tCO&#8322;</div>}
                         </div>
                         <div className={styles.innerGrid}>
                             <p className={styles.subHeaderTxt}>Transportation</p>
-                            {/* <div className={styles.subOpEmissionsTxt}>{ chainData.emissions_operations.transportation }</div> */}
                             {chainData.emissions_operations.transportation != null ? (<div className={styles.subOpEmissionsTxt}>{chainData.emissions_operations.transportation}</div>) 
                             : (<div className={styles.subOpEmissionsTxt}>NA</div>)}
-                            {/* <div className={styles.subOpHeader}>tCO&#8322;</div> */}
                             {chainData.emissions_operations.transportation != null && <div className={styles.subOpHeader}>tCO&#8322;</div>}
                         </div>
                         <div className={styles.innerGrid}>
                             <p className={styles.subHeaderTxt}>Supplies</p>
-                            {/* <div className={styles.subOpEmissionsTxt}>{ chainData.emissions_operations.supplies }</div> */}
                             {chainData.emissions_operations.supplies != null ? (<div className={styles.subOpEmissionsTxt}>{chainData.emissions_operations.supplies}</div>) 
                             : (<div className={styles.subOpEmissionsTxt}>NA</div>)}
-                            {/* <div className={styles.subOpHeader}>tCO&#8322;</div> */}
                             {chainData.emissions_operations.supplies != null && <div className={styles.subOpHeader}>tCO&#8322;</div>}
                         </div>
                         <div className={styles.innerGrid}>
                             <p className={styles.subHeaderTxt}>Misc</p>
-                            {/* <div className={styles.subOpEmissionsTxt}>{ chainData.emissions_operations.misc }</div> */}
                             {chainData.emissions_operations.misc != null ? (<div className={styles.subOpEmissionsTxt}>{chainData.emissions_operations.misc}</div>) 
                             : (<div className={styles.subOpEmissionsTxt}>NA</div>)}
-                            {/* <div className={styles.subOpHeader}>tCO&#8322;</div> */}
                             {chainData.emissions_operations.misc != null && <div className={styles.subOpHeader}>tCO&#8322;</div>}
                         </div>
                     </div>
                 </div>
                 <div className={styles.operationsChartsContainer}>
                     <div className={styles.operationsPieChartContainer}>
-                        <OperationsBreakdownChart />
+                        <OperationsBreakdownChart chartData={chainData}/>
                     </div>
                     <div className={styles.operationsLineChartContainer}>
-                        <OperationsEmissionChart />
+                        <OperationsEmissionChart chartData={chainData}/>
                     </div>
                 </div>
                 <div className={styles.operationsSubContainer}>

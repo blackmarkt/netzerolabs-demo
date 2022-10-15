@@ -64,10 +64,10 @@ const Blockchains = () => {
             <h4 className={styles.dashboardHeader}>Network Emissions</h4>
             <div className={styles.dashboardSubContainer}>
                 <div className={styles.emissionsChartContainer}>
-                    <BlockchainEmissionsChart />
+                    <BlockchainEmissionsChart chartData={chainData}/>
                 </div>
                 <div className={styles.emissionsChartContainer}>
-                    <CumulativeBlockchainEmissionsChart />
+                    <CumulativeBlockchainEmissionsChart chartData={chainData}/>
                 </div>
             </div>
             <h4 className={styles.dashboardHeader}>Operations Emissions</h4>
