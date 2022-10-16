@@ -14,13 +14,14 @@ const Map = ({ mapData }) => {
     mapboxgl.accessToken = 
         "pk.eyJ1IjoibWFya3RibGFjayIsImEiOiJjanZzY2w2cnYwZzcxM3ltZjZyYmZvMzZmIn0.4nBm1lPx-HffkRCfaI4_uQ";
 
-    useEffect(() => {
+    // useEffect(() => {
         if (map == undefined) {
             let map = new mapboxgl.Map({
                 container: mapContainer.current,
-                style: "mapbox://styles/marktblack/cl8xmd54n000014pp4ec2wuh1",
+                // style: "mapbox://styles/marktblack/cl8xmd54n000014pp4ec2wuh1",
+                style: "mapbox://styles/marktblack/cl9ak59tt000715t2bb8k9ao2",
                 zoom:zoom,
-                // interactive: false,
+                interactive: false,
                 attributionControl: false
             });
 
@@ -34,26 +35,26 @@ const Map = ({ mapData }) => {
             map.on("load", function () {
 
                 map.resize();
-                // map.addSource('node-source', {
-                //     'type': 'geojson',
-                //     'data': mapData,
-                // });
+                map.addSource('node-source', {
+                    'type': 'geojson',
+                    'data': mapData,
+                });
 
-                // map.addLayer({
-                //     'id': 'node-layer',
-                //     'type': 'symbol',
-                //     'source': 'node-source',
-                //     "layout": {
-                //         "icon-image": "monument",
-                //         "text-field": "{title}",
-                //         "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-                //         "text-offset": [0, 0.6],
-                //         "text-anchor": "top"
-                //     }
-                // });
+                map.addLayer({
+                    'id': 'node-layer',
+                    'type': 'circl',
+                    'source': 'node-source',
+                    "layout": {
+                        "icon-image": "monument",
+                        "text-field": "{title}",
+                        "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+                        "text-offset": [0, 0.6],
+                        "text-anchor": "top"
+                    }
+                });
             });
         }
-    });
+    // },[]);
 
     return (
         <main className={styles.main}>

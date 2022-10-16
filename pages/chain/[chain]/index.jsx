@@ -81,7 +81,7 @@ const chain = ({ chainData }) => {
                 </div>
                 <div className={styles.subMapContainer}>
                     {/* <Map mapData={mapData}/> */}
-                    <Map />
+                    <Map mapData={chainData.node_map_data}/>
                 </div>
             </div>
             <h4 className={styles.dashboardHeader}>Network</h4>
@@ -122,9 +122,6 @@ const chain = ({ chainData }) => {
                         <li>
                             {chainData.transactions_sum != null ? (<div className={styles.subEmissionsTxt}>{chainData.transactions_sum}</div>) 
                             : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                            {/* {chainData.transactions_sum != null && <div className={styles.subHeader}>tCO&#8322;</div>} */}
-                            {/* <div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>{ chainData.transactions_sum }</div> */}
-                            {/* <div className={styles.subHeader}>tCO&#8322;</div> */}
                             <p className={styles.footnotes}>YTD Tx</p>
                         </li>
                     </ul>
@@ -208,6 +205,7 @@ export async function getServerSideProps(context) {
             chainData = value
         } 
     })
+    
     return { props: { chainData: chainData }}
 }
 

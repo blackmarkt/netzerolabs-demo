@@ -4,6 +4,7 @@ import { numberWithCommas, dateUnixLabels, txData, calculateSum, cumEmissionsDat
     combineUnixDataArr, combineUnixFauxDataArr, dateUnixCelo, emissionsData,
     operationsOfficeData, operationsTransportData, operationsSuppliesData, operationsMiscData,
     celoEmissionsDailyData, calculateMedian, ethereumOfficesData, calculateTxTCO2Chart} from './emissionsData'
+import mapData from './node_tracker_geojson_100722.geojson' assert {type: 'json'};
 
 const blockchainData = [
     {chain: 'Bitcoin', 
@@ -53,6 +54,10 @@ const blockchainData = [
     netzero: false,
     netzero_report_url: false,
     offices: [],
+    node_map_data: {
+        map_color: '#f7b360',
+        map_data: mapData,
+    }
     },
     {chain: 'Ethereum', 
     logo: '/blockchains/ethereum_45x45.png',
@@ -103,6 +108,10 @@ const blockchainData = [
     netzero: false,
     netzero_report_url: null,
     offices:ethereumOfficesData,
+    node_map_data: {
+        map_color: '#6b6e88',
+        map_data: mapData,
+    }
     },
     {chain: 'Celo', 
     logo: '/blockchains/celo_40x40.png',
@@ -149,6 +158,10 @@ const blockchainData = [
     netzero: true,
     netzero_report_url: 'https://www.wren.co/profile/celo',
     offices: [],
+    node_map_data: {
+        map_color: '#FBCB5C',
+        map_data: mapData,
+    }
     },
     {chain: 'Solana', 
     logo: '/blockchains/solana_40x40.png',
@@ -195,6 +208,10 @@ const blockchainData = [
     netzero: true,
     netzero_report_url: 'https://solana.com/news/solanas-energy-use-report-march-2022',
     offices: [],
+    node_map_data: {
+        map_color: '#4CB2C3',
+        map_data: mapData,
+    }
     },
     {chain: 'Avalanche', 
     logo: '/blockchains/avalanche_40x40.png',
@@ -241,6 +258,10 @@ const blockchainData = [
     netzero: false,
     netzero_report_url: null,
     offices: [],
+    node_map_data: {
+        map_color: '#FB2838',
+        map_data: {},
+    }
     },
     {chain: 'Polygon', 
     logo: '/blockchains/polygon_40x40.png',
@@ -333,6 +354,10 @@ const blockchainData = [
     netzero: true,
     netzero_report_url: 'https://near.org/blog/near-climate-neutral-product/',
     offices: [],
+    node_map_data: {
+        map_color: '#FFFFFF',
+        map_data: {},
+    }
     },
     {chain: 'Binance', 
     logo: '/blockchains/binance_40x40.png',
@@ -379,6 +404,10 @@ const blockchainData = [
     netzero: false,
     netzero_report_url:null,
     offices: [],
+    node_map_data: {
+        map_color: '#FFFFFF',
+        map_data: {},
+    }
     },
     {chain: 'Cardano', 
     logo: '/blockchains/cardano_45x45.png',
@@ -425,6 +454,10 @@ const blockchainData = [
     netzero: false,
     netzero_report_url:null,
     offices: [],
+    node_map_data: {
+        map_color: '#FFFFFF',
+        map_data: {},
+    }
     },
     {chain: 'Polkadot', 
     logo: '/blockchains/polkadot_40x40.png',
@@ -471,6 +504,10 @@ const blockchainData = [
     netzero: false,
     netzero_report_url:null,
     offices: [],
+    node_map_data: {
+        map_color: '#FFFFFF',
+        map_data: {},
+    }
     },
     // {chain: 'Algorand', 
     // logo: '/blockchains/algorand_40x40.png',
