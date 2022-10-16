@@ -6,6 +6,9 @@
 .logoChain, .txtChain, .topDashboard, .subHeader, .net0Cert {
     display: inline-block;
 }
+.net0Cert {
+    opacity: 0.6;
+}
 .logoChain {
     padding-left:0.5rem
 }

@@ -1,9 +1,10 @@
 import Highcharts from 'highcharts'
 import { numberWithCommas, dateUnixLabels, txData, calculateSum, cumEmissionsData, 
     celoCumEmissionData, celoTxDailyData, bitcoinUnixData, btcTxData, calculateTxTCO2, 
-    combineUnixDataArr, combineUnixFauxDataArr, dateUnixCelo, emissionsData,
+    combineUnixDataArr, combineUnixFauxDataArr, dateUnixCelo, emissionsData, avalancheUnixTxChart,
     operationsOfficeData, operationsTransportData, operationsSuppliesData, operationsMiscData,
-    celoEmissionsDailyData, calculateMedian, ethereumOfficesData, calculateTxTCO2Chart} from './emissionsData'
+    celoEmissionsDailyData, calculateMedian, ethereumOfficesData, calculateTxTCO2Chart,
+    avalancheTxData, avalancheEmissionsData, avalancheTCO2Data, avalancheCumTCO2Data} from './emissionsData'
 import mapData from './node_tracker_geojson_100722.geojson' assert {type: 'json'};
 
 const blockchainData = [
@@ -216,9 +217,9 @@ const blockchainData = [
     {chain: 'Avalanche', 
     logo: '/blockchains/avalanche_40x40.png',
     chart_data: {
-        chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
-        chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
-        chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
+        chart_daily_data: avalancheEmissionsData,
+        chart_cum_data: avalancheCumTCO2Data,
+        chart_tx_daily: avalancheUnixTxChart,
         chart_color: '#FB2838',
         operations_data: [
             { name: 'Office', y: 1},
@@ -238,18 +239,18 @@ const blockchainData = [
         supplies:null,
         misc:null,
     },
-    emissions: null,
+    emissions: numberWithCommas(calculateSum(avalancheTCO2Data)),
     emissions_stats: {
-        median: null,
-        sum: null
+        median: numberWithCommas(calculateMedian(avalancheTCO2Data)),
+        sum: numberWithCommas(calculateSum(avalancheTCO2Data))
     },
     offsets:null,
-    transactions_sum:null,
+    transactions_sum: numberWithCommas(calculateSum(avalancheTxData)),
     transaction_stats: {
-        median: null,
-        sum: null
+        median: numberWithCommas(calculateMedian(avalancheTxData)),
+        sum: numberWithCommas(calculateSum(avalancheTxData))
     },
-    network_emissions:null,
+    network_emissions:numberWithCommas(calculateSum(avalancheTCO2Data)),
     operation_emissions:null,
     color:'#FB2838',
     id: 3,
@@ -284,8 +285,8 @@ const blockchainData = [
     },
     emissions: null,
     emissions_stats: {
-        median: null,
-        sum: null
+        median: numberWithCommas(calculateMedian(avalancheTCO2Data)),
+        sum: numberWithCommas(calculateSum(avalancheTCO2Data))
     },
     emissions_operations: {
         office:null,

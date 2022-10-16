@@ -11,54 +11,43 @@ const Blockchains = () => {
     return (
         <div className={styles.dashboardContainer}>
             <h2 className={styles.dashboardMainHeader}>Blockchain Emissions</h2>
-            {/* <h4 className={styles.dashboardHeader}>Total Emissions</h4> */}
             <div className={styles.dashboardSubContainer}>
-                {/* <div className={styles.emissionsLeftContainer}> */}
-                    <div className={styles.chainContainer}>
-                        <table className={styles.chainTable}>
-                            <thead>
-                                <tr className={styles.tableHeader}>
-                                    <th height="50"></th>
-                                    <th>
-                                        Chain
-                                    </th>
-                                    <th>
-                                        NetZero
-                                    </th>
-                                    <th>
-                                        Total Emissions
-                                    </th>
-                                    <th>
-                                        Carbon Offsets
-                                    </th>
-                                    <th>
-                                        Transactions
-                                    </th>
-                                    <th>
-                                        Network Emissions
-                                    </th>
-                                    <th>
-                                        Operation Emissions
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {chainData.map((obj, index) => {
-                                    // your code here
-                                    return <Emissions {...obj}/>
-                                })}
-                            </tbody>
-                        </table>
-                    </div>
-                {/* </div> */}
-                {/* <div className={styles.emissionsRightContainer}>
-                    <div className={styles.emissionsChartContainer}>
-                        <BlockchainEmissionsChart />
-                    </div>
-                    <div className={styles.emissionsChartContainer}>
-                        <CumulativeBlockchainEmissionsChart />
-                    </div>
-                </div> */}
+                <div className={styles.chainContainer}>
+                    <table className={styles.chainTable}>
+                        <thead>
+                            <tr className={styles.tableHeader}>
+                                <th height="50"></th>
+                                <th>
+                                    Chain
+                                </th>
+                                <th>
+                                    NetZero
+                                </th>
+                                <th>
+                                    Total Emissions
+                                </th>
+                                <th>
+                                    Carbon Offsets
+                                </th>
+                                <th>
+                                    Transactions
+                                </th>
+                                <th>
+                                    Network Emissions
+                                </th>
+                                <th>
+                                    Operation Emissions
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {chainData.map((obj, index) => {
+                                // your code here
+                                return <Emissions {...obj}/>
+                            })}
+                        </tbody>
+                    </table>
+                </div>
             </div>
             <p className={styles.footNote}>&#42; Ethereum since the merge on 9/15/22</p>
             <h4 className={styles.dashboardHeader}>Network Emissions</h4>

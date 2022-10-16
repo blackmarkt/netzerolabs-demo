@@ -38,6 +38,7 @@ const ChainEmissions = ( props ) => {
                         src='/certification/netzero_cert.png'
                         alt='NetZero Certified'
                         height='25px'
+                        opacity='0.6'
                     /></td>
                 ) : (
                     <td className={styles.tableColCertNA}>  
@@ -59,14 +60,12 @@ const ChainEmissions = ( props ) => {
                     : (<div className={[styles.emissionsTxtMatte, styles.emissionsTxtTx].join(" ")}>NA</div>)}
                 </td>
                 <td className={styles.tableColEmission}>
-                    {/* <div className={styles.emissionsTxtMatte}>{props.network_emissions}</div> */}
                     {props.network_emissions != null ? (<div className={styles.emissionsTxtMatte}>{props.network_emissions}</div>) 
                     : (<div className={styles.emissionsTxtMatte}>NA</div>)}
                     {props.network_emissions != null && <div className={styles.emissionsUnitsMatte}>tCO&#8322;</div>}
                 </td>
                 <td className={styles.tableColEmission}>
                     <div className={styles.emissionsTxtMatte}>{props.operation_emissions}</div>
-                    {/* <div className={styles.emissionsUnitsMatte}>tCO&#8322;</div> */}
                     {props.operation_emissions != null ? (<div className={styles.emissionsTxtMatte}>{props.operation_emissions}</div>) 
                     : (<div className={styles.emissionsTxtMatte}>NA</div>)}
                     {props.operation_emissions != null && <div className={styles.emissionsUnitsMatte}>tCO&#8322;</div>}
