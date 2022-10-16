@@ -49,7 +49,7 @@ const Map = ({ mapData }) => {
                     'paint': {
                         'circle-color': mapData.map_color,
                         'circle-blur':4,
-                        'circle-radius':5
+                        'circle-radius':6
                     }
                     // "layout": {
                     //     "icon-image": "monument",
