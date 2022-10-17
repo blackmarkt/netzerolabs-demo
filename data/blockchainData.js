@@ -4,7 +4,8 @@ import { numberWithCommas, dateUnixLabels, txData, calculateSum, cumEmissionsDat
     combineUnixDataArr, combineUnixFauxDataArr, dateUnixCelo, emissionsData, avalancheUnixTxChart,
     operationsOfficeData, operationsTransportData, operationsSuppliesData, operationsMiscData,
     celoEmissionsDailyData, calculateMedian, ethereumOfficesData, calculateTxTCO2Chart,
-    avalancheTxData, avalancheEmissionsData, avalancheTCO2Data, avalancheCumTCO2Data} from './emissionsData'
+    avalancheTxData, avalancheEmissionsData, avalancheTCO2Data, avalancheCumTCO2Data,
+    solanaOfficeData} from './emissionsData'
 import mapData from './node_tracker_geojson_100722.geojson' assert {type: 'json'};
 
 const blockchainData = [
@@ -79,10 +80,6 @@ const blockchainData = [
                            {name: 'Misc', data: operationsMiscData},
         ]  
     },
-    // chart_daily_data: combineUnixDataArr(dateUnixLabels, emissionsData),
-    // chart_cum_data: combineUnixDataArr(dateUnixLabels, cumEmissionsData),
-    // chart_tx_daily: combineUnixDataArr(dateUnixLabels, txData), 
-    // chart_color: '#61668B',
     emissions: numberWithCommas(cumEmissionsData.slice(-1)[0]),
     emissions_stats: {
         median: numberWithCommas(calculateMedian(calculateTxTCO2(emissionsData, 'daily'))),
@@ -208,7 +205,7 @@ const blockchainData = [
     nav: 'solana',
     netzero: true,
     netzero_report_url: 'https://solana.com/news/solanas-energy-use-report-march-2022',
-    offices: [],
+    offices: solanaOfficeData,
     node_map_data: {
         map_color: '#4CB2C3',
         map_data: mapData,
@@ -306,8 +303,8 @@ const blockchainData = [
     id: 4,
     row: 'tableEven',
     nav: 'polygon',
-    netzero: false,
-    netzero_report_url: null,
+    netzero: true,
+    netzero_report_url: 'https://www.klimadao.finance/blog/polygon-pos-emissions-analysis',
     offices: [],
     },
     {chain: 'NEAR', 

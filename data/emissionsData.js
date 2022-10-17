@@ -268,15 +268,15 @@ const ethereumOfficesData = [
                              {title: 'Ethereum HQ', 
                               address: 'Zeughausgasse 7A, 6300 Zug, Switzerland',
                               geocoordinates: [8.5161, 47.1671],
-                              sq_ft: 0,
-                              energy_consumption: 0,
-                              emissions: 0},
+                              sq_ft: null,
+                              energy_consumption: null,
+                              emissions: null},
                               {title: 'Ethereum Office', 
                               address: '6 Oranienstraße, Berlin, Germany',
                               geocoordinates: [13.4205832, 52.4998606],
-                              sq_ft: 0,
-                              energy_consumption: 0,
-                              emissions: 0},
+                              sq_ft: null,
+                              energy_consumption: null,
+                              emissions: null},
                             ]
 
 const celoOfficeData = [
@@ -289,10 +289,19 @@ const celoOfficeData = [
                         {title: 'Celo Berlin Office', 
                         address: 'Skalitzer Str. 85, 10997 Berlin, Germany',
                         geocoordinates: [52.5003195,13.4339703],
-                        sq_ft: 0,
-                        energy_consumption: 0,
-                        emissions: 0},
+                        sq_ft: null,
+                        energy_consumption: null,
+                        emissions: null},
                     ]
+
+const solanaOfficeData = [
+                             {title: 'Solana HQ', 
+                              address: '645 Howard St, San Francisco',
+                              geocoordinates: [37.7857455, -122.3985539],
+                              sq_ft: null,
+                              energy_consumption: null,
+                              emissions: null},
+                            ]
 
 // Avalanche
 const avalancheConvertFactor = 0.0000022986
@@ -1809,7 +1818,7 @@ function calculateSum(arr) {
 export {dateLabels, emissionsData, cumEmissionsData, txData, operationsdata, ethereumOfficesData,
         operationsOfficeData, operationsTransportData, operationsSuppliesData, operationsMiscData,
         dateUnixLabels, dateUnixCelo, celoEmissionsDailyData, celoCumEmissionData, celoOfficeData, 
-        celoTxDailyData, bitcoinUnixData, btcTxData, avalancheCumTCO2Data,
+        celoTxDailyData, bitcoinUnixData, btcTxData, avalancheCumTCO2Data, solanaOfficeData,
         avalancheUnixTxChart, avalancheTxData, avalancheEmissionsData, avalancheTCO2Data,
         calculateTxTCO2, calculateTxTCO2Chart,
         calculateMedian, calculateSum, numberWithCommas, combineUnixDataArr, combineUnixFauxDataArr} 
