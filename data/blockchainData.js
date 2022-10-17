@@ -5,6 +5,7 @@ import { numberWithCommas, dateUnixLabels, txData, calculateSum, cumEmissionsDat
     operationsOfficeData, operationsTransportData, operationsSuppliesData, operationsMiscData,
     celoEmissionsDailyData, calculateMedian, ethereumOfficesData, calculateTxTCO2Chart,
     avalancheTxData, avalancheEmissionsData, avalancheTCO2Data, avalancheCumTCO2Data,
+    polygonUnixTxData, polygonUnixTCO2Data, polygonUnixTCO2SumData, polygonTxData, polygonTC02Data,
     solanaOfficeData} from './emissionsData'
 import mapData from './node_tracker_geojson_100722.geojson' assert {type: 'json'};
 
@@ -264,9 +265,9 @@ const blockchainData = [
     {chain: 'Polygon', 
     logo: '/blockchains/polygon_40x40.png',
     chart_data: {
-        chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
-        chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
-        chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
+        chart_daily_data: polygonUnixTCO2Data,
+        chart_cum_data: polygonUnixTCO2SumData,
+        chart_tx_daily: polygonUnixTxData,
         chart_color: '#8B42ED',
         operations_data: [
             { name: 'Office', y: 1},
@@ -280,10 +281,10 @@ const blockchainData = [
                            {name: 'Misc', data: operationsMiscData},
         ]  
     },
-    emissions: null,
+    emissions: numberWithCommas(calculateSum(polygonTC02Data)),
     emissions_stats: {
-        median: numberWithCommas(calculateMedian(avalancheTCO2Data)),
-        sum: numberWithCommas(calculateSum(avalancheTCO2Data))
+        median: numberWithCommas(calculateMedian(polygonTC02Data)),
+        sum: numberWithCommas(calculateSum(polygonTC02Data))
     },
     emissions_operations: {
         office:null,
@@ -292,12 +293,12 @@ const blockchainData = [
         misc:null,
     },
     offsets:null,
-    transactions_sum:null,
+    transactions_sum:numberWithCommas(calculateSum(polygonTxData)),
     transaction_stats: {
-        median: null,
-        sum: null
+        median: numberWithCommas(calculateMedian(polygonTxData)),
+        sum: numberWithCommas(calculateSum(polygonTxData))
     },
-    network_emissions:null,
+    network_emissions:numberWithCommas(calculateSum(polygonTC02Data)),
     operation_emissions:null,
     color:'#8B43EE',
     id: 4,
@@ -306,6 +307,10 @@ const blockchainData = [
     netzero: true,
     netzero_report_url: 'https://www.klimadao.finance/blog/polygon-pos-emissions-analysis',
     offices: [],
+    node_map_data: {
+        map_color: '#8B42ED',
+        map_data: {},
+    }
     },
     {chain: 'NEAR', 
     logo: '/blockchains/near_40x40.png',
