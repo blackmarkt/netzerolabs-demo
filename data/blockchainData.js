@@ -1,12 +1,15 @@
 import Highcharts from 'highcharts'
-import { numberWithCommas, dateUnixLabels, txData, calculateSum, cumEmissionsData, 
+import { numberWithCommas, dateUnixLabels, txData, calculateSum, cumEmissionsData,
+    ethUnixTCO2Data, ethUnixCUMTCO2Data, ethTCO02Data, ethTCO02CumData, 
     celoCumEmissionData, celoTxDailyData, bitcoinUnixData, btcTxData, calculateTxTCO2, 
     combineUnixDataArr, combineUnixFauxDataArr, dateUnixCelo, emissionsData, avalancheUnixTxChart,
     operationsOfficeData, operationsTransportData, operationsSuppliesData, operationsMiscData,
     celoEmissionsDailyData, calculateMedian, ethereumOfficesData, calculateTxTCO2Chart,
     avalancheTxData, avalancheEmissionsData, avalancheTCO2Data, avalancheCumTCO2Data,
     polygonUnixTxData, polygonUnixTCO2Data, polygonUnixTCO2SumData, polygonTxData, polygonTC02Data,
-    solanaOfficeData, polygonOfficeData} from './emissionsData'
+    binTxData, binTCO2Data, binUnixTxData, binUnixTCO2Data, binUnixCumTCO2Data,
+    cardTCO2Data, cardTxData, cardUnixCumTCO2Data, cardUnixTxData, cardUnixTCO2Data,
+    solanaOfficeData, polygonOfficeData, celoOfficeData} from './emissionsData'
 import mapData from './node_tracker_geojson_100722.geojson' assert {type: 'json'};
 
 const blockchainData = [
@@ -156,7 +159,7 @@ const blockchainData = [
     nav: 'celo',
     netzero: true,
     netzero_report_url: 'https://www.wren.co/profile/celo',
-    offices: [],
+    offices: celoOfficeData,
     node_map_data: {
         map_color: '#FBCB5C',
         map_data: mapData,
@@ -298,7 +301,7 @@ const blockchainData = [
         median: numberWithCommas(calculateMedian(polygonTxData)),
         sum: numberWithCommas(calculateSum(polygonTxData))
     },
-    network_emissions:numberWithCommas(calculateSum(polygonTC02Data)),
+    network_emissions: numberWithCommas(calculateSum(polygonTC02Data)),
     operation_emissions:null,
     color:'#8B43EE',
     id: 4,
@@ -365,9 +368,9 @@ const blockchainData = [
     {chain: 'Binance', 
     logo: '/blockchains/binance_40x40.png',
     chart_data: {
-        chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
-        chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
-        chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
+        chart_daily_data: binUnixTCO2Data,
+        chart_cum_data: binUnixCumTCO2Data,
+        chart_tx_daily: binUnixTxData,
         chart_color: '#FFD700',
         operations_data: [
             { name: 'Office', y: 1},
@@ -381,10 +384,10 @@ const blockchainData = [
                            {name: 'Misc', data: operationsMiscData},
         ]  
     },
-    emissions: null,
+    emissions: numberWithCommas(calculateSum(binTCO2Data)),
     emissions_stats: {
-        median: null,
-        sum: null
+        median: numberWithCommas(calculateMedian(binTCO2Data)),
+        sum: numberWithCommas(calculateSum(binTCO2Data))
     },
     emissions_operations: {
         office:null,
@@ -393,12 +396,12 @@ const blockchainData = [
         misc:null,
     },
     offsets:null,
-    transactions_sum:null,
+    transactions_sum: numberWithCommas(calculateSum(binTxData)),
     transaction_stats: {
-        median: null,
-        sum: null
+        median: numberWithCommas(calculateMedian(binTxData)),
+        sum: numberWithCommas(calculateSum(binTxData))
     },
-    network_emissions:null,
+    network_emissions: numberWithCommas(calculateSum(binTCO2Data)),
     operation_emissions:null,
     color:'#000000',
     id: 6,
@@ -415,9 +418,9 @@ const blockchainData = [
     {chain: 'Cardano', 
     logo: '/blockchains/cardano_45x45.png',
     chart_data: {
-        chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
-        chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
-        chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
+        chart_daily_data: cardUnixTCO2Data,
+        chart_cum_data: cardUnixCumTCO2Data,
+        chart_tx_daily: cardUnixTxData,
         chart_color: '#3263C8',
         operations_data: [
             { name: 'Office', y: 1},
@@ -431,10 +434,10 @@ const blockchainData = [
                            {name: 'Misc', data: operationsMiscData},
         ]  
     },
-    emissions: null,
+    emissions: numberWithCommas(calculateSum(cardTCO2Data)),
     emissions_stats: {
-        median: null,
-        sum: null
+        median: numberWithCommas(calculateMedian(cardTCO2Data)),
+        sum: numberWithCommas(calculateSum(cardTCO2Data))
     },
     emissions_operations: {
         office:null,
@@ -443,12 +446,12 @@ const blockchainData = [
         misc:null,
     },
     offsets:null,
-    transactions_sum:null,
+    transactions_sum: numberWithCommas(calculateSum(cardTxData)),
     transaction_stats: {
-        median: null,
-        sum: null
+        median: numberWithCommas(calculateMedian(cardTxData)),
+        sum: numberWithCommas(calculateSum(cardTxData))
     },
-    network_emissions:null,
+    network_emissions: numberWithCommas(calculateSum(cardTCO2Data)),
     operation_emissions:null,
     color:'#000000',
     id: 7,
