@@ -6,7 +6,7 @@ import { numberWithCommas, dateUnixLabels, txData, calculateSum, cumEmissionsDat
     celoEmissionsDailyData, calculateMedian, ethereumOfficesData, calculateTxTCO2Chart,
     avalancheTxData, avalancheEmissionsData, avalancheTCO2Data, avalancheCumTCO2Data,
     polygonUnixTxData, polygonUnixTCO2Data, polygonUnixTCO2SumData, polygonTxData, polygonTC02Data,
-    solanaOfficeData} from './emissionsData'
+    solanaOfficeData, polygonOfficeData} from './emissionsData'
 import mapData from './node_tracker_geojson_100722.geojson' assert {type: 'json'};
 
 const blockchainData = [
@@ -306,7 +306,7 @@ const blockchainData = [
     nav: 'polygon',
     netzero: true,
     netzero_report_url: 'https://www.klimadao.finance/blog/polygon-pos-emissions-analysis',
-    offices: [],
+    offices: polygonOfficeData,
     node_map_data: {
         map_color: '#8B42ED',
         map_data: {},

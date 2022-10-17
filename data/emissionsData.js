@@ -303,6 +303,15 @@ const solanaOfficeData = [
                               emissions: null},
                             ]
 
+const polygonOfficeData = [
+                             {title: 'Polygon HQ', 
+                              address: '157, 2nd A Cross, Indiranagar Double Rd, Bengaluru',
+                              geocoordinates: [12.9644957,77.6384376],
+                              sq_ft: null,
+                              energy_consumption: null,
+                              emissions: null},
+                            ]
+
 // Avalanche
 const avalancheConvertFactor = 0.0000022986
 
@@ -2742,5 +2751,6 @@ export {dateLabels, emissionsData, cumEmissionsData, txData, operationsdata, eth
         celoTxDailyData, bitcoinUnixData, btcTxData, avalancheCumTCO2Data, solanaOfficeData,
         avalancheUnixTxChart, avalancheTxData, avalancheEmissionsData, avalancheTCO2Data,
         polygonUnixTxData, polygonUnixTCO2Data, polygonUnixTCO2SumData, polygonTxData, polygonTC02Data,
+        polygonOfficeData,
         calculateTxTCO2, calculateTxTCO2Chart,
         calculateMedian, calculateSum, numberWithCommas, combineUnixDataArr, combineUnixFauxDataArr} 
