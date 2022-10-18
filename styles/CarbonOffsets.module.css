@@ -32,7 +32,7 @@
     color:darkgray!important;
     text-shadow: none;
     opacity:0.5!important;
-    width:100%;
+    /* width:100%; */
     /* margin-top:0.8rem; */
     margin: 0.8rem 0 1.4rem;
 }
@@ -40,7 +40,7 @@
     width:100%;
 }
 .offsetsStatsTxt {
-    font-size:1.4rem;
+    font-size:1.6rem;
     padding:0;
     margin: 0;
     text-shadow:0 0 10px white;
@@ -48,6 +48,11 @@
 .subOpEmissionsTxt {
     padding:0.6rem 0 0rem;
     font-size: 1.5rem;
+}
+.emissionsUnits {
+    font-size:0.6rem;
+    display: inline-block;
+    margin-left:0.3rem
 }
 .txtNA {
     color:#616161!important;

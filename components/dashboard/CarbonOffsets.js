@@ -17,15 +17,14 @@ const CarbonOffsets = ({ offsetData }) => {
                 </ul>
                 <ul className={styles.offsetsBar}>
                     <l1>
-                        <h3 className={styles.offsetsStatsTxt}>{offsetData.offsets}</h3>
-                        {offsetData.offsets != null ? (<div className={styles.offsetsStatsTxt}>{offsetData.offsets}</div>) 
+                        {offsetData.offsets != null ? (<div className={styles.offsetsStatsTxt}>{offsetData.offsets}<div className={styles.emissionsUnits}>tCO&#8322;</div></div>) 
                         : (<div className={[styles.subOpEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
+                        {/* {offsetData.offsets != null && <div className={styles.emissionsUnits}>tCO&#8322;</div>} */}
                         <div className={styles.offsetsSubTxt}>Total tCO&#8322;</div>
                     </l1>
                 </ul>
                 <ul className={styles.offsetsBar}>
                     <l1>
-                        {/* <h3>{offsetData.netzero_report_url}</h3> */}
                         <a className={styles.certLink} target="_blank" href={offsetData.netzero_report_url}>
                             <img className={styles.net0Cert}
                                 src='/icons/report_ico.png'
