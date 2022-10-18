@@ -8,7 +8,6 @@ import HighchartsReact from 'highcharts-react-official'
 
 
 const CumulativeBlockchainOffsetChart = ({ offsetData }) => {
-    console.log('OFFSET DATA ', offsetData);
 
     var offsetDataSeries = (function() {
         if (typeof Highcharts === 'object') {

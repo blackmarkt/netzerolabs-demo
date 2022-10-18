@@ -118,7 +118,7 @@ const blockchainData = [
         netzero_co: null,
         netzero_report_url: null,
         netzero_offsets_chart:null,
-        chart_color: '#757B9D',
+        chart_color: '#6b6e88',
     },
     offices:ethereumOfficesData,
     node_map_data: {
@@ -174,7 +174,7 @@ const blockchainData = [
         offsets: numberWithCommas(getTotalOffsetsMonthly(celoNumOffsets)),
         netzero_report_url: 'https://www.wren.co/profile/celo',
         netzero_offsets_chart: createUNIXOffsetChartData(celoNumOffsets),
-        chart_color: '#34CF7E',
+        chart_color: '#FBCB5C',
     },
     offices: celoOfficeData,
     node_map_data: {
@@ -229,7 +229,7 @@ const blockchainData = [
         netzero_co: 'Robert Murphy',
         netzero_report_url: 'https://solana.com/news/solanas-energy-use-report-march-2022',
         netzero_offsets_chart:null,
-        chart_color: '#7265E2',
+        chart_color: '#4CB2C3',
     },
     offices: solanaOfficeData,
     node_map_data: {

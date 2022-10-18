@@ -7,8 +7,6 @@ import HighchartsReact from 'highcharts-react-official'
 
 const CumulativeOffsetChart = ({ offsetData }) => {
 
-    console.log('CHART (CUM) DATA ', offsetData)
-
     const options = {
         chart: {
             type: 'line',
@@ -90,7 +88,7 @@ const CumulativeOffsetChart = ({ offsetData }) => {
                 rangeDescription: ''
             },
             labels: {
-                step:4,
+                // step:4,
                 style: {
                     fontSize: '0.5rem',
                     color: '#616161',
