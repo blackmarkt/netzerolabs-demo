@@ -17,7 +17,7 @@ const blockchainData = [
     {chain: 'Bitcoin', 
     logo: '/blockchains/bitcoin_50x50.png',
     chart_data: {
-        chart_daily_data: calculateTxTCO2Chart(dateUnixCelo, btcTxData, 'daily'),
+        chart_daily_data: bitcoinUnixData,
         chart_cum_data: calculateTxTCO2Chart(dateUnixCelo, btcTxData, 'cum'),
         chart_tx_daily: combineUnixDataArr(dateUnixLabels, btcTxData),
         chart_color: '#f7b360',

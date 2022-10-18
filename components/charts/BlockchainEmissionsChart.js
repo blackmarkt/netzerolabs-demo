@@ -49,7 +49,7 @@ const BlockchainEmissionsChart = ({ chartData }) => {
             // color: "#fff"
         },
         title: {
-            text: 'Daily tCO2',
+            text: 'Daily tCO2 (per Tx)',
             floating:true,
             // y:20,
             style: {
@@ -64,7 +64,7 @@ const BlockchainEmissionsChart = ({ chartData }) => {
             enabled: false
         },
         legend: {
-            enabled: true,
+            enabled: false,
             verticalAlign: 'top',
             align:'center',
             padding:30,
@@ -100,8 +100,9 @@ const BlockchainEmissionsChart = ({ chartData }) => {
             }
         },
         yAxis: {
+            type: 'logarithmic',
             lineWidth: 0,
-            min: 0,
+            min: 1,
             // max:100, 
             lineColor: 'transparent',
             gridLineWidth: 0,
@@ -110,7 +111,7 @@ const BlockchainEmissionsChart = ({ chartData }) => {
                 text: 'tCO2'
             },
             labels: {
-                step:1,
+                // step:1,
                 style: {
                     fontSize: '0.7rem',
                     color: '#616161',
@@ -143,134 +144,6 @@ const BlockchainEmissionsChart = ({ chartData }) => {
         tooltip: {
             pointFormat: '<b>{point.y:,.2f}</b>',
         },
-        // series: [
-        //         {
-        //             name: chartData[6].chain,
-        //             className: 'line-class1',
-        //             data: chartData[6].chart_data.chart_daily_data,
-        //             color: chartData[6].chart_data.chart_color,
-        //             // type: 'area',
-        //             shadow: {
-        //                 color:  chartData[6].chart_data.chart_color,
-        //                     width: 12,
-        //                     offsetX: 0,
-        //                     offsetY: 0
-        //             },
-        //             lineWidth: 1.2,
-        //             animation: {
-        //                 // defer: 1200,
-        //                 duration: 1000
-        //             },
-        //             marker: {
-        //                 enabled: false
-        //             }
-        //         },
-        //         {
-        //             name:  chartData[1].chain,
-        //             className: 'line-class1',
-        //             data: chartData[1].chart_data.chart_daily_data,
-        //             color:  chartData[1].chart_data.chart_color,
-        //             // type: 'area',
-        //             shadow: {
-        //                 color:  chartData[1].chart_data.chart_color,
-        //                     width: 12,
-        //                     offsetX: 0,
-        //                     offsetY: 0
-        //             },
-        //             lineWidth: 1.2,
-        //             animation: {
-        //                 // defer: 1200,
-        //                 duration: 1000
-        //             },
-        //             marker: {
-        //                 enabled: false
-        //             }
-        //         },
-        //         {
-        //             name: chartData[2].chain,
-        //             className: 'line-class1',
-        //             data: chartData[2].chart_data.chart_daily_data,
-        //             color: chartData[2].chart_data.chart_color,
-        //             // type: 'area',
-        //             shadow: {
-        //                 color: chartData[2].chart_data.chart_color,
-        //                     width: 12,
-        //                     offsetX: 0,
-        //                     offsetY: 0
-        //             },
-        //             lineWidth: 1.2,
-        //             animation: {
-        //                 // defer: 1200,
-        //                 duration: 1000
-        //             },
-        //             marker: {
-        //                 enabled: false
-        //             }
-        //         },
-        //         {
-        //             name: chartData[3].chain,
-        //             className: 'line-class1',
-        //             data: chartData[3].chart_data.chart_daily_data,
-        //             color: chartData[3].chart_data.chart_color,
-        //             // type: 'area',
-        //             shadow: {
-        //                 color: chartData[3].chart_data.chart_color,
-        //                     width: 12,
-        //                     offsetX: 0,
-        //                     offsetY: 0
-        //             },
-        //             lineWidth: 1.2,
-        //             animation: {
-        //                 // defer: 1200,
-        //                 duration: 1000
-        //             },
-        //             marker: {
-        //                 enabled: false
-        //             }
-        //         },
-        //         {
-        //             name: chartData[4].chain,
-        //             className: 'line-class1',
-        //             data: chartData[4].chart_data.chart_daily_data,
-        //             color: chartData[4].chart_data.chart_color,
-        //             // type: 'area',
-        //             shadow: {
-        //                 color: chartData[4].chart_data.chart_color,
-        //                     width: 12,
-        //                     offsetX: 0,
-        //                     offsetY: 0
-        //             },
-        //             lineWidth: 1.2,
-        //             animation: {
-        //                 // defer: 1200,
-        //                 duration: 1000
-        //             },
-        //             marker: {
-        //                 enabled: false
-        //             }
-        //         },
-        //         {
-        //             name: chartData[5].chain,
-        //             className: 'line-class1',
-        //             data: chartData[5].chart_data.chart_daily_data,
-        //             color: chartData[5].chart_data.chart_color,
-        //             // type: 'area',
-        //             shadow: {
-        //                 color: chartData[5].chart_data.chart_color,
-        //                     width: 12,
-        //                     offsetX: 0,
-        //                     offsetY: 0
-        //             },
-        //             lineWidth: 1.2,
-        //             animation: {
-        //                 // defer: 1200,
-        //                 duration: 1000
-        //             },
-        //             marker: {
-        //                 enabled: false
-        //             }
-        //         }
-        // ]
         series: chartDataSeries
     }
 

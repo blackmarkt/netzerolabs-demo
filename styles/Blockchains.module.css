@@ -76,7 +76,6 @@
     opacity: 0.3!important;
     text-align: right;
 } 
-/* .chainRightContainer {
-    width:60%;
-    text-align: center;
-} */
+.subHeadHeader {
+    font-size:0.6rem
+}
