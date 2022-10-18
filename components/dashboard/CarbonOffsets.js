@@ -1,10 +1,12 @@
 import Link from 'next/link'
 // import React, { useState, useEffect, useRef } from "react"
 import styles from '../../styles/CarbonOffsets.module.css'
+import CumulativeOffsetChart from '../../components/charts/CumulativeOffsetChart'
 // import { numberWithCommas } from '../../data/emissionsData'
 
 
 const CarbonOffsets = ({ offsetData }) => {
+    console.log("CARBON OFFSETS ", offsetData.netzero_offsets_chart);
 
     return (
         <div className={styles.offsetsOuterContainer}>
@@ -38,7 +40,7 @@ const CarbonOffsets = ({ offsetData }) => {
                 </ul>
             </div>
             <div className={styles.offsetsSubRightContainer}>
-
+                <CumulativeOffsetChart offsetData={offsetData} />
             </div>
         </div>
     )

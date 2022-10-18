@@ -5,10 +5,15 @@
 .offsetsSubLeftContainer, .offsetsSubRightContainer {
     display: inline-block;
     width:30%;
-    height:100%
+    height:100%;
+    padding-top: 1rem;
+    vertical-align: middle;
 }
 .offsetsSubRightContainer {
-    width:68%
+    width:68%;
+    height:100%;
+    color:#616161!important;
+    text-shadow: none!important;
 }
 .offsetsFlexGrid {
     display: flex;
@@ -28,7 +33,7 @@
 }
 .offsetsSubTxt {
     font-size:0.7rem;
-    display: inline-block;
+    /* display: inline-block; */
     color:darkgray!important;
     text-shadow: none;
     opacity:0.5!important;
@@ -38,6 +43,7 @@
 }
 .certLink {
     width:100%;
+    opacity:0.7;
 }
 .offsetsStatsTxt {
     font-size:1.6rem;

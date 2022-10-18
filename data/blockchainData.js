@@ -7,7 +7,7 @@ import { numberWithCommas, dateUnixLabels, txData, calculateSum, cumEmissionsDat
     celoEmissionsDailyData, calculateMedian, ethereumOfficesData, calculateTxTCO2Chart,
     avalancheTxData, avalancheEmissionsData, avalancheTCO2Data, avalancheCumTCO2Data,
     polygonUnixTxData, polygonUnixTCO2Data, polygonUnixTCO2SumData, polygonTxData, polygonTC02Data,
-    binTxData, binTCO2Data, binUnixTxData, binUnixTCO2Data, binUnixCumTCO2Data,
+    binTxData, binTCO2Data, binUnixTxData, binUnixTCO2Data, binUnixCumTCO2Data, createUNIXOffsetChartData,
     cardTCO2Data, cardTxData, cardUnixCumTCO2Data, cardUnixTxData, cardUnixTCO2Data,
     solanaOfficeData, polygonOfficeData, celoOfficeData, alavancheOfficeData, nearOfficeData,
     polkadotOfficeData, binanceOfficeData, cardanoOfficeData, celoNumOffsets, getTotalOffsetsMonthly} from './emissionsData'
@@ -169,6 +169,8 @@ const blockchainData = [
         netzero_co: 'Wren',
         offsets: numberWithCommas(getTotalOffsetsMonthly(celoNumOffsets)),
         netzero_report_url: 'https://www.wren.co/profile/celo',
+        netzero_offsets_chart: createUNIXOffsetChartData(celoNumOffsets),
+        chart_color: '#34CF7E',
     },
     offices: celoOfficeData,
     node_map_data: {
