@@ -188,7 +188,7 @@ const chain = ({ chainData }) => {
             <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>
             <div className={`${styles.dashboardSubContainer} ${styles[chainData.nav]}`}>
                 {chainData.netzero == true ? (<CarbonOffsets offsetData={chainData.netzero_cert} />) 
-                    : (<span className={styles.notActiveTxt}>Not Active</span>)}
+                    : (<div className={styles.notActiveContainer}><span className={styles.notActiveTxt}>Not Active</span></div>)}
                 {/* <div className={styles.dashboardNotActive}></div> */}
                 {/* <div className={styles.notActiveContainer}>                     */}
                     {/* {chainData.netzero == true ? (<a className={styles.subOpEmissionsTxt} target="_blank" href={chainData.netzero_cert.netzero_report_url}>{chainData.netzero_cert.netzero_co}</a>) 
