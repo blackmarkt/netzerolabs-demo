@@ -62,6 +62,8 @@ const blockchainData = [
     netzero_cert: {
         netzero_co: null,
         netzero_report_url: null,
+        netzero_offsets_chart:null,
+        chart_color: '#F7931A',
     },
     offices: [],
     node_map_data: {
@@ -115,6 +117,8 @@ const blockchainData = [
     netzero_cert: {
         netzero_co: null,
         netzero_report_url: null,
+        netzero_offsets_chart:null,
+        chart_color: '#757B9D',
     },
     offices:ethereumOfficesData,
     node_map_data: {
@@ -222,8 +226,10 @@ const blockchainData = [
     nav: 'solana',
     netzero: true,
     netzero_cert: {
-        netzero_co: null,
+        netzero_co: 'Robert Murphy',
         netzero_report_url: 'https://solana.com/news/solanas-energy-use-report-march-2022',
+        netzero_offsets_chart:null,
+        chart_color: '#7265E2',
     },
     offices: solanaOfficeData,
     node_map_data: {
@@ -277,6 +283,8 @@ const blockchainData = [
     netzero_cert: {
         netzero_co: null,
         netzero_report_url: null,
+        netzero_offsets_chart:null,
+        chart_color:'#FB2838'
     },
     offices: alavancheOfficeData,
     node_map_data: {
@@ -330,6 +338,8 @@ const blockchainData = [
     netzero_cert: {
         netzero_co: 'Offsetra/KlimaDAO',
         netzero_report_url: 'https://www.klimadao.finance/blog/polygon-pos-emissions-analysis',
+        netzero_offsets_chart:null,
+        chart_color:'#8B42ED'
     },
     offices: polygonOfficeData,
     node_map_data: {
@@ -383,6 +393,8 @@ const blockchainData = [
     netzero_cert: {
         netzero_co: 'South Pole',
         netzero_report_url: 'https://near.org/blog/near-climate-neutral-product/',
+        netzero_offsets_chart:null,
+        chart_color:'#FFFFFF'
     },
     offices: nearOfficeData,
     node_map_data: {
@@ -436,6 +448,8 @@ const blockchainData = [
     netzero_cert: {
         netzero_co: null,
         netzero_report_url: null,
+        netzero_offsets_chart:null,
+        chart_color: '#FFD700',
     },
     offices: binanceOfficeData,
     node_map_data: {
@@ -481,7 +495,7 @@ const blockchainData = [
     },
     network_emissions: numberWithCommas(calculateSum(cardTCO2Data)),
     operation_emissions:null,
-    color:'#000000',
+    color:'#3263C8',
     id: 7,
     row: 'tableOdd',
     nav: 'cardano',
@@ -489,6 +503,8 @@ const blockchainData = [
     netzero_cert: {
         netzero_co: null,
         netzero_report_url: null,
+        netzero_offsets_chart:null,
+        chart_color: '#3263C8',
     },
     offices: cardanoOfficeData,
     node_map_data: {
@@ -534,7 +550,7 @@ const blockchainData = [
     },
     network_emissions:null,
     operation_emissions:null,
-    color:'#000000',
+    color:'#f682ba',
     id: 8,
     row: 'tableEven',
     nav: 'polkadot',
@@ -542,10 +558,12 @@ const blockchainData = [
     netzero_cert: {
         netzero_co: null,
         netzero_report_url: null,
+        netzero_offsets_chart:null,
+        chart_color: '#F7931A',
     },
     offices: polkadotOfficeData,
     node_map_data: {
-        map_color: '#FFFFFF',
+        map_color: '#f682ba',
         map_data: {},
     }
     },

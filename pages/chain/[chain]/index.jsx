@@ -11,6 +11,7 @@ import TransactionsChart from '../../../components/charts/TransactionsChart'
 import CumulativeTransactionsChart from '../../../components/charts/CumulativeTransactionsChart'
 import OperationsBreakdownChart from '../../../components/charts/OperationsBreakdownChart'
 import OperationsEmissionChart from '../../../components/charts/OperationsEmissionChart'
+import CumulativeBlockchainOffsetChart from '../../../components/charts/CumulativeBlockchainOffsetChart'
 // import { numberWithCommas, calculateSum, calculateMedian } from '../../../data/emissionsData'
 import { blockchainData } from '../../../data/blockchainData'
 

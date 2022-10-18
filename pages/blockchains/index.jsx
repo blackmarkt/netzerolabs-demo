@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Emissions from '../../components/blockchains/Emissions'
 import BlockchainEmissionsChart from '../../components/charts/BlockchainEmissionsChart'
 import CumulativeBlockchainEmissionsChart from '../../components/charts/CumulativeBlockchainEmissionsChart'
+import CumulativeBlockchainOffsetChart from '../../components/charts/CumulativeBlockchainOffsetChart'
 import styles from '../../styles/blockchains.module.css'
 import { getBlockchainData } from '../../data/blockchainData'
 
@@ -75,7 +76,9 @@ const Blockchains = () => {
             </div>
             <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>
             <div className={styles.dashboardSubContainer}>
-                
+                <div className={styles.emissionsChartContainer}>
+                    <CumulativeBlockchainOffsetChart offsetData={chainData}/>
+                </div>
             </div>
         </div>
     );
