@@ -45,7 +45,7 @@ const BlockchainEmissionsChart = ({ chartData }) => {
         chart: {
             type: 'line',
             backgroundColor: 'transparent',
-            margin: [20,20,20,100]
+            margin: [20,20,40,100]
             // color: "#fff"
         },
         title: {
@@ -64,10 +64,10 @@ const BlockchainEmissionsChart = ({ chartData }) => {
             enabled: false
         },
         legend: {
-            enabled: false,
-            verticalAlign: 'top',
+            enabled: true,
+            verticalAlign: 'bottom',
             align:'center',
-            padding:30,
+            padding:-15,
             style: {
                 fontSize: '0.4rem',
                 color: 'gray',

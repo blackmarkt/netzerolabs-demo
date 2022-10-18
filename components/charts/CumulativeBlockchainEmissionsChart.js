@@ -56,7 +56,7 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
         chart: {
             type: 'line',
             backgroundColor: 'transparent',
-            margin: [30,20,30,100]
+            margin: [30,20,40,100]
             // color: "#fff"
         },
         title: {
@@ -76,9 +76,9 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
         },
         legend: {
             enabled: true,
-            verticalAlign: 'top',
+            verticalAlign: 'bottom',
             align:'center',
-            padding:70,
+            padding:-10,
             style: {
                 fontSize: '0.4rem',
                 color: 'darkgray',

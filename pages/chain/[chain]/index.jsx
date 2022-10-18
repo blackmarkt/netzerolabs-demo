@@ -188,7 +188,9 @@ const chain = ({ chainData }) => {
             <div className={`${styles.dashboardSubContainer} ${styles[chainData.nav]}`}>
                 <div className={styles.dashboardNotActive}></div>
                 <div className={styles.notActiveContainer}>
-                    <span className={styles.notActiveTxt}>Not Active</span>
+                    {chainData.netzero == true ? (<a className={styles.subOpEmissionsTxt} target="_blank" href={chainData.netzero_cert.netzero_report_url}>{chainData.netzero_cert.netzero_co}</a>) 
+                    : (<span className={styles.notActiveTxt}>Not Active</span>)}
+                    {/* <span className={styles.notActiveTxt}>Not Active</span> */}
                 </div>
                 {/* <div className={styles.test}>Test</div> */}
             </div>
