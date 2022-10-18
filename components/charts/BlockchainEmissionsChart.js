@@ -1,5 +1,5 @@
 import React from 'react'
-import Highcharts from 'highcharts'
+import Highcharts, { chart } from 'highcharts'
 // import HighchartsExporting from 'highcharts/modules/exporting'
 import HighchartsReact from 'highcharts-react-official'
 import { dateLabels, emissionsData, dateUnixLabels, dateUnixCelo, celoEmissionsDailyData, 
@@ -142,7 +142,7 @@ const BlockchainEmissionsChart = ({ chartData }) => {
             }
         },
         tooltip: {
-            pointFormat: '<b>{point.y:,.2f}</b>',
+            pointFormat: '<b>{series.name}: {point.y:,.2f}</b>',
         },
         series: chartDataSeries
     }

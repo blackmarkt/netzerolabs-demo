@@ -150,7 +150,7 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
             }
         },
         tooltip: {
-            pointFormat: '<b>{point.y:,.2f}</b>',
+            pointFormat: '<b>{series.name}: {point.y:,.2f}</b>',
         },
         series:chartDataSeries
     }

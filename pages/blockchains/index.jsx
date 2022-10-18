@@ -10,7 +10,7 @@ const Blockchains = () => {
 
     return (
         <div className={styles.dashboardContainer}>
-            <h2 className={styles.dashboardMainHeader}>Blockchain Emissions</h2>
+            <h2 className={styles.dashboardMainHeader}>Blockchain (L1) Emissions</h2>
             <div className={styles.dashboardSubContainer}>
                 <div className={styles.chainContainer}>
                     <table className={styles.chainTable}>
