@@ -9,7 +9,8 @@ import { numberWithCommas, dateUnixLabels, txData, calculateSum, cumEmissionsDat
     polygonUnixTxData, polygonUnixTCO2Data, polygonUnixTCO2SumData, polygonTxData, polygonTC02Data,
     binTxData, binTCO2Data, binUnixTxData, binUnixTCO2Data, binUnixCumTCO2Data,
     cardTCO2Data, cardTxData, cardUnixCumTCO2Data, cardUnixTxData, cardUnixTCO2Data,
-    solanaOfficeData, polygonOfficeData, celoOfficeData} from './emissionsData'
+    solanaOfficeData, polygonOfficeData, celoOfficeData, alavancheOfficeData, nearOfficeData,
+    polkadotOfficeData, binanceOfficeData, cardanoOfficeData,} from './emissionsData'
 import mapData from './node_tracker_geojson_100722.geojson' assert {type: 'json'};
 
 const blockchainData = [
@@ -62,7 +63,7 @@ const blockchainData = [
     offices: [],
     node_map_data: {
         map_color: '#f7b360',
-        map_data: mapData,
+        map_data: {},
     }
     },
     {chain: 'Ethereum', 
@@ -162,7 +163,7 @@ const blockchainData = [
     offices: celoOfficeData,
     node_map_data: {
         map_color: '#FBCB5C',
-        map_data: mapData,
+        map_data: {},
     }
     },
     {chain: 'Solana', 
@@ -212,7 +213,7 @@ const blockchainData = [
     offices: solanaOfficeData,
     node_map_data: {
         map_color: '#4CB2C3',
-        map_data: mapData,
+        map_data: {},
     }
     },
     {chain: 'Avalanche', 
@@ -259,7 +260,7 @@ const blockchainData = [
     nav: 'avalanche',
     netzero: false,
     netzero_report_url: null,
-    offices: [],
+    offices: alavancheOfficeData,
     node_map_data: {
         map_color: '#FB2838',
         map_data: {},
@@ -359,7 +360,7 @@ const blockchainData = [
     nav: 'near',
     netzero: true,
     netzero_report_url: 'https://near.org/blog/near-climate-neutral-product/',
-    offices: [],
+    offices: nearOfficeData,
     node_map_data: {
         map_color: '#FFFFFF',
         map_data: {},
@@ -409,7 +410,7 @@ const blockchainData = [
     nav: 'binance',
     netzero: false,
     netzero_report_url:null,
-    offices: [],
+    offices: binanceOfficeData,
     node_map_data: {
         map_color: '#FFFFFF',
         map_data: {},
@@ -459,7 +460,7 @@ const blockchainData = [
     nav: 'cardano',
     netzero: false,
     netzero_report_url:null,
-    offices: [],
+    offices: cardanoOfficeData,
     node_map_data: {
         map_color: '#FFFFFF',
         map_data: {},
@@ -509,7 +510,7 @@ const blockchainData = [
     nav: 'polkadot',
     netzero: false,
     netzero_report_url:null,
-    offices: [],
+    offices: polkadotOfficeData,
     node_map_data: {
         map_color: '#FFFFFF',
         map_data: {},

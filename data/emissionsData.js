@@ -2098,6 +2098,51 @@ const polygonOfficeData = [
                               emissions: null},
                             ]
 
+const alavancheOfficeData = [
+                             {title: 'Avalanche HQ', 
+                              address: '263 S 4th St. #110497, Brooklyn, New York, 11211',
+                              geocoordinates: [40.7100617,-73.957199],
+                              sq_ft: null,
+                              energy_consumption: null,
+                              emissions: null},
+                            ]
+
+const nearOfficeData = [
+                            {title: 'NEAR HQ', 
+                            address: '181 2nd St, San Francisco, CA 94105',
+                            geocoordinates: [37.78751,-122.3986586],
+                            sq_ft: null,
+                            energy_consumption: null,
+                            emissions: null},
+                        ]
+
+const binanceOfficeData = [
+                            {title: 'Binance HQ', 
+                            address: '20 W 34th St, New York, NY 10001',
+                            geocoordinates: [40.748766,-73.985725],
+                            sq_ft: null,
+                            energy_consumption: null,
+                            emissions: null},
+                        ]
+
+const cardanoOfficeData = [
+                            {title: 'Cardano HQ', 
+                            address: 'Dammstrasse 16, 6300 Zug, Switzerland',
+                            geocoordinates: [50.3635065,7.0310165],
+                            sq_ft: null,
+                            energy_consumption: null,
+                            emissions: null},
+                        ]
+
+const polkadotOfficeData = [
+                            {title: 'Polkadot HQ', 
+                            address: '5G97+WX Zug, Switzerland',
+                            geocoordinates: [47.1698212,8.5128057],
+                            sq_ft: null,
+                            energy_consumption: null,
+                            emissions: null},
+                        ]
+
 // Avalanche
 const avalancheConvertFactor = 0.0000022986
 
@@ -5953,7 +5998,8 @@ export {dateLabels, emissionsData, cumEmissionsData, txData, operationsdata, eth
         celoTxDailyData, bitcoinUnixData, btcTxData, avalancheCumTCO2Data, solanaOfficeData,
         avalancheUnixTxChart, avalancheTxData, avalancheEmissionsData, avalancheTCO2Data,
         polygonUnixTxData, polygonUnixTCO2Data, polygonUnixTCO2SumData, polygonTxData, polygonTC02Data,
-        polygonOfficeData,
+        polygonOfficeData, alavancheOfficeData, nearOfficeData, polkadotOfficeData, binanceOfficeData, 
+        cardanoOfficeData,
         binTxData, binTCO2Data, binUnixTxData, binUnixTCO2Data, binUnixCumTCO2Data,
         cardTCO2Data, cardTxData, cardUnixCumTCO2Data, cardUnixTxData, cardUnixTCO2Data,
         calculateTxTCO2, calculateTxTCO2Chart,
