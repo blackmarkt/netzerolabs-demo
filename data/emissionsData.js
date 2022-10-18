@@ -872,7 +872,11 @@ const celoTxDailyData = [743095, 722798, 603837, 758576, 698247, 458999, 425325,
     377916, 384197, 367577, 312894, 299058, 374020, 363721, 340147, 318334, 240515, 326920, 307034, 310997, 328657, 334245, 260684, 268364, 268896, 264232, 
     330169, 299223, 302623, 317741]
 
+const celoNumOffsets = 65.7
+
+
 // Solana
+
 const solGToTFactor = 0.0000011023
 
 
@@ -5991,6 +5995,12 @@ function calculateSum(arr) {
     return sum
 }
 
+function getTotalOffsetsMonthly(monthOffset) {
+    let currentDate = new Date();
+    let monthNumber = currentDate.getMonth() + 1;
+    return monthOffset * monthNumber
+  }
+
 export {dateLabels, emissionsData, cumEmissionsData, txData, operationsdata, ethereumOfficesData,
         ethUnixTCO2Data, ethUnixCUMTCO2Data, ethTCO02Data, ethTCO02CumData,
         operationsOfficeData, operationsTransportData, operationsSuppliesData, operationsMiscData,
@@ -5999,8 +6009,8 @@ export {dateLabels, emissionsData, cumEmissionsData, txData, operationsdata, eth
         avalancheUnixTxChart, avalancheTxData, avalancheEmissionsData, avalancheTCO2Data,
         polygonUnixTxData, polygonUnixTCO2Data, polygonUnixTCO2SumData, polygonTxData, polygonTC02Data,
         polygonOfficeData, alavancheOfficeData, nearOfficeData, polkadotOfficeData, binanceOfficeData, 
-        cardanoOfficeData,
+        cardanoOfficeData, celoNumOffsets, 
         binTxData, binTCO2Data, binUnixTxData, binUnixTCO2Data, binUnixCumTCO2Data,
         cardTCO2Data, cardTxData, cardUnixCumTCO2Data, cardUnixTxData, cardUnixTCO2Data,
-        calculateTxTCO2, calculateTxTCO2Chart,
+        calculateTxTCO2, calculateTxTCO2Chart, getTotalOffsetsMonthly,
         calculateMedian, calculateSum, numberWithCommas, combineUnixDataArr, combineUnixFauxDataArr} 

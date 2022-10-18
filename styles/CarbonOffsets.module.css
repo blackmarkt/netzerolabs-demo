@@ -1,0 +1,47 @@
+.offsetsOuterContainer {
+    width:100%;
+    height:100%;
+}
+.offsetsSubLeftContainer, .offsetsSubRightContainer {
+    display: inline-block;
+    width:30%;
+    height:100%
+}
+.offsetsSubRightContainer {
+    width:68%
+}
+.offsetsFlexGrid {
+    display: flex;
+}
+.offsetsGrid {
+    text-align: center;
+    flex-wrap: wrap;
+    width:100%;
+}
+.offsetsBar {
+    list-style: none!important;
+    list-style-type: none!important;
+    margin: 0;
+    text-align: center;
+    /* padding: 0; */
+    padding: 1rem 0 0;
+}
+.offsetsSubTxt {
+    font-size:0.7rem;
+    display: inline-block;
+    color:darkgray!important;
+    text-shadow: none;
+    opacity:0.5!important;
+    width:100%;
+    /* margin-top:0.8rem; */
+    margin: 0.8rem 0 1.4rem;
+}
+.certLink {
+    width:100%;
+}
+.offsetsStatsTxt {
+    font-size:1.4rem;
+    padding:0;
+    margin: 0;
+    text-shadow:0 0 10px white;
+}

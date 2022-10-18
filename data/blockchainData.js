@@ -10,7 +10,7 @@ import { numberWithCommas, dateUnixLabels, txData, calculateSum, cumEmissionsDat
     binTxData, binTCO2Data, binUnixTxData, binUnixTCO2Data, binUnixCumTCO2Data,
     cardTCO2Data, cardTxData, cardUnixCumTCO2Data, cardUnixTxData, cardUnixTCO2Data,
     solanaOfficeData, polygonOfficeData, celoOfficeData, alavancheOfficeData, nearOfficeData,
-    polkadotOfficeData, binanceOfficeData, cardanoOfficeData,} from './emissionsData'
+    polkadotOfficeData, binanceOfficeData, cardanoOfficeData, celoNumOffsets, getTotalOffsetsMonthly} from './emissionsData'
 import mapData from './node_tracker_geojson_100722.geojson' assert {type: 'json'};
 
 const blockchainData = [
@@ -152,7 +152,7 @@ const blockchainData = [
         supplies:null,
         misc:null,
     },
-    offsets:null,
+    offsets: numberWithCommas(getTotalOffsetsMonthly(celoNumOffsets)),
     transactions_sum: numberWithCommas(calculateSum(celoTxDailyData)),
     transaction_stats: {
         median: numberWithCommas(calculateMedian(celoTxDailyData, 'daily')),
@@ -167,6 +167,7 @@ const blockchainData = [
     netzero: true,
     netzero_cert: {
         netzero_co: 'Wren',
+        offsets: numberWithCommas(getTotalOffsetsMonthly(celoNumOffsets)),
         netzero_report_url: 'https://www.wren.co/profile/celo',
     },
     offices: celoOfficeData,

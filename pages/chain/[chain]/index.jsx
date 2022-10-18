@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import React, { useState, useEffect, useLayoutEffect, useContext } from "react";
 import Map from '../../../components/map/Map'
 import Offices from '../../../components/dashboard/Offices'
+import CarbonOffsets from '../../../components/dashboard/CarbonOffsets'
 // import Axios from "axios"
 import styles from '../../../styles/dashboard.module.css'
 import Image from 'next/image'
@@ -186,12 +187,13 @@ const chain = ({ chainData }) => {
             </div>
             <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>
             <div className={`${styles.dashboardSubContainer} ${styles[chainData.nav]}`}>
-                <div className={styles.dashboardNotActive}></div>
-                <div className={styles.notActiveContainer}>
-                    {chainData.netzero == true ? (<a className={styles.subOpEmissionsTxt} target="_blank" href={chainData.netzero_cert.netzero_report_url}>{chainData.netzero_cert.netzero_co}</a>) 
+                {chainData.netzero == true ? (<CarbonOffsets offsetData={chainData.netzero_cert} />) 
                     : (<span className={styles.notActiveTxt}>Not Active</span>)}
-                    {/* <span className={styles.notActiveTxt}>Not Active</span> */}
-                </div>
+                {/* <div className={styles.dashboardNotActive}></div> */}
+                {/* <div className={styles.notActiveContainer}>                     */}
+                    {/* {chainData.netzero == true ? (<a className={styles.subOpEmissionsTxt} target="_blank" href={chainData.netzero_cert.netzero_report_url}>{chainData.netzero_cert.netzero_co}</a>) 
+                    : (<span className={styles.notActiveTxt}>Not Active</span>)} */}
+                {/* </div> */}
                 {/* <div className={styles.test}>Test</div> */}
             </div>
         </div>
