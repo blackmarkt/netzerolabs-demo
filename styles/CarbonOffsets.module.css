@@ -45,3 +45,11 @@
     margin: 0;
     text-shadow:0 0 10px white;
 }
+.subOpEmissionsTxt {
+    padding:0.6rem 0 0rem;
+    font-size: 1.5rem;
+}
+.txtNA {
+    color:#616161!important;
+    text-shadow: none!important;
+}
