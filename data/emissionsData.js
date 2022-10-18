@@ -6007,7 +6007,7 @@ function createUNIXOffsetChartData(monthOffset) {
     let currentDate = new Date()
     let monthNumber = currentDate.getMonth() + 1
     for (let i = 1; i<=monthNumber; i++) {
-        temp_dt = Math.floor(new Date('2022.0' + String(i) + '.01').getTime())
+        temp_dt = Math.floor(new Date('2022/0' + String(i) + '/01 12:00:00').getTime())
         monthDTArr.push({x: temp_dt, y: monthOffset*i})
     }
     return monthDTArr

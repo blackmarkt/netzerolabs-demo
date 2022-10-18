@@ -2,18 +2,16 @@ import React from 'react'
 import Highcharts from 'highcharts'
 // import HighchartsExporting from 'highcharts/modules/exporting'
 import HighchartsReact from 'highcharts-react-official'
-// import { dateLabels, dateUnixLabels, dateUnixCelo, cumEmissionsData, celoCumEmissionData, 
-//     combineUnixDataArr, combineUnixFauxDataArr } from '../../data/emissionsData'
-// import { blockoffsetData, defaultChainEmissionsData } from '../../data/blockoffsetData'
 
 
 const CumulativeBlockchainOffsetChart = ({ offsetData }) => {
+    console.log('OFFSET DATA ', offsetData)
 
     var offsetDataSeries = (function() {
         if (typeof Highcharts === 'object') {
             var dataArr = []
             for (let i = 0; i < offsetData.length; i += 1) {
-                if (offsetData[i].chain != 'Bitcoin' && offsetData[i].netzero_cert.netzero_offsets_chart != null) {
+                if (offsetData[i].netzero_cert.netzero_offsets_chart != null) {
                     dataArr.push({
                         name: offsetData[i].chain,
                         className: 'line-class1',
@@ -21,7 +19,7 @@ const CumulativeBlockchainOffsetChart = ({ offsetData }) => {
                         color: offsetData[i].netzero_cert.chart_color,
                         type: 'area',
                         shadow: {
-                            color:offsetData[i].netzero_cert.chart_color,
+                            color: offsetData[i].netzero_cert.chart_color,
                                 width: 12,
                                 offsetX: 0,
                                 offsetY: 0
@@ -126,7 +124,7 @@ const CumulativeBlockchainOffsetChart = ({ offsetData }) => {
         tooltip: {
             pointFormat: '<b>{series.name}: {point.y:,.2f}</b>',
         },
-        series:offsetDataSeries
+        series: offsetDataSeries
     }
 
     return (
@@ -135,7 +133,7 @@ const CumulativeBlockchainOffsetChart = ({ offsetData }) => {
                 highcharts={Highcharts}
                 constructorType={'chart'}
                 options={options}
-                containerProps={{ className: 'cumulative-blockchain-chart',
+                containerProps={{ className: 'cumulative-blockchain-offset-chart',
                                   style: { height: "100%" } }} 
             />
         </div>

@@ -161,7 +161,7 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
                 highcharts={Highcharts}
                 constructorType={'chart'}
                 options={options}
-                containerProps={{ className: 'cumulative-blockchain-chart',
+                containerProps={{ className: 'cumulative-blockchain-emissions-chart',
                                   style: { height: "280px" } }} 
             />
         </div>
