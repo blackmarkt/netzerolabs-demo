@@ -63,7 +63,7 @@ const CumulativeBlockchainOffsetChart = ({ offsetData }) => {
         title: {
             text: 'Total Carbon Offsets (tCO2)',
             floating:true,
-            y:40,
+            y:0,
             style: {
                 fontSize: '0.7rem',
                 color: '#616161',
@@ -77,9 +77,9 @@ const CumulativeBlockchainOffsetChart = ({ offsetData }) => {
         },
         legend: {
             enabled: true,
-            verticalAlign: 'bottom',
+            verticalAlign: 'top',
             align:'center',
-            padding:-10,
+            padding:25,
             style: {
                 fontSize: '0.4rem',
                 color: 'darkgray',
