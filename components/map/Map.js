@@ -6,7 +6,7 @@ import styles from '../../styles/Map.module.css'
 
 const Map = ({ mapData }) => {
     const mapContainer = useRef(null);
-    const [zoom, setZoom] = useState(0.01);
+    // const [zoom, setZoom] = useState(0.0);
     const [data, setData] = useState(null);
     const [map, setMap] = useState(null);
 
@@ -22,7 +22,7 @@ const Map = ({ mapData }) => {
                 projection: 'equirectangular',
                 // style: "mapbox://styles/marktblack/cl8xmd54n000014pp4ec2wuh1",
                 style: "mapbox://styles/marktblack/cl9ak59tt000715t2bb8k9ao2",
-                zoom:zoom,
+                zoom:0.3,
                 // interactive: false,
                 attributionControl: false
             });

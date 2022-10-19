@@ -6,8 +6,7 @@ import CumulativeOffsetChart from '../../components/charts/CumulativeOffsetChart
 
 
 const CarbonOffsets = ({ offsetData }) => {
-    console.log("CARBON OFFSETS ", offsetData.netzero_offsets_chart);
-
+    
     return (
         <div className={styles.offsetsOuterContainer}>
             <div className={styles.offsetsSubLeftContainer}>

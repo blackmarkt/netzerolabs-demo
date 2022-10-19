@@ -17,6 +17,7 @@ import btcNodeData from './bitcoin_node_tracker_geojson_101822.geojson' assert {
 const blockchainData = [
     {chain: 'Bitcoin', 
     logo: '/blockchains/bitcoin_50x50.png',
+    website: 'https://bitcoin.org/en/',
     chart_data: {
         chart_daily_data: bitcoinUnixData,
         chart_cum_data: calculateTxTCO2Chart(dateUnixCelo, btcTxData, 'cum'),
@@ -75,6 +76,7 @@ const blockchainData = [
     },
     {chain: 'Ethereum', 
     logo: '/blockchains/ethereum_45x45.png',
+    website: 'https://ethereum.org/en/foundation/',
     chart_data: {
         chart_daily_data: combineUnixDataArr(dateUnixLabels, emissionsData),
         chart_cum_data: combineUnixDataArr(dateUnixLabels, cumEmissionsData),
@@ -131,6 +133,7 @@ const blockchainData = [
     },
     {chain: 'Celo', 
     logo: '/blockchains/celo_40x40.png',
+    website: 'https://celo.org/',
     chart_data: {
         chart_daily_data: combineUnixDataArr(dateUnixCelo, celoEmissionsDailyData),
         chart_cum_data: combineUnixDataArr(dateUnixCelo, celoCumEmissionData),
@@ -188,6 +191,7 @@ const blockchainData = [
     },
     {chain: 'Solana', 
     logo: '/blockchains/solana_40x40.png',
+    website: 'https://solana.com/',
     chart_data: {
         chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
@@ -244,6 +248,7 @@ const blockchainData = [
     },
     {chain: 'Avalanche', 
     logo: '/blockchains/avalanche_40x40.png',
+    website: 'https://www.avax.network/',
     chart_data: {
         chart_daily_data: avalancheEmissionsData,
         chart_cum_data: avalancheCumTCO2Data,
@@ -300,6 +305,7 @@ const blockchainData = [
     },
     {chain: 'Polygon', 
     logo: '/blockchains/polygon_40x40.png',
+    website: 'https://polygon.technology/',
     chart_data: {
         chart_daily_data: polygonUnixTCO2Data,
         chart_cum_data: polygonUnixTCO2SumData,
@@ -356,6 +362,7 @@ const blockchainData = [
     },
     {chain: 'NEAR', 
     logo: '/blockchains/near_40x40.png',
+    website: 'https://near.org/',
     chart_data: {
         chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
@@ -412,6 +419,7 @@ const blockchainData = [
     },
     {chain: 'Binance', 
     logo: '/blockchains/binance_40x40.png',
+    website: 'https://www.binance.com/en',
     chart_data: {
         chart_daily_data: binUnixTCO2Data,
         chart_cum_data: binUnixCumTCO2Data,
@@ -468,6 +476,7 @@ const blockchainData = [
     },
     {chain: 'Cardano', 
     logo: '/blockchains/cardano_45x45.png',
+    website: 'https://cardano.org/',
     chart_data: {
         chart_daily_data: cardUnixTCO2Data,
         chart_cum_data: cardUnixCumTCO2Data,
@@ -524,6 +533,7 @@ const blockchainData = [
     },
     {chain: 'Polkadot', 
     logo: '/blockchains/polkadot_40x40.png',
+    website: 'https://polkadot.network/',
     chart_data: {
         chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),

@@ -17,8 +17,6 @@ import { blockchainData } from '../../../data/blockchainData'
 
 const chain = ({ chainData }) => {
 
-    console.log('TEST ', chainData);
-
     return (
         <div className={styles.dashboardContainer}>
             <h2>{chainData.chain}
@@ -31,7 +29,9 @@ const chain = ({ chainData }) => {
                     alt={chainData.chain}
                     height='25px' />}
             </h2>
-            {/* <p style={{"margin":"0"}}>0xEA123</p> */}
+            <a href={`${chainData.website}`} target="_blank" rel="noopener noreferrer">
+                <p style={{"margin":"0 0 0.3rem"}}>{chainData.website}</p>
+            </a>
             <div className={styles.flexGrid}>
                 <div className={`${styles.grid} ${styles[chainData.nav]}`}>
                     {chainData.emissions != null ? (<div className={styles.topDashboard}>{chainData.emissions}</div>) 
