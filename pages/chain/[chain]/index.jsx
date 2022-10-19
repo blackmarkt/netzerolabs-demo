@@ -4,7 +4,7 @@ import Map from '../../../components/map/Map'
 import Offices from '../../../components/dashboard/Offices'
 import CarbonOffsets from '../../../components/dashboard/CarbonOffsets'
 // import Axios from "axios"
-import styles from '../../../styles/dashboard.module.css'
+import styles from '../../../styles/Dashboard.module.css'
 import Image from 'next/image'
 // import Ethereum from '../../public/blockchains/ethereum.png'
 import TransactionsChart from '../../../components/charts/TransactionsChart'
@@ -27,13 +27,9 @@ const chain = ({ chainData }) => {
                     alt={chainData.chain}
                     height='35px'
                 />
-                {/* <Image
-                    src={Ethereum}
-                    alt='Ethereum Logo'
-                    width={38}
-                    height={38}
-                    margin-left={'0.5rem'}               
-                /> */}
+                {chainData.netzero == true && chainData.netzero_cert.web3 == false && <img className={styles.netzeroCert} src='../certification/netzero_cert.png'
+                    alt={chainData.chain}
+                    height='25px' />}
             </h2>
             <p style={{"margin":"0"}}>0xEA123</p>
             <div className={styles.flexGrid}>

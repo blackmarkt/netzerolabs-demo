@@ -228,6 +228,9 @@ p.subHeaderTxt {
 .emissionsRed {
     text-shadow:0 0 10px red!important;
 }
+.netzeroCert {
+    margin-left:0.4rem
+}
 .ethereum {
     box-shadow: 0 1px 1px #6b6e88, 0 0 10px #61668B!important;
 }

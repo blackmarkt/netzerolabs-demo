@@ -64,6 +64,7 @@ const blockchainData = [
         netzero_report_url: null,
         netzero_offsets_chart:null,
         chart_color: '#F7931A',
+        web3: false,
     },
     offices: [],
     node_map_data: {
@@ -119,6 +120,7 @@ const blockchainData = [
         netzero_report_url: null,
         netzero_offsets_chart:null,
         chart_color: '#6b6e88',
+        web3: false,
     },
     offices:ethereumOfficesData,
     node_map_data: {
@@ -175,6 +177,7 @@ const blockchainData = [
         netzero_report_url: 'https://www.wren.co/profile/celo',
         netzero_offsets_chart: createUNIXOffsetChartData(celoNumOffsets),
         chart_color: '#FBCB5C',
+        web3: false,
     },
     offices: celoOfficeData,
     node_map_data: {
@@ -230,6 +233,7 @@ const blockchainData = [
         netzero_report_url: 'https://solana.com/news/solanas-energy-use-report-march-2022',
         netzero_offsets_chart:null,
         chart_color: '#4CB2C3',
+        web3: false,
     },
     offices: solanaOfficeData,
     node_map_data: {
@@ -284,7 +288,8 @@ const blockchainData = [
         netzero_co: null,
         netzero_report_url: null,
         netzero_offsets_chart:null,
-        chart_color:'#FB2838'
+        chart_color:'#FB2838',
+        web3: false,
     },
     offices: alavancheOfficeData,
     node_map_data: {
@@ -339,7 +344,8 @@ const blockchainData = [
         netzero_co: 'Offsetra/KlimaDAO',
         netzero_report_url: 'https://www.klimadao.finance/blog/polygon-pos-emissions-analysis',
         netzero_offsets_chart:null,
-        chart_color:'#8B42ED'
+        chart_color:'#8B42ED',
+        web3: false,
     },
     offices: polygonOfficeData,
     node_map_data: {
@@ -394,7 +400,8 @@ const blockchainData = [
         netzero_co: 'South Pole',
         netzero_report_url: 'https://near.org/blog/near-climate-neutral-product/',
         netzero_offsets_chart:null,
-        chart_color:'#FFFFFF'
+        chart_color:'#FFFFFF',
+        web3: false,
     },
     offices: nearOfficeData,
     node_map_data: {
@@ -450,6 +457,7 @@ const blockchainData = [
         netzero_report_url: null,
         netzero_offsets_chart:null,
         chart_color: '#FFD700',
+        web3: false,
     },
     offices: binanceOfficeData,
     node_map_data: {
@@ -505,6 +513,7 @@ const blockchainData = [
         netzero_report_url: null,
         netzero_offsets_chart:null,
         chart_color: '#3263C8',
+        web3: false,
     },
     offices: cardanoOfficeData,
     node_map_data: {
@@ -560,6 +569,7 @@ const blockchainData = [
         netzero_report_url: null,
         netzero_offsets_chart:null,
         chart_color: '#F7931A',
+        web3: false,
     },
     offices: polkadotOfficeData,
     node_map_data: {
