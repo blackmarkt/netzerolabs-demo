@@ -33,7 +33,7 @@ const Map = ({ mapData }) => {
                 map.setProjection('equirectangular');
 
                 // disable map zoom when using scroll
-                map.scrollZoom.disable();
+                // map.scrollZoom.disable();
                 
                 map.resize();
 
@@ -51,14 +51,49 @@ const Map = ({ mapData }) => {
                         'circle-blur':4,
                         'circle-radius':6
                     }
-                    // "layout": {
-                    //     "icon-image": "monument",
-                    //     "text-field": "{title}",
-                    //     "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
-                    //     "text-offset": [0, 0.6],
-                    //     "text-anchor": "top"
-                    // }
                 });
+
+            });
+
+            const popupOffsets = {
+                'top': [100, -350],
+                'top-left': [0, 0],
+                'top-right': [0, 0],
+            }
+
+             // Create a popup, but don't add it to the map yet.
+             const popup = new mapboxgl.Popup({
+                closeButton: false,
+                closeOnClick: false,
+                className: 'map-popup',
+                anchor: 'top',
+                offset: popupOffsets,
+            });
+
+            map.on('mouseenter', 'node-layer', (e) => {
+                // Change the cursor style as a UI indicator.
+                map.getCanvas().style.cursor = 'pointer';
+                 
+                // Copy coordinates array.
+                const coordinates = e.features[0].geometry.coordinates.slice();
+                const description = e.features[0].properties.nodeId;
+                const ipAddress = e.features[0].properties.ipAddress.split(":")[0];
+                 
+                // Ensure that if the map is zoomed out such that multiple
+                // copies of the feature are visible, the popup appears
+                // over the copy being pointed to.
+                // while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+                // coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+                // }
+                 
+                // Populate the popup and set its coordinates
+                // based on the feature found.
+                popup.setLngLat(coordinates).setHTML('<p className={styles.mapTxt}>' + ipAddress + '</p>').addClassName('map-popup').addTo(map);
+            });
+                 
+            map.on('mouseleave', 'node-layer', () => {
+                map.getCanvas().style.cursor = '';
+                popup.remove();
             });
         }
     }, []);

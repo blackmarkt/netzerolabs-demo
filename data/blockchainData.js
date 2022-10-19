@@ -11,7 +11,8 @@ import { numberWithCommas, dateUnixLabels, txData, calculateSum, cumEmissionsDat
     cardTCO2Data, cardTxData, cardUnixCumTCO2Data, cardUnixTxData, cardUnixTCO2Data,
     solanaOfficeData, polygonOfficeData, celoOfficeData, alavancheOfficeData, nearOfficeData,
     polkadotOfficeData, binanceOfficeData, cardanoOfficeData, celoNumOffsets, getTotalOffsetsMonthly} from './emissionsData'
-import mapData from './node_tracker_geojson_100722.geojson' assert {type: 'json'};
+import mapData from './eth_node_tracker_geojson_100722.geojson' assert {type: 'json'};
+import btcNodeData from './bitcoin_node_tracker_geojson_101822.geojson' assert {type: 'json'};
 
 const blockchainData = [
     {chain: 'Bitcoin', 
@@ -69,7 +70,7 @@ const blockchainData = [
     offices: [],
     node_map_data: {
         map_color: '#f7b360',
-        map_data: {},
+        map_data: btcNodeData,
     }
     },
     {chain: 'Ethereum', 

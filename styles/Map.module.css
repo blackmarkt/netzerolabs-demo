@@ -21,3 +21,6 @@
 .mapboxgl-ctrl-logo{
     display: none!important;
 }
+.map-popup, .mapTxt{
+    font-size:0.3rem!important;
+}
