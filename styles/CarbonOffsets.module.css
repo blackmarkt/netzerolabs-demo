@@ -4,13 +4,13 @@
 }
 .offsetsSubLeftContainer, .offsetsSubRightContainer {
     display: inline-block;
-    width:25%;
+    width:30%;
     height:100%;
     /* padding-top: 1rem; */
     vertical-align: middle;
 }
 .offsetsSubRightContainer {
-    width:73%;
+    width:68%;
     height:100%;
     color:#616161!important;
     text-shadow: none!important;
