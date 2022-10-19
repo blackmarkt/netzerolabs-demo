@@ -1,11 +1,22 @@
+@media only screen and (max-width:46em) {
+    .footerContainer {
+        margin-top:2rem!important;
+        padding:1rem 0 2rem!important
+    }
+    .footerTxt {
+        font-size:0.6rem!important
+    }
+}
+@media only screen and (min-width: 46em) and (max-width: 66em) and (orientation:portrait) {
+} 
 .footerContainer {
     position:relative;
     left:0;
     right:0;
     bottom:0;
     margin:0 auto;
-    margin-top:8rem;
-    display: flex;
+    margin-top:4rem;
+    /* display: flex; */
     flex: 1;
     padding: 3rem 0 4rem;
     justify-content: center;
@@ -13,8 +24,16 @@
     color:white;
     text-shadow:0 0 10px lime;
 }
-
+.footerTxtContainer {
+    text-align: center;
+    margin:2rem 0 1.4rem;
+    width:100%;
+}
+.footerTxt {
+    font-size:0.7rem
+}
 .footerIcon {
+    text-align: center;
     width:fit-content;
     height:fit-content;
     margin:0 auto;

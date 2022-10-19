@@ -6,6 +6,9 @@ import Twitter from '../public/social_media/twitter.png'
 const Footer = () => {
     return (
         <footer className={styles.footerContainer}>
+            <div className={styles.footerTxtContainer}>
+                <p className={styles.footerTxt}>Made with &#10084; in Berkeley, CA</p>
+            </div>
             <div className={styles.footerIcon}>
                 <Link href="https://twitter.com/Net0Labs">
                     <a target="_blank">
