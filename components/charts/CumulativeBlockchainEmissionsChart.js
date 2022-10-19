@@ -13,7 +13,7 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
         if (typeof Highcharts === 'object') {
             var dataArr = []
             for (let i = 0; i < chartData.length; i += 1) {
-                if (chartData[i].chain != 'Bitcoin') {
+                // if (chartData[i].chain != 'Bitcoin') {
                     dataArr.push({
                         name: chartData[i].chain,
                         className: 'line-class1',
@@ -46,7 +46,7 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
                             ]
                         },
                     })
-                }
+                // }
             }
             return dataArr;
         }
@@ -111,7 +111,7 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
         //     }
         // },
         yAxis: {
-            // type: 'logarithmic',
+            type: 'logarithmic',
             lineWidth: 0,
                 lineColor: 'black',
                 gridLineWidth: 0,

@@ -13,7 +13,7 @@ const BlockchainEmissionsChart = ({ chartData }) => {
         if (typeof Highcharts === 'object') {
             var dataArr = []
             for (let i = 0; i < chartData.length; i += 1) {
-                if (chartData[i].chain != 'Bitcoin') {
+                // if (chartData[i].chain != 'Bitcoin') {
                     dataArr.push({
                         name: chartData[i].chain,
                         className: 'line-class1',
@@ -35,7 +35,7 @@ const BlockchainEmissionsChart = ({ chartData }) => {
                             enabled: false
                         }
                     })
-                }
+                // }
             }
             return dataArr;
         }

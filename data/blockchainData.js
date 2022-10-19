@@ -1,6 +1,6 @@
 import Highcharts from 'highcharts'
 import { numberWithCommas, dateUnixLabels, txData, calculateSum, cumEmissionsData,
-    ethUnixTCO2Data, ethUnixCUMTCO2Data, ethTCO02Data, ethTCO02CumData, 
+    ethUnixTCO2Data, ethUnixCUMTCO2Data, ethTCO02Data, ethTCO02CumData, btcUnixTCO2Data,
     celoCumEmissionData, celoTxDailyData, bitcoinUnixData, btcTxData, calculateTxTCO2, 
     combineUnixDataArr, combineUnixFauxDataArr, dateUnixCelo, emissionsData, avalancheUnixTxChart,
     operationsOfficeData, operationsTransportData, operationsSuppliesData, operationsMiscData,
@@ -8,7 +8,7 @@ import { numberWithCommas, dateUnixLabels, txData, calculateSum, cumEmissionsDat
     avalancheTxData, avalancheEmissionsData, avalancheTCO2Data, avalancheCumTCO2Data,
     polygonUnixTxData, polygonUnixTCO2Data, polygonUnixTCO2SumData, polygonTxData, polygonTC02Data,
     binTxData, binTCO2Data, binUnixTxData, binUnixTCO2Data, binUnixCumTCO2Data, createUNIXOffsetChartData,
-    cardTCO2Data, cardTxData, cardUnixCumTCO2Data, cardUnixTxData, cardUnixTCO2Data,
+    cardTCO2Data, cardTxData, cardUnixCumTCO2Data, cardUnixTxData, cardUnixTCO2Data, btcUnixCumTCO2Data,
     solanaOfficeData, polygonOfficeData, celoOfficeData, alavancheOfficeData, nearOfficeData,
     polkadotOfficeData, binanceOfficeData, cardanoOfficeData, celoNumOffsets, getTotalOffsetsMonthly} from './emissionsData'
 import mapData from './eth_node_tracker_geojson_100722.geojson' assert {type: 'json'};
@@ -19,9 +19,9 @@ const blockchainData = [
     logo: '/blockchains/bitcoin_50x50.png',
     website: 'https://bitcoin.org/en/',
     chart_data: {
-        chart_daily_data: bitcoinUnixData,
-        chart_cum_data: calculateTxTCO2Chart(dateUnixCelo, btcTxData, 'cum'),
-        chart_tx_daily: combineUnixDataArr(dateUnixLabels, btcTxData),
+        chart_daily_data: btcUnixTCO2Data,
+        chart_cum_data: btcUnixCumTCO2Data,
+        chart_tx_daily: bitcoinUnixData,
         chart_color: '#f7b360',
         operations_data: [
             { name: 'Office', y: 1},
