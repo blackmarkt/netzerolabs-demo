@@ -31,7 +31,7 @@ const chain = ({ chainData }) => {
                     alt={chainData.chain}
                     height='25px' />}
             </h2>
-            <p style={{"margin":"0"}}>0xEA123</p>
+            {/* <p style={{"margin":"0"}}>0xEA123</p> */}
             <div className={styles.flexGrid}>
                 <div className={`${styles.grid} ${styles[chainData.nav]}`}>
                     {chainData.emissions != null ? (<div className={styles.topDashboard}>{chainData.emissions}</div>) 
