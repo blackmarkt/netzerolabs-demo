@@ -24,6 +24,7 @@ const Map = ({ mapData }) => {
                 style: "mapbox://styles/marktblack/cl9ak59tt000715t2bb8k9ao2",
                 zoom:0.3,
                 // interactive: false,
+                dragPan: false,
                 attributionControl: false
             });
             setData(mapData);

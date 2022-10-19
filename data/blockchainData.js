@@ -78,8 +78,8 @@ const blockchainData = [
     logo: '/blockchains/ethereum_45x45.png',
     website: 'https://ethereum.org/en/foundation/',
     chart_data: {
-        chart_daily_data: combineUnixDataArr(dateUnixLabels, emissionsData),
-        chart_cum_data: combineUnixDataArr(dateUnixLabels, cumEmissionsData),
+        chart_daily_data:ethUnixTCO2Data,
+        chart_cum_data: ethUnixCUMTCO2Data,
         chart_tx_daily: combineUnixDataArr(dateUnixLabels, txData),
         chart_color: '#6b6e88',
         operations_data: [

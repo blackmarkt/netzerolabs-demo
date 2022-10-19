@@ -38,8 +38,8 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
                             linearGradient:  { 
                                 x1: 0,
                                 y1: 0,
-                                x2: 1,
-                                y2: 1},
+                                x2: 0.5,
+                                y2: 0.8},
                             stops: [
                                 [0, chartData[i].chart_data.chart_color],
                                 [1, 'transparent']
