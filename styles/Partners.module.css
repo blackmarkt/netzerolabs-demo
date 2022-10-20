@@ -1,0 +1,18 @@
+.partnersMsgContainer {
+    height:58vh;
+    width:100%;
+    text-align: center;
+    position: relative;
+}
+.partnersMsgSubContainer {
+    position: absolute;
+    top:50%;
+    left:0;
+    right: 0;
+}
+.partnersMsg {
+    font-size:1.4rem;
+    text-align: center;
+    color:#616161;
+    text-shadow: none!important;
+}
