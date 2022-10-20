@@ -1,6 +1,9 @@
 import Head from 'next/head'
+import { useRouter } from "next/router";
 
-const Meta = ({ title, keywords, description }) => {
+const Meta = ({ title, keywords, description}) => {
+  const router = useRouter();
+
   return (
     <Head>
       <meta name='viewport' content='width=device-width, initial-scale=1' />
@@ -8,13 +11,14 @@ const Meta = ({ title, keywords, description }) => {
       <meta name='description' content={description} />
       <meta charSet='utf-8' />
       <link rel='icon' href='/favicon.ico' />
-      <title>{title}</title>
+      {router.asPath != "/" ? (<title>{title} | {router.asPath.split("/").at(-1).replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())}</title>) 
+      : (<title>{title} | On Chain Carbon Accounting</title>)}
     </Head>
   )
 }
 
 Meta.defaultProps = {
-  title: 'Net0Labs | On-Chain Carbon Accounting',
+  title: 'Net0Labs ',
   keywords: 'crypto climate, carbon accounting, crypto, environment, netzero, net zero, climate',
   description: 'On-Chain Carbon Accounting',
 }
