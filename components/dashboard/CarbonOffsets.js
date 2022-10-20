@@ -6,13 +6,14 @@ import CumulativeOffsetChart from '../../components/charts/CumulativeOffsetChart
 
 
 const CarbonOffsets = ({ offsetData }) => {
-    
+
     return (
         <div className={styles.offsetsOuterContainer}>
             <div className={styles.offsetsSubLeftContainer}>
                 <ul className={styles.offsetsBar}>
                     <l1>
                         <h3 className={styles.offsetsStatsTxt}>{offsetData.netzero_co}</h3>
+                        {offsetData.web3 == false && <div className={styles.offsetCryptoCo}>(Web2)</div>}
                         <div className={styles.offsetsSubTxt}>Auditor</div>
                     </l1>
                 </ul>

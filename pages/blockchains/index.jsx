@@ -67,12 +67,6 @@ const Blockchains = () => {
             </div>
             <h4 className={styles.dashboardHeader}>Operations Emissions</h4>
             <div className={styles.dashboardSubContainer}>
-                {/* <div className={styles.emissionsChartContainer}>
-                    <BlockchainEmissionsChart chartData={{}}/>
-                </div>
-                <div className={styles.emissionsChartContainer}>
-                    <CumulativeBlockchainEmissionsChart chartData={{}}/>
-                </div> */}
             </div>
             <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>
             <div className={styles.dashboardSubContainer}>

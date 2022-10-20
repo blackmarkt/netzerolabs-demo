@@ -39,7 +39,7 @@
     opacity:0.5!important;
     /* width:100%; */
     /* margin-top:0.8rem; */
-    margin: 0.8rem 0 1.4rem;
+    margin: 0.4rem 0 1.4rem;
 }
 .certLink {
     width:100%;
@@ -63,4 +63,17 @@
 .txtNA {
     color:#616161!important;
     text-shadow: none!important;
+}
+.offsetCryptoCo {
+    display: inline-block;
+    font-size:0.6rem;
+    /* padding:0.3rem 0.4rem; */
+    color:red;
+    text-shadow:0 0 20px red;
+    /* background-color: red; */
+    width:fit-content;
+    text-align: center;
+    margin: 0 auto;
+    margin-top:0.1rem;
+    border-radius: 6px;
 }
