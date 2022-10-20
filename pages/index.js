@@ -90,6 +90,12 @@ export default function Home() {
                     <source src="movie.ogg" type="video/ogg" />
                 </video>
             </div>
+            <div id="vid1" className={styles.videoContainer}>
+                <video id="vid_charm_industrial" className={styles.videoMask} autoPlay muted loop playsInline preload="none">
+                    <source src="/nfts/solar_nft.mp4" type="video/mp4" />
+                    <source src="movie.ogg" type="video/ogg" />
+                </video>
+            </div>
           </div>
           <div className={styles.faqContainer}>
             <div className={styles.faqInnerContainer}>

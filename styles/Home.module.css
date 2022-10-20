@@ -308,7 +308,7 @@ input:focus {
 }
 .videoContainer {
   display: inline-block;
-  width:33%;
+  width:25%;
   border-radius: 6px;
 }
 .videoMask {
