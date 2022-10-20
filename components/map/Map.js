@@ -20,7 +20,6 @@ const Map = ({ mapData }) => {
             let map = new mapboxgl.Map({
                 container: mapContainer.current,
                 projection: 'equirectangular',
-                // style: "mapbox://styles/marktblack/cl8xmd54n000014pp4ec2wuh1",
                 style: "mapbox://styles/marktblack/cl9ak59tt000715t2bb8k9ao2",
                 zoom:0.3,
                 // interactive: false,
@@ -32,9 +31,6 @@ const Map = ({ mapData }) => {
 
             map.on("load", function () {
                 map.setProjection('equirectangular');
-
-                // disable map zoom when using scroll
-                // map.scrollZoom.disable();
                 
                 map.resize();
 
@@ -80,15 +76,6 @@ const Map = ({ mapData }) => {
                 const description = e.features[0].properties.nodeId;
                 const ipAddress = e.features[0].properties.ipAddress.split(":")[0];
                  
-                // Ensure that if the map is zoomed out such that multiple
-                // copies of the feature are visible, the popup appears
-                // over the copy being pointed to.
-                // while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
-                // coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
-                // }
-                 
-                // Populate the popup and set its coordinates
-                // based on the feature found.
                 popup.setLngLat(coordinates).setHTML('<p className={styles.mapTxt}>' + ipAddress + '</p>').addClassName('map-popup').addTo(map);
             });
                  

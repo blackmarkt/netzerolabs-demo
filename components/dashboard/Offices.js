@@ -6,8 +6,6 @@ const Offices = ( props ) => {
         <div className={styles.officeGrid}>
             <h3 className={styles.officeTitle}>{props.title}</h3>
             <h3 className={styles.officeAddress}>{props.address}</h3>
-            {/* <div className={styles.subEmissionsTxt}>{props.emissions}</div> */}
-            {/* <div className={styles.subHeader}>tCO&#8322;</div> */}
             {props.emissions != null ? (<div className={styles.subEmissionsTxt}>{props.emissions}</div>) 
             : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
             {props.emissions != null && <div className={styles.subHeader}>tCO&#8322;</div>}
