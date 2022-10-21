@@ -49,7 +49,7 @@ const BlockchainEmissionsChart = ({ chartData }) => {
             // color: "#fff"
         },
         title: {
-            text: 'Daily tCO2 (per Tx)',
+            text: 'Daily tCO2e (per Tx)',
             floating:true,
             // y:20,
             style: {

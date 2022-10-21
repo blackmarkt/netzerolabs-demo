@@ -7,15 +7,6 @@ import { numberWithCommas } from '../../data/emissionsData'
 const ChainEmissions = ( props ) => {
 
     return (
-            // { props.rowClass == "tableOdd"
-            //     ? <tr className={styles.tableOdd}>
-            //     : (<tr>)
-            // }
-            // {props.id % 2 == 0 ? (
-            //     <tr className={styles.tableOdd}>
-            //   ) : (
-            //     <tr>
-            // )}
             <Link href={`/chain/${props.nav}`}>
             <tr className={styles.navChainLink}>
                 <td>
@@ -31,7 +22,7 @@ const ChainEmissions = ( props ) => {
                 }
                 </td>
                     {/* <div className={styles.emissionsTxt}>{props.emissions}</div> */}
-                    {/* <div className={styles.emissionsUnits}>tCO&#8322;</div> */}
+                    {/* <div className={styles.emissionsUnits}>tCO&#8322;e</div> */}
                 {props.netzero == true ? (
                     <td className={styles.tableColCert}>  
                     <img className={styles.net0Cert}
@@ -48,12 +39,12 @@ const ChainEmissions = ( props ) => {
                 <td className={styles.tableColEmission}>
                     {props.emissions != null ? (<div className={styles.emissionsTxt}>{props.emissions}</div>) 
                     : (<div className={[styles.emissionsTxt, styles.emissionsTxtMatte].join(" ")}>NA</div>)}
-                    {props.emissions != null && <div className={styles.emissionsUnits}>tCO&#8322;</div>}
+                    {props.emissions != null && <div className={styles.emissionsUnits}>tCO&#8322;e</div>}
                 </td>
                 <td className={styles.tableColEmission}>
                     {props.offsets != null ? (<div className={styles.emissionsTxt}>{props.offsets}</div>) 
                     : (<div className={[styles.emissionsTxt, styles.emissionsTxtMatte].join(" ")}>NA</div>)}
-                    {props.offsets != null && <div className={styles.emissionsUnits}>tCO&#8322;</div>}
+                    {props.offsets != null && <div className={styles.emissionsUnits}>tCO&#8322;e</div>}
                 </td>
                 <td className={styles.tableColEmission}>
                     {props.transactions_sum != null ? (<div className={[styles.emissionsTxtMatte, styles.emissionsTxtTx].join(" ")}>{props.transactions_sum}</div>) 
@@ -62,13 +53,13 @@ const ChainEmissions = ( props ) => {
                 <td className={styles.tableColEmission}>
                     {props.network_emissions != null ? (<div className={styles.emissionsTxtMatte}>{props.network_emissions}</div>) 
                     : (<div className={styles.emissionsTxtMatte}>NA</div>)}
-                    {props.network_emissions != null && <div className={styles.emissionsUnitsMatte}>tCO&#8322;</div>}
+                    {props.network_emissions != null && <div className={styles.emissionsUnitsMatte}>tCO&#8322;e</div>}
                 </td>
                 <td className={styles.tableColEmission}>
                     <div className={styles.emissionsTxtMatte}>{props.operation_emissions}</div>
                     {props.operation_emissions != null ? (<div className={styles.emissionsTxtMatte}>{props.operation_emissions}</div>) 
                     : (<div className={styles.emissionsTxtMatte}>NA</div>)}
-                    {props.operation_emissions != null && <div className={styles.emissionsUnitsMatte}>tCO&#8322;</div>}
+                    {props.operation_emissions != null && <div className={styles.emissionsUnitsMatte}>tCO&#8322;e</div>}
                 </td>
             </tr>
             </Link>

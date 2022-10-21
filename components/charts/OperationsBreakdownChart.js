@@ -73,7 +73,7 @@ const OperationsBreakdownChart = ({ chartData }) => {
             }
         },
         series: [{
-            name: 'tCO2 %',
+            name: 'tCO2e %',
             size: '100%',
             innerSize: '40%',
             data: chartData.chart_data.operations_data

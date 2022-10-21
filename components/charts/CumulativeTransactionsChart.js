@@ -17,7 +17,7 @@ const CumulativeTransactionsChart = ({ chartData }) => {
             // color: "#fff"
         },
         title: {
-            text: 'Total tCO2',
+            text: 'Total tCO2e',
             floating:true,
             y:40,
             style: {
@@ -102,7 +102,7 @@ const CumulativeTransactionsChart = ({ chartData }) => {
             pointFormat: '<b>{point.y:,.2f}</b>',
         },
         series: [{
-                name: 'YTD tCO2',
+                name: 'YTD tCO2e',
                 className: 'line-class1',
                 data: chartData.chart_data.chart_cum_data,
                 color: 'white',

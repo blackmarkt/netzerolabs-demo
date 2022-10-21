@@ -17,7 +17,7 @@ const TransactionsChart = ({ chartData }) => {
             // color: "#fff"
         },
         title: {
-            text: 'Daily tCO2',
+            text: 'Daily tCO2e',
             floating:true,
             y:40,
             style: {
@@ -103,7 +103,7 @@ const TransactionsChart = ({ chartData }) => {
             pointFormat: '<b>{point.y:,.2f}</b>',
         },
         series: [{
-                name: 'Daily tCO2',
+                name: 'Daily tCO2e',
                 className: 'line-class1',
                 data: chartData.chart_data.chart_daily_data,
                 color: 'white',

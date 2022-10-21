@@ -17,6 +17,7 @@ import { numberWithCommas, calculateSum,
 import mapData from './eth_node_tracker_geojson_100722.geojson' assert {type: 'json'}
 import btcNodeData from './bitcoin_node_tracker_geojson_101822.geojson' assert {type: 'json'}
 import solNodeData from './solana_node_tracker_geojson_101822.geojson' assert {type: 'json'}
+import bitcoinTxData from './transactions/bitcoin_tx.json' assert {type: 'json'}
 import cardanoTxData from './transactions/cardano_tx.json' assert {type: 'json'}
 import polkadotTxData from './transactions/polkadot_tx.json' assert {type: 'json'}
 import binanceTxData from './transactions/binance_tx.json' assert {type: 'json'}
@@ -34,9 +35,9 @@ const blockchainData = [
     logo: '/blockchains/bitcoin_50x50.png',
     website: 'https://bitcoin.org/en/',
     chart_data: {
-        chart_daily_data: btcUnixTCO2Data,
-        chart_cum_data: btcUnixCumTCO2Data,
-        chart_tx_daily: bitcoinUnixData,
+        chart_daily_data: calculateTxTCO2Chart(bitcoinTxData, btcTxTCO2Factor, 'daily'),
+        chart_cum_data: calculateTxTCO2Chart(bitcoinTxData, btcTxTCO2Factor, 'cumulative'),
+        chart_tx_daily: bitcoinTxData,
         chart_color: '#f7b360',
         operations_data: [
             { name: 'Office', y: 1},
@@ -50,10 +51,10 @@ const blockchainData = [
                            {name: 'Misc', data: operationsMiscData},
         ] 
     },
-    emissions: numberWithCommas(calculateTxTCO2(btcTxData, 'cum')),
+    emissions: numberWithCommas(calculateSum(getTCO2ArrFromChartArr(bitcoinTxData, btcTxTCO2Factor))),
     emissions_stats: {
-        median: numberWithCommas(calculateMedian(calculateTxTCO2(btcTxData, 'daily'))),
-        sum: numberWithCommas(calculateSum(calculateTxTCO2(btcTxData, 'daily')))
+        median: numberWithCommas(calculateMedian(getTCO2ArrFromChartArr(bitcoinTxData, btcTxTCO2Factor))),
+        sum: numberWithCommas(calculateSum(getTCO2ArrFromChartArr(bitcoinTxData, btcTxTCO2Factor)))
     },
     emissions_operations: {
         office:null,
@@ -62,12 +63,12 @@ const blockchainData = [
         misc:null,
     },
     offsets:null,
-    transactions_sum: numberWithCommas(calculateSum(btcTxData)),
+    transactions_sum: numberWithCommas(calculateSum(getArrFromChartArr(bitcoinTxData))),
     transaction_stats: {
-        median: numberWithCommas(calculateMedian(btcTxData, 'daily')),
-        sum: numberWithCommas(calculateSum(btcTxData, 'daily'))
+        median: numberWithCommas(calculateMedian(getArrFromChartArr(bitcoinTxData))),
+        sum: numberWithCommas(calculateSum(getArrFromChartArr(bitcoinTxData)))
     },
-    network_emissions: numberWithCommas(calculateTxTCO2(btcTxData, 'cum')),
+    network_emissions: numberWithCommas(calculateSum(getTCO2ArrFromChartArr(bitcoinTxData, btcTxTCO2Factor))),
     operation_emissions:null,
     color: '#F7931A',
     id: 0,

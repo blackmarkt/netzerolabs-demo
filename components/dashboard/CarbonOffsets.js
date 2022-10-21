@@ -19,10 +19,10 @@ const CarbonOffsets = ({ offsetData }) => {
                 </ul>
                 <ul className={styles.offsetsBar}>
                     <l1>
-                        {offsetData.offsets != null ? (<div className={styles.offsetsStatsTxt}>{offsetData.offsets}<div className={styles.emissionsUnits}>tCO&#8322;</div></div>) 
+                        {offsetData.offsets != null ? (<div className={styles.offsetsStatsTxt}>{offsetData.offsets}<div className={styles.emissionsUnits}>tCO&#8322;e</div></div>) 
                         : (<div className={[styles.subOpEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                        {/* {offsetData.offsets != null && <div className={styles.emissionsUnits}>tCO&#8322;</div>} */}
-                        <div className={styles.offsetsSubTxt}>Total tCO&#8322;</div>
+                        {/* {offsetData.offsets != null && <div className={styles.emissionsUnits}>tCO&#8322;e</div>} */}
+                        <div className={styles.offsetsSubTxt}>Total tCO&#8322;e</div>
                     </l1>
                 </ul>
                 <ul className={styles.offsetsBar}>

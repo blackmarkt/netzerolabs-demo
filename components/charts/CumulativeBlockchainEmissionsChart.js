@@ -60,7 +60,7 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
             // color: "#fff"
         },
         title: {
-            text: 'Total tCO2 (per Tx)',
+            text: 'Total tCO2e (per Tx)',
             floating:true,
             y:40,
             style: {

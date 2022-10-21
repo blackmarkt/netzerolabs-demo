@@ -97,10 +97,10 @@ const CumulativeOffsetChart = ({ offsetData }) => {
             }
         },
         tooltip: {
-            pointFormat: '<b>{point.y:,.2f} (TCO2)</b>',
+            pointFormat: '<b>{point.y:,.2f} (TCO2e)</b>',
         },
         series: [{
-                name: 'YTD tCO2',
+                name: 'YTD tCO2e',
                 className: 'line-class1',
                 data: offsetData.netzero_offsets_chart,
                 color: 'white',
