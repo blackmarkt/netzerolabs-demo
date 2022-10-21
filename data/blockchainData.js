@@ -1,19 +1,33 @@
 import Highcharts from 'highcharts'
-import { numberWithCommas, dateUnixLabels, txData, calculateSum, cumEmissionsData,
-    ethUnixTCO2Data, ethUnixCUMTCO2Data, ethTCO02Data, ethTCO02CumData, btcUnixTCO2Data,
-    celoCumEmissionData, celoTxDailyData, bitcoinUnixData, btcTxData, calculateTxTCO2, 
-    combineUnixDataArr, combineUnixFauxDataArr, dateUnixCelo, emissionsData, avalancheUnixTxChart,
+import { numberWithCommas, calculateSum, 
+    // dateUnixLabels, txData,  cumEmissionsData,
+    // ethUnixTCO2Data, ethUnixCUMTCO2Data, ethTCO02Data, ethTCO02CumData, 
+    // celoCumEmissionData, celoTxDailyData, 
+    btcUnixTCO2Data, bitcoinUnixData, btcTxData, btcUnixCumTCO2Data, calculateTxTCO2, 
+    // combineUnixDataArr, combineUnixFauxDataArr, dateUnixCelo, emissionsData, avalancheUnixTxChart,
     operationsOfficeData, operationsTransportData, operationsSuppliesData, operationsMiscData,
-    celoEmissionsDailyData, calculateMedian, ethereumOfficesData, calculateTxTCO2Chart,
-    avalancheTxData, avalancheEmissionsData, avalancheTCO2Data, avalancheCumTCO2Data,
-    polygonUnixTxData, polygonUnixTCO2Data, polygonUnixTCO2SumData, polygonTxData, polygonTC02Data,
-    binTxData, binTCO2Data, binUnixTxData, binUnixTCO2Data, binUnixCumTCO2Data, createUNIXOffsetChartData,
-    cardTCO2Data, cardTxData, cardUnixCumTCO2Data, cardUnixTxData, cardUnixTCO2Data, btcUnixCumTCO2Data,
+    celoEmissionsDailyData, calculateMedian, ethereumOfficesData, 
+    createUNIXOffsetChartData, combineUnixFauxDataArr, dateUnixCelo,
+    // avalancheTxData, avalancheEmissionsData, avalancheTCO2Data, avalancheCumTCO2Data,
+    // polygonUnixTxData, polygonUnixTCO2Data, polygonUnixTCO2SumData, polygonTxData, polygonTC02Data,
+    // binTxData, binTCO2Data, binUnixTxData, binUnixTCO2Data, binUnixCumTCO2Data, createUNIXOffsetChartData,
+    // cardTCO2Data, cardTxData, cardUnixCumTCO2Data, cardUnixTxData, cardUnixTCO2Data, 
     solanaOfficeData, polygonOfficeData, celoOfficeData, alavancheOfficeData, nearOfficeData,
     polkadotOfficeData, binanceOfficeData, cardanoOfficeData, celoNumOffsets, getTotalOffsetsMonthly} from './emissionsData'
 import mapData from './eth_node_tracker_geojson_100722.geojson' assert {type: 'json'}
 import btcNodeData from './bitcoin_node_tracker_geojson_101822.geojson' assert {type: 'json'}
 import solNodeData from './solana_node_tracker_geojson_101822.geojson' assert {type: 'json'}
+import cardanoTxData from './transactions/cardano_tx.json' assert {type: 'json'}
+import polkadotTxData from './transactions/polkadot_tx.json' assert {type: 'json'}
+import binanceTxData from './transactions/binance_tx.json' assert {type: 'json'}
+import polygonTxData from './transactions/polygon_tx.json' assert {type: 'json'}
+import avalancheTxData from './transactions/avalanche_tx.json' assert {type: 'json'}
+import celoTxData from './transactions/celo_tx.json' assert {type: 'json'}
+import ethereumTxData from './transactions/ethereum_tx.json' assert {type: 'json'}
+import { calculateTxTCO2Chart, calculateMergeTxTCO2Chart, getArrFromChartArr, getTCO2ArrFromChartArr,
+        getMergeTCO2ArrFromChartArr } from './utils/utilFunctions.js'
+import { btcTxTCO2Factor, ethTxTCO2PreFactor, ethTxTCO2PostFactor, celoTxTCO2Factor, solTxTCO2Factor, 
+        avaxTxTCO2Factor, polkTxTCO2Factor, cardTxTCO2Factor } from './TxTCO2ConversionFactors.js'
 
 const blockchainData = [
     {chain: 'Bitcoin', 
@@ -36,8 +50,6 @@ const blockchainData = [
                            {name: 'Misc', data: operationsMiscData},
         ] 
     },
-    // chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
-    // chart_cum_data: bitcoinUnixData,
     emissions: numberWithCommas(calculateTxTCO2(btcTxData, 'cum')),
     emissions_stats: {
         median: numberWithCommas(calculateMedian(calculateTxTCO2(btcTxData, 'daily'))),
@@ -79,9 +91,9 @@ const blockchainData = [
     logo: '/blockchains/ethereum_45x45.png',
     website: 'https://ethereum.org/en/foundation/',
     chart_data: {
-        chart_daily_data:ethUnixTCO2Data,
-        chart_cum_data: ethUnixCUMTCO2Data,
-        chart_tx_daily: combineUnixDataArr(dateUnixLabels, txData),
+        chart_daily_data: calculateMergeTxTCO2Chart(ethereumTxData, ethTxTCO2PreFactor, ethTxTCO2PostFactor, 'daily'),
+        chart_cum_data: calculateMergeTxTCO2Chart(ethereumTxData, ethTxTCO2PreFactor, ethTxTCO2PostFactor, 'cumulative'),
+        chart_tx_daily: ethereumTxData,
         chart_color: '#6b6e88',
         operations_data: [
             { name: 'Office', y: 1},
@@ -95,10 +107,10 @@ const blockchainData = [
                            {name: 'Misc', data: operationsMiscData},
         ]  
     },
-    emissions: numberWithCommas(cumEmissionsData.slice(-1)[0]),
+    emissions: numberWithCommas(calculateSum(getMergeTCO2ArrFromChartArr(ethereumTxData, ethTxTCO2PreFactor, ethTxTCO2PostFactor))),
     emissions_stats: {
-        median: numberWithCommas(calculateMedian(calculateTxTCO2(emissionsData, 'daily'))),
-        sum: numberWithCommas(calculateSum(calculateTxTCO2(emissionsData, 'daily')))
+        median: numberWithCommas(calculateMedian(getMergeTCO2ArrFromChartArr(ethereumTxData, ethTxTCO2PreFactor, ethTxTCO2PostFactor))),
+        sum: numberWithCommas(calculateSum(getMergeTCO2ArrFromChartArr(ethereumTxData, ethTxTCO2PreFactor, ethTxTCO2PostFactor)))
     },
     emissions_operations: {
         office:null,
@@ -107,12 +119,12 @@ const blockchainData = [
         misc:null,
     },
     offsets:null,
-    transactions_sum: numberWithCommas(calculateSum(txData)),
+    transactions_sum: numberWithCommas(calculateSum(getArrFromChartArr(ethereumTxData))),
     transaction_stats: {
-        median: numberWithCommas(calculateMedian(txData, 'daily')),
-        sum: numberWithCommas(calculateSum(txData, 'daily'))
+        median: numberWithCommas(calculateMedian(getArrFromChartArr(ethereumTxData))),
+        sum: numberWithCommas(calculateSum(getArrFromChartArr(ethereumTxData)))
     },
-    network_emissions: numberWithCommas(cumEmissionsData.slice(-1)[0]),
+    network_emissions: numberWithCommas(calculateSum(getMergeTCO2ArrFromChartArr(ethereumTxData, ethTxTCO2PreFactor, ethTxTCO2PostFactor))),
     operation_emissions:null,
     color: '#757B9D',
     id: 0,
@@ -136,9 +148,9 @@ const blockchainData = [
     logo: '/blockchains/celo_40x40.png',
     website: 'https://celo.org/',
     chart_data: {
-        chart_daily_data: combineUnixDataArr(dateUnixCelo, celoEmissionsDailyData),
-        chart_cum_data: combineUnixDataArr(dateUnixCelo, celoCumEmissionData),
-        chart_tx_daily: combineUnixDataArr(celoEmissionsDailyData, txData),
+        chart_daily_data: calculateTxTCO2Chart(celoTxData, celoTxTCO2Factor, 'daily'),
+        chart_cum_data: calculateTxTCO2Chart(celoTxData, celoTxTCO2Factor, 'cumulative'),
+        chart_tx_daily: celoTxData,
         chart_color: '#FBCB5C',
         operations_data: [
             { name: 'Office', y: 1},
@@ -152,10 +164,10 @@ const blockchainData = [
                            {name: 'Misc', data: operationsMiscData},
         ]  
     },
-    emissions: numberWithCommas(celoCumEmissionData.slice(-1)[0]),
+    emissions: numberWithCommas(calculateSum(getTCO2ArrFromChartArr(celoTxData, celoTxTCO2Factor))),
     emissions_stats: {
-        median: numberWithCommas(calculateMedian(calculateTxTCO2(celoEmissionsDailyData, 'daily'))),
-        sum: numberWithCommas(calculateSum(calculateTxTCO2(celoEmissionsDailyData, 'daily')))
+        median: numberWithCommas(calculateMedian(getTCO2ArrFromChartArr(celoTxData, celoTxTCO2Factor))),
+        sum: numberWithCommas(calculateSum(getTCO2ArrFromChartArr(celoTxData, celoTxTCO2Factor)))
     },
     emissions_operations: {
         office:null,
@@ -163,13 +175,13 @@ const blockchainData = [
         supplies:null,
         misc:null,
     },
-    offsets: numberWithCommas(getTotalOffsetsMonthly(celoNumOffsets)),
-    transactions_sum: numberWithCommas(calculateSum(celoTxDailyData)),
+    offsets:numberWithCommas(getTotalOffsetsMonthly(celoNumOffsets)),
+    transactions_sum: numberWithCommas(calculateSum(getArrFromChartArr(celoTxData))),
     transaction_stats: {
-        median: numberWithCommas(calculateMedian(celoTxDailyData, 'daily')),
-        sum: numberWithCommas(calculateSum(celoTxDailyData, 'daily'))
+        median: numberWithCommas(calculateMedian(getArrFromChartArr(celoTxData))),
+        sum: numberWithCommas(calculateSum(getArrFromChartArr(celoTxData)))
     },
-    network_emissions: numberWithCommas(celoCumEmissionData.slice(-1)[0]),
+    network_emissions: numberWithCommas(calculateSum(getTCO2ArrFromChartArr(celoTxData, celoTxTCO2Factor))),
     operation_emissions:null,
     color: '#FACA5B',
     id: 1,
@@ -251,9 +263,9 @@ const blockchainData = [
     logo: '/blockchains/avalanche_40x40.png',
     website: 'https://www.avax.network/',
     chart_data: {
-        chart_daily_data: avalancheEmissionsData,
-        chart_cum_data: avalancheCumTCO2Data,
-        chart_tx_daily: avalancheUnixTxChart,
+        chart_daily_data: calculateTxTCO2Chart(avalancheTxData, avaxTxTCO2Factor, 'daily'),
+        chart_cum_data: calculateTxTCO2Chart(avalancheTxData, avaxTxTCO2Factor, 'cumulative'),
+        chart_tx_daily: avalancheTxData,
         chart_color: '#FB2838',
         operations_data: [
             { name: 'Office', y: 1},
@@ -267,24 +279,24 @@ const blockchainData = [
                            {name: 'Misc', data: operationsMiscData},
         ]  
     },
+    emissions: numberWithCommas(calculateSum(getTCO2ArrFromChartArr(avalancheTxData, avaxTxTCO2Factor))),
+    emissions_stats: {
+        median: numberWithCommas(calculateMedian(getTCO2ArrFromChartArr(avalancheTxData, avaxTxTCO2Factor))),
+        sum: numberWithCommas(calculateSum(getTCO2ArrFromChartArr(avalancheTxData, avaxTxTCO2Factor)))
+    },
     emissions_operations: {
         office:null,
         transportation:null,
         supplies:null,
         misc:null,
     },
-    emissions: numberWithCommas(calculateSum(avalancheTCO2Data)),
-    emissions_stats: {
-        median: numberWithCommas(calculateMedian(avalancheTCO2Data)),
-        sum: numberWithCommas(calculateSum(avalancheTCO2Data))
-    },
     offsets:null,
-    transactions_sum: numberWithCommas(calculateSum(avalancheTxData)),
+    transactions_sum: numberWithCommas(calculateSum(getArrFromChartArr(avalancheTxData))),
     transaction_stats: {
-        median: numberWithCommas(calculateMedian(avalancheTxData)),
-        sum: numberWithCommas(calculateSum(avalancheTxData))
+        median: numberWithCommas(calculateMedian(getArrFromChartArr(avalancheTxData))),
+        sum: numberWithCommas(calculateSum(getArrFromChartArr(avalancheTxData)))
     },
-    network_emissions:numberWithCommas(calculateSum(avalancheTCO2Data)),
+    network_emissions: numberWithCommas(calculateSum(getTCO2ArrFromChartArr(avalancheTxData, avaxTxTCO2Factor))),
     operation_emissions:null,
     color:'#FB2838',
     id: 3,
@@ -308,9 +320,9 @@ const blockchainData = [
     logo: '/blockchains/polygon_40x40.png',
     website: 'https://polygon.technology/',
     chart_data: {
-        chart_daily_data: polygonUnixTCO2Data,
-        chart_cum_data: polygonUnixTCO2SumData,
-        chart_tx_daily: polygonUnixTxData,
+        chart_daily_data: calculateMergeTxTCO2Chart(polygonTxData, ethTxTCO2PreFactor, ethTxTCO2PostFactor, 'daily'),
+        chart_cum_data: calculateMergeTxTCO2Chart(polygonTxData, ethTxTCO2PreFactor, ethTxTCO2PostFactor, 'cumulative'),
+        chart_tx_daily: polygonTxData,
         chart_color: '#8B42ED',
         operations_data: [
             { name: 'Office', y: 1},
@@ -324,10 +336,10 @@ const blockchainData = [
                            {name: 'Misc', data: operationsMiscData},
         ]  
     },
-    emissions: numberWithCommas(calculateSum(polygonTC02Data)),
+    emissions: numberWithCommas(calculateSum(getMergeTCO2ArrFromChartArr(polygonTxData, ethTxTCO2PreFactor, ethTxTCO2PostFactor))),
     emissions_stats: {
-        median: numberWithCommas(calculateMedian(polygonTC02Data)),
-        sum: numberWithCommas(calculateSum(polygonTC02Data))
+        median: numberWithCommas(calculateMedian(getMergeTCO2ArrFromChartArr(polygonTxData, ethTxTCO2PreFactor, ethTxTCO2PostFactor))),
+        sum: numberWithCommas(calculateSum(getMergeTCO2ArrFromChartArr(polygonTxData, ethTxTCO2PreFactor, ethTxTCO2PostFactor)))
     },
     emissions_operations: {
         office:null,
@@ -336,12 +348,12 @@ const blockchainData = [
         misc:null,
     },
     offsets:null,
-    transactions_sum:numberWithCommas(calculateSum(polygonTxData)),
+    transactions_sum: numberWithCommas(calculateSum(getArrFromChartArr(polygonTxData))),
     transaction_stats: {
-        median: numberWithCommas(calculateMedian(polygonTxData)),
-        sum: numberWithCommas(calculateSum(polygonTxData))
+        median: numberWithCommas(calculateMedian(getArrFromChartArr(polygonTxData))),
+        sum: numberWithCommas(calculateSum(getArrFromChartArr(polygonTxData)))
     },
-    network_emissions: numberWithCommas(calculateSum(polygonTC02Data)),
+    network_emissions: numberWithCommas(calculateSum(getMergeTCO2ArrFromChartArr(polygonTxData, ethTxTCO2PreFactor, ethTxTCO2PostFactor))),
     operation_emissions:null,
     color:'#8B43EE',
     id: 4,
@@ -422,124 +434,10 @@ const blockchainData = [
     logo: '/blockchains/binance_40x40.png',
     website: 'https://www.binance.com/en',
     chart_data: {
-        chart_daily_data: binUnixTCO2Data,
-        chart_cum_data: binUnixCumTCO2Data,
-        chart_tx_daily: binUnixTxData,
-        chart_color: '#FFD700',
-        operations_data: [
-            { name: 'Office', y: 1},
-            { name: 'Transportation', y: 1},
-            { name: 'Supplies', y: 1},
-            { name: 'Misc', y: 1},
-        ],
-        operations_break: [{name: 'Office', data: operationsOfficeData},
-                           {name: 'Transport', data: operationsTransportData},
-                           {name: 'Supplies', data: operationsSuppliesData},
-                           {name: 'Misc', data: operationsMiscData},
-        ]  
-    },
-    emissions: numberWithCommas(calculateSum(binTCO2Data)),
-    emissions_stats: {
-        median: numberWithCommas(calculateMedian(binTCO2Data)),
-        sum: numberWithCommas(calculateSum(binTCO2Data))
-    },
-    emissions_operations: {
-        office:null,
-        transportation:null,
-        supplies:null,
-        misc:null,
-    },
-    offsets:null,
-    transactions_sum: numberWithCommas(calculateSum(binTxData)),
-    transaction_stats: {
-        median: numberWithCommas(calculateMedian(binTxData)),
-        sum: numberWithCommas(calculateSum(binTxData))
-    },
-    network_emissions: numberWithCommas(calculateSum(binTCO2Data)),
-    operation_emissions:null,
-    color:'#000000',
-    id: 6,
-    row: 'tableEven',
-    nav: 'binance',
-    netzero: false,
-    netzero_cert: {
-        netzero_co: null,
-        netzero_report_url: null,
-        netzero_offsets_chart:null,
-        chart_color: '#FFD700',
-        web3: false,
-    },
-    offices: binanceOfficeData,
-    node_map_data: {
-        map_color: '#FFFFFF',
-        map_data: {},
-    }
-    },
-    {chain: 'Cardano', 
-    logo: '/blockchains/cardano_45x45.png',
-    website: 'https://cardano.org/',
-    chart_data: {
-        chart_daily_data: cardUnixTCO2Data,
-        chart_cum_data: cardUnixCumTCO2Data,
-        chart_tx_daily: cardUnixTxData,
-        chart_color: '#3263C8',
-        operations_data: [
-            { name: 'Office', y: 1},
-            { name: 'Transportation', y: 1},
-            { name: 'Supplies', y: 1},
-            { name: 'Misc', y: 1},
-        ],
-        operations_break: [{name: 'Office', data: operationsOfficeData},
-                           {name: 'Transport', data: operationsTransportData},
-                           {name: 'Supplies', data: operationsSuppliesData},
-                           {name: 'Misc', data: operationsMiscData},
-        ]  
-    },
-    emissions: numberWithCommas(calculateSum(cardTCO2Data)),
-    emissions_stats: {
-        median: numberWithCommas(calculateMedian(cardTCO2Data)),
-        sum: numberWithCommas(calculateSum(cardTCO2Data))
-    },
-    emissions_operations: {
-        office:null,
-        transportation:null,
-        supplies:null,
-        misc:null,
-    },
-    offsets:null,
-    transactions_sum: numberWithCommas(calculateSum(cardTxData)),
-    transaction_stats: {
-        median: numberWithCommas(calculateMedian(cardTxData)),
-        sum: numberWithCommas(calculateSum(cardTxData))
-    },
-    network_emissions: numberWithCommas(calculateSum(cardTCO2Data)),
-    operation_emissions:null,
-    color:'#3263C8',
-    id: 7,
-    row: 'tableOdd',
-    nav: 'cardano',
-    netzero: false,
-    netzero_cert: {
-        netzero_co: null,
-        netzero_report_url: null,
-        netzero_offsets_chart:null,
-        chart_color: '#3263C8',
-        web3: false,
-    },
-    offices: cardanoOfficeData,
-    node_map_data: {
-        map_color: '#FFFFFF',
-        map_data: {},
-    }
-    },
-    {chain: 'Polkadot', 
-    logo: '/blockchains/polkadot_40x40.png',
-    website: 'https://polkadot.network/',
-    chart_data: {
         chart_daily_data: combineUnixFauxDataArr(dateUnixCelo),
         chart_cum_data: combineUnixFauxDataArr(dateUnixCelo),
-        chart_tx_daily: combineUnixFauxDataArr(dateUnixCelo),
-        chart_color: '#f682ba',
+        chart_tx_daily: binanceTxData,
+        chart_color: '#FFD700',
         operations_data: [
             { name: 'Office', y: 1},
             { name: 'Transportation', y: 1},
@@ -564,12 +462,126 @@ const blockchainData = [
         misc:null,
     },
     offsets:null,
-    transactions_sum:null,
+    transactions_sum: numberWithCommas(calculateSum(getArrFromChartArr(binanceTxData))),
     transaction_stats: {
-        median: null,
-        sum: null
+        median: numberWithCommas(calculateMedian(getArrFromChartArr(binanceTxData))),
+        sum: numberWithCommas(calculateSum(getArrFromChartArr(binanceTxData)))
     },
-    network_emissions:null,
+    network_emissions: null,
+    operation_emissions:null,
+    color:'#000000',
+    id: 6,
+    row: 'tableEven',
+    nav: 'binance',
+    netzero: false,
+    netzero_cert: {
+        netzero_co: null,
+        netzero_report_url: null,
+        netzero_offsets_chart:null,
+        chart_color: '#FFD700',
+        web3: false,
+    },
+    offices: binanceOfficeData,
+    node_map_data: {
+        map_color: '#FFFFFF',
+        map_data: {},
+    }
+    },
+    {chain: 'Cardano', 
+    logo: '/blockchains/cardano_45x45.png',
+    website: 'https://cardano.org/',
+    chart_data: {
+        chart_daily_data: calculateTxTCO2Chart(cardanoTxData, cardTxTCO2Factor, 'daily'),
+        chart_cum_data: calculateTxTCO2Chart(cardanoTxData, cardTxTCO2Factor, 'cumulative'),
+        chart_tx_daily: cardanoTxData,
+        chart_color: '#3263C8',
+        operations_data: [
+            { name: 'Office', y: 1},
+            { name: 'Transportation', y: 1},
+            { name: 'Supplies', y: 1},
+            { name: 'Misc', y: 1},
+        ],
+        operations_break: [{name: 'Office', data: operationsOfficeData},
+                           {name: 'Transport', data: operationsTransportData},
+                           {name: 'Supplies', data: operationsSuppliesData},
+                           {name: 'Misc', data: operationsMiscData},
+        ]  
+    },
+    emissions: numberWithCommas(calculateSum(getTCO2ArrFromChartArr(cardanoTxData, cardTxTCO2Factor))),
+    emissions_stats: {
+        median: numberWithCommas(calculateMedian(getTCO2ArrFromChartArr(cardanoTxData, cardTxTCO2Factor))),
+        sum: numberWithCommas(calculateSum(getTCO2ArrFromChartArr(cardanoTxData, cardTxTCO2Factor)))
+    },
+    emissions_operations: {
+        office:null,
+        transportation:null,
+        supplies:null,
+        misc:null,
+    },
+    offsets:null,
+    transactions_sum: numberWithCommas(calculateSum(getArrFromChartArr(cardanoTxData))),
+    transaction_stats: {
+        median: numberWithCommas(calculateMedian(getArrFromChartArr(cardanoTxData))),
+        sum: numberWithCommas(calculateSum(getArrFromChartArr(cardanoTxData)))
+    },
+    network_emissions: numberWithCommas(calculateSum(getTCO2ArrFromChartArr(cardanoTxData, cardTxTCO2Factor))),
+    operation_emissions:null,
+    color:'#3263C8',
+    id: 7,
+    row: 'tableOdd',
+    nav: 'cardano',
+    netzero: false,
+    netzero_cert: {
+        netzero_co: null,
+        netzero_report_url: null,
+        netzero_offsets_chart:null,
+        chart_color: '#3263C8',
+        web3: false,
+    },
+    offices: cardanoOfficeData,
+    node_map_data: {
+        map_color: '#FFFFFF',
+        map_data: {},
+    }
+    },
+    {chain: 'Polkadot', 
+    logo: '/blockchains/polkadot_40x40.png',
+    website: 'https://polkadot.network/',
+    chart_data: {
+        chart_daily_data: calculateTxTCO2Chart(polkadotTxData, polkTxTCO2Factor, 'daily'),
+        chart_cum_data: calculateTxTCO2Chart(polkadotTxData, polkTxTCO2Factor, 'cumulative'),
+        chart_tx_daily: polkadotTxData,
+        chart_color: '#f682ba',
+        operations_data: [
+            { name: 'Office', y: 1},
+            { name: 'Transportation', y: 1},
+            { name: 'Supplies', y: 1},
+            { name: 'Misc', y: 1},
+        ],
+        operations_break: [{name: 'Office', data: operationsOfficeData},
+                           {name: 'Transport', data: operationsTransportData},
+                           {name: 'Supplies', data: operationsSuppliesData},
+                           {name: 'Misc', data: operationsMiscData},
+        ]  
+    },
+    emissions: numberWithCommas(calculateSum(getTCO2ArrFromChartArr(polkadotTxData, polkTxTCO2Factor))),
+    emissions_stats: {
+        median: numberWithCommas(calculateMedian(getTCO2ArrFromChartArr(polkadotTxData, polkTxTCO2Factor))),
+        sum: numberWithCommas(calculateSum(getTCO2ArrFromChartArr(polkadotTxData, polkTxTCO2Factor)))
+    },
+    emissions_operations: {
+        office:null,
+        transportation:null,
+        supplies:null,
+        misc:null,
+    },
+    offsets:null,
+    transactions_sum: numberWithCommas(calculateSum(getArrFromChartArr(polkadotTxData))),
+    transaction_stats: {
+        median: numberWithCommas(calculateMedian(getArrFromChartArr(polkadotTxData))),
+        sum: numberWithCommas(calculateSum(getArrFromChartArr(polkadotTxData)))
+    },
+    network_emissions: numberWithCommas(calculateSum(getTCO2ArrFromChartArr(polkadotTxData, polkTxTCO2Factor))),
     operation_emissions:null,
     color:'#f682ba',
     id: 8,

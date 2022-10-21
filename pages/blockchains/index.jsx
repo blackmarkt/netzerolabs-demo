@@ -3,7 +3,7 @@ import Emissions from '../../components/blockchains/Emissions'
 import BlockchainEmissionsChart from '../../components/charts/BlockchainEmissionsChart'
 import CumulativeBlockchainEmissionsChart from '../../components/charts/CumulativeBlockchainEmissionsChart'
 import CumulativeBlockchainOffsetChart from '../../components/charts/CumulativeBlockchainOffsetChart'
-import styles from '../../styles/blockchains.module.css'
+import styles from '../../styles/Blockchains.module.css'
 import { getBlockchainData } from '../../data/blockchainData'
 
 const Blockchains = () => {
@@ -11,7 +11,14 @@ const Blockchains = () => {
 
     return (
         <div className={styles.dashboardContainer}>
-            <h2 className={styles.dashboardMainHeader}>Blockchain (L1) Emissions</h2>
+            <div className={styles.dashboardLeftHeader}>
+                <h2 className={styles.dashboardMainHeader}>Blockchain (L1) Emissions</h2>
+            </div>
+            <div className={styles.dashboardRightHeader}>
+                <a href="https://www.notion.so/blackmarkt/Carbon-Accounting-Methodology-b2e03be009a945f680592ec7563107d6" target="_blank" rel="noopener noreferrer">
+                    <p style={{"margin":"0 0 1rem", "padding": "0rem"}}>Methology</p>
+                </a>
+            </div>
             <div className={styles.dashboardSubContainer}>
                 <div className={styles.chainContainer}>
                     <table className={styles.chainTable}>
