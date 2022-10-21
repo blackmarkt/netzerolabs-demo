@@ -83,6 +83,9 @@ const blockchainData = [
         web3: false,
     },
     offices: [],
+    node_data: {
+        total_nodes: numberWithCommas(btcNodeData['features'].length),
+    },
     node_map_data: {
         map_color: '#f7b360',
         map_data: btcNodeData,
@@ -140,6 +143,9 @@ const blockchainData = [
         web3: false,
     },
     offices:ethereumOfficesData,
+    node_data: {
+        total_nodes: numberWithCommas(mapData['features'].length),
+    },
     node_map_data: {
         map_color: '#6b6e88',
         map_data: mapData,
