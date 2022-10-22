@@ -51,6 +51,11 @@ const ChainEmissions = ( props ) => {
                     : (<div className={[styles.emissionsTxtMatte, styles.emissionsTxtTx].join(" ")}>NA</div>)}
                 </td>
                 <td className={styles.tableColEmission}>
+                    {props.node_data.total_nodes != null ? (<div className={styles.emissionsTxtMatte}>{props.node_data.total_nodes}</div>) 
+                    : (<div className={styles.emissionsTxtMatte}>NA</div>)}
+                    {/* {props.node_data.total_nodes != null && <div className={styles.emissionsUnitsMatte}>tCO&#8322;e</div>} */}
+                </td>
+                <td className={styles.tableColEmission}>
                     {props.network_emissions != null ? (<div className={styles.emissionsTxtMatte}>{props.network_emissions}</div>) 
                     : (<div className={styles.emissionsTxtMatte}>NA</div>)}
                     {props.network_emissions != null && <div className={styles.emissionsUnitsMatte}>tCO&#8322;e</div>}

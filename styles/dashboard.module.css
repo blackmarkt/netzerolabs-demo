@@ -67,7 +67,7 @@
     width:28%;
     text-align: center;
     vertical-align: top;
-    padding:2rem 0 0;
+    padding:1rem 0 0;
 }
 .subStatsContainer {
     width:23%;
@@ -103,7 +103,7 @@
 .subStatsBar {
     padding: 0.7rem 0;
 }
-.topDashboard, .subEmissionsTxt, .subOpEmissionsTxt {
+.topDashboard, .subEmissionsTxt, .subOpEmissionsTxt, .subEmissionsHeader {
     display: inline-block;
     font-size:2rem;
     padding:0.8rem 0 0rem;
@@ -115,6 +115,9 @@
 .subOpEmissionsTxt {
     padding:0.6rem 0 0rem;
     font-size: 1.5rem;
+}
+.subEmissionsHeader {
+    padding: 0 0 1rem
 }
 .subDashboard {
     padding: 0rem 0 1rem

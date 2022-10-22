@@ -25,6 +25,12 @@ import polygonTxData from './transactions/polygon_tx.json' assert {type: 'json'}
 import avalancheTxData from './transactions/avalanche_tx.json' assert {type: 'json'}
 import celoTxData from './transactions/celo_tx.json' assert {type: 'json'}
 import ethereumTxData from './transactions/ethereum_tx.json' assert {type: 'json'}
+import celoValidators from './node_validators/celo_validators.json' assert {type: 'json'}
+import avaxValidators from './node_validators/avax_validators.json' assert {type: 'json'}
+import binanceValidators from './node_validators/binance_validators.json' assert {type: 'json'}
+import polkadotValidators from './node_validators/polkadot_validators.json' assert {type: 'json'}
+import polygonValidators from './node_validators/polygon_validators.json' assert {type: 'json'}
+import polygonNodeData from './polygon_node_tracker_geojson_102122.geojson' assert {type: 'json'}
 import { calculateTxTCO2Chart, calculateMergeTxTCO2Chart, getArrFromChartArr, getTCO2ArrFromChartArr,
         getMergeTCO2ArrFromChartArr } from './utils/utilFunctions.js'
 import { btcTxTCO2Factor, ethTxTCO2PreFactor, ethTxTCO2PostFactor, celoTxTCO2Factor, solTxTCO2Factor, 
@@ -204,6 +210,9 @@ const blockchainData = [
         web3: false,
     },
     offices: celoOfficeData,
+    node_data: {
+        total_nodes: Object.keys(celoValidators['validators']).length,
+    },
     node_map_data: {
         map_color: '#FBCB5C',
         map_data: {},
@@ -261,6 +270,9 @@ const blockchainData = [
         web3: false,
     },
     offices: solanaOfficeData,
+    node_data: {
+        total_nodes: numberWithCommas(solNodeData['features'].length),
+    },
     node_map_data: {
         map_color: '#4CB2C3',
         map_data: solNodeData,
@@ -318,6 +330,9 @@ const blockchainData = [
         web3: false,
     },
     offices: alavancheOfficeData,
+    node_data: {
+        total_nodes: numberWithCommas(avaxValidators.length),
+    },
     node_map_data: {
         map_color: '#FB2838',
         map_data: {},
@@ -375,9 +390,12 @@ const blockchainData = [
         web3: false,
     },
     offices: polygonOfficeData,
+    node_data: {
+        total_nodes: numberWithCommas(polygonValidators.length),
+    },
     node_map_data: {
         map_color: '#8B42ED',
-        map_data: {},
+        map_data: polygonNodeData,
     }
     },
     {chain: 'NEAR', 
@@ -432,6 +450,9 @@ const blockchainData = [
         web3: false,
     },
     offices: nearOfficeData,
+    node_data: {
+        total_nodes: 126,
+    },
     node_map_data: {
         map_color: '#FFFFFF',
         map_data: {},
@@ -489,6 +510,9 @@ const blockchainData = [
         web3: false,
     },
     offices: binanceOfficeData,
+    node_data: {
+        total_nodes: numberWithCommas(binanceValidators['result'].length),
+    },
     node_map_data: {
         map_color: '#FFFFFF',
         map_data: {},
@@ -546,6 +570,9 @@ const blockchainData = [
         web3: false,
     },
     offices: cardanoOfficeData,
+    node_data: {
+        total_nodes: '3,203',
+    },
     node_map_data: {
         map_color: '#FFFFFF',
         map_data: {},
@@ -603,24 +630,14 @@ const blockchainData = [
         web3: false,
     },
     offices: polkadotOfficeData,
+    node_data: {
+        total_nodes: polkadotValidators['validator_count'],
+    },
     node_map_data: {
         map_color: '#f682ba',
         map_data: {},
     }
     },
-    // {chain: 'Algorand', 
-    // logo: '/blockchains/algorand_40x40.png',
-    // emissions: null,
-    // offsets:null,
-    // transactions_sum:null,
-    // network_emissions:null,
-    // operation_emissions:null,
-    // color:'#000000',
-    // id: 9,
-    // row: 'tableOdd',
-    // nav: '/algorand',
-    // netzero: false,
-    // },
 ]
 
 function getBlockchainData() {

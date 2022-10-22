@@ -46,6 +46,10 @@ const Blockchains = () => {
                                     <p className={styles.subHeadHeader}>(YTD)</p>
                                 </th>
                                 <th>
+                                    Validator
+                                    <p className={styles.subHeadHeader}>(YTD)</p>
+                                </th>
+                                <th>
                                     Network Emissions
                                     <p className={styles.subHeadHeader}>(YTD)</p>
                                 </th>
