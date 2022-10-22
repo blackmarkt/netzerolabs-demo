@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router'
+// import { useRouter } from 'next/router'
 import React, { useState, useEffect, useLayoutEffect, useContext } from "react";
 import Map from '../../../components/map/Map'
 import Offices from '../../../components/dashboard/Offices'
@@ -183,7 +183,7 @@ const chain = ({ chainData }) => {
                         <div className={styles.flexOfficeGrid}>
                             {chainData.offices.map((obj, index) => {
                                 // your code here
-                                return <Offices {...obj}/>
+                                return <Offices key={index} {...obj}/>
                             })}
                         </div>
                     }

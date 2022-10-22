@@ -62,7 +62,7 @@ const Blockchains = () => {
                         <tbody>
                             {chainData.map((obj, index) => {
                                 // your code here
-                                return <Emissions {...obj}/>
+                                return <Emissions key={index} {...obj}/>
                             })}
                         </tbody>
                     </table>
