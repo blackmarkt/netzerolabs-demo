@@ -9,7 +9,7 @@ import { getBlockchainData } from '../../data/blockchainData'
 const Blockchains = () => {
     const [chainData, setChainData] = useState(getBlockchainData)
 
-    console.log('CHAIN DATA ', chainData)
+    // console.log('CHAIN DATA ', chainData)
 
     return (
         <div className={styles.dashboardContainer}>
