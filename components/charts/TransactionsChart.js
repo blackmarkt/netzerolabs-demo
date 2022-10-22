@@ -7,7 +7,7 @@ import HighchartsReact from 'highcharts-react-official'
 
 const TransactionsChart = ({ chartData }) => {
 
-    console.log('CHART DATA ', chartData)
+    // console.log('CHART DATA ', chartData)
 
     const options = {
         chart: {
