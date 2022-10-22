@@ -2,7 +2,7 @@ import Nav from './Nav'
 import Meta from './Meta'
 import DemoHeader from './DemoHeader'
 import Footer from './Footer'
-import styles from '../styles/Layout.module.css'
+import layoutStyles from '../styles/Layout.module.css'
 
 const Layout = ({ children }) => {
   return (
@@ -10,8 +10,8 @@ const Layout = ({ children }) => {
       <DemoHeader />
       <Meta />
       <Nav />
-      <div className={styles.container}>
-        <main className={styles.main}>
+      <div className={layoutStyles.container}>
+        <main className={layoutStyles.main}>
           {/* <Header /> */}
           {children}
         </main>  

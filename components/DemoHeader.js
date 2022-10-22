@@ -1,8 +1,8 @@
-import styles from '../styles/Demo.module.css';
+import demoStyles from '../styles/Demo.module.css';
 
 const DemoHeader = () => {
     return (
-        <div className={styles.headerBanner}>
+        <div className={demoStyles.headerBanner}>
             DEMO Mode
         </div>
     )
