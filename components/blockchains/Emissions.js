@@ -7,7 +7,7 @@ import { numberWithCommas } from '../../data/emissionsData'
 const ChainEmissions = ( props ) => {
 
     return (
-            <Link href={`/chain/${props.nav}`}>
+            <Link key={props.chain} href={`/chain/${props.nav}`}>
             <tr className={styles.navChainLink}>
                 <td>
                     <img className={styles.logoChain}
