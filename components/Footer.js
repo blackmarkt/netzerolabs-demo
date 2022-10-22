@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import Image from 'next/Image'
+import Image from 'next/image'
 import footerStyles from '../styles/footer.module.css'
 import Twitter from '../public/social_media/twitter.png'
 

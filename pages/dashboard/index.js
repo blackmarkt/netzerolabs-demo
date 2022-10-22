@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Map from '../../components/map/Map'
 import Offices from '../../components/dashboard/Offices'
 import Axios from "axios"
-import styles from '../../styles/Dashboard.module.css'
+import styles from '../../styles/dashboard.module.css'
 import Image from 'next/image'
 import Ethereum from '../../public/blockchains/ethereum.png'
 import TransactionsChart from '../../components/charts/TransactionsChart'
