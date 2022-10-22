@@ -58,8 +58,6 @@ const chain = ({ chainData }) => {
                         <li>
                             {chainData.node_data.total_nodes != null ? (<div className={styles.subEmissionsHeader}>{chainData.node_data.total_nodes}</div>) 
                             : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                             {/* {chainData.node_data.total_nodes != null && <div className={styles.subHeader}>tCO&#8322;e</div>} */}
-                            {/* <p className={styles.footnotes}>Total Validators</p> */}
                         </li>
                     </ul>
                     <p className={styles.subHeaderTxt}>Network</p>
@@ -194,13 +192,7 @@ const chain = ({ chainData }) => {
             <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>
             <div className={`${styles.dashboardSubContainer} ${styles[chainData.nav]}`}>
                 {chainData.netzero == true ? (<CarbonOffsets offsetData={chainData.netzero_cert} />) 
-                    : (<div className={styles.notActiveContainer}><span className={styles.notActiveTxt}>Not Active</span></div>)}
-                {/* <div className={styles.dashboardNotActive}></div> */}
-                {/* <div className={styles.notActiveContainer}>                     */}
-                    {/* {chainData.netzero == true ? (<a className={styles.subOpEmissionsTxt} target="_blank" href={chainData.netzero_cert.netzero_report_url}>{chainData.netzero_cert.netzero_co}</a>) 
-                    : (<span className={styles.notActiveTxt}>Not Active</span>)} */}
-                {/* </div> */}
-                {/* <div className={styles.test}>Test</div> */}
+                : (<div className={styles.notActiveContainer}><span className={styles.notActiveTxt}>Not Active</span></div>)}
             </div>
         </div>
     );
