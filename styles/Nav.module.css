@@ -22,7 +22,8 @@
     cursor: pointer;
 }
 .imgHeader {
-    float:left
+    float:left;
+    cursor: pointer;
 }
 .btnLaunch {
     float:right;
