@@ -4,10 +4,12 @@ import BlockchainEmissionsChart from '../../components/charts/BlockchainEmission
 import CumulativeBlockchainEmissionsChart from '../../components/charts/CumulativeBlockchainEmissionsChart'
 import CumulativeBlockchainOffsetChart from '../../components/charts/CumulativeBlockchainOffsetChart'
 import styles from '../../styles/Blockchains.module.css'
-import { getBlockchainData } from '../../data/blockchainData'
+import { getBlockchainData, getL1TotalEmissions, getL1TotalOffsets } from '../../data/blockchainData'
 
 const Blockchains = () => {
     const [chainData, setChainData] = useState(getBlockchainData)
+    const [totalL1Emissions, setTotalL1Emissions] = useState(getL1TotalEmissions)
+    const [totalL1Offsets, setTotalL1Offsets] = useState(getL1TotalOffsets)
 
     // console.log('CHAIN DATA ', chainData)
 
@@ -21,6 +23,18 @@ const Blockchains = () => {
                 <a href="https://www.notion.so/blackmarkt/Carbon-Accounting-Methodology-b2e03be009a945f680592ec7563107d6" target="_blank" rel="noopener noreferrer">
                     <p style={{"margin":"0 0 1rem", "padding": "0rem"}}>Methology</p>
                 </a>
+            </div>
+            <div className={styles.dashboardHeaderContainer}>
+                <div className={`${styles.grid} ${styles.dashboardHeadSubContainer}`}>
+                    <div className={`${styles.topDashboard} ${styles.totalEmissionsTxt}`}>{totalL1Emissions}</div>
+                    <div className={styles.emissionsUnits}>tCO&#8322;e</div>
+                    <p className={styles.subDashboard}>Total L1 CO&#8322; Footprint</p>
+                </div>
+                <div className={`${styles.grid} ${styles.dashboardHeadSubContainer}`}>
+                    <div className={`${styles.topDashboard} ${styles.totalOffsetTxt}`}>{totalL1Offsets}</div>
+                    <div className={styles.emissionsUnits}>tCO&#8322;e</div>
+                    <p className={styles.subDashboard}>Total L1 CO&#8322; Offsets</p>
+                </div>      
             </div>
             <div className={styles.dashboardSubContainer}>
                 <div className={styles.chainContainer}>

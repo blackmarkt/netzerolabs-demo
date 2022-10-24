@@ -200,7 +200,28 @@ function createUNIXOffsetChartData(monthOffset) {
     return monthDTArr
 }
 
+function calculateTotalL1Emissions(dataArr) {
+    let totalArr = [];
+    for (let i = 0; i<dataArr.length; i++) {
+        if (dataArr[i].emissions != null) {
+            totalArr.push(parseInt(dataArr[i].emissions.replace(/,/g, '')))
+        }
+    }
+    return calculateSum(totalArr)
+}
+
+function calculateTotalL1Offsets(dataArr) {
+    let totalArr = [];
+    for (let i = 0; i<dataArr.length; i++) {
+        if (dataArr[i].offsets != null) {
+            totalArr.push(parseInt(dataArr[i].offsets.replace(/,/g, '')))
+        }
+    }
+    return calculateSum(totalArr)
+}
+
+
 export { createTxTCO2Chart, numberWithCommas, calculateMedian, calculateSum, getTotalOffsetsMonthly,
         createUNIXOffsetChartData, combineUnixDataArr, combineUnixFauxDataArr, calculateTxTCO2,
         calculateTxTCO2Chart, getArrFromChartArr, getTCO2ArrFromChartArr, calculateMergeTxTCO2Chart,
-        getMergeTCO2ArrFromChartArr }
+        getMergeTCO2ArrFromChartArr, calculateTotalL1Emissions, calculateTotalL1Offsets }

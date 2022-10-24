@@ -32,7 +32,7 @@ import polkadotValidators from './node_validators/polkadot_validators.json' asse
 import polygonValidators from './node_validators/polygon_validators.json' assert {type: 'json'}
 import polygonNodeData from './polygon_node_tracker_geojson_102122.geojson' assert {type: 'json'}
 import { calculateTxTCO2Chart, calculateMergeTxTCO2Chart, getArrFromChartArr, getTCO2ArrFromChartArr,
-        getMergeTCO2ArrFromChartArr } from './utils/utilFunctions.js'
+        getMergeTCO2ArrFromChartArr, calculateTotalL1Emissions, calculateTotalL1Offsets } from './utils/utilFunctions.js'
 import { btcTxTCO2Factor, ethTxTCO2PreFactor, ethTxTCO2PostFactor, celoTxTCO2Factor, solTxTCO2Factor, 
         avaxTxTCO2Factor, polkTxTCO2Factor, cardTxTCO2Factor } from './TxTCO2ConversionFactors.js'
 
@@ -644,6 +644,14 @@ function getBlockchainData() {
     return blockchainData
 }
 
+function getL1TotalEmissions() {
+    return numberWithCommas(calculateTotalL1Emissions(blockchainData))
+}
+
+function getL1TotalOffsets() {
+    return numberWithCommas(calculateTotalL1Offsets(blockchainData))
+}
+
 var pieColors = (function (base) {
     if (typeof Highcharts === 'object') {
         var colors = [],
@@ -661,4 +669,4 @@ var pieColors = (function (base) {
 
 const defaultChainEmissionsData = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
-export { blockchainData, defaultChainEmissionsData, getBlockchainData }
+export { blockchainData, defaultChainEmissionsData, getBlockchainData, getL1TotalEmissions, getL1TotalOffsets }

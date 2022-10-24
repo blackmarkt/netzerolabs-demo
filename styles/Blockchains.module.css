@@ -27,7 +27,7 @@
     padding:0.1rem 1.5rem 1rem 1rem;
 }
 .dashboardMainHeader {
-    margin:0 0 1.4rem
+    margin:0 0 1rem
 }
 .dashboardHeader {
     color:#616161;
@@ -110,4 +110,52 @@
     color:darkgray!important;
     text-shadow: none!important;
     opacity: 0.3!important;
+}
+.dashboardHeaderContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:0.8rem
+}
+.dashboardHeadSubContainer {
+    text-align: center;
+    flex-wrap: wrap;
+    width:49%;
+    min-height:8vh;
+    padding:0.5rem 1rem 0;
+    margin:1rem 0;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    /* display: inline-block; */
+    border-radius: 6px;
+    box-shadow: 0px 1px 1px aquamarine, 0 0 8px #6AD0AE;
+    vertical-align: super;
+    padding:0.1rem 1.5rem 1rem 1rem;   
+}
+.topDashboard, .subEmissionsTxt, .subOpEmissionsTxt, .subEmissionsHeader {
+    display: inline-block;
+    font-size:2rem;
+    padding:1.4rem 0 0rem;
+    text-shadow:0 0 10px white;
+}
+.emissionsTxt, .emissionsTxtMatte {
+    display: inline-block;
+    font-size:0.9rem;
+    padding:0.8rem 0 0rem;
+    text-shadow:0 0 10px white;
+}
+.emissionsUnits, .emissionsUnitsMatte {
+    font-size:0.6rem;
+    display: inline-block;
+    margin-left:0.3rem
+}
+.subDashboard {
+    padding: 0
+}
+.totalEmissionsTxt {
+    text-shadow:0 0 10px red;
+    color:rgb(254, 231, 231)
+}
+.totalOffsetTxt {
+    text-shadow:0 0 10px aqua;
+    color:rgb(223, 255, 255)
 }
