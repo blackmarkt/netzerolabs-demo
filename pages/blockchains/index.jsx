@@ -28,12 +28,12 @@ const Blockchains = () => {
                 <div className={`${styles.grid} ${styles.dashboardHeadSubContainer}`}>
                     <div className={`${styles.topDashboard} ${styles.totalEmissionsTxt}`}>{totalL1Emissions}</div>
                     <div className={styles.emissionsUnits}>tCO&#8322;e</div>
-                    <p className={styles.subDashboard}>Total L1 CO&#8322; Footprint</p>
+                    <p className={styles.subDashboard}>Total L1 CO&#8322; Emissions (YTD)</p>
                 </div>
                 <div className={`${styles.grid} ${styles.dashboardHeadSubContainer}`}>
                     <div className={`${styles.topDashboard} ${styles.totalOffsetTxt}`}>{totalL1Offsets}</div>
                     <div className={styles.emissionsUnits}>tCO&#8322;e</div>
-                    <p className={styles.subDashboard}>Total L1 CO&#8322; Offsets</p>
+                    <p className={styles.subDashboard}>Total L1 CO&#8322; Offsets (YTD)</p>
                 </div>      
             </div>
             <div className={styles.dashboardSubContainer}>
