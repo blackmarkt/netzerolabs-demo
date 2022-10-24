@@ -16,7 +16,7 @@ const Blockchains = () => {
     return (
         <div className={styles.dashboardContainer}>
             <div className={styles.dashboardLeftHeader}>
-                <h2 className={styles.dashboardMainHeader}>Top 10 Blockchain Emissions</h2>
+                <h2 className={styles.dashboardMainHeader}>Blockchain (L1) Emissions</h2>
                 <p style={{"margin":"0", "padding": "0rem"}}>Last Updated 11/22/22</p>
             </div>
             <div className={styles.dashboardRightHeader}>
