@@ -42,7 +42,7 @@ export default function Home() {
             <div className={styles.homeImageLeft}>
               <div id="vid-earth-nft" className={styles.earthContainer}>
                 <video id="earthNFT" className={styles.earthMask} autoPlay muted loop playsInline preload="none">
-                    <source src="./net0labs/net_zero_nft.mp4" type="video/mp4" />
+                  <source src="/net0labs/net0labs_certification.mp4" type="video/mp4" />
                     {/* <source src="movie.ogg" type="video/ogg" /> */}
                 </video>
               </div>
@@ -110,7 +110,8 @@ export default function Home() {
             <div className={styles.homeImageLeft}>
               <div id="net0labs-pledge" className={styles.net0labsPledgeContainer}>
                 <video id="net0labs-vid" className={styles.net0labsMask} autoPlay muted loop playsInline preload="none">
-                    <source src="/net0labs/net0labs_certification.mp4" type="video/mp4" />
+                    {/* <source src="/net0labs/net0labs_certification.mp4" type="video/mp4" /> */}
+                    <source src="./net0labs/net_zero_nft.mp4" type="video/mp4" />
                     <source src="movie.ogg" type="video/ogg" />
                 </video>
               </div>
