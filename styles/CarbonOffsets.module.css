@@ -10,6 +10,7 @@
     vertical-align: middle;
 }
 .offsetsSubRightContainer {
+    position: relative;
     width:68%;
     height:100%;
     color:#616161!important;
@@ -76,4 +77,25 @@
     margin: 0 auto;
     margin-top:0.1rem;
     border-radius: 6px;
+}
+.notActiveContainer {
+    position: absolute;
+    left: 0;
+    top: 40%;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    z-index:2;
+    display: flex;
+    justify-content:center;
+    margin:0 auto;
+}
+.notActiveTxt {
+    /* display: inline-block; */
+    vertical-align: middle;
+    line-height: normal;
+    font-size:1.4rem;
+    color:darkgray!important;
+    text-shadow: none!important;
+    opacity: 0.3!important;
 }

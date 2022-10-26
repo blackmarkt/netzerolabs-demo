@@ -89,7 +89,7 @@ const chain = ({ chainData }) => {
                     <Map mapData={chainData.node_map_data}/>
                 </div>
             </div>
-            <h4 className={styles.dashboardHeader}>Network</h4>
+            <h4 className={styles.dashboardHeader}>Network <span className={styles.subDashboardHeader}>(Scope 2)</span></h4>
             <div className={`${styles.dashboardSubContainer} ${styles[chainData.nav]}`}>
                 <div className={styles.subStatsContainer}>
                     <h4 className={styles.subHeaderTxt}>Stats</h4>
@@ -140,7 +140,7 @@ const chain = ({ chainData }) => {
                     </div>
                 </div>
             </div>
-            <h4 className={styles.dashboardHeader}>Operations</h4>
+            <h4 className={styles.dashboardHeader}>Operations <span className={styles.subDashboardHeader}>(Scope 3)</span></h4>
             <div className={`${styles.dashboardOpsSubContainer} ${styles[chainData.nav]}`}>
                 <div className={styles.operationsSubContainer}>
                     <div className={styles.flexGrid}>
@@ -191,8 +191,9 @@ const chain = ({ chainData }) => {
             </div>
             <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>
             <div className={`${styles.dashboardSubContainer} ${styles[chainData.nav]}`}>
-                {chainData.netzero == true ? (<CarbonOffsets offsetData={chainData.netzero_cert} />) 
-                : (<div className={styles.notActiveContainer}><span className={styles.notActiveTxt}>Not Active</span></div>)}
+                <CarbonOffsets offsetData={chainData.netzero_cert} />
+                {/* {chainData.netzero == true ? (<CarbonOffsets offsetData={chainData.netzero_cert} />) 
+                : (<div className={styles.notActiveContainer}><span className={styles.notActiveTxt}>Not Active</span></div>)} */}
             </div>
         </div>
     );

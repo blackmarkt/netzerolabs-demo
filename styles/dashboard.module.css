@@ -24,6 +24,9 @@
     text-shadow: none!important;
     margin:1rem 0.5rem;
 }
+.subDashboardHeader {
+    font-size:0.6rem;
+}
 .logoChain {
     margin-left:0.5rem
 }

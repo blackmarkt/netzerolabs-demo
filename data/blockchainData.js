@@ -87,6 +87,7 @@ const blockchainData = [
         netzero_offsets_chart:null,
         chart_color: '#F7931A',
         web3: false,
+        netzero_pledge:null,
     },
     offices: [],
     node_data: {
@@ -147,6 +148,7 @@ const blockchainData = [
         netzero_offsets_chart:null,
         chart_color: '#6b6e88',
         web3: false,
+        netzero_pledge:null,
     },
     offices:ethereumOfficesData,
     node_data: {
@@ -208,6 +210,7 @@ const blockchainData = [
         netzero_offsets_chart: createUNIXOffsetChartData(celoNumOffsets),
         chart_color: '#FBCB5C',
         web3: false,
+        netzero_pledge:null,
     },
     offices: celoOfficeData,
     node_data: {
@@ -268,6 +271,7 @@ const blockchainData = [
         netzero_offsets_chart:null,
         chart_color: '#4CB2C3',
         web3: false,
+        netzero_pledge:null,
     },
     offices: solanaOfficeData,
     node_data: {
@@ -328,6 +332,7 @@ const blockchainData = [
         netzero_offsets_chart:null,
         chart_color:'#FB2838',
         web3: false,
+        netzero_pledge:null,
     },
     offices: alavancheOfficeData,
     node_data: {
@@ -388,6 +393,7 @@ const blockchainData = [
         netzero_offsets_chart:null,
         chart_color:'#8B42ED',
         web3: false,
+        netzero_pledge:null,
     },
     offices: polygonOfficeData,
     node_data: {
@@ -448,6 +454,7 @@ const blockchainData = [
         netzero_offsets_chart:null,
         chart_color:'#FFFFFF',
         web3: false,
+        netzero_pledge:null,
     },
     offices: nearOfficeData,
     node_data: {
@@ -508,6 +515,7 @@ const blockchainData = [
         netzero_offsets_chart:null,
         chart_color: '#FFD700',
         web3: false,
+        netzero_pledge:null,
     },
     offices: binanceOfficeData,
     node_data: {
@@ -568,6 +576,7 @@ const blockchainData = [
         netzero_offsets_chart:null,
         chart_color: '#3263C8',
         web3: false,
+        netzero_pledge:null,
     },
     offices: cardanoOfficeData,
     node_data: {
@@ -628,6 +637,7 @@ const blockchainData = [
         netzero_offsets_chart:null,
         chart_color: '#F7931A',
         web3: false,
+        netzero_pledge:null,
     },
     offices: polkadotOfficeData,
     node_data: {
