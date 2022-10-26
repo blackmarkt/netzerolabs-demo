@@ -152,8 +152,8 @@
     padding: 0
 }
 .totalEmissionsTxt {
-    text-shadow:0 0 10px orangered;
-    color:rgb(255, 227, 216)
+    text-shadow:0 0 10px red!important;
+    color:rgb(254, 231, 231)!important;
 }
 .totalOffsetTxt {
     text-shadow:0 0 10px aquamarine;

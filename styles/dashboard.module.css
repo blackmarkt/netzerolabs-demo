@@ -229,8 +229,8 @@ p.subHeaderTxt {
     text-shadow: none!important;
 }
 .totalEmissionsTxt {
-    text-shadow:0 0 10px orangered;
-    color:rgb(255, 227, 216)
+    text-shadow:0 0 10px red!important;
+    color:rgb(254, 231, 231)!important;
 }
 .totalOffsetTxt {
     text-shadow:0 0 10px aquamarine;
@@ -273,8 +273,8 @@ p.subHeaderTxt {
     box-shadow: 0 1px 1px #f682ba, 0 0 10px #FB007A!important;
 }
 .pulsate {
-    text-shadow:0 0 10px red!important;
-    color:rgb(254, 231, 231)!important;
+    text-shadow:0 0 10px yellow!important;
+    color:rgb(255, 255, 208)!important;
     animation: pulsate 3s infinite;
     -ms-animation: pulsate 3s infinite;
     -webkit-animation: pulsate 3s infinite;
