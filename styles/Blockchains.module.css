@@ -137,6 +137,9 @@
     padding:1.4rem 0 0rem;
     text-shadow:0 0 10px white;
 }
+.subDashboardHeader {
+    font-size:0.6rem;
+}
 .emissionsTxt, .emissionsTxtMatte {
     display: inline-block;
     font-size:0.9rem;

@@ -85,7 +85,7 @@ const Blockchains = () => {
                 </div>
             </div>
             <p className={styles.footNote}>&#42; Ethereum since the merge on 9/15/22</p>
-            <h4 className={styles.dashboardHeader}>Network Emissions</h4>
+            <h4 className={styles.dashboardHeader}>Network Emissions <span className={styles.subDashboardHeader}>(Scope 2)</span></h4>
             <div className={styles.dashboardSubContainer}>
                 <div className={styles.emissionsChartContainer}>
                     {/* <div className={`${styles.emissionsSubChartContainer} ${styles.leftChartContainer}`}>
@@ -107,7 +107,7 @@ const Blockchains = () => {
                     <CumulativeBlockchainOffsetChart offsetData={chainData}/>
                 </div>
             </div>
-            <h4 className={styles.dashboardHeader}>Operations Emissions</h4>
+            <h4 className={styles.dashboardHeader}>Operations Emissions <span className={styles.subDashboardHeader}>(Scope 3)</span></h4>
             <div className={styles.dashboardSubContainer}>
                 <div className={styles.notActiveContainer}>
                     <span className={styles.notActiveTxt}>Not Active</span>
