@@ -5,6 +5,7 @@ import HighchartsReact from 'highcharts-react-official'
 import { dateLabels, emissionsData, dateUnixLabels, dateUnixCelo, celoEmissionsDailyData, 
     celoCumEmissionData, combineUnixDataArr, combineUnixFauxDataArr} from '../../data/emissionsData'
 import { blockchainData, defaultChainEmissionsData, } from '../../data/blockchainData'
+import { normalizeConfig } from 'next/dist/server/config-shared'
 
 
 const BlockchainEmissionsChart = ({ chartData }) => {
@@ -69,8 +70,8 @@ const BlockchainEmissionsChart = ({ chartData }) => {
             align:'center',
             padding:-15,
             style: {
-                fontSize: '0.4rem',
-                color: 'gray',
+                fontSize: '0.3rem',
+                color: '#616161',
             }
         },
         plotOptions: {
@@ -154,7 +155,7 @@ const BlockchainEmissionsChart = ({ chartData }) => {
                 constructorType={'chart'}
                 options={options}
                 containerProps={{ className: 'blockchain-emissions-chart',
-                                  style: { height: "280px" } }} 
+                                  style: { height: "300px" } }} 
             />
         </div>
     )

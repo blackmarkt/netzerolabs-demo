@@ -44,7 +44,7 @@ const blockchainData = [
         chart_daily_data: calculateTxTCO2Chart(bitcoinTxData, btcTxTCO2Factor, 'daily'),
         chart_cum_data: calculateTxTCO2Chart(bitcoinTxData, btcTxTCO2Factor, 'cumulative'),
         chart_tx_daily: bitcoinTxData,
-        chart_color: '#f7b360',
+        chart_color: '#F7931A',
         operations_data: [
             { name: 'Office', y: 1},
             { name: 'Transportation', y: 1},

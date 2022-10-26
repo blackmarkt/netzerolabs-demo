@@ -38,8 +38,8 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
                             linearGradient:  { 
                                 x1: 0,
                                 y1: 0,
-                                x2: 0.5,
-                                y2: 0.8},
+                                x2: 0.8,
+                                y2: 1},
                             stops: [
                                 [0, chartData[i].chart_data.chart_color],
                                 [1, 'transparent']
@@ -56,13 +56,13 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
         chart: {
             type: 'line',
             backgroundColor: 'transparent',
-            margin: [30,20,40,100]
+            margin: [20,20,50,100]
             // color: "#fff"
         },
         title: {
             text: 'Total tCO2e (per Tx)',
             floating:true,
-            y:40,
+            y:10,
             style: {
                 fontSize: '0.7rem',
                 color: '#616161',
@@ -80,10 +80,15 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
             align:'center',
             padding:-10,
             style: {
-                fontSize: '0.4rem',
-                color: 'darkgray',
+                fontSize: '0.3rem',
+                color: '#616161',
             }
         },
+        // plotOptions: {
+        //     area: {
+        //         stacking: 'normal'
+        //     }
+        // },
         // plotOptions: {
         //     area: {
         //         fillColor: {
@@ -162,7 +167,7 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
                 constructorType={'chart'}
                 options={options}
                 containerProps={{ className: 'cumulative-blockchain-emissions-chart',
-                                  style: { height: "280px" } }} 
+                                  style: { height: "300px" } }} 
             />
         </div>
     )

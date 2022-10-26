@@ -3,6 +3,7 @@ import Emissions from '../../components/blockchains/Emissions'
 import BlockchainEmissionsChart from '../../components/charts/BlockchainEmissionsChart'
 import CumulativeBlockchainEmissionsChart from '../../components/charts/CumulativeBlockchainEmissionsChart'
 import CumulativeBlockchainOffsetChart from '../../components/charts/CumulativeBlockchainOffsetChart'
+import BlockchainEmissionsPieChart from '../../components/charts/BlockchainEmissionsPieChart'
 import styles from '../../styles/Blockchains.module.css'
 import { getBlockchainData, getL1TotalEmissions, getL1TotalOffsets } from '../../data/blockchainData'
 
@@ -87,10 +88,17 @@ const Blockchains = () => {
             <h4 className={styles.dashboardHeader}>Network Emissions</h4>
             <div className={styles.dashboardSubContainer}>
                 <div className={styles.emissionsChartContainer}>
-                    <BlockchainEmissionsChart chartData={chainData}/>
-                </div>
-                <div className={styles.emissionsChartContainer}>
-                    <CumulativeBlockchainEmissionsChart chartData={chainData}/>
+                    {/* <div className={`${styles.emissionsSubChartContainer} ${styles.leftChartContainer}`}>
+                        <BlockchainEmissionsPieChart chartData={chainData}/>
+                    </div>
+                    <div className={`${styles.emissionsSubChartContainer} ${styles.rightChartContainer}`}> */}
+                        <div className={styles.emissionsChartContainer}>
+                            <BlockchainEmissionsChart chartData={chainData}/>
+                        </div>
+                        <div className={styles.emissionsChartContainer}>
+                            <CumulativeBlockchainEmissionsChart chartData={chainData}/>
+                        </div>
+                    {/* </div> */}
                 </div>
             </div>
             <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>

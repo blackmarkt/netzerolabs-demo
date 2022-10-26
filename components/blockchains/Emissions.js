@@ -34,17 +34,17 @@ const ChainEmissions = ( props ) => {
                         /></td>
                     ) : (
                         <td className={styles.tableColCertNA}>  
-                        <div className={styles.emissionsTxtMatte}>NA</div>
+                        <div className={[styles.emissionsTxtMatte, styles.pulsate].join(" ")}>NA</div>
                         </td>
                     )}
                     <td className={styles.tableColEmission}>
                         {props.emissions != null ? (<div className={styles.emissionsTxt}>{props.emissions}</div>) 
-                        : (<div className={[styles.emissionsTxt, styles.emissionsTxtMatte].join(" ")}>NA</div>)}
+                        : (<div className={[styles.emissionsTxt, styles.emissionsTxtMatte, styles.pulsate].join(" ")}>NA</div>)}
                         {props.emissions != null && <div className={styles.emissionsUnits}>tCO&#8322;e</div>}
                     </td>
                     <td className={styles.tableColEmission}>
                         {props.offsets != null ? (<div className={styles.emissionsTxt}>{props.offsets}</div>) 
-                        : (<div className={[styles.emissionsTxt, styles.emissionsTxtMatte].join(" ")}>NA</div>)}
+                        : (<div className={[styles.emissionsTxt, styles.emissionsTxtMatte, styles.pulsate].join(" ")}>NA</div>)}
                         {props.offsets != null && <div className={styles.emissionsUnits}>tCO&#8322;e</div>}
                     </td>
                     <td className={styles.tableColEmission}>

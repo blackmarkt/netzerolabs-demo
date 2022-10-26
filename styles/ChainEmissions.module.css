@@ -90,3 +90,34 @@
     /* color:red!important; */
     text-shadow:0 0 10px red!important;
 }
+.pulsate {
+    text-shadow:0 0 10px red!important;
+    color:rgb(254, 231, 231)!important;
+    animation: pulsate 3s infinite;
+    -ms-animation: pulsate 3s infinite;
+    -webkit-animation: pulsate 3s infinite;
+    /* -webkit-animation-iteration-count: infinite; */
+    opacity:1
+}
+@-webkit-keyframes pulsate {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0.1;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@keyframes pulsate {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0.1;
+    }
+    100% {
+        opacity:1;
+    }
+}

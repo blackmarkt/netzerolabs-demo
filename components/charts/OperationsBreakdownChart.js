@@ -1,23 +1,15 @@
 import React, { useEffect } from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
-// import { operationsdata } from '../../data/emissionsData'
-
-// Data retrieved from https://netmarketshare.com/
-// Make monochrome colors
-
 
 const OperationsBreakdownChart = ({ chartData }) => {
 
     var pieColors = (function () {
         if (typeof Highcharts === 'object') {
             var colors = [],
-                // base = ,
             i;
     
             for (i = 0; i < 10; i += 1) {
-                // Start out with a darkened base color (negative brighten), and end
-                // up with a much brighter color
                 colors.push(Highcharts.color(chartData.chart_data.chart_color).brighten((i - 3) / 8).get());
             }
             return colors;
