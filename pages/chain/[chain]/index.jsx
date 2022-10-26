@@ -34,19 +34,19 @@ const chain = ({ chainData }) => {
             </a>
             <div className={styles.flexGrid}>
                 <div className={`${styles.grid} ${styles[chainData.nav]}`}>
-                    {chainData.emissions != null ? (<div className={styles.topDashboard}>{chainData.emissions}</div>) 
-                    : (<div className={[styles.topDashboard, styles.txtNA].join(" ")}>NA</div>)}
+                    {chainData.emissions != null ? (<div className={[styles.topDashboard, styles.totalEmissionsTxt].join(" ")}>{chainData.emissions}</div>) 
+                    : (<div className={[styles.topDashboard, styles.txtNA, styles.totalEmissionsTxt, styles.pulsate].join(" ")}>NA</div>)}
                     {chainData.emissions != null && <div className={styles.subHeader}>tCO&#8322;e</div>}
                     <p className={styles.subDashboard}>CO&#8322; Footprint</p>
                 </div>
                 <div className={`${styles.grid} ${styles[chainData.nav]}`}>
-                    {chainData.offsets != null ? (<div className={styles.topDashboard}>{chainData.offsets}</div>) 
-                    : (<div className={[styles.topDashboard, styles.txtNA].join(" ")}>NA</div>)}
+                    {chainData.offsets != null ? (<div className={[styles.topDashboard, styles.totalOffsetTxt].join(" ")}>{chainData.offsets}</div>) 
+                    : (<div className={[styles.topDashboard, styles.txtNA, styles.totalEmissionsTx, styles.pulsate].join(" ")}>NA</div>)}
                     {chainData.offsets != null && <div className={styles.subHeader}>tCO&#8322;e</div>}
                     <p className={styles.subDashboard}>CO&#8322; Offset (tCO&#8322;e)</p>
                 </div>
                 <div className={`${styles.grid} ${styles[chainData.nav]}`}>
-                    <div id='usdConvert' className={[styles.topDashboard, styles.txtNA].join(" ")}v>$0</div>
+                    <div id='usdConvert' className={[styles.topDashboard, styles.txtNA, styles.totalEmissionsTx, styles.pulsate].join(" ")}v>NA</div>
                     <div id="ethConvert" className={styles.ethContribute}></div>
                     <p className={styles.subDashboard}>CO&#8322; Offset ($)</p>
                 </div>

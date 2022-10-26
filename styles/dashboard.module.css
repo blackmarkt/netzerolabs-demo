@@ -228,6 +228,14 @@ p.subHeaderTxt {
     color:#616161!important;
     text-shadow: none!important;
 }
+.totalEmissionsTxt {
+    text-shadow:0 0 10px red;
+    color:rgb(254, 231, 231)
+}
+.totalOffsetTxt {
+    text-shadow:0 0 10px aquamarine;
+    color:rgb(229, 254, 246)
+}
 .emissionsRed {
     text-shadow:0 0 10px red!important;
 }
@@ -263,4 +271,35 @@ p.subHeaderTxt {
 }
 .polkadot {
     box-shadow: 0 1px 1px #f682ba, 0 0 10px #FB007A!important;
+}
+.pulsate {
+    text-shadow:0 0 10px red!important;
+    color:rgb(254, 231, 231)!important;
+    animation: pulsate 3s infinite;
+    -ms-animation: pulsate 3s infinite;
+    -webkit-animation: pulsate 3s infinite;
+    /* -webkit-animation-iteration-count: infinite; */
+    opacity:1
+}
+@-webkit-keyframes pulsate {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0.1;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@keyframes pulsate {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0.1;
+    }
+    100% {
+        opacity:1;
+    }
 }
