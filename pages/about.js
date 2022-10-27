@@ -5,7 +5,7 @@ export default function About() {
         <div className={aboutStyles.aboutContainer}>
                 <div className={aboutStyles.aboutSubContainer}>
                     <h2 className={aboutStyles.aboutHeader}>Our Web3 Climate Mission</h2>
-                    <p>All Web3 companies, organizations, DAO's, etc... that have publicly launched tokens commit to the following 2 climate actions:</p>
+                    <p className={aboutStyles.aboutHeaderTxt}>All Web3 companies, organizations, DAO's, etc... that have publicly launched tokens commit to the following 2 climate actions:</p>
                     <div className={aboutStyles.aboutSubContainer}>
                         <h3 className={aboutStyles.aboutMissionState}>NetZero 20x0 Pledges</h3>
                         <p className={aboutStyles.aboutTxt}>Draft accessible, credible, actionable and enforceable plans to become NetZero by 2050 or sooner (2030 being the most ambitious deadline). Ideally these plans would be tokenized and stored on-chain. To learn more please check out the  

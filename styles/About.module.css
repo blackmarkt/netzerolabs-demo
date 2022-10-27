@@ -13,10 +13,14 @@
 .aboutHeader {
     margin:2rem 0;
 }
+.aboutHeaderTxt {
+    font-size:1rem
+}
 .aboutMissionState {
     margin:2.6rem 0 2rem 0;
     text-shadow: 0 0 10px aquamarine;
 }
 .aboutTxt {
-    margin-left:1rem
+    margin-left:1rem;
+    font-size:1rem
 }
