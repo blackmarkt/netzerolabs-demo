@@ -134,44 +134,44 @@ export default function Home() {
             <div className={styles.signaturesLogGrid}>
               <div className={styles.signItem}>
                 <img className={styles.signImg}
-                  height='40px'
+                  height='45px'
                   src='/pledges/amazon_logo.png' 
                   alt='Amazon' 
                 />
               </div>
               <div className={styles.signItem}>
                 <img className={styles.signImg}
-                  height='40px'
+                  height='45px'
                   src='/pledges/google_logo.png' 
                   alt='Google' 
                 />
               </div>
               <div className={styles.signItem}>
                 <img className={styles.signImg}
-                  height='45px'
+                  height='50px'
                   src='/pledges/microsoft_logo.png' 
                   alt='Microsoft' 
                 />
               </div>
               <div className={styles.signItem}>
                 <img className={styles.signImg}
-                  height='50px'
-                  src='/pledges/chainlink_logo.png' 
-                  alt='Chainlink' 
+                  height='30px'
+                  src='/pledges/uber_logo.png' 
+                  alt='Uber' 
                 />
               </div>
               <div className={styles.signItem}>
                 <img className={styles.signImg}
-                  height='45px'
-                  src='/pledges/celo_logo.png' 
-                  alt='Celo' 
+                  height='30px'
+                  src='/pledges/visa_logo.png' 
+                  alt='Visa' 
                 />
               </div>
               <div className={styles.signItem}>
                 <img className={styles.signImg}
-                  height='45px'
-                  src='/pledges/coinbase_logo.png' 
-                  alt='Coinbase' 
+                  height='30px'
+                  src='/pledges/ibm_logo.png' 
+                  alt='IBM' 
                 />
               </div>
             </div>
