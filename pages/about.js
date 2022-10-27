@@ -4,7 +4,7 @@ export default function About() {
     return (
         <div className={aboutStyles.aboutContainer}>
                 <div className={aboutStyles.aboutSubContainer}>
-                    <h1 className={aboutStyles.aboutHeader}>Our Web3 Climate Mission</h1>
+                    <h1 className={aboutStyles.aboutHeader}>Our Climate Mission</h1>
                     <p className={aboutStyles.aboutHeaderTxt}>All Web3 companies, organizations, DAO's, etc... that have publicly launched tokens commit to the following 2 climate actions:</p>
                     <div className={aboutStyles.aboutSubContainer}>
                         <h2 className={aboutStyles.aboutMissionState}>NetZero 20x0 Pledge</h2>
