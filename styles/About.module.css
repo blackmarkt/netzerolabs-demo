@@ -1,9 +1,10 @@
 .aboutContainer {
-    height:58vh;
+    height:70%;
+    min-height:58vh;
     width:100%;
     max-width: 1000px;
     margin:0 auto;
-    margin-top: 3rem;
+    margin-top: 2rem;
     /* text-align: center; */
     position: relative;
 }
@@ -22,5 +23,5 @@
 }
 .aboutTxt {
     margin-left:1rem;
-    font-size:1rem
+    font-size:0.9rem
 }
