@@ -24,11 +24,11 @@ const Nav = () => {
                     Blockchains
                 </button>
             </Link>
-            <Link href="/partners">
+            {/* <Link href="/partners">
                 <button className={navStyles.buttonHead}>
                     Partners
                 </button>
-            </Link>
+            </Link> */}
             <Link href="/about">
                 <button className={navStyles.buttonHead}>
                     About
