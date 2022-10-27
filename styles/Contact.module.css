@@ -1,0 +1,18 @@
+.contactMsgContainer {
+    height:58vh;
+    width:100%;
+    text-align: center;
+    position: relative;
+}
+.contactMsgSubContainer {
+    position: absolute;
+    top:50%;
+    left:0;
+    right: 0;
+}
+.contactMsg {
+    font-size:1.4rem;
+    text-align: center;
+    color:#616161;
+    text-shadow: none!important;
+}

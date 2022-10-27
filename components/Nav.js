@@ -29,6 +29,11 @@ const Nav = () => {
                     Partners
                 </button>
             </Link>
+            <Link href="/about">
+                <button className={navStyles.buttonHead}>
+                    About
+                </button>
+            </Link>
                 <button className={navStyles.btnLaunch}>
                     Launching Soon
                 </button>

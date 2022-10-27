@@ -1,0 +1,19 @@
+.aboutContainer {
+    height:58vh;
+    width:100%;
+    max-width: 1000px;
+    margin:0 auto;
+    margin-top: 3rem;
+    /* text-align: center; */
+    position: relative;
+}
+.aboutSubContainer {
+    padding:1rem 0;
+}
+.aboutHeader {
+    margin:2rem 0;
+}
+.aboutMissionState {
+    margin:3rem 0 2rem 0;
+    text-shadow: 0 0 10px aquamarine;
+}
