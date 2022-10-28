@@ -4,22 +4,25 @@
     width:100%;
     max-width: 1000px;
     margin:0 auto;
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     /* text-align: center; */
     position: relative;
 }
 .aboutSubContainer {
     padding:1rem 0;
 }
+.aboutSubCommitContainer {
+    padding-top:0.4rem
+}
 .aboutHeader {
     font-size:2.4rem;
-    margin:2rem 0;
+    margin:1rem 0;
 }
 .aboutHeaderTxt {
     font-size:1rem
 }
 .aboutMissionState {
-    margin:2.6rem 0 2rem 0;
+    margin:1.6rem 0;
     text-shadow: 0 0 10px aquamarine;
 }
 .aboutTxt {
