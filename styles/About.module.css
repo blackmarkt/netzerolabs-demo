@@ -4,7 +4,7 @@
     width:100%;
     max-width: 1000px;
     margin:0 auto;
-    margin-top: 2rem;
+    margin-top: 1.4rem;
     /* text-align: center; */
     position: relative;
 }
@@ -22,7 +22,7 @@
     font-size:1rem
 }
 .aboutMissionState {
-    margin:1.6rem 0;
+    margin:1.3rem 0;
     text-shadow: 0 0 10px aquamarine;
 }
 .aboutTxt {
@@ -31,7 +31,7 @@
 }
 .net0labsCertContainer {
     margin:0 auto;
-    margin:4rem 0 0;
+    margin:2.4rem 0 2rem;
     text-align: center;
 }
 .net0labsMask {
