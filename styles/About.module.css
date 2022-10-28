@@ -26,3 +26,14 @@
     margin-left:1rem;
     font-size:0.9rem
 }
+.net0labsCertContainer {
+    margin:0 auto;
+    margin:4rem 0 0;
+    text-align: center;
+}
+.net0labsMask {
+    width:100%;
+    max-width: 340px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 2px limegreen, 0 0 23px lightseagreen;
+}
