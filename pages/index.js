@@ -148,28 +148,28 @@ export default function Home() {
               </div>
               <div className={styles.signItem}>
                 <img className={styles.signImg}
-                  height='50px'
+                  height='55px'
                   src='/pledges/microsoft_logo.png' 
                   alt='Microsoft' 
                 />
               </div>
               <div className={styles.signItem}>
                 <img className={styles.signImg}
-                  height='30px'
+                  height='25px'
                   src='/pledges/uber_logo.png' 
                   alt='Uber' 
                 />
               </div>
               <div className={styles.signItem}>
                 <img className={styles.signImg}
-                  height='30px'
+                  height='25px'
                   src='/pledges/visa_logo.png' 
                   alt='Visa' 
                 />
               </div>
               <div className={styles.signItem}>
                 <img className={styles.signImg}
-                  height='30px'
+                  height='25px'
                   src='/pledges/ibm_logo.png' 
                   alt='IBM' 
                 />

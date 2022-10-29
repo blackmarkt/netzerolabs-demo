@@ -45,6 +45,7 @@
   }
   .nftContainer {
     margin-top: 7rem!important;
+    margin-bottom:7rem!important;
   }
   .faqContainer {
     margin-top: 0rem!important;
@@ -54,6 +55,11 @@
     width:90%!important;
     height:300px!important;
     margin-top:2rem!important;
+  }
+  .videoContainer {
+    width:50%!important;
+    margin:1rem 0;
+    /* border-radius: 6px; */
   }
   .videoMask { 
     width:80%!important
