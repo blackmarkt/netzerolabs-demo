@@ -39,4 +39,29 @@
     max-width: 340px;
     border-radius: 50%;
     box-shadow: 2px 2px 2px limegreen, 0 0 23px lightseagreen;
+    animation: fadeIn 6s;
+    -webkit-animation: fadeIn 6s;
+    -moz-animation: fadeIn 6s;
+    -o-animation: fadeIn 6s;
+    -ms-animation: fadeIn 6s;
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+@-moz-keyframes fadeIn { /* Firefox */
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+@-webkit-keyframes fadeIn { /* Safari and Chrome */
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+@-o-keyframes fadeIn { /* Opera */
+  0% {opacity:0;}
+  100% {opacity:1;}
 }
