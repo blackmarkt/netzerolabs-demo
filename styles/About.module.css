@@ -19,10 +19,11 @@
     margin:1rem 0;
 }
 .aboutHeaderTxt {
-    font-size:1rem
+    font-size:1rem;
+    margin-bottom: 0;
 }
 .aboutMissionState {
-    margin:1.3rem 0;
+    margin:2.5rem 0 0.5rem;
     text-shadow: 0 0 10px aquamarine;
 }
 .aboutTxt {
