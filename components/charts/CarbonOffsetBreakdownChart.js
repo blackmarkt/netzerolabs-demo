@@ -34,7 +34,7 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
                 x2: 1,
                 y2: 1},
             stops: [
-                [0, 'limegreen'],
+                [0.2, 'limegreen'],
                 [1, 'transparent']
             ]
         },
@@ -53,7 +53,7 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
                 x2: 1,
                 y2: 1},
             stops: [
-                [0, 'aqua'],
+                [0.2, 'aqua'],
                 [1, 'transparent']
             ]
         },
@@ -67,12 +67,12 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
         },
         color: {
             linearGradient:  { 
-                x1: 1,
-                y1: 0,
+                x1: 0,
+                y1: 1,
                 x2: 1,
-                y2: 1},
+                y2: 0},
             stops: [
-                [0, '#F8F8FF'],
+                [0.2, '#F8F8FF'],
                 [1, 'transparent']
             ]
         },
@@ -86,12 +86,12 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
         },
         color: {
             linearGradient:  { 
-                x1: 0,
-                y1: 1,
+                x1: 1,
+                y1: 0,
                 x2: 1,
                 y2: 1},
             stops: [
-                [0, '#2E2E2E'],
+                [0.4, '#2E2E2E'],
                 [1, 'transparent']
             ]
         },
@@ -107,10 +107,10 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
             linearGradient:  { 
                 x1: 1,
                 y1: 0,
-                x2: 0,
+                x2: 1,
                 y2: 1},
             stops: [
-                [0, 'darkgray'],
+                [0.4, 'gray'],
                 [1, 'transparent']
             ]
         },
@@ -131,7 +131,8 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
             plotShadow: false,
             type: 'pie',
             backgroundColor: 'transparent',
-            padding: [10,0,10,0]
+            margin: [30,0,20,0],
+            padding: [30,0,30,0]
         },
         credits: {
             enabled: false
@@ -163,19 +164,19 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
                 opacity:1,
                 // shadow: true,
                 // borderColor:'#FFFFFF',
-                startAngle: -90,
-                endAngle: 90,
-                center: ['50%', '75%'],
-                size: '120%',
+                // startAngle: -90,
+                // endAngle: 90,
+                // center: ['50%', '75%'],
+                size: '110%',
                 dataLabels: {
                     enabled: true,
                     // format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
                     format: '<b>{point.name}</b><br>0%',
-                    distance: -25,
+                    distance: -40,
                     style: {
                         textOutline: false,
-                        color: 'darkgray',
-                        fontSize:'0.6rem', 
+                        color: 'white',
+                        fontSize:'0.7rem', 
                     },
                     filter: {
                         property: 'percentage',
@@ -187,7 +188,7 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
         },
         series: [{
             name: 'tCO2e %',
-            size: '140%',
+            size: '120%',
             innerSize: '30%',
             data: carbonOffsetData
         }]
@@ -200,7 +201,7 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
                 constructorType={'chart'}
                 options={options}
                 containerProps={{ className: 'carbon-offset-pie-chart',
-                                  style: { height: "200px" } }} 
+                                  style: { height: "250px" } }} 
             />
         </div>
     )
