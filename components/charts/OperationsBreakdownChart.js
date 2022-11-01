@@ -35,7 +35,8 @@ const OperationsBreakdownChart = ({ chartData }) => {
             text: ''
         },
         tooltip: {
-            pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            // pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            pointFormat: '{series.name}: <b>0%</b>'
         },
         accessibility: {
             point: {
@@ -51,7 +52,8 @@ const OperationsBreakdownChart = ({ chartData }) => {
                 opacity:0.7,
                 dataLabels: {
                     enabled: true,
-                    format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
+                    format: '<b>{point.name}</b><br>0%',
+                    // format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
                     distance: -30,
                     style: {
                         textOutline: false 

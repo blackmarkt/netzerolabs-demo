@@ -30,7 +30,7 @@
     margin: 0;
     text-align: center;
     /* padding: 0; */
-    padding: 0.4rem 0 0;
+    padding: 1rem 0 0;
 }
 .offsetsSubTxt {
     font-size:0.7rem;
@@ -100,7 +100,7 @@
     opacity: 0.3!important;
 }
 .subHeaderDivider {
-    margin:2rem 1.5rem;
+    margin:0.8rem 1.5rem 2rem 0;
     border-top: 3px solid darkgray;
     opacity:0.1;
     border-radius: 6px;
