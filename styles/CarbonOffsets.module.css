@@ -1,6 +1,7 @@
 .offsetsOuterContainer {
     width:100%;
     height:100%;
+    padding:1rem 0;
 }
 .offsetsSubLeftContainer, .offsetsSubRightContainer {
     display: inline-block;
@@ -100,7 +101,7 @@
     opacity: 0.3!important;
 }
 .subHeaderDivider {
-    margin:0.8rem 1.5rem 2rem 0;
+    margin:0.8rem 1.5rem 2rem 1.5rem;
     border-top: 3px solid darkgray;
     opacity:0.1;
     border-radius: 6px;
