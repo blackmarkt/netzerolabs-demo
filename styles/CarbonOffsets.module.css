@@ -101,7 +101,7 @@
     opacity: 0.3!important;
 }
 .subHeaderDivider {
-    margin:0.8rem 1.5rem 2rem 1.5rem;
+    margin:0.8rem 1.5rem 1.5rem 1.5rem;
     border-top: 3px solid darkgray;
     opacity:0.1;
     border-radius: 6px;
@@ -119,8 +119,8 @@
     margin:0rem 0 1rem;
     padding-top: 0;
     text-align: center;
-    /* color:#616161!important;
-    text-shadow: none!important; */
+    color:#616161!important;
+    text-shadow: none!important;
 }
 .subChartHeader {
     font-size:0.8rem;

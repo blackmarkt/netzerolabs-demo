@@ -62,7 +62,7 @@ const CarbonOffsets = ({ offsetData }) => {
             </div>
             <hr className={styles.subHeaderDivider}></hr>
             <div className={styles.offsetsSubLeftContainer}>
-                <h4 className={styles.subHeader}>Carbon Offset Portfolio</h4>
+                <h4 className={styles.subHeader}>Carbon Assets Portfolio</h4>
                 <ul className={styles.offsetsBar}>
                     <l1>
                         {offsetData.offsets_dollar != null ? (<div className={styles.offsetsStatsTxt}>{offsetData.offsets_dollar}<div className={styles.emissionsUnits}>tCO&#8322;e</div></div>) 
