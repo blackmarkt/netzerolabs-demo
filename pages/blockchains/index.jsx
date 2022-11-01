@@ -88,21 +88,16 @@ const Blockchains = () => {
                     </table>
                 </div>
             </div>
-            <p className={styles.footNote}>&#42; Ethereum since the merge on 9/15/22</p>
+            <p className={styles.footNote}>&#42; Ethereum merge on 9/15/22</p>
             <h4 className={styles.dashboardHeader}>Network Emissions <span className={styles.subDashboardHeader}>(Scope 2)</span></h4>
             <div className={styles.dashboardSubContainer}>
                 <div className={styles.emissionsChartContainer}>
-                    {/* <div className={`${styles.emissionsSubChartContainer} ${styles.leftChartContainer}`}>
-                        <BlockchainEmissionsPieChart chartData={chainData}/>
+                    <div className={styles.emissionsChartContainer}>
+                        <BlockchainEmissionsChart chartData={chainData}/>
                     </div>
-                    <div className={`${styles.emissionsSubChartContainer} ${styles.rightChartContainer}`}> */}
-                        <div className={styles.emissionsChartContainer}>
-                            <BlockchainEmissionsChart chartData={chainData}/>
-                        </div>
-                        <div className={styles.emissionsChartContainer}>
-                            <CumulativeBlockchainEmissionsChart chartData={chainData}/>
-                        </div>
-                    {/* </div> */}
+                    <div className={styles.emissionsChartContainer}>
+                        <CumulativeBlockchainEmissionsChart chartData={chainData}/>
+                    </div>
                 </div>
             </div>
             <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>

@@ -17,7 +17,7 @@ const ChainEmissions = ( props ) => {
                     />
                 </td>
                 <td>
-                    {props.chain == 'Ethereum' ? (<h4 className={styles.txtChain}>{props.chain}&#42;</h4>)
+                    {props.chain == 'Ethereum' || props.chain == 'Polygon' ? (<h4 className={styles.txtChain}>{props.chain}&#42;</h4>)
                     : (<h4 className={styles.txtChain}>{props.chain}</h4>)}
                 </td>
                 {props.netzero_pledge == true ? (
