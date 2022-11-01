@@ -76,7 +76,7 @@ const BlockchainEmissionsPieChart = ({ chartData }) => {
                 borderWidth:0,
                 opacity:0.7,
                 shadow: true,
-                borderColor:'#FFFFFF',
+                // borderColor:'#FFFFFF',
                 dataLabels: {
                     enabled: true,
                     format: '<b>{point.name}</b><br>{point.percentage:.1f} %',

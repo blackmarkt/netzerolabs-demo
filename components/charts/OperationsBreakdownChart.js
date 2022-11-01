@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
+import { withRouter } from 'next/router';
 
 const OperationsBreakdownChart = ({ chartData }) => {
 
@@ -13,6 +14,26 @@ const OperationsBreakdownChart = ({ chartData }) => {
                 colors.push(Highcharts.color(chartData.chart_data.chart_color).brighten((i - 3) / 8).get());
             }
             return colors;
+        }
+    }());
+
+    var colorGradientArr = (function () {
+        let dataArr = chartData.chart_data.operations_data
+        if (typeof Highcharts === 'object') {
+            for (let i=0; i<chartData.chart_data.operations_data.length; i+=1) {
+                dataArr[i]['color'] = {
+                    linearGradient:  { 
+                        x1: 0,
+                        y1: 0,
+                        x2: 1,
+                        y2: 1},
+                    stops: [
+                        [0, Highcharts.color(chartData.chart_data.chart_color).brighten((i - 3) / 8).get()],
+                        [1, 'transparent']
+                    ]
+                }
+            }
+            return dataArr
         }
     }());
 
@@ -47,16 +68,17 @@ const OperationsBreakdownChart = ({ chartData }) => {
             pie: {
                 allowPointSelect: true,
                 cursor: 'pointer',
-                colors: pieColors,
+                // colors: pieColors,
                 borderWidth:0,
-                opacity:0.7,
+                // opacity:0.7,
                 dataLabels: {
                     enabled: true,
                     format: '<b>{point.name}</b><br>0%',
                     // format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
                     distance: -30,
                     style: {
-                        textOutline: false 
+                        textOutline: false,
+                        color:'white',
                     },
                     filter: {
                         property: 'percentage',
@@ -70,7 +92,8 @@ const OperationsBreakdownChart = ({ chartData }) => {
             name: 'tCO2e %',
             size: '100%',
             innerSize: '40%',
-            data: chartData.chart_data.operations_data
+            data: colorGradientArr,
+            // data: chartData.chart_data.operations_data
         }]
     }
 

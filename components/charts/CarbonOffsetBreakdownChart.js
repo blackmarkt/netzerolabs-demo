@@ -161,7 +161,7 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
                 allowPointSelect: true,
                 cursor: 'pointer',
                 borderWidth:0,
-                opacity:1,
+                opacity:0.8,
                 // shadow: true,
                 // borderColor:'#FFFFFF',
                 // startAngle: -90,
