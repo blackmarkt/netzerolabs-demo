@@ -1,23 +1,9 @@
 import React, { useEffect } from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
-import { withRouter } from 'next/router';
 
 
 const BlockchainEmissionsPieChart = ({ chartData }) => {
-    // console.log('CHART DATA ', chartData);
-
-    // var pieColors = (function () {
-    //     if (typeof Highcharts === 'object') {
-    //         var colors = [],
-    //         i;
-    
-    //         for (i = 0; i < chartData.length; i += 1) {
-    //             colors.push(Highcharts.color(chartData.chart_data.chart_color).brighten((i - 3) / 8).get());
-    //         }
-    //         return colors;
-    //     }
-    // }());
 
     function pieData(chainData) {
         if (typeof Highcharts === 'object') {
@@ -29,7 +15,6 @@ const BlockchainEmissionsPieChart = ({ chartData }) => {
                                y: parseInt(chainData[i].emissions_stats.sum.replace(/,/g, '')),
                                color: chainData[i].chart_data.chart_color});
                 }
-                console.log('CHART DATA ', chainData[i].chain);
             }
             return data;
         }
@@ -83,7 +68,7 @@ const BlockchainEmissionsPieChart = ({ chartData }) => {
                 dataLabels: {
                     enabled: true,
                     format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
-                    distance: -40,
+                    distance: -10,
                     style: {
                         textOutline: false,
                         color: 'darkgray' 

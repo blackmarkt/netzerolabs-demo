@@ -105,20 +105,16 @@ const chain = ({ chainData }) => {
                     </ul>
                     <ul className={styles.subStatsBar}>
                         <li>
-                            {/* <div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>{ chainData.transaction_stats.median }</div> */}
                             {chainData.transaction_stats.median != null ? (<div className={styles.subEmissionsTxt}>{chainData.transaction_stats.median}</div>) 
                             : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                            {/* <div className={styles.subHeader}>Tx</div> */}
                             <p className={styles.footnotes}>Median Daily Tx</p>
                         </li>
                     </ul>
                     <hr className={styles.subHeaderDivider}></hr>
                     <ul className={styles.subStatsBar}>
                         <li>
-                            {/* <div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>{ chainData.emissions }</div> */}
                             {chainData.emissions != null ? (<div className={styles.subEmissionsTxt}>{chainData.emissions}</div>) 
                             : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                            {/* <div className={styles.subHeader}>tCO&#8322;e</div> */}
                             {chainData.emissions != null && <div className={styles.subHeader}>tCO&#8322;e</div>}
                             <p className={styles.footnotes}>YTD</p>
                         </li>
@@ -190,10 +186,8 @@ const chain = ({ chainData }) => {
                 </div>
             </div>
             <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>
-            <div className={`${styles.dashboardSubContainer} ${styles[chainData.nav]}`}>
+            <div className={`${styles.dashboardOffsetContainer} ${styles[chainData.nav]}`}>
                 <CarbonOffsets offsetData={chainData.netzero_cert} />
-                {/* {chainData.netzero == true ? (<CarbonOffsets offsetData={chainData.netzero_cert} />) 
-                : (<div className={styles.notActiveContainer}><span className={styles.notActiveTxt}>Not Active</span></div>)} */}
             </div>
         </div>
     );

@@ -7,7 +7,7 @@ export default function About() {
                 <h1 className={aboutStyles.aboutHeader}>Our Climate Mission</h1>
                 <p className={aboutStyles.aboutHeaderTxt}>All Web3 companies, organizations, DAO's, etc... that have publicly launched tokens commit to the following 2 climate actions:</p>
                 <div className={aboutStyles.aboutSubCommitContainer}>
-                <h2 className={aboutStyles.aboutMissionState}>Carbon Negative Commitment</h2>
+                    <h2 className={aboutStyles.aboutMissionState}>Carbon Negative Commitment</h2>
                     <p className={aboutStyles.aboutTxt}>Consistently measure, report and offset carbon footprints. All climate reports, assets, certifications should be tokenized and stored on-chain for absolute public transparency.</p>
                     <h2 className={aboutStyles.aboutMissionState}>NetZero 20x0 Pledge</h2>
                     <p className={aboutStyles.aboutTxt}>Draft accessible, credible, actionable and enforceable plans to become NetZero by 2050 or sooner (2030 being the most ambitious deadline). Ideally these plans would be tokenized and stored on-chain. To learn more please check out the  

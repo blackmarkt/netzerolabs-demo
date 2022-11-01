@@ -99,3 +99,24 @@
     text-shadow: none!important;
     opacity: 0.3!important;
 }
+.subHeaderDivider {
+    margin:2rem 1.5rem;
+    border-top: 3px solid darkgray;
+    opacity:0.1;
+    border-radius: 6px;
+}
+.subChartContainer {
+    height:30%;
+    max-height: 250px;
+    width:100%;
+    padding:0 0.5rem;
+    /* color:#616161!important;
+    text-shadow: none!important; */
+}
+.subHeader {
+    font-size:0.8rem;
+    margin:0.2rem 0 1rem;
+    text-align: center;
+    /* color:#616161!important;
+    text-shadow: none!important; */
+}
