@@ -1,0 +1,27 @@
+.nftContainer {
+  height: 100%;
+  width:100%;
+  margin:0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  cursor: pointer;
+  /* opacity:0.4; */
+  filter: blur(6px);
+  -webkit-filter: blur(6px);
+  -moz-filter: blur(6px);
+  -o-filter: blur(6px);
+  -ms-filter: blur(6px);
+}
+.videoContainer {
+  width:30%;
+  margin:1rem 0.5rem;
+    /* border-radius: 6px; */
+}
+.videoMask {
+  width:75%;
+  margin: 0 auto;
+  border-radius: 6px;
+  text-shadow:0 0 6px white;
+  box-shadow: 0 1px 1px white, 0 0 8px white;
+}

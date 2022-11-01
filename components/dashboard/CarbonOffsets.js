@@ -3,7 +3,7 @@ import Link from 'next/link'
 import styles from '../../styles/CarbonOffsets.module.css'
 import CumulativeOffsetChart from '../../components/charts/CumulativeOffsetChart'
 import CarbonOffsetBreakdownChart from '../../components/charts/CarbonOffsetBreakdownChart'
-import mitt from 'next/dist/shared/lib/mitt'
+import CarbonNFTs from '../blockchains/CarbonNFTs'
 // import { numberWithCommas } from '../../data/emissionsData'
 
 
@@ -80,6 +80,11 @@ const CarbonOffsets = ({ offsetData }) => {
                 <div className={styles.subChartContainer}>
                     <CarbonOffsetBreakdownChart offsetData={offsetData} />
                 </div>
+            </div>
+            <div className={styles.offsetsSubRightContainer}>
+                <p className={styles.subChartHeader}>Projects</p>
+                <span className={[styles.notActiveTxt, styles.txtCenter].join(" ")}>Not Active</span>
+                <CarbonNFTs />
             </div>
         </div>
     )

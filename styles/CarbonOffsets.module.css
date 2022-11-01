@@ -114,9 +114,26 @@
     text-shadow: none!important; */
 }
 .subHeader {
-    font-size:0.8rem;
-    margin:0.2rem 0 1rem;
+    font-size:0.9rem;
+    margin:0rem 0 1rem;
+    padding-top: 0;
     text-align: center;
     /* color:#616161!important;
     text-shadow: none!important; */
+}
+.subChartHeader {
+    font-size:0.8rem;
+    margin:0rem 0 1rem;
+    padding-top: 0;
+    text-align: center;
+    color:darkgray!important;
+    text-shadow: none!important;
+}
+.txtCenter {
+    position: absolute;
+    top:50%;
+    left:0;
+    right:0;
+    text-align: center;
+    z-index:99
 }

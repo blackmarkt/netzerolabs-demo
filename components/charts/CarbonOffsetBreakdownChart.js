@@ -171,7 +171,7 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
                     enabled: true,
                     // format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
                     format: '<b>{point.name}</b><br>0%',
-                    distance: -30,
+                    distance: -25,
                     style: {
                         textOutline: false,
                         color: 'darkgray',

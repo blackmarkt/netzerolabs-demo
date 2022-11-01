@@ -13,7 +13,19 @@ const BlockchainEmissionsPieChart = ({ chartData }) => {
                 if (chainData[i].emissions != null && chainData[i].chain != 'Bitcoin') {
                     data.push({name: chainData[i].chain, 
                                y: parseInt(chainData[i].emissions_stats.sum.replace(/,/g, '')),
-                               color: chainData[i].chart_data.chart_color});
+                            //    color: chainData[i].chart_data.chart_color});
+                               color: {
+                                    linearGradient:  { 
+                                        x1: 0,
+                                        y1: 0,
+                                        x2: 1,
+                                        y2: 1},
+                                    stops: [
+                                        [0, chainData[i].chart_data.chart_color],
+                                        [1, 'transparent']
+                                    ]
+                                }
+                            });
                 }
             }
             return data;
