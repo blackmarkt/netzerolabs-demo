@@ -67,7 +67,7 @@ const CarbonOffsets = ({ offsetData }) => {
                     <l1>
                         {offsetData.offsets_dollar != null ? (<div className={styles.offsetsStatsTxt}>{offsetData.offsets_dollar}<div className={styles.emissionsUnits}>tCO&#8322;e</div></div>) 
                         : (<div className={[styles.subOpEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                        <div className={styles.offsetsSubTxt}>Total USD</div>
+                        <div className={styles.offsetsSubTxt}>Total Offsets (USD)</div>
                     </l1>
                 </ul>
                 <ul className={styles.offsetsBar}>

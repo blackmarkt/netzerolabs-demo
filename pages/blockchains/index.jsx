@@ -47,7 +47,11 @@ const Blockchains = () => {
                                     Chain
                                 </th>
                                 <th>
-                                    NetZero
+                                    NetZero Pledge
+                                </th>
+                                <th>
+                                    Emissions Report
+                                    <p className={styles.subHeadHeader}>(2022)</p>
                                 </th>
                                 <th>
                                     Total Emissions

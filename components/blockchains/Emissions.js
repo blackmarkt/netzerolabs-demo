@@ -17,10 +17,22 @@ const ChainEmissions = ( props ) => {
                     />
                 </td>
                 <td>
-                {props.chain == 'Ethereum' ? (<h4 className={styles.txtChain}>{props.chain}&#42;</h4>)
-                : (<h4 className={styles.txtChain}>{props.chain}</h4>)
-                }
+                    {props.chain == 'Ethereum' ? (<h4 className={styles.txtChain}>{props.chain}&#42;</h4>)
+                    : (<h4 className={styles.txtChain}>{props.chain}</h4>)}
                 </td>
+                {props.netzero_pledge == true ? (
+                    <td className={styles.tableColCert}>  
+                    <img className={styles.net0Cert}
+                        src='/certification/netzero_cert.png'
+                        alt='NetZero Certified'
+                        height='25px'
+                        opacity='0.6'
+                    /></td>
+                ) : (
+                    <td className={styles.tableColCertNA}>  
+                    <div className={[styles.emissionsTxtMatte, styles.pulsate].join(" ")}>NA</div>
+                    </td>
+                )}
                 {props.netzero == true ? (
                     <td className={styles.tableColCert}>  
                     <img className={styles.net0Cert}

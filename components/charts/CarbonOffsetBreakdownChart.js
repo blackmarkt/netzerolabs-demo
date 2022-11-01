@@ -131,7 +131,7 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
             plotShadow: false,
             type: 'pie',
             backgroundColor: 'transparent',
-            margin: [30,0,20,0],
+            margin: [40,0,20,0],
             padding: [30,0,30,0]
         },
         credits: {
@@ -201,7 +201,7 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
                 constructorType={'chart'}
                 options={options}
                 containerProps={{ className: 'carbon-offset-pie-chart',
-                                  style: { height: "250px" } }} 
+                                  style: { height: "260px" } }} 
             />
         </div>
     )

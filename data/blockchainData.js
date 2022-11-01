@@ -81,6 +81,7 @@ const blockchainData = [
     row: 'tableOdd',
     nav: 'bitcoin',
     netzero: false,
+    netzero_pledge:false,
     netzero_cert: {
         netzero_co: null,
         netzero_report_url: null,
@@ -145,6 +146,7 @@ const blockchainData = [
     row: 'tableEven',
     nav: 'ethereum',
     netzero: false,
+    netzero_pledge:false,
     netzero_cert: {
         netzero_co: null,
         netzero_report_url: null,
@@ -209,6 +211,7 @@ const blockchainData = [
     row: 'tableOdd',
     nav: 'celo',
     netzero: true,
+    netzero_pledge:false,
     netzero_cert: {
         netzero_co: 'Wren',
         offsets: numberWithCommas(getTotalOffsetsMonthly(celoNumOffsets)),
@@ -272,6 +275,7 @@ const blockchainData = [
     row: 'tableEven',
     nav: 'solana',
     netzero: true,
+    netzero_pledge:false,
     netzero_cert: {
         netzero_co: 'Robert Murphy',
         netzero_report_url: 'https://solana.com/news/solanas-energy-use-report-march-2022',
@@ -335,6 +339,7 @@ const blockchainData = [
     row: 'tableOdd',
     nav: 'avalanche',
     netzero: false,
+    netzero_pledge:false,
     netzero_cert: {
         netzero_co: null,
         netzero_report_url: null,
@@ -398,6 +403,7 @@ const blockchainData = [
     row: 'tableEven',
     nav: 'polygon',
     netzero: true,
+    netzero_pledge:false,
     netzero_cert: {
         netzero_co: 'Offsetra/KlimaDAO',
         netzero_report_url: 'https://www.klimadao.finance/blog/polygon-pos-emissions-analysis',
@@ -461,6 +467,7 @@ const blockchainData = [
     row: 'tableOdd',
     nav: 'near',
     netzero: true,
+    netzero_pledge:false,
     netzero_cert: {
         netzero_co: 'South Pole',
         netzero_report_url: 'https://near.org/blog/near-climate-neutral-product/',
@@ -524,6 +531,7 @@ const blockchainData = [
     row: 'tableEven',
     nav: 'binance',
     netzero: false,
+    netzero_pledge:false,
     netzero_cert: {
         netzero_co: null,
         netzero_report_url: null,
@@ -587,6 +595,7 @@ const blockchainData = [
     row: 'tableOdd',
     nav: 'cardano',
     netzero: false,
+    netzero_pledge:false,
     netzero_cert: {
         netzero_co: null,
         netzero_report_url: null,
@@ -650,6 +659,7 @@ const blockchainData = [
     row: 'tableEven',
     nav: 'polkadot',
     netzero: false,
+    netzero_pledge:false,
     netzero_cert: {
         netzero_co: null,
         netzero_report_url: null,
