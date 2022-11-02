@@ -29,12 +29,12 @@ const Blockchains = () => {
                 <div className={`${styles.grid} ${styles.dashboardHeadSubContainer}`}>
                     <div className={`${styles.topDashboard} ${styles.totalEmissionsTxt}`}>{totalL1Emissions}</div>
                     <div className={styles.emissionsUnits}>tCO&#8322;e</div>
-                    <p className={styles.subDashboard}>Total L1 CO&#8322; Emissions (YTD)</p>
+                    <p className={styles.subDashboard}>Total L1 Emissions (YTD)</p>
                 </div>
                 <div className={`${styles.grid} ${styles.dashboardHeadSubContainer}`}>
                     <div className={`${styles.topDashboard} ${styles.totalOffsetTxt}`}>{totalL1Offsets}</div>
                     <div className={styles.emissionsUnits}>tCO&#8322;e</div>
-                    <p className={styles.subDashboard}>Total L1 CO&#8322; Offsets (YTD)</p>
+                    <p className={styles.subDashboard}>Total L1 Offsets (YTD)</p>
                 </div>      
             </div>
             <div className={styles.dashboardSubContainer}>
@@ -101,7 +101,7 @@ const Blockchains = () => {
                 </div>
             </div>
             <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>
-            <div className={[styles.dashboardSubContainer, styles.dashboardChartSubContainer].join(" ")}>
+            <div className={[styles.dashboardSubContainer, styles.dashboardOffsetsSubContainer].join(" ")}>
                 <div className={styles.emissionsChartContainer}>
                     <CumulativeBlockchainOffsetChart offsetData={chainData}/>
                 </div>
