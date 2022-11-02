@@ -76,6 +76,7 @@ const BlockchainEmissionsChart = ({ chartData }) => {
         },
         plotOptions: {
             area: {
+                // stacking: 'normal',
                 fillColor: {
                     linearGradient: {
                         x1: 0,
@@ -155,7 +156,7 @@ const BlockchainEmissionsChart = ({ chartData }) => {
                 constructorType={'chart'}
                 options={options}
                 containerProps={{ className: 'blockchain-emissions-chart',
-                                  style: { height: "300px" } }} 
+                                  style: { height: "340px" } }} 
             />
         </div>
     )

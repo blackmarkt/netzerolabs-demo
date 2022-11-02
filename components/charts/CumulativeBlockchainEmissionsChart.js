@@ -19,7 +19,7 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
                         className: 'line-class1',
                         data:  chartData[i].chart_data.chart_cum_data,
                         color: chartData[i].chart_data.chart_color,
-                        type: 'area',
+                        // type: 'area',
                         shadow: {
                             color:chartData[i].chart_data.chart_color,
                                 width: 12,
@@ -54,13 +54,13 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
 
     const options = {
         chart: {
-            type: 'line',
+            // type: 'area',
             backgroundColor: 'transparent',
-            margin: [20,20,50,100]
+            margin: [20,20,50,80]
             // color: "#fff"
         },
         title: {
-            text: 'Total tCO2e (per Tx)',
+            text: 'Cumulative tCO2e (per Tx)',
             floating:true,
             y:10,
             style: {
@@ -84,11 +84,15 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
                 color: '#616161',
             }
         },
-        // plotOptions: {
-        //     area: {
-        //         stacking: 'normal'
-        //     }
-        // },
+        plotOptions: {
+            area: {
+                stacking: 'normal',
+            },
+            // series: {
+            //     stickyTracking: false,
+            //     trackByArea: true
+            // }
+        },
         // plotOptions: {
         //     area: {
         //         fillColor: {
@@ -117,6 +121,7 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
         // },
         yAxis: {
             type: 'logarithmic',
+            min:1,
             lineWidth: 0,
                 lineColor: 'black',
                 gridLineWidth: 0,
@@ -129,9 +134,9 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
                         fontSize: '0.6rem',
                         color: '#616161',
                     },
-                    formatter: function() {
-                    return this.value;
-                    }
+                    // formatter: function() {
+                    // return Highcharts.numberFormat(this.value);
+                    // }
                 }
         },
         xAxis: {
@@ -155,7 +160,7 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
             }
         },
         tooltip: {
-            pointFormat: '<b>{series.name}: {point.y:,.2f}</b>',
+            pointFormat: '<b>{series.name}: {point.y:,.0f}</b>',
         },
         series:chartDataSeries
     }
@@ -167,7 +172,7 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
                 constructorType={'chart'}
                 options={options}
                 containerProps={{ className: 'cumulative-blockchain-emissions-chart',
-                                  style: { height: "300px" } }} 
+                                  style: { height: "360px" } }} 
             />
         </div>
     )
