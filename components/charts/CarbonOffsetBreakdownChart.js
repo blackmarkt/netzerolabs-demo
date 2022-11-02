@@ -20,7 +20,7 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
     //     }
     // }
     var carbonOffsetData = [
-        {name: 'Nature', y:1,
+        {name: 'Conservation', y:1,
         shadow: {
             color: 'limegreen',
                 width: 30,
@@ -96,7 +96,7 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
             ]
         },
         },
-        {name:'Concrete', y:1,
+        {name:'Policy', y:1,
         shadow: {
             color: 'gray',
                 width: 30,
@@ -172,7 +172,7 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
                     enabled: true,
                     // format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
                     format: '<b>{point.name}</b><br>0%',
-                    distance: -40,
+                    distance: -30,
                     style: {
                         textOutline: false,
                         color: 'white',

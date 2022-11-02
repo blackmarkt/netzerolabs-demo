@@ -4,6 +4,7 @@ import BlockchainEmissionsChart from '../../components/charts/BlockchainEmission
 import CumulativeBlockchainEmissionsChart from '../../components/charts/CumulativeBlockchainEmissionsChart'
 import CumulativeBlockchainOffsetChart from '../../components/charts/CumulativeBlockchainOffsetChart'
 import BlockchainEmissionsPieChart from '../../components/charts/BlockchainEmissionsPieChart'
+import CarbonOffsetBreakdownChart from "../../components/charts/CarbonOffsetBreakdownChart";
 import styles from '../../styles/Blockchains.module.css'
 import { getBlockchainData, getL1TotalEmissions, getL1TotalOffsets } from '../../data/blockchainData'
 
@@ -102,8 +103,13 @@ const Blockchains = () => {
             </div>
             <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>
             <div className={[styles.dashboardSubContainer, styles.dashboardOffsetsSubContainer].join(" ")}>
-                <div className={styles.emissionsChartContainer}>
-                    <CumulativeBlockchainOffsetChart offsetData={chainData}/>
+                <div className={styles.subLeftContainer}>
+                    <CarbonOffsetBreakdownChart offsetData={chainData}/>
+                </div>
+                <div className={styles.subRightContainer}>
+                    <div className={styles.emissionsChartContainer}>
+                        <CumulativeBlockchainOffsetChart offsetData={chainData}/>
+                    </div>
                 </div>
             </div>
             <h4 className={styles.dashboardHeader}>Operations Emissions <span className={styles.subDashboardHeader}>(Scope 3)</span></h4>
