@@ -75,10 +75,10 @@ const OperationsBreakdownChart = ({ chartData }) => {
                     enabled: true,
                     format: '<b>{point.name}</b><br>0%',
                     // format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
-                    distance: -30,
+                    distance: -40,
                     style: {
                         textOutline: false,
-                        color:'white',
+                        color:'gray',
                     },
                     filter: {
                         property: 'percentage',

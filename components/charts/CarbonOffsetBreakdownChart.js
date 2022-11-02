@@ -142,7 +142,7 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
         },
         title: {
             text: '',
-            // marginTop:-20,
+            marginTop:-0,
             style: {
                 fontSize: '0.75rem',
                 color: '#616161'
@@ -175,7 +175,7 @@ const CarbonOffsetBreakdownChart = ({ chartData }) => {
                     distance: -30,
                     style: {
                         textOutline: false,
-                        color: 'white',
+                        color: 'gray',
                         fontSize:'0.7rem', 
                     },
                     filter: {

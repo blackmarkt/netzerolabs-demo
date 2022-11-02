@@ -17,7 +17,8 @@
     padding:1rem 0;
 }
 .dashboardOffsetContainer {
-    max-height:revert!important
+    max-height:revert!important;
+    text-shadow: none!important;
 }
 .dashboardOpsSubContainer {
     max-height: 800px;
@@ -170,6 +171,7 @@ p.subHeaderTxt {
 }
 .operationsChartsContainer {
     height:62%;
+    text-shadow: none!important;
 }
 .operationsSubContainer {
     margin-bottom:1.2rem
@@ -177,11 +179,14 @@ p.subHeaderTxt {
 .operationsPieChartContainer, .operationsLineChartContainer {
     display: inline-block;
     height:100%;
-    width:33%
+    width:33%;
+}
+.operationsPieChartContainer {
+    color:darkgray!important;
+    text-shadow: none!important;
 }
 .operationsLineChartContainer {
     width:65%;
-    text-shadow: none!important;
 }
 .officeAddress, .officeTitle {
     margin:0.4rem 0;
