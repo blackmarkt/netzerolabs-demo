@@ -21,7 +21,9 @@ const Map = ({ mapData }) => {
                 container: mapContainer.current,
                 projection: 'equirectangular',
                 style: "mapbox://styles/marktblack/cl9ak59tt000715t2bb8k9ao2",
-                zoom:0.3,
+                zoom:0.35,
+                // center: [-77.034084142948, 38.909671288923], 
+                minZoom:0.035,
                 // interactive: false,
                 dragPan: false,
                 attributionControl: false
@@ -43,6 +45,7 @@ const Map = ({ mapData }) => {
                     'id': 'node-layer',
                     'type': 'circle',
                     'source': 'node-source',
+                    'minZoom': '0.35',
                     'paint': {
                         'circle-color': mapData.map_color,
                         'circle-blur':6,

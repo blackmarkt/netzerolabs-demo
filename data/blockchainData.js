@@ -163,7 +163,7 @@ const blockchainData = [
         total_nodes: numberWithCommas(mapData['features'].length),
     },
     node_map_data: {
-        map_color: '#6b6e88',
+        map_color: '#8c8ea4',
         map_data: mapData,
     }
     },
