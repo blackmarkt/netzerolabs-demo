@@ -45,8 +45,8 @@ const Map = ({ mapData }) => {
                     'source': 'node-source',
                     'paint': {
                         'circle-color': mapData.map_color,
-                        'circle-blur':4,
-                        'circle-radius':6
+                        'circle-blur':6,
+                        'circle-radius':8
                     }
                 });
 
@@ -76,7 +76,7 @@ const Map = ({ mapData }) => {
                 const description = e.features[0].properties.nodeId;
                 const ipAddress = e.features[0].properties.ipAddress.split(":")[0];
                  
-                popup.setLngLat(coordinates).setHTML('<p className={styles.mapTxt}>' + ipAddress + '</p>').addClassName('map-popup').addTo(map);
+                popup.setLngLat(coordinates).setHTML('<p className={styles.mapTxt}>IP:</p>' + ipAddress).addClassName('map-popup').addTo(map);
             });
                  
             map.on('mouseleave', 'node-layer', () => {

@@ -4,6 +4,9 @@
     height: 100%;
     min-height:360px;
     border-radius:6px;
+    font-size: 0.7rem!important;
+    color:white;
+    text-shadow:0 0 10px white;
 }    
 .mapContainer {
     position: absolute;
@@ -11,16 +14,17 @@
     left:0;
     right:0;
     margin:0 auto;
-    /* bottom: 0; */
-    /* height:100%; */
-    /* width:100%; */
-    /* height: 460px;
-    width:600px; */
-    /* opacity:0.8; */
 }
 .mapboxgl-ctrl-logo{
     display: none!important;
 }
 .map-popup, .mapTxt{
-    font-size:0.3rem!important;
+    font-size:0.2rem!important;
+    display: inline-block;
+    color:white;
+    text-shadow:0 0 10px white;
+}
+.mapboxgl-popup-content {
+    font-size: 0.7rem!important;
+    text-shadow:0 0 10px white;
 }

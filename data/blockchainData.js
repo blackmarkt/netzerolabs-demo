@@ -17,6 +17,7 @@ import { numberWithCommas, calculateSum,
 import mapData from './eth_node_tracker_geojson_100722.geojson' assert {type: 'json'}
 import btcNodeData from './bitcoin_node_tracker_geojson_101822.geojson' assert {type: 'json'}
 import solNodeData from './solana_node_tracker_geojson_101822.geojson' assert {type: 'json'}
+import celoNodeData from './celo_node_tracker_geojson_110222.geojson' assert {type: 'json'}
 import bitcoinTxData from './transactions/bitcoin_tx.json' assert {type: 'json'}
 import cardanoTxData from './transactions/cardano_tx.json' assert {type: 'json'}
 import polkadotTxData from './transactions/polkadot_tx.json' assert {type: 'json'}
@@ -224,11 +225,11 @@ const blockchainData = [
     },
     offices: celoOfficeData,
     node_data: {
-        total_nodes: Object.keys(celoValidators['validators']).length,
+        total_nodes: numberWithCommas(celoNodeData['features'].length),
     },
     node_map_data: {
         map_color: '#FBCB5C',
-        map_data: {},
+        map_data: celoNodeData,
     }
     },
     {chain: 'Solana', 
