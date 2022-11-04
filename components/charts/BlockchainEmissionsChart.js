@@ -118,9 +118,9 @@ const BlockchainEmissionsChart = ({ chartData }) => {
                     fontSize: '0.7rem',
                     color: '#616161',
                 },
-                formatter: function() {
-                return this.value;
-                }
+                // formatter: function() {
+                // return this.value;
+                // }
             }
         },
         xAxis: {

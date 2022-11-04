@@ -61,30 +61,32 @@ const CarbonOffsets = ({ offsetData }) => {
                 {offsetData.netzero_offsets_chart == null && <div className={styles.notActiveContainer}><span className={styles.notActiveTxt}>Not Active</span></div>}
             </div>
             <hr className={styles.subHeaderDivider}></hr>
-            <div className={styles.offsetsSubLeftContainer}>
-                <h4 className={styles.subHeader}>Carbon Assets Portfolio</h4>
-                <ul className={styles.offsetsBar}>
-                    <l1>
-                        {offsetData.offsets_dollar != null ? (<div className={styles.offsetsStatsTxt}>{offsetData.offsets_dollar}<div className={styles.emissionsUnits}>tCO&#8322;e</div></div>) 
-                        : (<div className={[styles.subOpEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                        <div className={styles.offsetsSubTxt}>Total Offsets (USD)</div>
-                    </l1>
-                </ul>
-                <ul className={styles.offsetsBar}>
-                    <l1>
-                        {offsetData.offsets_dollar != null ? (<div className={styles.offsetsStatsTxt}>{offsetData.offsets_dollar}<div className={styles.emissionsUnits}>tCO&#8322;e</div></div>) 
-                        : (<div className={[styles.subOpEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                        <div className={styles.offsetsSubTxt}>Total Retired tCO&#8322;e</div>
-                    </l1>
-                </ul>
-                <div className={styles.subChartContainer}>
-                    <CarbonOffsetBreakdownChart offsetData={offsetData} />
+            <h4 className={styles.subHeader}>Carbon Assets Portfolio</h4>
+            <div className={styles.offsetsPortfolioContainer}>
+                <div className={styles.offsetsSubLeftContainer}>
+                    <ul className={styles.offsetsBar}>
+                        <l1>
+                            {offsetData.offsets_dollar != null ? (<div className={styles.offsetsStatsTxt}>{offsetData.offsets_dollar}<div className={styles.emissionsUnits}>tCO&#8322;e</div></div>) 
+                            : (<div className={[styles.subOpEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
+                            <div className={styles.offsetsSubTxt}>Total Offsets (USD)</div>
+                        </l1>
+                    </ul>
+                    <ul className={styles.offsetsBar}>
+                        <l1>
+                            {offsetData.offsets_dollar != null ? (<div className={styles.offsetsStatsTxt}>{offsetData.offsets_dollar}<div className={styles.emissionsUnits}>tCO&#8322;e</div></div>) 
+                            : (<div className={[styles.subOpEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
+                            <div className={styles.offsetsSubTxt}>Total Retired tCO&#8322;e</div>
+                        </l1>
+                    </ul>
+                    <div className={styles.subChartContainer}>
+                        <CarbonOffsetBreakdownChart offsetData={offsetData} />
+                    </div>
                 </div>
-            </div>
-            <div className={styles.offsetsSubRightContainer}>
-                <p className={styles.subChartHeader}>Projects</p>
-                <span className={[styles.notActiveTxt, styles.txtCenter].join(" ")}>Not Active</span>
-                <CarbonNFTs />
+                <div className={styles.offsetsSubRightContainer}>
+                    <p className={styles.subChartHeader}>Projects</p>
+                    <span className={[styles.notActiveTxt, styles.txtCenter].join(" ")}>Not Active</span>
+                    <CarbonNFTs />
+                </div>
             </div>
         </div>
     )
