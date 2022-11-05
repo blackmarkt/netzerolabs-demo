@@ -12,7 +12,7 @@
         width:100%!important
     }
     .subEmissionsHeader, .subEmissionsTxt {
-        font-size:1rem!important;
+        font-size:1.4rem!important;
         padding:0.3rem 0 0!important;
     }
     .footnotes {
@@ -27,7 +27,7 @@
     }
     .subHeaderTxt {
         margin:0.3rem 0!important;
-        font-size:0.7rem!important
+        font-size:0.8rem!important
     }
     .innerGrid {
         min-height:4vh!important;

@@ -11,6 +11,14 @@
     .subChartHeader {
         margin-top:1rem!important
     }
+    .subHeaderDivider {
+        margin:0 1rem!important
+    }
+    .subHeader {
+        width: 90%!important;
+        margin:0 auto!important;
+        margin-top:1rem!important;
+    }
 }
 @media only screen and (min-width: 46em) and (max-width: 66em) and (orientation:portrait) {
 
