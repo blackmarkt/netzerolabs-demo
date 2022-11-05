@@ -4,7 +4,7 @@ import Map from '../../../components/map/Map'
 import Offices from '../../../components/dashboard/Offices'
 import CarbonOffsets from '../../../components/dashboard/CarbonOffsets'
 // import Axios from "axios"
-import styles from '../../../styles/dashboard.module.css'
+import dashboardStyles from '../../../styles/Dashboard.module.css'
 import Image from 'next/image'
 // import Ethereum from '../../public/blockchains/ethereum.png'
 import TransactionsChart from '../../../components/charts/TransactionsChart'
@@ -18,165 +18,165 @@ import { blockchainData } from '../../../data/blockchainData'
 const chain = ({ chainData }) => {
 
     return (
-        <div className={styles.dashboardContainer}>
+        <div className={dashboardStyles.dashboardContainer}>
             <h2>{chainData.chain}
-                <img className={styles.logoChain}
+                <img className={dashboardStyles.logoChain}
                     src={chainData.logo}
                     alt={chainData.chain}
                     height='35px'
                 />
-                {chainData.netzero == true && chainData.netzero_cert.web3 == false && <img className={styles.netzeroCert} src='../certification/netzero_cert.png'
+                {chainData.netzero == true && chainData.netzero_cert.web3 == false && <img className={dashboardStyles.netzeroCert} src='../certification/netzero_cert.png'
                     alt={chainData.chain}
                     height='25px' />}
             </h2>
             <a href={`${chainData.website}`} target="_blank" rel="noopener noreferrer">
                 <p style={{"margin":"0 0 0.3rem"}}>{chainData.website}</p>
             </a>
-            <div className={styles.flexGrid}>
-                <div className={`${styles.grid} ${styles[chainData.nav]}`}>
-                    {chainData.emissions != null ? (<div className={[styles.topDashboard, styles.totalEmissionsTxt].join(" ")}>{chainData.emissions}</div>) 
-                    : (<div className={[styles.topDashboard, styles.txtNA, styles.totalEmissionsTxt, styles.pulsate].join(" ")}>NA</div>)}
-                    {chainData.emissions != null && <div className={styles.subHeader}>tCO&#8322;e</div>}
-                    <p className={styles.subDashboard}>CO&#8322; Footprint</p>
+            <div className={dashboardStyles.flexGrid}>
+                <div className={`${dashboardStyles.grid} ${dashboardStyles[chainData.nav]}`}>
+                    {chainData.emissions != null ? (<div className={[dashboardStyles.topDashboard, dashboardStyles.totalEmissionsTxt].join(" ")}>{chainData.emissions}</div>) 
+                    : (<div className={[dashboardStyles.topDashboard, dashboardStyles.txtNA, dashboardStyles.totalEmissionsTxt, dashboardStyles.pulsate].join(" ")}>NA</div>)}
+                    {chainData.emissions != null && <div className={dashboardStyles.subHeader}>tCO&#8322;e</div>}
+                    <p className={dashboardStyles.subDashboard}>CO&#8322; Footprint</p>
                 </div>
-                <div className={`${styles.grid} ${styles[chainData.nav]}`}>
-                    {chainData.offsets != null ? (<div className={[styles.topDashboard, styles.totalOffsetTxt].join(" ")}>{chainData.offsets}</div>) 
-                    : (<div className={[styles.topDashboard, styles.txtNA, styles.totalEmissionsTx, styles.pulsate].join(" ")}>NA</div>)}
-                    {chainData.offsets != null && <div className={styles.subHeader}>tCO&#8322;e</div>}
-                    <p className={styles.subDashboard}>CO&#8322; Offset (tCO&#8322;e)</p>
+                <div className={`${dashboardStyles.grid} ${dashboardStyles[chainData.nav]}`}>
+                    {chainData.offsets != null ? (<div className={[dashboardStyles.topDashboard, dashboardStyles.totalOffsetTxt].join(" ")}>{chainData.offsets}</div>) 
+                    : (<div className={[dashboardStyles.topDashboard, dashboardStyles.txtNA, dashboardStyles.totalEmissionsTx, dashboardStyles.pulsate].join(" ")}>NA</div>)}
+                    {chainData.offsets != null && <div className={dashboardStyles.subHeader}>tCO&#8322;e</div>}
+                    <p className={dashboardStyles.subDashboard}>CO&#8322; Offset (tCO&#8322;e)</p>
                 </div>
-                <div className={`${styles.grid} ${styles[chainData.nav]}`}>
-                    <div id='usdConvert' className={[styles.topDashboard, styles.txtNA, styles.totalEmissionsTx, styles.pulsate].join(" ")}v>NA</div>
-                    <div id="ethConvert" className={styles.ethContribute}></div>
-                    <p className={styles.subDashboard}>CO&#8322; Offset ($)</p>
+                <div className={`${dashboardStyles.grid} ${dashboardStyles[chainData.nav]}`}>
+                    <div id='usdConvert' className={[dashboardStyles.topDashboard, dashboardStyles.txtNA, dashboardStyles.totalEmissionsTx, dashboardStyles.pulsate].join(" ")}v>NA</div>
+                    <div id="ethConvert" className={dashboardStyles.ethContribute}></div>
+                    <p className={dashboardStyles.subDashboard}>CO&#8322; Offset ($)</p>
                 </div>
             </div>
-            <div className={`${styles.dashboardSubContainer} ${styles[chainData.nav]}`}>
-                <div className={styles.subContainer}>
-                <p className={styles.subHeaderTxt}>Validator Count</p>
-                    <ul className={styles.subEmissionsBar}>
+            <div className={`${dashboardStyles.dashboardSubContainer} ${dashboardStyles[chainData.nav]}`}>
+                <div className={dashboardStyles.subContainer}>
+                <p className={dashboardStyles.subHeaderTxt}>Validator Count</p>
+                    <ul className={dashboardStyles.subEmissionsBar}>
                         <li>
-                            {chainData.node_data.total_nodes != null ? (<div className={styles.subEmissionsHeader}>{chainData.node_data.total_nodes}</div>) 
-                            : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
+                            {chainData.node_data.total_nodes != null ? (<div className={dashboardStyles.subEmissionsHeader}>{chainData.node_data.total_nodes}</div>) 
+                            : (<div className={[dashboardStyles.subEmissionsTxt, dashboardStyles.txtNA].join(" ")}>NA</div>)}
                         </li>
                     </ul>
-                    <p className={styles.subHeaderTxt}>Network</p>
-                    <ul className={styles.subEmissionsBar}>
+                    <p className={dashboardStyles.subHeaderTxt}>Network</p>
+                    <ul className={dashboardStyles.subEmissionsBar}>
                         <li>
-                            {/* <div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>{ chainData.network_emissions }</div> */}
-                            {chainData.network_emissions != null ? (<div className={styles.subEmissionsHeader}>{chainData.network_emissions}</div>) 
-                            : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                            {/* <div className={styles.subHeader}>tCO&#8322;e</div> */}
-                            {chainData.network_emissions != null && <div className={styles.subHeader}>tCO&#8322;e</div>}
-                            {/* <p className={styles.footnotes}>Group Validators</p> */}
+                            {/* <div className={[dashboardStyles.subEmissionsTxt, dashboardStyles.txtNA].join(" ")}>{ chainData.network_emissions }</div> */}
+                            {chainData.network_emissions != null ? (<div className={dashboardStyles.subEmissionsHeader}>{chainData.network_emissions}</div>) 
+                            : (<div className={[dashboardStyles.subEmissionsTxt, dashboardStyles.txtNA].join(" ")}>NA</div>)}
+                            {/* <div className={dashboardStyles.subHeader}>tCO&#8322;e</div> */}
+                            {chainData.network_emissions != null && <div className={dashboardStyles.subHeader}>tCO&#8322;e</div>}
+                            {/* <p className={dashboardStyles.footnotes}>Group Validators</p> */}
                         </li>
                     </ul>
-                    <hr className={styles.subHeaderDivider}></hr>
-                    <p className={styles.subHeaderTxt}>Operations</p>
-                    <ul className={styles.subEmissionsBar}>
+                    <hr className={dashboardStyles.subHeaderDivider}></hr>
+                    <p className={dashboardStyles.subHeaderTxt}>Operations</p>
+                    <ul className={dashboardStyles.subEmissionsBar}>
                         <li>
-                            {/* <div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>0</div> */}
-                            {chainData.operation_emissions != null ? (<div className={styles.subEmissionsHeader}>{chainData.operation_emissions}</div>) 
-                            : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                            {/* <div className={styles.subHeader}>tCO&#8322;e</div> */}
-                            {chainData.operation_emissions != null && <div className={styles.subHeader}>tCO&#8322;e</div>}
-                            {/* <p className={styles.footnotes}>Group Validators</p> */}
+                            {/* <div className={[dashboardStyles.subEmissionsTxt, dashboardStyles.txtNA].join(" ")}>0</div> */}
+                            {chainData.operation_emissions != null ? (<div className={dashboardStyles.subEmissionsHeader}>{chainData.operation_emissions}</div>) 
+                            : (<div className={[dashboardStyles.subEmissionsTxt, dashboardStyles.txtNA].join(" ")}>NA</div>)}
+                            {/* <div className={dashboardStyles.subHeader}>tCO&#8322;e</div> */}
+                            {chainData.operation_emissions != null && <div className={dashboardStyles.subHeader}>tCO&#8322;e</div>}
+                            {/* <p className={dashboardStyles.footnotes}>Group Validators</p> */}
                         </li>
                     </ul>
                 </div>
-                <div className={styles.subMapContainer}>
+                <div className={dashboardStyles.subMapContainer}>
                     {/* <Map mapData={mapData}/> */}
                     <Map mapData={chainData.node_map_data}/>
                 </div>
             </div>
-            <h4 className={styles.dashboardHeader}>Network <span className={styles.subDashboardHeader}>(Scope 2)</span></h4>
-            <div className={`${styles.dashboardSubContainer} ${styles[chainData.nav]}`}>
-                <div className={styles.subStatsContainer}>
-                    <h4 className={styles.subHeaderTxt}>Stats</h4>
-                    <ul className={styles.subStatsBar}>
+            <h4 className={dashboardStyles.dashboardHeader}>Network <span className={dashboardStyles.subDashboardHeader}>(Scope 2)</span></h4>
+            <div className={`${dashboardStyles.dashboardSubContainer} ${dashboardStyles[chainData.nav]}`}>
+                <div className={dashboardStyles.subStatsContainer}>
+                    <h4 className={dashboardStyles.subHeaderTxt}>Stats</h4>
+                    <ul className={dashboardStyles.subStatsBar}>
                         <li>
-                            {/* <div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>{ chainData.emissions_stats.median}</div> */}
-                            {chainData.emissions_stats.median != null ? (<div className={styles.subEmissionsTxt}>{chainData.emissions_stats.median}</div>) 
-                            : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                            {/* <div className={styles.subHeader}>tCO&#8322;e</div> */}
-                            {chainData.emissions_stats.median != null && <div className={styles.subHeader}>tCO&#8322;e</div>}
-                            <p className={styles.footnotes}>Median Daily</p>
+                            {/* <div className={[dashboardStyles.subEmissionsTxt, dashboardStyles.txtNA].join(" ")}>{ chainData.emissions_stats.median}</div> */}
+                            {chainData.emissions_stats.median != null ? (<div className={dashboardStyles.subEmissionsTxt}>{chainData.emissions_stats.median}</div>) 
+                            : (<div className={[dashboardStyles.subEmissionsTxt, dashboardStyles.txtNA].join(" ")}>NA</div>)}
+                            {/* <div className={dashboardStyles.subHeader}>tCO&#8322;e</div> */}
+                            {chainData.emissions_stats.median != null && <div className={dashboardStyles.subHeader}>tCO&#8322;e</div>}
+                            <p className={dashboardStyles.footnotes}>Median Daily</p>
                         </li>
                     </ul>
-                    <ul className={styles.subStatsBar}>
+                    <ul className={dashboardStyles.subStatsBar}>
                         <li>
-                            {chainData.transaction_stats.median != null ? (<div className={styles.subEmissionsTxt}>{chainData.transaction_stats.median}</div>) 
-                            : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                            <p className={styles.footnotes}>Median Daily Tx</p>
+                            {chainData.transaction_stats.median != null ? (<div className={dashboardStyles.subEmissionsTxt}>{chainData.transaction_stats.median}</div>) 
+                            : (<div className={[dashboardStyles.subEmissionsTxt, dashboardStyles.txtNA].join(" ")}>NA</div>)}
+                            <p className={dashboardStyles.footnotes}>Median Daily Tx</p>
                         </li>
                     </ul>
-                    <hr className={styles.subHeaderDivider}></hr>
-                    <ul className={styles.subStatsBar}>
+                    <hr className={dashboardStyles.subHeaderDivider}></hr>
+                    <ul className={dashboardStyles.subStatsBar}>
                         <li>
-                            {chainData.emissions != null ? (<div className={styles.subEmissionsTxt}>{chainData.emissions}</div>) 
-                            : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                            {chainData.emissions != null && <div className={styles.subHeader}>tCO&#8322;e</div>}
-                            <p className={styles.footnotes}>YTD</p>
+                            {chainData.emissions != null ? (<div className={dashboardStyles.subEmissionsTxt}>{chainData.emissions}</div>) 
+                            : (<div className={[dashboardStyles.subEmissionsTxt, dashboardStyles.txtNA].join(" ")}>NA</div>)}
+                            {chainData.emissions != null && <div className={dashboardStyles.subHeader}>tCO&#8322;e</div>}
+                            <p className={dashboardStyles.footnotes}>YTD</p>
                         </li>
                     </ul>
-                    <ul className={styles.subStatsBar}>
+                    <ul className={dashboardStyles.subStatsBar}>
                         <li>
-                            {chainData.transactions_sum != null ? (<div className={styles.subEmissionsTxt}>{chainData.transactions_sum}</div>) 
-                            : (<div className={[styles.subEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                            <p className={styles.footnotes}>YTD Tx</p>
+                            {chainData.transactions_sum != null ? (<div className={dashboardStyles.subEmissionsTxt}>{chainData.transactions_sum}</div>) 
+                            : (<div className={[dashboardStyles.subEmissionsTxt, dashboardStyles.txtNA].join(" ")}>NA</div>)}
+                            <p className={dashboardStyles.footnotes}>YTD Tx</p>
                         </li>
                     </ul>
                 </div>
-                <div className={styles.subChartContainer}>
-                    <div className={styles.stackChartContainer}>
+                <div className={dashboardStyles.subChartContainer}>
+                    <div className={dashboardStyles.stackChartContainer}>
                         <TransactionsChart chartData={chainData}/>
                     </div>
-                    <div className={styles.stackChartContainer}>
+                    <div className={dashboardStyles.stackChartContainer}>
                         <CumulativeTransactionsChart chartData={chainData}/>
                     </div>
                 </div>
             </div>
-            <h4 className={styles.dashboardHeader}>Operations <span className={styles.subDashboardHeader}>(Scope 3)</span></h4>
-            <div className={`${styles.dashboardOpsSubContainer} ${styles[chainData.nav]}`}>
-                <div className={styles.operationsSubContainer}>
-                    <div className={styles.flexGrid}>
-                        <div className={styles.innerGrid}>
-                            <p className={styles.subHeaderTxt}>Offices</p>
-                            {chainData.emissions_operations.office != null ? (<div className={styles.subOpEmissionsTxt}>{chainData.emissions_operations.office}</div>) 
-                            : (<div className={[styles.subOpEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                            {chainData.emissions_operations.office != null && <div className={styles.subOpHeader}>tCO&#8322;e</div>}
+            <h4 className={dashboardStyles.dashboardHeader}>Operations <span className={dashboardStyles.subDashboardHeader}>(Scope 3)</span></h4>
+            <div className={`${dashboardStyles.dashboardOpsSubContainer} ${dashboardStyles[chainData.nav]}`}>
+                <div className={dashboardStyles.operationsSubContainer}>
+                    <div className={dashboardStyles.flexGridOps}>
+                        <div className={dashboardStyles.innerGrid}>
+                            <p className={dashboardStyles.subHeaderTxt}>Offices</p>
+                            {chainData.emissions_operations.office != null ? (<div className={dashboardStyles.subOpEmissionsTxt}>{chainData.emissions_operations.office}</div>) 
+                            : (<div className={[dashboardStyles.subOpEmissionsTxt, dashboardStyles.txtNA].join(" ")}>NA</div>)}
+                            {chainData.emissions_operations.office != null && <div className={dashboardStyles.subOpHeader}>tCO&#8322;e</div>}
                         </div>
-                        <div className={styles.innerGrid}>
-                            <p className={styles.subHeaderTxt}>Transportation</p>
-                            {chainData.emissions_operations.transportation != null ? (<div className={styles.subOpEmissionsTxt}>{chainData.emissions_operations.transportation}</div>) 
-                            : (<div className={[styles.subOpEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                            {chainData.emissions_operations.transportation != null && <div className={styles.subOpHeader}>tCO&#8322;e</div>}
+                        <div className={dashboardStyles.innerGrid}>
+                            <p className={dashboardStyles.subHeaderTxt}>Transportation</p>
+                            {chainData.emissions_operations.transportation != null ? (<div className={dashboardStyles.subOpEmissionsTxt}>{chainData.emissions_operations.transportation}</div>) 
+                            : (<div className={[dashboardStyles.subOpEmissionsTxt, dashboardStyles.txtNA].join(" ")}>NA</div>)}
+                            {chainData.emissions_operations.transportation != null && <div className={dashboardStyles.subOpHeader}>tCO&#8322;e</div>}
                         </div>
-                        <div className={styles.innerGrid}>
-                            <p className={styles.subHeaderTxt}>Supplies</p>
-                            {chainData.emissions_operations.supplies != null ? (<div className={styles.subOpEmissionsTxt}>{chainData.emissions_operations.supplies}</div>) 
-                            : (<div className={[styles.subOpEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                            {chainData.emissions_operations.supplies != null && <div className={styles.subOpHeader}>tCO&#8322;e</div>}
+                        <div className={dashboardStyles.innerGrid}>
+                            <p className={dashboardStyles.subHeaderTxt}>Supplies</p>
+                            {chainData.emissions_operations.supplies != null ? (<div className={dashboardStyles.subOpEmissionsTxt}>{chainData.emissions_operations.supplies}</div>) 
+                            : (<div className={[dashboardStyles.subOpEmissionsTxt, dashboardStyles.txtNA].join(" ")}>NA</div>)}
+                            {chainData.emissions_operations.supplies != null && <div className={dashboardStyles.subOpHeader}>tCO&#8322;e</div>}
                         </div>
-                        <div className={styles.innerGrid}>
-                            <p className={styles.subHeaderTxt}>Misc</p>
-                            {chainData.emissions_operations.misc != null ? (<div className={styles.subOpEmissionsTxt}>{chainData.emissions_operations.misc}</div>) 
-                            : (<div className={[styles.subOpEmissionsTxt, styles.txtNA].join(" ")}>NA</div>)}
-                            {chainData.emissions_operations.misc != null && <div className={styles.subOpHeader}>tCO&#8322;e</div>}
+                        <div className={dashboardStyles.innerGrid}>
+                            <p className={dashboardStyles.subHeaderTxt}>Misc</p>
+                            {chainData.emissions_operations.misc != null ? (<div className={dashboardStyles.subOpEmissionsTxt}>{chainData.emissions_operations.misc}</div>) 
+                            : (<div className={[dashboardStyles.subOpEmissionsTxt, dashboardStyles.txtNA].join(" ")}>NA</div>)}
+                            {chainData.emissions_operations.misc != null && <div className={dashboardStyles.subOpHeader}>tCO&#8322;e</div>}
                         </div>
                     </div>
                 </div>
-                <div className={styles.operationsChartsContainer}>
-                    <div className={styles.operationsPieChartContainer}>
+                <div className={dashboardStyles.operationsChartsContainer}>
+                    <div className={dashboardStyles.operationsPieChartContainer}>
                         <OperationsBreakdownChart chartData={chainData}/>
                     </div>
-                    <div className={styles.operationsLineChartContainer}>
+                    <div className={dashboardStyles.operationsLineChartContainer}>
                         <OperationsEmissionChart chartData={chainData}/>
                     </div>
                 </div>
-                <div className={styles.operationsSubContainer}>
+                <div className={dashboardStyles.operationsSubContainer}>
                     {chainData.offices.length > 0 && 
-                        <div className={styles.flexOfficeGrid}>
+                        <div className={dashboardStyles.flexOfficeGrid}>
                             {chainData.offices.map((obj, index) => {
                                 // your code here
                                 return <Offices key={index} {...obj}/>
@@ -185,8 +185,8 @@ const chain = ({ chainData }) => {
                     }
                 </div>
             </div>
-            <h4 className={styles.dashboardHeader}>Carbon Offsets</h4>
-            <div className={`${styles.dashboardOffsetContainer} ${styles[chainData.nav]}`}>
+            <h4 className={dashboardStyles.dashboardHeader}>Carbon Offsets</h4>
+            <div className={`${dashboardStyles.dashboardOffsetContainer} ${dashboardStyles[chainData.nav]}`}>
                 <CarbonOffsets offsetData={chainData.netzero_cert} />
             </div>
         </div>

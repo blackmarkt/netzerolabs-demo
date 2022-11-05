@@ -13,13 +13,13 @@ const CumulativeTransactionsChart = ({ chartData }) => {
         chart: {
             type: 'line',
             backgroundColor: 'transparent',
-            margin: [50,20,50,100]
+            // margin: [50,20,50,100]
             // color: "#fff"
         },
         title: {
             text: 'Total tCO2e',
             floating:true,
-            y:40,
+            y:0,
             style: {
                 fontSize: '0.7rem',
                 color: '#616161',
@@ -73,9 +73,9 @@ const CumulativeTransactionsChart = ({ chartData }) => {
                         fontSize: '0.6rem',
                         color: '#616161',
                     },
-                    formatter: function() {
-                    return this.value;
-                    }
+                    // formatter: function() {
+                    // return this.value;
+                    // }
                 }
         },
         xAxis: {
@@ -90,7 +90,7 @@ const CumulativeTransactionsChart = ({ chartData }) => {
                 rangeDescription: ''
             },
             labels: {
-                step:4,
+                step:1,
                 style: {
                     fontSize: '0.5rem',
                     color: '#616161',
@@ -121,7 +121,30 @@ const CumulativeTransactionsChart = ({ chartData }) => {
                 marker: {
                     enabled: false
                 }
-        }]
+        }],
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        enabled:false
+                    },
+                    yAxis: {
+                        title: {
+                            text: null
+                        }
+                    },
+                    subtitle: {
+                        text: null
+                    },
+                    credits: {
+                        enabled: false
+                    }
+                }
+            }]
+        }
     }
 
     return (

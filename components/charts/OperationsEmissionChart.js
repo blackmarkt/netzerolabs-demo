@@ -59,7 +59,7 @@ const TransactionsChart = ({ chartData }) => {
         chart: {
             type: 'line',
             backgroundColor: 'transparent',
-            margin: [50,20,50,100]
+            // margin: [50,20,50,100]
             // color: "#fff"
         },
         title: {
@@ -76,8 +76,8 @@ const TransactionsChart = ({ chartData }) => {
         },
         legend: {
             enabled: true,
-            verticalAlign: 'top',
-            padding:30,
+            // verticalAlign: 'top',
+            padding:-10,
             style: {
                 fontSize: '0.5rem',
                 color: 'gray',
@@ -238,7 +238,30 @@ const TransactionsChart = ({ chartData }) => {
         //             }
         //         }
         // ]
-        series: chartDataSeries
+        series: chartDataSeries,
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    // legend: {
+                    //     enabled:false
+                    // },
+                    yAxis: {
+                        title: {
+                            text: null
+                        }
+                    },
+                    subtitle: {
+                        text: null
+                    },
+                    credits: {
+                        enabled: false
+                    }
+                }
+            }]
+        }
     }
 
     return (

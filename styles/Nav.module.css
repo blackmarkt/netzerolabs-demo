@@ -7,7 +7,13 @@
         height:50px!important
     }
     .headerRight {
+        top:30%!important
+    }
+    .subHeaderRight {
         display: none!important;
+    }
+    .buttonHead {
+        margin-right: revert!important;
     }
 }   
 .nav {

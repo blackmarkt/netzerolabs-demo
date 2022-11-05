@@ -1,3 +1,71 @@
+@media only screen and (max-width:46em) {
+    .dashboardContainer {
+        margin-top: 1rem!important;
+    }
+    .dashboardSubContainer, .dashboardOpsSubContainer {
+        max-height: none!important;
+    }
+    .flexGrid {
+        display: inline!important;
+    }
+    .grid {
+        width:100%!important
+    }
+    .subEmissionsHeader, .subEmissionsTxt {
+        font-size:1rem!important;
+        padding:0.3rem 0 0!important;
+    }
+    .footnotes {
+        font-size: 0.5rem!important;
+    }
+    .subHeader {
+       display: none!important;
+    }
+    .subStatsBar {
+        margin:0.2rem 0!important;
+        padding:0.3rem 0!important
+    }
+    .subHeaderTxt {
+        margin:0.3rem 0!important;
+        font-size:0.7rem!important
+    }
+    .innerGrid {
+        min-height:4vh!important;
+        text-align: center!important;
+        margin:0.3rem 0 !important
+    }
+    .subHeaderDivider {
+        margin:0.8rem 1.5rem!important
+    }
+    .subOpEmissionsTxt {
+        font-size: 1.2rem!important;
+        /* padding:0.2rem 0.7rem!important */
+    }
+    .subContainer, 
+    .subStatsContainer, 
+    .subMapContainer, 
+    .operationsPieChartContainer, 
+    .operationsLineChartContainer,
+    .operationsSubContainer {
+        width: 100%!important;
+        display:inline!important
+    }
+    .subChartContainer {
+        width: 70%!important;
+        display:inline!important
+    }
+    .subEmissionsBar {
+        margin-bottom:2rem!important
+    }
+    .stackChartContainer {
+        margin-top:1.6rem!important
+    }
+
+}
+@media only screen and (min-width: 46em) and (max-width: 66em) and (orientation:portrait) {
+
+}
+
 .dashboardContainer {
     width:100%;
     max-width: 1000px;
@@ -34,7 +102,7 @@
 .logoChain {
     margin-left:0.5rem
 }
-.flexGrid {
+.flexGrid, .flexGridOps {
     display: flex;
     justify-content: space-between;
 }

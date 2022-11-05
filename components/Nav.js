@@ -24,19 +24,21 @@ const Nav = () => {
                     Blockchains
                 </button>
             </Link>
-            {/* <Link href="/partners">
+            <div className={navStyles.subHeaderRight}>
+                 {/* <Link href="/partners">
                 <button className={navStyles.buttonHead}>
                     Partners
                 </button>
-            </Link> */}
-            <Link href="/about">
-                <button className={navStyles.buttonHead}>
-                    About
-                </button>
-            </Link>
+                </Link> */}
+                <Link href="/about">
+                    <button className={navStyles.buttonHead}>
+                        About
+                    </button>
+                </Link>
                 <button className={navStyles.btnLaunch}>
                     Launching Soon
                 </button>
+            </div>
         </div>
     </nav>
   )

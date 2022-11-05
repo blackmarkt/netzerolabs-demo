@@ -11,13 +11,13 @@ const TransactionsChart = ({ chartData }) => {
         chart: {
             type: 'line',
             backgroundColor: 'transparent',
-            margin: [50,20,50,100]
+            // margin: [50,20,50,100]
             // color: "#fff"
         },
         title: {
             text: 'Daily tCO2e',
             floating:true,
-            y:40,
+            y:0,
             style: {
                 fontSize: '0.7rem',
                 color: 'gray',
@@ -72,9 +72,9 @@ const TransactionsChart = ({ chartData }) => {
                     fontSize: '0.6rem',
                     color: '#616161',
                 },
-                formatter: function() {
-                return this.value;
-                }
+                // formatter: function() {
+                // return this.value;
+                // }
             }
         },
         xAxis: {
@@ -120,7 +120,30 @@ const TransactionsChart = ({ chartData }) => {
                 marker: {
                     enabled: false
                 }
-        }]
+        }],
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        enabled:false
+                    },
+                    yAxis: {
+                        title: {
+                            text: null
+                        }
+                    },
+                    subtitle: {
+                        text: null
+                    },
+                    credits: {
+                        enabled: false
+                    }
+                }
+            }]
+        }
     }
 
     return (
