@@ -4,7 +4,7 @@ import Map from '../../../components/map/Map'
 import Offices from '../../../components/dashboard/Offices'
 import CarbonOffsets from '../../../components/dashboard/CarbonOffsets'
 // import Axios from "axios"
-import dashboardStyles from '../../../styles/Dashboard.module.css'
+import dashboardStyles from '../../../styles/dashboard.module.css'
 import Image from 'next/image'
 // import Ethereum from '../../public/blockchains/ethereum.png'
 import TransactionsChart from '../../../components/charts/TransactionsChart'
