@@ -88,6 +88,7 @@ const Blockchains = () => {
                         </tbody>
                     </table>
                 </div>
+                <p className={[styles.footNote, styles.testnetNote].join(" ")}>Does not include Testnets</p>
             </div>
             <p className={styles.footNote}>&#42; Ethereum merge on 9/15/22</p>
             <h4 className={styles.dashboardHeader}>Network Emissions <span className={styles.subDashboardHeader}>(Scope 2)</span></h4>

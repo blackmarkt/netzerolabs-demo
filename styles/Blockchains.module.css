@@ -104,6 +104,11 @@
     text-shadow: none!important;
     opacity: 0.3!important;
     text-align: right;
+}
+.testnetNote {
+    text-align: left;
+    margin:0 1rem 0;
+    font-style: italic;
 } 
 .subHeadHeader {
     font-size:0.6rem
