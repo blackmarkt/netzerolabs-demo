@@ -1,3 +1,59 @@
+@media only screen and (max-width:46em) {
+    .main {
+        width:95%!important;
+    }
+    .dashboardContainer {
+        margin-top:1rem!important
+    }
+    .dashboardMainHeader {
+        font-size: 1.4rem!important;
+    }
+    .dashboardHeaderContainer {
+        display: revert!important;
+    }
+    .dashboardHeadSubContainer {
+        display: inline-block!important;
+        width:100%!important;
+        margin:0.5rem 0!important;
+    }
+    .chainTable {
+        margin:0.3rem 0!important;
+    }
+    .txtChain, .tableColEmission {
+        font-size:0.65rem!important
+    }
+    .tableHeader {
+        font-size:0.7rem!important
+    }
+    /* .chainTable th:nth-child(6), */
+    .chainTable th:nth-child(7), 
+    .chainTable th:nth-child(8), 
+    .chainTable th:nth-child(9), 
+    .chainTable th:nth-child(10) {
+        display:none!important;
+    }
+    /* .chainTable td:nth-child(6),  */
+    .chainTable td:nth-child(7), 
+    .chainTable td:nth-child(8), 
+    .chainTable td:nth-child(9), 
+    .chainTable td:nth-child(10) {
+        display:none!important;
+    }
+    .subLeftContainer, .subRightContainer {
+        width:100%!important;
+        margin:0.5rem 0!important
+    }
+    .dashboardSubContainer, .dashboardChartSubContainer {
+        padding:0.2rem 0.4rem!important
+    }
+    .emissionsChartContainer {
+        margin:1rem 0!important;
+    }
+}
+@media only screen and (min-width: 46em) and (max-width: 66em) and (orientation:portrait) {
+
+}
+
 .dashboardContainer {
     width:100%;
     max-width: 1200px;

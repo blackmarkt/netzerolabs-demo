@@ -46,13 +46,13 @@ const BlockchainEmissionsChart = ({ chartData }) => {
         chart: {
             type: 'line',
             backgroundColor: 'transparent',
-            margin: [20,20,40,100]
+            // margin: [20,20,40,100]
             // color: "#fff"
         },
         title: {
             text: 'Daily tCO2e (per Tx)',
             floating:true,
-            y:0,
+            // y:0,
             style: {
                 fontSize: '0.7rem',
                 color: '#616161',
@@ -146,7 +146,30 @@ const BlockchainEmissionsChart = ({ chartData }) => {
         tooltip: {
             pointFormat: '<b>{series.name}: {point.y:,.2f}</b>',
         },
-        series: chartDataSeries
+        series: chartDataSeries,
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        enabled:false
+                    },
+                    yAxis: {
+                        title: {
+                            text: null
+                        }
+                    },
+                    subtitle: {
+                        text: null
+                    },
+                    credits: {
+                        enabled: false
+                    }
+                }
+            }]
+        }
     }
 
     return (

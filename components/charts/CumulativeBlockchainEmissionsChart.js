@@ -56,7 +56,7 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
         chart: {
             // type: 'area',
             backgroundColor: 'transparent',
-            margin: [20,20,50,80]
+            // margin: [20,20,50,60]
             // color: "#fff"
         },
         title: {
@@ -162,7 +162,35 @@ const CumulativeBlockchainEmissionsChart = ({ chartData }) => {
         tooltip: {
             pointFormat: '<b>{series.name}: {point.y:,.0f}</b>',
         },
-        series:chartDataSeries
+        series:chartDataSeries,
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        enabled:false
+                    },
+                    yAxis: {
+                        // labels: {
+                        //     align: 'left',
+                        //     x: 0,
+                        //     y: -5
+                        // },
+                        title: {
+                            text: null
+                        }
+                    },
+                    subtitle: {
+                        text: null
+                    },
+                    credits: {
+                        enabled: false
+                    }
+                }
+            }]
+        }
     }
 
     return (

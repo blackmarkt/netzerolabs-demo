@@ -11,7 +11,7 @@ const CumulativeOffsetChart = ({ offsetData }) => {
         chart: {
             type: 'line',
             backgroundColor: 'transparent',
-            margin: [50,20,50,100]
+            // margin: [50,20,50,100]
             // color: "#fff"
         },
         title: {
@@ -119,7 +119,30 @@ const CumulativeOffsetChart = ({ offsetData }) => {
                 marker: {
                     enabled: false
                 }
-        }]
+        }],
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        enabled:false
+                    },
+                    yAxis: {
+                        title: {
+                            text: null
+                        }
+                    },
+                    subtitle: {
+                        text: null
+                    },
+                    credits: {
+                        enabled: false
+                    }
+                }
+            }]
+        }
     }
 
     return (

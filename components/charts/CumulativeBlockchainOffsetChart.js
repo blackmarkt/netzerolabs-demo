@@ -53,7 +53,7 @@ const CumulativeBlockchainOffsetChart = ({ offsetData }) => {
         chart: {
             type: 'line',
             backgroundColor: 'transparent',
-            margin: [30,20,40,100]
+            // margin: [30,20,40,100]
             // color: "#fff"
         },
         title: {
@@ -123,7 +123,30 @@ const CumulativeBlockchainOffsetChart = ({ offsetData }) => {
         tooltip: {
             pointFormat: '<b>{series.name}: {point.y:,.2f}</b>',
         },
-        series: offsetDataSeries
+        series: offsetDataSeries,
+        responsive: {
+            rules: [{
+                condition: {
+                    maxWidth: 500
+                },
+                chartOptions: {
+                    legend: {
+                        enabled:false
+                    },
+                    yAxis: {
+                        title: {
+                            text: null
+                        }
+                    },
+                    subtitle: {
+                        text: null
+                    },
+                    credits: {
+                        enabled: false
+                    }
+                }
+            }]
+        }
     }
 
     return (

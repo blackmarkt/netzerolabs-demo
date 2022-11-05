@@ -1,3 +1,22 @@
+@media only screen and (max-width:46em) {
+    /* .chainTable td:nth-child(0), .chainTable td:nth-child(3), .chainTable td:nth-child(5), .chainTable td:nth-child(6) {
+        display:none!important;
+    } */
+    .txtChain, .tableColEmission {
+        font-size:0.65rem!important;
+        margin-left:0.2rem!important;
+    }
+    .tableColEmission, .tableColEmissionMatte, .emissionsTxt, .emissionsTxtMatte {
+        font-size:0.7rem!important
+    }
+    .emissionsUnitsMatte, .emissionsUnits {
+        display: none!important;
+    }
+}
+@media only screen and (min-width: 46em) and (max-width: 66em) and (orientation:portrait) {
+
+}
+
 .emissionsLeftContainer {
     display: inline-block;
     width:30%;
