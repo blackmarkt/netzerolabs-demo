@@ -141,25 +141,25 @@ const chain = ({ chainData }) => {
                 <div className={dashboardStyles.operationsSubContainer}>
                     <div className={dashboardStyles.flexGridOps}>
                         <div className={dashboardStyles.innerGrid}>
-                            <p className={dashboardStyles.subHeaderTxt}>Offices</p>
+                            <p className={dashboardStyles.subHeaderOpsTxt}>Offices</p>
                             {chainData.emissions_operations.office != null ? (<div className={dashboardStyles.subOpEmissionsTxt}>{chainData.emissions_operations.office}</div>) 
                             : (<div className={[dashboardStyles.subOpEmissionsTxt, dashboardStyles.txtNA].join(" ")}>NA</div>)}
                             {chainData.emissions_operations.office != null && <div className={dashboardStyles.subOpHeader}>tCO&#8322;e</div>}
                         </div>
                         <div className={dashboardStyles.innerGrid}>
-                            <p className={dashboardStyles.subHeaderTxt}>Transportation</p>
+                            <p className={dashboardStyles.subHeaderOpsTxt}>Transport</p>
                             {chainData.emissions_operations.transportation != null ? (<div className={dashboardStyles.subOpEmissionsTxt}>{chainData.emissions_operations.transportation}</div>) 
                             : (<div className={[dashboardStyles.subOpEmissionsTxt, dashboardStyles.txtNA].join(" ")}>NA</div>)}
                             {chainData.emissions_operations.transportation != null && <div className={dashboardStyles.subOpHeader}>tCO&#8322;e</div>}
                         </div>
                         <div className={dashboardStyles.innerGrid}>
-                            <p className={dashboardStyles.subHeaderTxt}>Supplies</p>
+                            <p className={dashboardStyles.subHeaderOpsTxt}>Supplies</p>
                             {chainData.emissions_operations.supplies != null ? (<div className={dashboardStyles.subOpEmissionsTxt}>{chainData.emissions_operations.supplies}</div>) 
                             : (<div className={[dashboardStyles.subOpEmissionsTxt, dashboardStyles.txtNA].join(" ")}>NA</div>)}
                             {chainData.emissions_operations.supplies != null && <div className={dashboardStyles.subOpHeader}>tCO&#8322;e</div>}
                         </div>
                         <div className={dashboardStyles.innerGrid}>
-                            <p className={dashboardStyles.subHeaderTxt}>Misc</p>
+                            <p className={dashboardStyles.subHeaderOpsTxt}>Misc</p>
                             {chainData.emissions_operations.misc != null ? (<div className={dashboardStyles.subOpEmissionsTxt}>{chainData.emissions_operations.misc}</div>) 
                             : (<div className={[dashboardStyles.subOpEmissionsTxt, dashboardStyles.txtNA].join(" ")}>NA</div>)}
                             {chainData.emissions_operations.misc != null && <div className={dashboardStyles.subOpHeader}>tCO&#8322;e</div>}

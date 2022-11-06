@@ -19,7 +19,8 @@
         font-size: 0.5rem!important;
     }
     .subHeader {
-       display: none!important;
+        font-size: 0.6rem!important;
+       /* display: none!important; */
     }
     .subStatsBar {
         margin:0.2rem 0!important;
@@ -28,6 +29,10 @@
     .subHeaderTxt {
         margin:0.3rem 0!important;
         font-size:0.8rem!important
+    }
+    .subHeaderOpsTxt {
+        font-size:0.7rem!important;
+        margin:1rem 0 0.5rem!important;
     }
     .innerGrid {
         min-height:4vh!important;
@@ -205,7 +210,7 @@
     display: inline-block;
     margin-left:0.5rem
 }
-.subHeaderTxt, .subOpHeaderTxt, .officeTitle {
+.subHeaderTxt, .subOpHeaderTxt, .officeTitle, .subHeaderOpsTxt {
     /* float:left; */
     width:100%;
     color:darkgray!important;
