@@ -76,11 +76,12 @@ const TransactionsChart = ({ chartData }) => {
         },
         legend: {
             enabled: true,
-            // verticalAlign: 'top',
-            padding:-10,
+            floating:true,
+            verticalAlign: 'top',
+            padding:8,
             style: {
                 fontSize: '0.5rem',
-                color: 'gray',
+                color: '#616161',
             }
         },
         plotOptions: {
