@@ -31,7 +31,7 @@ const Nav = () => {
                 </button>
                 </Link> */}
                 <Link href="/about">
-                    <button className={navStyles.buttonHead}>
+                    <button className={[navStyles.buttonHead, navStyles.buttonAbout].join(" ")}>
                         About
                     </button>
                 </Link>

@@ -67,3 +67,7 @@
     margin-right: 2rem;
     cursor: pointer;
 }
+.buttonAbout {
+    position: relative!important;
+    top:30%!important
+}
