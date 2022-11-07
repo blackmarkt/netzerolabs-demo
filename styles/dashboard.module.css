@@ -129,6 +129,9 @@
     /* box-shadow: 0 1px 1px #CDCDCD, 0 0 8px #CDCDCD; */
     /* box-shadow: 0 1px 1px #61668B, 0 0 10px #61668B; */
 }
+.grid {
+    width:49%;
+}
 .innerGrid {
     width:23%;
     box-shadow: none!important;

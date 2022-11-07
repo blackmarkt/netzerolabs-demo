@@ -45,11 +45,11 @@ const chain = ({ chainData }) => {
                     {chainData.offsets != null && <div className={dashboardStyles.subHeader}>tCO&#8322;e</div>}
                     <p className={dashboardStyles.subDashboard}>CO&#8322; Offset (tCO&#8322;e)</p>
                 </div>
-                <div className={`${dashboardStyles.grid} ${dashboardStyles[chainData.nav]}`}>
+                {/* <div className={`${dashboardStyles.grid} ${dashboardStyles[chainData.nav]}`}>
                     <div id='usdConvert' className={[dashboardStyles.topDashboard, dashboardStyles.txtNA, dashboardStyles.totalEmissionsTx, dashboardStyles.pulsate].join(" ")}v>NA</div>
                     <div id="ethConvert" className={dashboardStyles.ethContribute}></div>
                     <p className={dashboardStyles.subDashboard}>CO&#8322; Offset ($)</p>
-                </div>
+                </div> */}
             </div>
             <div className={`${dashboardStyles.dashboardSubContainer} ${dashboardStyles[chainData.nav]}`}>
                 <div className={dashboardStyles.subContainer}>
