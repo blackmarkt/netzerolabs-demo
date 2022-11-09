@@ -25,11 +25,11 @@ const Nav = () => {
                 </button>
             </Link>
             <div className={navStyles.subHeaderRight}>
-                <Link href="/blockchains">
+                {/* <Link href="/blockchains">
                     <button className={[navStyles.buttonHead, navStyles.buttonAbout].join(" ")}>
                         Tracker
                     </button>
-                </Link>
+                </Link> */}
                 <Link href="/about">
                     <button className={[navStyles.buttonHead, navStyles.buttonAbout].join(" ")}>
                         About
