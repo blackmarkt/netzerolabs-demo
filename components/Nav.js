@@ -6,7 +6,7 @@ import navStyles from '../styles/Nav.module.css'
 const Nav = () => {
   return (
     <nav className={navStyles.nav}>
-        <Link href='/'>
+        <Link href='/blockchains'>
             {/* <Image
                 src={Net0LabsLogo}
                 alt='Net0Labs'
@@ -19,17 +19,17 @@ const Nav = () => {
             />
         </Link>
         <div className={navStyles.headerRight}>
-            <Link href="/blockchains">
+            <Link href="/">
                 <button className={navStyles.buttonHead}>
-                    Blockchains
+                    Services
                 </button>
             </Link>
             <div className={navStyles.subHeaderRight}>
-                 {/* <Link href="/partners">
-                <button className={navStyles.buttonHead}>
-                    Partners
-                </button>
-                </Link> */}
+                <Link href="/blockchains">
+                    <button className={[navStyles.buttonHead, navStyles.buttonAbout].join(" ")}>
+                        Tracker
+                    </button>
+                </Link>
                 <Link href="/about">
                     <button className={[navStyles.buttonHead, navStyles.buttonAbout].join(" ")}>
                         About

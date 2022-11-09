@@ -12,8 +12,10 @@ const Map = ({ mapData }) => {
 
     mapboxgl.accessToken = 
         "pk.eyJ1IjoibWFya3RibGFjayIsImEiOiJjanZzY2w2cnYwZzcxM3ltZjZyYmZvMzZmIn0.4nBm1lPx-HffkRCfaI4_uQ";
+
+    // mapboxgl.accessToken = process.env.NEXT_MAPBOX_KEY;
     
-    console.log('MAP DATA ', mapData)
+    // console.log('MAP DATA ', mapData)
 
     useEffect(() => {
         if (map == undefined) {
