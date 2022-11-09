@@ -10,6 +10,8 @@ const Meta = ({ title, keywords, description}) => {
       <meta name='keywords' content={keywords} />
       <meta name='description' content={description} />
       <meta charSet='utf-8' />
+      <meta name="google" content="notranslate" />
+      <meta http-equiv="Content-Language" content="en" />
       <link rel='icon' href='/favicon.ico' />
       {router.asPath != "/" ? (<title>{title} | {router.asPath.split("/").at(-1).replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())}</title>) 
       : (<title>{title} | On Chain Carbon Accounting</title>)}
