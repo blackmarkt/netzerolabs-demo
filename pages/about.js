@@ -9,7 +9,7 @@ export default function About() {
                 <br></br>
                 <br></br>
                 <br></br>
-                <br></br>
+                {/* <br></br> */}
                 <h1 className={aboutStyles.aboutHeader}>Our Climate Mission</h1>
                 <p className={aboutStyles.aboutHeaderTxt}>All Web3 companies, organizations, DAO's, etc... that have publicly launched tokens commit to the following 2 climate actions:</p>
                 <div className={aboutStyles.aboutSubCommitContainer}>
