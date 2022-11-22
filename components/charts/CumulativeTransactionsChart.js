@@ -7,8 +7,6 @@ import HighchartsReact from 'highcharts-react-official'
 
 const CumulativeTransactionsChart = ({ chartData }) => {
 
-    // console.log('CHART (CUM) DATA ', chartData)
-
     const options = {
         chart: {
             type: 'line',

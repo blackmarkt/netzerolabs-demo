@@ -1,0 +1,260 @@
+@media only screen and (max-width:46em) {
+    .main {
+        width:95%!important;
+    }
+    .dashboardContainer {
+        margin-top:1rem!important
+    }
+    .dashboardMainHeader {
+        font-size: 2rem!important;
+    }
+    .dashboardHeaderContainer {
+        display: revert!important;
+    }
+    .dashboardHeadSubContainer {
+        display: inline-block!important;
+        width:100%!important;
+        margin:0.5rem 0!important;
+    }
+    .chainTable {
+        margin:0.3rem 0!important;
+    }
+    .txtChain, .tableColEmission {
+        font-size:0.65rem!important
+    }
+    .tableHeader {
+        font-size:0.7rem!important
+    }
+    /* .chainTable th:nth-child(6), */
+    .chainTable th:nth-child(7), 
+    .chainTable th:nth-child(8), 
+    .chainTable th:nth-child(9), 
+    .chainTable th:nth-child(10) {
+        display:none!important;
+    }
+    /* .chainTable td:nth-child(6),  */
+    .chainTable td:nth-child(7), 
+    .chainTable td:nth-child(8), 
+    .chainTable td:nth-child(9), 
+    .chainTable td:nth-child(10) {
+        display:none!important;
+    }
+    .subLeftContainer, .subRightContainer {
+        width:100%!important;
+        margin:0.5rem 0!important
+    }
+    .dashboardSubContainer, .dashboardChartSubContainer {
+        padding:0.2rem 0.4rem!important
+    }
+    .emissionsChartContainer {
+        margin:1rem 0!important;
+    }
+}
+@media only screen and (min-width: 46em) and (max-width: 66em) and (orientation:portrait) {
+
+}
+
+.dashboardContainer {
+    width:100%;
+    max-width: 1200px;
+    margin:0 auto;
+    margin-top: 3rem;
+}
+.dashboardLeftHeader {
+    width:80%;
+    display: inline-block;
+}
+.dashboardRightHeader {
+    width:20%;
+    display: inline-block;
+    text-align: right;
+    padding-right:0.8rem;
+    vertical-align: bottom;
+}
+.dashboardSubContainer,.dashboardChartSubContainer {
+    position: relative;
+    width:100%;
+    min-height:400px;
+    max-height:700px;
+    border-radius: 6px;
+    box-shadow: 0px 1px 1px yellowgreen, 0 0 8px aqua;
+    /* box-shadow: 0 1px 1px white, 0 0 8px white; */
+    /* margin:0rem 0 1rem; */
+    padding:0.6rem 1.5rem 1rem 1rem;
+}
+.dashboardChartSubContainer, .dashboardCreditsTable {
+    max-height: 1000px!important;
+}
+.dashboardOffsetsSubContainer {
+    max-height: 1200px!important;
+}
+.subLeftContainer, .subRightContainer {
+    display: inline-block;
+    width:25%;
+    height:100%;
+    text-align: center;
+    vertical-align: middle;
+    color:darkgray!important;
+    text-shadow: none!important;
+}
+.subRightContainer {
+    width:73%;
+}
+.dashboardMainHeader {
+    margin:0 0 1rem
+}
+.dashboardHeader {
+    color:#616161;
+    text-shadow: none!important;
+    margin:1rem 0.5rem 0.6rem;
+}
+.emissionsLeftContainer, .emissionsRightContainer {
+    display: inline-block;
+    width:30%;
+    height: 100%;
+    vertical-align: top;
+}
+.emissionsRightContainer {
+    width: 70%;
+}
+.emissionsChartContainer {
+    display: inline-block;
+    height:49%;
+    width:100%;
+    color:darkgray!important;
+    text-shadow: none!important;
+    margin:1rem 0 0.5rem
+}
+.logoChain, .txtChain, .topDashboard, .subHeader {
+    display: inline-block;
+}
+.chainContainer {
+    width:100%;
+    height:100%;
+}
+.chainRightContainer, .chainLeftContainer {
+    display: inline-block;
+}
+.chainLeftContainer {
+    text-align: left;
+    width: 100%;
+    /* display: grid; */
+}
+.chainTable {
+    width: 100%;
+    margin:1rem;
+    /* display: grid; */
+    border-collapse: collapse;
+}
+.tableHeader {
+    color:#616161;
+    text-shadow: none!important;
+    font-size:0.75rem;
+    opacity:0.7;
+}
+.footNote {
+    width:100%;
+    margin:0.6rem 0 0;
+    font-size:0.6rem;
+    color:darkgray!important;
+    text-shadow: none!important;
+    opacity: 0.3!important;
+    text-align: right;
+}
+.testnetNote {
+    text-align: left;
+    margin:0 1rem 0;
+    font-style: italic;
+} 
+.subHeadHeader {
+    font-size:0.6rem
+}
+.notActiveContainer {
+    position: absolute;
+    left: 0;
+    top: 45%;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    z-index:2;
+    display: flex;
+    justify-content:center;
+    margin:0 auto;
+}
+.notActiveTxt {
+    /* display: inline-block; */
+    vertical-align: middle;
+    line-height: normal;
+    font-size:1.4rem;
+    color:darkgray!important;
+    text-shadow: none!important;
+    opacity: 0.3!important;
+}
+.dashboardHeaderContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom:0.8rem
+}
+.dashboardHeadSubContainer {
+    text-align: center;
+    flex-wrap: wrap;
+    width:49%;
+    min-height:8vh;
+    padding:0.5rem 1rem 0;
+    margin:1rem 0;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    /* display: inline-block; */
+    border-radius: 6px;
+    box-shadow: 0px 1px 1px yellowgreen, 0 0 8px aqua;
+    vertical-align: super;
+    padding:0.1rem 1.5rem 1rem 1rem;   
+}
+.topDashboard, .subEmissionsTxt, .subOpEmissionsTxt, .subEmissionsHeader {
+    display: inline-block;
+    font-size:2rem;
+    padding:1.4rem 0 0rem;
+    text-shadow:0 0 10px white;
+}
+.subDashboardHeader {
+    font-size:0.6rem;
+}
+.emissionsTxt, .emissionsTxtMatte {
+    display: inline-block;
+    font-size:0.9rem;
+    padding:0.8rem 0 0rem;
+    text-shadow:0 0 10px white;
+}
+.emissionsUnits, .emissionsUnitsMatte {
+    font-size:0.6rem;
+    display: inline-block;
+    margin-left:0.3rem
+}
+.subDashboard {
+    padding: 0
+}
+.totalEmissionsTxt {
+    /* text-shadow:0 0 10px red!important; */
+    color:rgb(254, 231, 231)!important;
+}
+.totalOffsetTxt {
+    text-shadow:0 0 10px aquamarine;
+    color:rgb(229, 254, 246)
+}
+.emissionsSubChartContainer {
+    display: inline-block;
+    /* width: 70%; */
+    height:100%;
+}
+.leftChartContainer {
+    vertical-align: top;
+    width:28%;
+    /* box-shadow: 0px 1px 1px aquamarine, 0 0 8px #6AD0AE; */
+    /* height:100% */
+}
+.rightChartContainer {
+    width:70%
+}
+.blockchain-pie-chart {
+    filter: drop-shadow(0 0 10px rgba(127, 255, 212, 0.4));
+}

@@ -1,0 +1,149 @@
+@media only screen and (max-width:46em) {
+    /* .chainTable td:nth-child(0), .chainTable td:nth-child(3), .chainTable td:nth-child(5), .chainTable td:nth-child(6) {
+        display:none!important;
+    } */
+    .txtChain, .tableColEmission {
+        font-size:0.65rem!important;
+        margin-left:0.2rem!important;
+    }
+    .tableColEmission, .tableColEmissionMatte, .emissionsTxt, .emissionsTxtMatte {
+        font-size:0.7rem!important
+    }
+    .emissionsUnitsMatte, .emissionsUnits {
+        display: none!important;
+    }
+}
+@media only screen and (min-width: 46em) and (max-width: 66em) and (orientation:portrait) {
+
+}
+.tableRow {
+    padding:0.5rem 0
+}
+.emissionsLeftContainer {
+    display: inline-block;
+    width:30%;
+    height: 100%;
+}
+.logoChain, .txtChain, .topDashboard, .subHeader, .net0Cert {
+    display: inline-block;
+}
+.net0Cert {
+    opacity: 0.6;
+}
+.logoChain {
+    padding-left:0.5rem
+}
+.chainRightContainer, .chainLeftContainer {
+    display: inline-block;
+}
+.chainSubLeftContainer {
+    text-align: left;
+    width: 42%;
+}
+.chainRightContainer {
+    width:56%;
+    text-align: center;
+}
+.chainRow {
+    margin:0;
+    width:100%
+}
+.txtChain {
+    color:darkgray!important;
+    text-shadow: none!important;
+    opacity: 0.5!important;
+    padding-right:1.4rem;
+    font-size:0.8rem;
+    vertical-align: super;
+}
+.chainLeftRow {
+    display: inline-block;
+    text-align: left;
+    width:50%;
+}
+.chainRightRow {
+    display: inline-block;
+    text-align: right;
+    width:48%;
+    vertical-align: super;
+}
+.emissionsTxt, .emissionsTxtMatte {
+    display: inline-block;
+    font-size:0.9rem;
+    padding:0.8rem 0 0rem;
+    text-shadow:0 0 10px white;
+}
+.emissionsTxtMatte {
+    font-size:0.75rem
+}
+.emissionsUnits, .emissionsUnitsMatte {
+    font-size:0.6rem;
+    display: inline-block;
+    margin-left:0.3rem
+}
+.tableColEmission, .tableColEmissionMatte {
+    text-align: center;
+    vertical-align: super;
+}
+.tableColCert, .tableColCertNA {
+    text-align: center;
+    vertical-align: revert;
+}
+.tableColCertNA {
+    vertical-align: super;
+}
+.emissionsTxtMatte, .emissionsUnitsMatte, .txtNA {
+    color:#616161;
+    text-shadow: none!important;
+}
+.emissionsTxtTx {
+    font-size:0.8rem
+}
+.tableOdd {
+    background: #1e1e1e;
+    border-radius:4px
+}
+.navChainLink {
+    cursor: pointer;
+    border-radius:6;
+    text-decoration: underline;
+}
+.navChainLink:hover {
+    background-color:#272727;
+}
+.emissionsRed {
+    /* color:red!important; */
+    text-shadow:0 0 10px red!important;
+}
+.pulsate {
+    text-shadow:0 0 10px yellow!important;
+    /* color:rgb(255, 255, 208)!important; */
+    color:white!important;
+    animation: pulsate 3s infinite;
+    -ms-animation: pulsate 3s infinite;
+    -webkit-animation: pulsate 3s infinite;
+    /* -webkit-animation-iteration-count: infinite; */
+    opacity:1
+}
+@-webkit-keyframes pulsate {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0.1;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@keyframes pulsate {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0.1;
+    }
+    100% {
+        opacity:1;
+    }
+}

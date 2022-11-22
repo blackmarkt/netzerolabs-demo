@@ -220,8 +220,18 @@ function calculateTotalL1Offsets(dataArr) {
     return calculateSum(totalArr)
 }
 
+function calculateTotalCarbonQty(dataArr) {
+    let totalArr = [];
+    for (let i = 0; i<dataArr.length; i++) {
+        if (dataArr[i]['Quantity'] != null) {
+            totalArr.push(parseInt(dataArr[i]['Quantity']))
+        }
+    }
+    return calculateSum(totalArr)
+}
+
 
 export { createTxTCO2Chart, numberWithCommas, calculateMedian, calculateSum, getTotalOffsetsMonthly,
         createUNIXOffsetChartData, combineUnixDataArr, combineUnixFauxDataArr, calculateTxTCO2,
         calculateTxTCO2Chart, getArrFromChartArr, getTCO2ArrFromChartArr, calculateMergeTxTCO2Chart,
-        getMergeTCO2ArrFromChartArr, calculateTotalL1Emissions, calculateTotalL1Offsets }
+        getMergeTCO2ArrFromChartArr, calculateTotalL1Emissions, calculateTotalL1Offsets, calculateTotalCarbonQty }
