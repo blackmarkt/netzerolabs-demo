@@ -10,16 +10,16 @@ const CarbonCreditsCountryPieChart = ({ chartData }) => {
             i;
     
             for (i = 0; i < 10; i += 1) {
-                colors.push(Highcharts.color('##00FFFF').brighten((i - 3) / 8).get());
+                colors.push(Highcharts.color('#00FFFF').brighten((i - 3) / 8).get());
             }
             return colors;
         }
     }());
 
     var colorGradientArr = (function () {
-        let dataArr = chartData.chart_data.operations_data
+        let dataArr = chartData
         if (typeof Highcharts === 'object') {
-            for (let i=0; i<chartData.chart_data.operations_data.length; i+=1) {
+            for (let i=0; i<chartData.length; i+=1) {
                 dataArr[i]['color'] = {
                     linearGradient:  { 
                         x1: 0,
@@ -27,12 +27,12 @@ const CarbonCreditsCountryPieChart = ({ chartData }) => {
                         x2: 1,
                         y2: 1},
                     stops: [
-                        [0, Highcharts.color('##00FFFF').brighten((i - 3) / 8).get()],
+                        [0, Highcharts.color('#00FFFF').brighten((i - 3) / 12).get()],
                         [1, 'transparent']
                     ]
                 }
             }
-            return dataArr
+            return dataArr.slice(0, 9)
         }
     }());
 
@@ -55,8 +55,8 @@ const CarbonCreditsCountryPieChart = ({ chartData }) => {
             text: ''
         },
         tooltip: {
-            // pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-            pointFormat: '{series.name}: <b>0%</b>'
+            pointFormat: '{point.country}: <b>{point.percentage:.1f}%</b>'
+            // pointFormat: '{series.name}: <b>0%</b>'
         },
         accessibility: {
             point: {
@@ -72,9 +72,9 @@ const CarbonCreditsCountryPieChart = ({ chartData }) => {
                 // opacity:0.7,
                 dataLabels: {
                     enabled: true,
-                    format: '<b>{point.name}</b><br>0%',
-                    // format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
-                    distance: -40,
+                    // format: '<b>{point.name}</b><br>0%',
+                    format: '<b>{point.country}</b><br>{point.percentage:.1f} %',
+                    distance: -30,
                     style: {
                         textOutline: false,
                         color:'gray',

@@ -17,11 +17,17 @@ const CarbonCreditsTable = ( props ) => {
                 <td>
                     {/* <a href={`${props['URL']}`} target="_blank" rel="noopener noreferrer"> */}
                         <div className={creditTable.emissionsTxtMatte}>
+                            Toucan
+                        </div>
+                    {/* </a> */}
+                </td>
+                <td>
+                    {/* <a href={`${props['URL']}`} target="_blank" rel="noopener noreferrer"> */}
+                        <div className={creditTable.emissionsTxtMatte}>
                             {props['Project Type']}
                         </div>
                     {/* </a> */}
                 </td>
-
                 <td className={creditTable.tableColEmission}>
                     <div className={creditTable.emissionsTxtMatte}>
                         {props['Country']}

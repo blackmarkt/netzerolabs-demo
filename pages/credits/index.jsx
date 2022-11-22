@@ -11,9 +11,9 @@ import { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown } fr
 const CarbonCredits = () => {
     const [carbonData, setCarbonData] = useState(getCarbonCreditData)
     const [totalCarbonQty, setTotalCarbonQty] = useState(getTotalCarbonCreditsQty)
-    // const [totalL1Offsets, setTotalL1Offsets] = useState(getL1TotalOffsets)
+    const [carbonCountry, setCarbonCountry] = useState(getCountryBreakdown())
 
-    console.log('TOTAL ', getCountryBreakdown())
+    console.log('TOTAL ', carbonCountry)
 
     return (
         <div className={creditStyles.dashboardContainer}>
@@ -51,10 +51,10 @@ const CarbonCredits = () => {
             </div>
             <h4 className={creditStyles.dashboardHeader}>Credits Breakdown</h4>
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardOffsetsSubContainer].join(" ")}>
-                {/* <div className={creditStyles.subLeftContainer}>
-                    <CarbonOffsetBreakdownChart offsetData={chainData}/>
+                <div className={creditStyles.subLeftContainer}>
+                    <CarbonCreditsCountryPieChart chartData={carbonCountry}/>
                 </div>
-                <div className={creditStyles.subRightContainer}>
+                {/* <div className={creditStyles.subRightContainer}>
                     <div className={creditStyles.emissionsChartContainer}>
                         <CumulativeBlockchainOffsetChart offsetData={chainData}/>
                     </div>
@@ -79,6 +79,9 @@ const CarbonCredits = () => {
                             <tr className={creditStyles.tableHeader}>
                                 <th>
                                     ID
+                                </th>
+                                <th>
+                                    Provider
                                 </th>
                                 <th>
                                     Type
