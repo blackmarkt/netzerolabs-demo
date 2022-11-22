@@ -114,12 +114,6 @@ const CarbonCredits = () => {
                 {/* <p className={[creditStyles.footNote, creditStyles.testnetNote].join(" ")}>Does not include Testnets</p> */}
             </div>
             {/* <p className={creditStyles.footNote}>&#42; Ethereum merge on 9/15/22</p> */}
-            <h4 className={creditStyles.dashboardHeader}>Operations Emissions <span className={creditStyles.subDashboardHeader}>(Scope 3)</span></h4>
-            <div className={creditStyles.dashboardSubContainer}>
-                <div className={creditStyles.notActiveContainer}>
-                    <span className={creditStyles.notActiveTxt}>Not Active</span>
-                </div>
-            </div>
         </div>
     );
 }

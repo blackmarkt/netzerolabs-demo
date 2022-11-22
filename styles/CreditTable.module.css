@@ -74,12 +74,12 @@
     text-shadow:0 0 10px white;
 }
 .emissionsTxtMatte {
-    font-size:0.75rem
+    font-size:0.7rem
 }
 .emissionsUnits, .emissionsUnitsMatte {
     font-size:0.6rem;
     display: inline-block;
-    margin-left:0.3rem
+    margin-left:0.2rem;
 }
 .tableColEmission, .tableColEmissionMatte {
     text-align: center;
@@ -92,7 +92,7 @@
 .tableColCertNA {
     vertical-align: super;
 }
-.emissionsTxtMatte, .emissionsUnitsMatte, .txtNA {
+.emissionsUnits, .emissionsTxtMatte, .emissionsUnitsMatte, .txtNA {
     color:#616161;
     text-shadow: none!important;
 }
@@ -108,9 +108,9 @@
     border-radius:6;
     text-decoration: underline;
 }
-.navChainLink:hover {
+/* .navChainLink:hover {
     background-color:#272727;
-}
+} */
 .emissionsRed {
     /* color:red!important; */
     text-shadow:0 0 10px red!important;

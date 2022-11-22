@@ -77,7 +77,7 @@
     min-height:400px;
     max-height:700px;
     border-radius: 6px;
-    box-shadow: 0px 1px 1px yellowgreen, 0 0 8px aqua;
+    box-shadow: 0px 1px 1px aquamarine, 0 0 8px aqua;
     /* box-shadow: 0 1px 1px white, 0 0 8px white; */
     /* margin:0rem 0 1rem; */
     padding:0.6rem 1.5rem 1rem 1rem;
@@ -206,7 +206,7 @@
     font-size: 0.8rem;
     /* display: inline-block; */
     border-radius: 6px;
-    box-shadow: 0px 1px 1px yellowgreen, 0 0 8px aqua;
+    box-shadow: 0px 1px 1px aquamarine, 0 0 8px aqua;
     vertical-align: super;
     padding:0.1rem 1.5rem 1rem 1rem;   
 }

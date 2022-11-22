@@ -8,16 +8,18 @@ const CarbonCreditsTable = ( props ) => {
     return (
             <tr key={props['ID']} className={creditTable.tableRow}>
                 <td className={creditTable.tableColEmission}>
-                    <div className={creditTable.emissionsTxtMatte}>
-                        {props['ID']}
-                    </div>
-                </td>
-                <td>
                     <a href={`${props['URL']}`} target="_blank" rel="noopener noreferrer">
                         <div className={[creditTable.emissionsTxtMatte, creditTable.navChainLink].join(" ")}>
-                            {props['Project Type']}
+                            {props['ID']}
                         </div>
                     </a>
+                </td>
+                <td>
+                    {/* <a href={`${props['URL']}`} target="_blank" rel="noopener noreferrer"> */}
+                        <div className={creditTable.emissionsTxtMatte}>
+                            {props['Project Type']}
+                        </div>
+                    {/* </a> */}
                 </td>
 
                 <td className={creditTable.tableColEmission}>
@@ -34,6 +36,7 @@ const CarbonCreditsTable = ( props ) => {
                     <div className={creditTable.emissionsTxtMatte}>
                         {numberWithCommas(props['Quantity'])}
                     </div>
+                    <div className={creditTable.emissionsUnits}>tCO&#8322;e</div>
                 </td>
                 <td className={creditTable.tableColEmission}>
                     <div className={creditTable.emissionsTxtMatte}>
