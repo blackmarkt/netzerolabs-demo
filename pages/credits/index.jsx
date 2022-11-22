@@ -3,17 +3,18 @@ import CarbonCreditsTable from '../../components/credits/CarbonCreditsTable'
 // import BlockchainEmissionsChart from '../../components/charts/BlockchainEmissionsChart'
 // import CumulativeBlockchainEmissionsChart from '../../components/charts/CumulativeBlockchainEmissionsChart'
 // import CumulativeBlockchainOffsetChart from '../../components/charts/CumulativeBlockchainOffsetChart'
-// import BlockchainEmissionsPieChart from '../../components/charts/BlockchainEmissionsPieChart'
+import CarbonCreditCountryStackedChart from '../../components/charts/CarbonCreditCountryStackedChart'
 import CarbonCreditsCountryPieChart from "../../components/charts/CarbonCreditsCountryPieChart";
 import creditStyles from '../../styles/Credits.module.css'
-import { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown } from '../../data/carbonCreditData'
+import { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked } from '../../data/carbonCreditData'
 
 const CarbonCredits = () => {
     const [carbonData, setCarbonData] = useState(getCarbonCreditData)
     const [totalCarbonQty, setTotalCarbonQty] = useState(getTotalCarbonCreditsQty)
     const [carbonCountry, setCarbonCountry] = useState(getCountryBreakdown())
+    const [carbonStackedCountry, setCarbonStackedCountry] = useState(getCountryStacked())
 
-    console.log('TOTAL ', carbonCountry)
+    console.log('TOTAL ', carbonStackedCountry)
 
     return (
         <div className={creditStyles.dashboardContainer}>
@@ -54,11 +55,11 @@ const CarbonCredits = () => {
                 <div className={creditStyles.subLeftContainer}>
                     <CarbonCreditsCountryPieChart chartData={carbonCountry}/>
                 </div>
-                {/* <div className={creditStyles.subRightContainer}>
+                <div className={creditStyles.subRightContainer}>
                     <div className={creditStyles.emissionsChartContainer}>
-                        <CumulativeBlockchainOffsetChart offsetData={chainData}/>
+                        <CarbonCreditCountryStackedChart chartData={carbonStackedCountry}/>
                     </div>
-                </div> */}
+                </div>
             </div>
             <h4 className={creditStyles.dashboardHeader}>Protocol Breakdown</h4>
             <div className={creditStyles.dashboardChartSubContainer}>

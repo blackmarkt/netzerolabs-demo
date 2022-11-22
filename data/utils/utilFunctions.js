@@ -230,8 +230,19 @@ function calculateTotalCarbonQty(dataArr) {
     return calculateSum(totalArr)
 }
 
+function convertDTUNIX(dateStr) {
+    let date = new Date(dateStr);
+    // console.log(date); // 👉️ Wed Jun 22 2022
+
+    let timestampInMs = date.getTime();
+
+    let unixTimestamp = Math.floor(date.getTime());
+    return unixTimestamp
+}
+
 
 export { createTxTCO2Chart, numberWithCommas, calculateMedian, calculateSum, getTotalOffsetsMonthly,
         createUNIXOffsetChartData, combineUnixDataArr, combineUnixFauxDataArr, calculateTxTCO2,
         calculateTxTCO2Chart, getArrFromChartArr, getTCO2ArrFromChartArr, calculateMergeTxTCO2Chart,
-        getMergeTCO2ArrFromChartArr, calculateTotalL1Emissions, calculateTotalL1Offsets, calculateTotalCarbonQty }
+        getMergeTCO2ArrFromChartArr, calculateTotalL1Emissions, calculateTotalL1Offsets, calculateTotalCarbonQty,
+        convertDTUNIX }
