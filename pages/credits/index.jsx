@@ -4,16 +4,16 @@ import CarbonCreditsTable from '../../components/credits/CarbonCreditsTable'
 // import CumulativeBlockchainEmissionsChart from '../../components/charts/CumulativeBlockchainEmissionsChart'
 // import CumulativeBlockchainOffsetChart from '../../components/charts/CumulativeBlockchainOffsetChart'
 // import BlockchainEmissionsPieChart from '../../components/charts/BlockchainEmissionsPieChart'
-// import CarbonOffsetBreakdownChart from "../../components/charts/CarbonOffsetBreakdownChart";
+import CarbonCreditsCountryPieChart from "../../components/charts/CarbonCreditsCountryPieChart";
 import creditStyles from '../../styles/Credits.module.css'
-import { getCarbonCreditData, getTotalCarbonCreditsQty } from '../../data/carbonCreditData'
+import { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown } from '../../data/carbonCreditData'
 
 const CarbonCredits = () => {
     const [carbonData, setCarbonData] = useState(getCarbonCreditData)
     const [totalCarbonQty, setTotalCarbonQty] = useState(getTotalCarbonCreditsQty)
     // const [totalL1Offsets, setTotalL1Offsets] = useState(getL1TotalOffsets)
 
-    console.log('TOTAL ', totalCarbonQty)
+    console.log('TOTAL ', getCountryBreakdown())
 
     return (
         <div className={creditStyles.dashboardContainer}>
