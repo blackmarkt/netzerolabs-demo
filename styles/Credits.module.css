@@ -146,6 +146,13 @@
     /* display: grid; */
     border-collapse: collapse;
 }
+.chainTable tr td:first-child {
+    padding: 0 1rem 0 0;
+}
+.chainTable thead {
+    /* margin:1rem 0 2rem 0; */
+    opacity:0.7;
+}
 .tableHeader {
     color:#616161;
     text-shadow: none!important;

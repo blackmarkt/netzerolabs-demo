@@ -49,7 +49,7 @@ const CarbonCredits = () => {
                     </div>
                 </div> */}
             </div>
-            <h4 className={creditStyles.dashboardHeader}>Breakdown <span className={creditStyles.subDashboardHeader}>(By Region/Country)</span></h4>
+            <h4 className={creditStyles.dashboardHeader}>Credits Breakdown</h4>
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardOffsetsSubContainer].join(" ")}>
                 {/* <div className={creditStyles.subLeftContainer}>
                     <CarbonOffsetBreakdownChart offsetData={chainData}/>
