@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import CarbonCreditsTable from '../../components/credits/CarbonCreditsTable'
 import TopCountriesTable from '../../components/credits/TopCountriesTable'
+import TopProtocolsTable from '../../components/credits/TopProtocolsTable'
 import CarbonCreditProtocolStackedChart from '../../components/charts/CarbonCreditProtocolStackedChart'
 import CarbonProtocolPieChart from '../../components/charts/CarbonProtocolPieChart'
 import CarbonCreditsTotalChart from '../../components/charts/CarbonCreditsTotalChart'
@@ -112,10 +113,10 @@ const CarbonCredits = () => {
                                 </tr>
                             </thead>
                             <tbody>
-                                {carbonCountry.map((obj, index) => {
+                                {protocolBreakdown.map((obj, index) => {
                                     if (index < 3) 
                                         return ( 
-                                            <TopCountriesTable key={index} {...obj}/>
+                                            <TopProtocolsTable key={index} {...obj}/>
                                         )
                                     return null
                                 })}

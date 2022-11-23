@@ -134,7 +134,7 @@ function getProtocolStacked(minYear=2020) {
 }
 
 function getProtocolBreakdown() {
-    let tempProtocol = [{provider: 'Toucan', 'y':toucanData.length, color: '#FFFFFF'}]
+    let tempProtocol = [{provider: 'Toucan', 'y':calculateTotalCarbonQty(toucanData), color: '#FFFFFF'}]
     return tempProtocol
 }
 
