@@ -10,7 +10,7 @@ const CarbonCreditsTypePieChart = ({ chartData }) => {
         if (typeof Highcharts === 'object') {
             for (let i=0; i<chartData.length; i+=1) {
                 let tempColor = projectTypeColors[dataArr[i]['type']]
-                console.log('TEMP COLOR ', tempColor)
+                // console.log('TEMP COLOR ', tempColor)
                 if (typeof tempColor != 'undefined') {
                     dataArr[i]['color'] = {
                         linearGradient:  { 
@@ -37,7 +37,7 @@ const CarbonCreditsTypePieChart = ({ chartData }) => {
                     }
                 }
             }
-            console.log('STACKED TYPE COLOR ', dataArr)
+            // console.log('STACKED TYPE COLOR ', dataArr)
             return dataArr
         }
     }());

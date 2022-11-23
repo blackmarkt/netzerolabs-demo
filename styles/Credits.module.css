@@ -59,6 +59,9 @@
     .dashboardDivider {
         margin:0.8rem 1.5rem!important
     }
+    .dashboardOffsetsSubContainer {
+        max-height: fit-content!important;
+    }
 }
 @media only screen and (min-width: 46em) and (max-width: 66em) and (orientation:portrait) {
 
@@ -100,7 +103,7 @@
     max-height: 1000px!important;
 }
 .dashboardOffsetsSubContainer {
-    max-height: 1200px!important;
+    max-height: 1200px;
 }
 .subLeftContainer, .subRightContainer {
     display: inline-block;

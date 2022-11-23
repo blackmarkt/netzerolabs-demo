@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import creditTable from '../../styles/CreditTable.module.css'
 import { numberWithCommas } from '../../data/emissionsData'
-
+import { projectTypeCats } from '../../data/carbonCreditData'
 
 const CarbonCreditsTable = ( props ) => {
-
+    
     return (
             <tr key={props['ID']} className={creditTable.tableRow}>
                 <td className={creditTable.tableColEmission}>
@@ -24,7 +24,7 @@ const CarbonCreditsTable = ( props ) => {
                 <td>
                     {/* <a href={`${props['URL']}`} target="_blank" rel="noopener noreferrer"> */}
                         <div className={creditTable.emissionsTxtMatte}>
-                            {props['Project Type']}
+                            {projectTypeCats[props['Project Type']]}
                         </div>
                     {/* </a> */}
                 </td>

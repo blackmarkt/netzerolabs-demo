@@ -30,15 +30,15 @@ const projectTypeCats = {'Energy industries (renewable/non-renewable sources)': 
                         'Energy industries (renewable/non-renewable sources); Livestock, enteric fermentation, and manure management': 'Renewable Energy (Livestock)',
                         'Energy industries (renewable/non-renewable sources); Fugitive emissions from fuels (solid, oil and gas)': 'Renewable Energy (Fugitive Emissions)'}
 
-const projectTypeColors = {'Renewable Energy': '#DAA520',
+const projectTypeColors = {'Renewable Energy': '#FFEA00',
                             'Forestry': 'green',
-                            'Renewable Energy (Waste)': '#FFD700',
-                            'Energy Demand':'#FFC000',
-                            'Renewable Energies (Manufacturing)': '#2E862B',
+                            'Renewable Energy (Waste)': '#FAFA33',
+                            'Energy Demand':'#FCF55F',
+                            'Renewable Energies (Manufacturing)': '#FFFAA0',
                             'Chemical':'aqua',
                             'Oil Fugitive Emissions':'#00000',
                             'Waste Management': 'brown',
-                            'Manufacturing':'silver'}
+                            'Manufacturing':'gray'}
 
 function getCarbonCreditData() {
     return toucanData
@@ -252,4 +252,4 @@ function getTypeStacked(minYear=2020) {
 
 export { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
          sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked, getCarbonTypeBreakdown,
-         getTypeStacked, projectTypeColors }
+         getTypeStacked, projectTypeColors, projectTypeCats }
