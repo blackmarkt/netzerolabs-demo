@@ -2,39 +2,25 @@ import React, { useEffect } from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 
-const CarbonProtocolPieChart = ({ chartData }) => {
+const CarbonCreditsTypePieChart = ({ chartData }) => {
 
     var colorGradientArr = (function () {
         let dataArr = chartData
         if (typeof Highcharts === 'object') {
-            // for (let i=0; i<chartData.length; i+=1) {
-            //     // console.log('COLOR TEMP ', tempColor);
-            //     // console.log('COLOR TEMP 2', tempColor);
-            //     dataArr[i]['color'] = {
-            //         linearGradient:  { 
-            //             x1: 0,
-            //             y1: 0,
-            //             x2: 1,
-            //             y2: 1},
-            //         stops: [
-            //             // [0, Highcharts.color(tempColor[0].color).brighten((i - 3) / 12).get()],
-            //             [0, dataArr[i].color],
-            //             [1, 'transparent']
-            //         ]
-            //     }
-            // }
-            dataArr[0]['color'] = {
-                                    linearGradient:  { 
-                                        x1: 0,
-                                        y1: 0,
-                                        x2: 1,
-                                        y2: 1},
-                                    stops: [
-                                        // [0, Highcharts.color(tempColor[0].color).brighten((i - 3) / 12).get()],
-                                        [0, dataArr[0].color],
-                                        [1, 'transparent']
-                                    ]
-                                }
+            for (let i=0; i<chartData.length; i+=1) {
+                dataArr[i]['color'] = {
+                    linearGradient:  { 
+                        x1: 0,
+                        y1: 0,
+                        x2: 1,
+                        y2: 1},
+                    stops: [
+                        [0, Highcharts.color('aquamarine').brighten((i - 3) / 12).get()],
+                        // [0, dataArr[i].color],
+                        [1, 'transparent']
+                    ]
+                }
+            }
             console.log('COLOR ', dataArr)
             return dataArr
         }
@@ -59,7 +45,7 @@ const CarbonProtocolPieChart = ({ chartData }) => {
             text: ''
         },
         tooltip: {
-            pointFormat: '{point.country}: <b>{point.percentage:.1f}%</b>'
+            pointFormat: '{point.type}: <b>{point.percentage:.1f}%</b>'
             // pointFormat: '{series.name}: <b>0%</b>'
         },
         accessibility: {
@@ -77,11 +63,12 @@ const CarbonProtocolPieChart = ({ chartData }) => {
                 dataLabels: {
                     enabled: true,
                     // format: '<b>{point.name}</b><br>0%',
-                    format: '<b>{point.provider}</b><br>{point.percentage:.1f} %',
+                    format: '<b>{point.type}</b><br>{point.percentage:.1f} %',
                     distance: -40,
                     style: {
                         textOutline: false,
                         color:'gray',
+                        fontSize:'0.6rem',
                     },
                     filter: {
                         property: 'percentage',
@@ -113,4 +100,4 @@ const CarbonProtocolPieChart = ({ chartData }) => {
     )
 }
 
-export default CarbonProtocolPieChart
+export default CarbonCreditsTypePieChart

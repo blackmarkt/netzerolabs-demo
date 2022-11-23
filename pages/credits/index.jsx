@@ -6,10 +6,11 @@ import CarbonCreditProtocolStackedChart from '../../components/charts/CarbonCred
 import CarbonProtocolPieChart from '../../components/charts/CarbonProtocolPieChart'
 import CarbonCreditsTotalChart from '../../components/charts/CarbonCreditsTotalChart'
 import CarbonCreditCountryStackedChart from '../../components/charts/CarbonCreditCountryStackedChart'
-import CarbonCreditsCountryPieChart from "../../components/charts/CarbonCreditsCountryPieChart";
+import CarbonCreditsCountryPieChart from "../../components/charts/CarbonCreditsCountryPieChart"
+import CarbonCreditsTypePieChart from "../../components/charts/CarbonCreditsTypePieChart"
 import creditStyles from '../../styles/Credits.module.css'
 import { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
-         sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked } from '../../data/carbonCreditData'
+         sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked, getCarbonTypeBreakdown } from '../../data/carbonCreditData'
 
 const CarbonCredits = () => {
     const [carbonData, setCarbonData] = useState(getCarbonCreditData)
@@ -19,8 +20,9 @@ const CarbonCredits = () => {
     const [sumCarbonCreditsArr, setSumCarbonCreditsArr] = useState(sumCarbonCreditsMonthly())
     const [protocolBreakdown, setProtocolBreakdown] = useState(getProtocolBreakdown())
     const [protocolStack, setProtocolStack] = useState(getProtocolStacked())
+    const [carbonTypeBreakdown, setCarbonTypeBreakdown] = useState(getCarbonTypeBreakdown())
 
-    console.log('SUM CARBON ', protocolStack)
+    console.log('TYPE CARBON ', carbonTypeBreakdown)
 
     return (
         <div className={creditStyles.dashboardContainer}>
@@ -58,41 +60,51 @@ const CarbonCredits = () => {
             </div>
             <h4 className={creditStyles.dashboardHeader}>Credits Breakdown</h4>
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardOffsetsSubContainer].join(" ")}>
-                <div className={creditStyles.subLeftContainer}>
-                    <div className={creditStyles.topCountriesContainer}>
-                        <h4 className={creditStyles.dashboardHeader}>Top Issuing Countries </h4>
-                        <table className={creditStyles.chainTable}>
-                            <thead>
-                                <tr className={creditStyles.tableHeader}>
-                                    {/* <th>
-                                        ID
-                                    </th> */}
-                                    <th>
-                                        Country
-                                    </th>
-                                    <th>
-                                        Quantity
-                                    </th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {carbonCountry.map((obj, index) => {
-                                    if (index < 3) 
-                                        return ( 
-                                            <TopCountriesTable key={index} {...obj}/>
-                                        )
-                                    return null
-                                })}
-                            </tbody>
-                        </table>
+                <div className={creditStyles.subContainer}>
+                    <div className={creditStyles.subLeftContainer}>
+                        <div className={creditStyles.topCountriesContainer}>
+                            <h4 className={creditStyles.dashboardHeader}>Top Issuing Countries </h4>
+                            <table className={creditStyles.chainTable}>
+                                <thead>
+                                    <tr className={creditStyles.tableHeader}>
+                                        {/* <th>
+                                            ID
+                                        </th> */}
+                                        <th>
+                                            Country
+                                        </th>
+                                        <th>
+                                            Quantity
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {carbonCountry.map((obj, index) => {
+                                        if (index < 3) 
+                                            return ( 
+                                                <TopCountriesTable key={index} {...obj}/>
+                                            )
+                                        return null
+                                    })}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div className={creditStyles.countriesPieContainer}>
+                            <CarbonCreditsCountryPieChart chartData={carbonCountry}/>
+                        </div>
                     </div>
-                    <div className={creditStyles.countriesPieContainer}>
-                        <CarbonCreditsCountryPieChart chartData={carbonCountry}/>
+                    <div className={creditStyles.subRightContainer}>
+                        <div className={creditStyles.emissionsChartContainer}>
+                            <CarbonCreditCountryStackedChart chartData={carbonStackedCountry}/>
+                        </div>
                     </div>
                 </div>
-                <div className={creditStyles.subRightContainer}>
-                    <div className={creditStyles.emissionsChartContainer}>
-                        <CarbonCreditCountryStackedChart chartData={carbonStackedCountry}/>
+                <hr className={creditStyles.dashboardDivider}></hr>
+                <div className={creditStyles.subContainer}>
+                    <div className={creditStyles.subLeftContainer}>
+                        <div className={creditStyles.countriesPieContainer}>
+                            <CarbonCreditsTypePieChart chartData={carbonTypeBreakdown}/>
+                        </div>
                     </div>
                 </div>
             </div>

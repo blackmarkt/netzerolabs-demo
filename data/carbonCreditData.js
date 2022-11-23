@@ -4,6 +4,32 @@ import moment from 'moment'
 import toucanData from './carbon_credits/toucan_vcus.json' assert {type: 'json'}
 import { numberWithCommas, calculateTotalCarbonQty, convertDTUNIX } from './utils/utilFunctions.js'
 
+const projectTypeCats = {'Energy industries (renewable/non-renewable sources)': 'Renewable Energy',
+                        'Fugitive emissions from fuels (solid, oil and gas); Mining/mineral production': 'Oil Fugitive Emissions/Mining',
+                        'Agriculture Forestry and Other Land Use': 'Forestry',
+                        'Waste handling and disposal': 'Waste Management', 
+                        'Manufacturing industries': 'Waste Disposal',
+                        'Energy demand; Waste handling and disposal': 'Energy Demand',
+                        'Energy industries (renewable/non-renewable sources); Livestock, enteric fermentation, and manure management; Waste handling and disposal': 'Renewable Energy (Livestock)',
+                        'Energy industries (renewable/non-renewable sources); Waste handling and disposal': 'Renewable Energy (Waste)',
+                        'Energy demand': 'Energy Demand', 
+                        'Transport': 'Transport',
+                        'Energy industries (renewable/non-renewable sources); Mining/mineral production': 'Renewable Energy (Mining)',
+                        'Livestock, enteric fermentation, and manure management': 'Livestock',
+                        'Energy demand; Energy industries (renewable/non-renewable sources)': 'Renewable Energy (Demand)',
+                        'Fugitive emissions from fuels (solid, oil and gas)': 'Oil Fugitive Emissions',
+                        'Construction; Energy industries (renewable/non-renewable sources)': 'Renewable Energies (Construction)',
+                        'Energy industries (renewable/non-renewable sources); Manufacturing industries': 'Renewable Energies (Manufacturing)',
+                        'Chemical industry': 'Chemical',
+                        'Fugitive emissions from production and consumption of halocarbons and sulphur hexafluoride': 'Fugitive Emissions (Halocarbons, Sulphur Hexalfuoride',
+                        'Energy distribution': 'Energy Distribution', 
+                        'Metal production': 'Energy Distribution (Metals)',
+                        'Mining/mineral production': 'Mining',
+                        'Agriculture Forestry and Other Land Use; Energy industries (renewable/non-renewable sources); Waste handling and disposal': 'Renewable Energy (Forestry/Waste)',
+                        'Chemical industry; Energy industries (renewable/non-renewable sources)': 'Renewable Energies (Chemical)',
+                        'Energy industries (renewable/non-renewable sources); Livestock, enteric fermentation, and manure management': 'Renewable Energy (Livestock)',
+                        'Energy industries (renewable/non-renewable sources); Fugitive emissions from fuels (solid, oil and gas)': 'Renewable Energy (Fugitive Emissions)'}
+
 function getCarbonCreditData() {
     return toucanData
 }
@@ -169,5 +195,26 @@ function sumProtocolCreditsMonthly(arr) {
     return tempArr
 }
 
+function getCarbonTypeBreakdown() {
+    let dataArr = []
+    toucanData.forEach(function(item) {
+        if(item["Project Type"] != null && typeof dataArr.find(({ type }) => type === projectTypeCats[item['Project Type']]) == 'undefined') {
+            // create new object with structure
+            let obj = {}
+            obj = {"type": projectTypeCats[item['Project Type']], "y":item.Quantity}
+            dataArr.push(obj);
+        } else {
+            // else find existing Country and add new data
+            let obj = dataArr.find(({ type }) => type === projectTypeCats[item['Project Type']]);
+            if(typeof obj != 'undefined') {
+                let tempSum = item.Quantity + obj.y
+                obj.y = tempSum
+            }
+        }
+    })
+    let sortedInput = dataArr.slice().sort((a, b) => b.y - a.y);
+    return sortedInput
+}
+
 export { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
-         sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked }
+         sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked, getCarbonTypeBreakdown }
