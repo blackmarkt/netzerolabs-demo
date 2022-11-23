@@ -2,19 +2,21 @@ import React, { useState, useEffect, useRef } from "react";
 import CarbonCreditsTable from '../../components/credits/CarbonCreditsTable'
 // import BlockchainEmissionsChart from '../../components/charts/BlockchainEmissionsChart'
 // import CumulativeBlockchainEmissionsChart from '../../components/charts/CumulativeBlockchainEmissionsChart'
-// import CumulativeBlockchainOffsetChart from '../../components/charts/CumulativeBlockchainOffsetChart'
+import CarbonCreditsTotalChart from '../../components/charts/CarbonCreditsTotalChart'
 import CarbonCreditCountryStackedChart from '../../components/charts/CarbonCreditCountryStackedChart'
 import CarbonCreditsCountryPieChart from "../../components/charts/CarbonCreditsCountryPieChart";
 import creditStyles from '../../styles/Credits.module.css'
-import { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked } from '../../data/carbonCreditData'
+import { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
+         sumCarbonCreditsMonthly } from '../../data/carbonCreditData'
 
 const CarbonCredits = () => {
     const [carbonData, setCarbonData] = useState(getCarbonCreditData)
     const [totalCarbonQty, setTotalCarbonQty] = useState(getTotalCarbonCreditsQty)
     const [carbonCountry, setCarbonCountry] = useState(getCountryBreakdown())
     const [carbonStackedCountry, setCarbonStackedCountry] = useState(getCountryStacked())
+    const [sumCarbonCreditsArr, setSumCarbonCreditsArr] = useState(sumCarbonCreditsMonthly())
 
-    console.log('TOTAL ', carbonStackedCountry)
+    console.log('SUM CARBON ', sumCarbonCreditsArr)
 
     return (
         <div className={creditStyles.dashboardContainer}>
@@ -41,14 +43,14 @@ const CarbonCredits = () => {
             </div>
             <h4 className={creditStyles.dashboardHeader}>Overview</h4>
             <div className={creditStyles.dashboardChartSubContainer}>
-                {/* <div className={creditStyles.emissionsChartContainer}>
+                <div className={creditStyles.emissionsChartContainer}>
                     <div className={creditStyles.emissionsChartContainer}>
-                        <BlockchainEmissionsChart chartData={chainData}/>
+                        <CarbonCreditsTotalChart chartData={sumCarbonCreditsArr}/>
                     </div>
-                    <div className={creditStyles.emissionsChartContainer}>
+                    {/* <div className={creditStyles.emissionsChartContainer}>
                         <CumulativeBlockchainEmissionsChart chartData={chainData}/>
-                    </div>
-                </div> */}
+                    </div> */}
+                </div>
             </div>
             <h4 className={creditStyles.dashboardHeader}>Credits Breakdown</h4>
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardOffsetsSubContainer].join(" ")}>

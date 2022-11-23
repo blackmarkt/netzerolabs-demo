@@ -74,17 +74,38 @@ function sumDailyMonthly(arr) {
         }
     })
     return tempArr
-    // var res = arr.reduce((acc, obj)=>{
-    //     console.log('TEST ', acc);
-    //     var existObj = acc.find(item => item.date === obj.date);
-    //     if(existObj){
-    //         existObj.y += obj.y;
-    //         // return acc
-    //     }
-    //     acc.push(obj);
-    //     // return acc
-    // }, [])
-    // return res
+}
+
+function sumCarbonCreditsMonthly(arr) {
+    let dataArr = []
+    let tempArr
+    toucanData.forEach(function(item) {
+        if (item['Issuance Date'] != null && typeof dataArr.find(({ date }) => date ===  convertDTUNIX(item['Issuance Date'])) == 'undefined') {
+            dataArr.push({'date': convertDTUNIX(item['Issuance Date']), 'y': item.Quantity})
+        } else {
+            let obj = dataArr.find(({ date }) => date ===  convertDTUNIX(item['Issuance Date']))
+            if (typeof obj != 'undefined') {
+                // let tempSum = obj.y + item.Quantity
+                // dataArr.push({'date': convertDTUNIX(item['Issuance Date']), 'y': tempSum })
+                obj.y += item.Quantity
+            }
+        }
+        let sortedInput = dataArr.slice().sort((a, b) => a.date - b.date);
+        let tempSum = 0
+        let sortedArr = [sortedInput.at(0)]
+        sortedInput.forEach(function(item, idx) {
+            if (idx !== 0) {
+                tempSum += item.y
+                sortedArr.push({date: item.date, y: tempSum})
+                // console.log('OUT ', sortedArr)
+                // sortedInput[idx].y = tempSum
+                // tempSum += sortedInput[idx-1].y + sortedInput[idx].y
+                // item.y += tempSum
+            }
+        })
+        tempArr = sortedArr.map(el=>Object.values(el))
+    })
+    return tempArr
 }
 
 function convertDailyMonthly(results) {
@@ -92,4 +113,5 @@ function convertDailyMonthly(results) {
     return groupedResults
 }
 
-export { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked }
+export { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
+         sumCarbonCreditsMonthly }

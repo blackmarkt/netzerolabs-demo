@@ -50,9 +50,9 @@ const CarbonCreditsCountryPieChart = ({ chartData }) => {
         if (typeof Highcharts === 'object') {
             for (let i=0; i<chartData.length; i+=1) {
                 let tempColor = getColorByCountry(dataArr[i]['country'])
-                console.log('COLOR TEMP ', tempColor);
+                // console.log('COLOR TEMP ', tempColor);
                 if (tempColor.length !== 0 && tempColor[0].color !== 'undefined') {
-                    console.log('COLOR TEMP 2', tempColor);
+                    // console.log('COLOR TEMP 2', tempColor);
                     dataArr[i]['color'] = {
                         linearGradient:  { 
                             x1: 0,

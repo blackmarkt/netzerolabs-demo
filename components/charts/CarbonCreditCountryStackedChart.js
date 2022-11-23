@@ -39,9 +39,9 @@ const CarbonCreditCountryStackedChart = ({ chartData }) => {
         if (typeof Highcharts === 'object') {
             for (let i=0; i<chartData.length; i+=1) {
                 let tempColor = getColorByCountry(dataArr[i]['name'])
-                console.log('COLOR TEMP ', tempColor);
+                // console.log('COLOR TEMP ', tempColor);
                 if (tempColor[0].color !== 'undefined') {
-                    console.log('COLOR TEMP 2', tempColor);
+                    // console.log('COLOR TEMP 2', tempColor);
                     dataArr[i]['color'] = {
                         linearGradient:  { 
                             x1: 0,
@@ -108,6 +108,9 @@ const CarbonCreditCountryStackedChart = ({ chartData }) => {
             lineColor: 'transparent',
             gridLineWidth: 0,
             gridLineColor: 'transparent',
+            title: {
+                text: 'tCO2e'
+            },
             labels: {
                 // step:1,
                 style: {
@@ -125,8 +128,8 @@ const CarbonCreditCountryStackedChart = ({ chartData }) => {
             align:'center',
             float:true,
             padding:25,
-            style: {
-                fontSize: '0.2rem',
+            itemStyle: {
+                fontSize: '0.6rem',
                 color: '#616161',
             }
         },
