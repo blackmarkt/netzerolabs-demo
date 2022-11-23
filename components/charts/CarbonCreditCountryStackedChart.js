@@ -39,7 +39,7 @@ const CarbonCreditCountryStackedChart = ({ chartData }) => {
         if (typeof Highcharts === 'object') {
             for (let i=0; i<chartData.length; i+=1) {
                 let tempColor = getColorByCountry(dataArr[i]['name'])
-                if (tempColor[0].color !== 'undefined') {
+                if (typeof tempColor[0].color !== 'undefined') {
                     dataArr[i]['color'] = {
                         linearGradient:  { 
                             x1: 0,
@@ -65,7 +65,7 @@ const CarbonCreditCountryStackedChart = ({ chartData }) => {
                     }
                 }
             }
-            console.log('COLOR ', dataArr)
+            // console.log('COLOR ', dataArr)
             return dataArr
         }
     }());

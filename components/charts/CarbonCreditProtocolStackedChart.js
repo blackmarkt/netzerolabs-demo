@@ -56,7 +56,7 @@ const CarbonCreditProtocolStackedChart = ({ chartData }) => {
                                         [1, 'transparent']
                                     ]
                                 }
-            console.log('STACKED CHART COLOR ', dataArr)
+            // console.log('STACKED CHART COLOR ', dataArr)
             return dataArr
         }
     }());

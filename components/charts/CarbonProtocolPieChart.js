@@ -35,7 +35,7 @@ const CarbonProtocolPieChart = ({ chartData }) => {
                                         [1, 'transparent']
                                     ]
                                 }
-            console.log('COLOR ', dataArr)
+            // console.log('COLOR ', dataArr)
             return dataArr
         }
     }());
