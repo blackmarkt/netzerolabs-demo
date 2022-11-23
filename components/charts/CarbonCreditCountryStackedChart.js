@@ -74,7 +74,7 @@ const CarbonCreditCountryStackedChart = ({ chartData }) => {
         chart: {
             type: 'column',
             backgroundColor: 'transparent',
-            margin: [10,10,20,60]
+            margin: [10,20,20,60]
         },
         credits: {
             enabled: false

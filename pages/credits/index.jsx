@@ -17,7 +17,7 @@ const CarbonCredits = () => {
     const [carbonStackedCountry, setCarbonStackedCountry] = useState(getCountryStacked())
     const [sumCarbonCreditsArr, setSumCarbonCreditsArr] = useState(sumCarbonCreditsMonthly())
 
-    // console.log('SUM CARBON ', carbonCountry)
+    console.log('SUM CARBON ', carbonCountry)
 
     return (
         <div className={creditStyles.dashboardContainer}>
@@ -87,6 +87,7 @@ const CarbonCredits = () => {
                     </div>
                 </div>
                 <div className={creditStyles.subRightContainer}>
+                    {/* <h4 className={creditStyles.dashboardHeader}>Carbon Credit Bridged By Country</h4> */}
                     <div className={creditStyles.emissionsChartContainer}>
                         <CarbonCreditCountryStackedChart chartData={carbonStackedCountry}/>
                     </div>

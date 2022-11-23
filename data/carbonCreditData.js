@@ -30,8 +30,9 @@ function getCountryBreakdown() {
             }
         }
     })
+    let sortedInput = dataArr.slice().sort((a, b) => b.y - a.y);
     // console.log('COUNTRY ', dataArr)
-    return dataArr
+    return sortedInput
 }
 
 function getCountryStacked(minYear=2020) {
