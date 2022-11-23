@@ -231,10 +231,12 @@ function calculateTotalCarbonQty(dataArr) {
 }
 
 function convertDTUNIX(dateStr) {
-    let date = new Date(dateStr);
+    const [year, month] = dateStr.split("-")
+    let dt = year + "-" + month + "-1"
+    let date = new Date(dt);
     // console.log(date); // 👉️ Wed Jun 22 2022
 
-    let timestampInMs = date.getTime();
+    // let timestampInMs = date.getTime();
 
     let unixTimestamp = Math.floor(date.getTime());
     return unixTimestamp
