@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useRef } from "react";
 import CarbonCreditsTable from '../../components/credits/CarbonCreditsTable'
 import TopCountriesTable from '../../components/credits/TopCountriesTable'
-// import BlockchainEmissionsChart from '../../components/charts/BlockchainEmissionsChart'
-// import CumulativeBlockchainEmissionsChart from '../../components/charts/CumulativeBlockchainEmissionsChart'
+import CarbonCreditProtocolStackedChart from '../../components/charts/CarbonCreditProtocolStackedChart'
+import CarbonProtocolPieChart from '../../components/charts/CarbonProtocolPieChart'
 import CarbonCreditsTotalChart from '../../components/charts/CarbonCreditsTotalChart'
 import CarbonCreditCountryStackedChart from '../../components/charts/CarbonCreditCountryStackedChart'
 import CarbonCreditsCountryPieChart from "../../components/charts/CarbonCreditsCountryPieChart";
 import creditStyles from '../../styles/Credits.module.css'
 import { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
-         sumCarbonCreditsMonthly } from '../../data/carbonCreditData'
+         sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked } from '../../data/carbonCreditData'
 
 const CarbonCredits = () => {
     const [carbonData, setCarbonData] = useState(getCarbonCreditData)
@@ -16,8 +16,10 @@ const CarbonCredits = () => {
     const [carbonCountry, setCarbonCountry] = useState(getCountryBreakdown())
     const [carbonStackedCountry, setCarbonStackedCountry] = useState(getCountryStacked())
     const [sumCarbonCreditsArr, setSumCarbonCreditsArr] = useState(sumCarbonCreditsMonthly())
+    const [protocolBreakdown, setProtocolBreakdown] = useState(getProtocolBreakdown())
+    const [protocolStack, setProtocolStack] = useState(getProtocolStacked())
 
-    console.log('SUM CARBON ', carbonCountry)
+    console.log('SUM CARBON ', protocolStack)
 
     return (
         <div className={creditStyles.dashboardContainer}>
@@ -57,6 +59,7 @@ const CarbonCredits = () => {
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardOffsetsSubContainer].join(" ")}>
                 <div className={creditStyles.subLeftContainer}>
                     <div className={creditStyles.topCountriesContainer}>
+                        <h4 className={creditStyles.dashboardHeader}>Top Issuing Countries </h4>
                         <table className={creditStyles.chainTable}>
                             <thead>
                                 <tr className={creditStyles.tableHeader}>
@@ -87,7 +90,6 @@ const CarbonCredits = () => {
                     </div>
                 </div>
                 <div className={creditStyles.subRightContainer}>
-                    {/* <h4 className={creditStyles.dashboardHeader}>Carbon Credit Bridged By Country</h4> */}
                     <div className={creditStyles.emissionsChartContainer}>
                         <CarbonCreditCountryStackedChart chartData={carbonStackedCountry}/>
                     </div>
@@ -95,14 +97,40 @@ const CarbonCredits = () => {
             </div>
             <h4 className={creditStyles.dashboardHeader}>Protocol Breakdown</h4>
             <div className={creditStyles.dashboardChartSubContainer}>
-                {/* <div className={creditStyles.emissionsChartContainer}>
-                    <div className={creditStyles.emissionsChartContainer}>
-                        <BlockchainEmissionsChart chartData={chainData}/>
+                <div className={creditStyles.subLeftContainer}>
+                    <div className={creditStyles.topCountriesContainer}>
+                        <h4 className={creditStyles.dashboardHeader}>Top Issuing Protocols </h4>
+                        <table className={creditStyles.chainTable}>
+                            <thead>
+                                <tr className={creditStyles.tableHeader}>
+                                    <th>
+                                        Provider
+                                    </th>
+                                    <th>
+                                        Quantity
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {carbonCountry.map((obj, index) => {
+                                    if (index < 3) 
+                                        return ( 
+                                            <TopCountriesTable key={index} {...obj}/>
+                                        )
+                                    return null
+                                })}
+                            </tbody>
+                        </table>
                     </div>
                     <div className={creditStyles.emissionsChartContainer}>
-                        <CumulativeBlockchainEmissionsChart chartData={chainData}/>
+                        <CarbonProtocolPieChart chartData={protocolBreakdown}/>
                     </div>
-                </div> */}
+                </div>
+                <div className={creditStyles.subRightContainer}>
+                    <div className={creditStyles.emissionsChartContainer}>
+                        <CarbonCreditProtocolStackedChart chartData={protocolStack}/>
+                    </div>
+                </div>
             </div>
             <h4 className={creditStyles.dashboardHeader}>Transactions</h4>
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardCreditsTable].join(" ")}>

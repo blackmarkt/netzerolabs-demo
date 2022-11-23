@@ -23,7 +23,6 @@ function getCountryBreakdown() {
         } else {
             // else find existing Country and add new data
             let obj = dataArr.find(({ country }) => country === item.Country);
-            // console.log('OBJECT ', obj)
             if(typeof obj != 'undefined') {
                 let tempSum = item.Quantity + obj.y
                 obj.y = tempSum
@@ -31,7 +30,6 @@ function getCountryBreakdown() {
         }
     })
     let sortedInput = dataArr.slice().sort((a, b) => b.y - a.y);
-    // console.log('COUNTRY ', dataArr)
     return sortedInput
 }
 
@@ -109,10 +107,67 @@ function sumCarbonCreditsMonthly(arr) {
     return tempArr
 }
 
+function getProtocolStacked(minYear=2020) {
+    let dataArr = []
+    toucanData.forEach(function(item) {
+        if (parseInt(item["Issuance Date"].split("-")[0]) >= minYear) {
+            // if(item.Country != null && typeof dataArr.find(({ name }) => name === item.Country) == 'undefined') {
+            //     let obj = {}
+            //     obj = {"name":item.Country, "data":[{date: convertDTUNIX(item['Issuance Date']), y: item.Quantity}]}
+            //     dataArr.push(obj)
+            // } else {
+            //     let obj = dataArr.find(({ name }) => name === item.Country);
+            //     if(typeof obj != 'undefined') {
+            //         obj.data.push({date: convertDTUNIX(item['Issuance Date']), y: item.Quantity})
+            //     }
+            // }
+            dataArr.push({date: convertDTUNIX(item['Issuance Date']), y: item.Quantity})
+        }
+    })
+    // dataArr.forEach(function(item) {
+    let tempData = sumDailyMonthly(dataArr)
+    let sortedInput = tempData.slice().sort((a, b) => a.date - b.date);
+    let tempArr = tempData.map(el=>Object.values(el))
+    // })
+    console.log('PROTOCOL DATA ', [{name:'Toucan', data: tempArr}])
+    return [{name:'Toucan', data: tempArr}]
+}
+
+function getProtocolBreakdown() {
+    let tempProtocol = [{provider: 'Toucan', 'y':toucanData.length, color: '#FFFFFF'}]
+    return tempProtocol
+}
+
 function convertDailyMonthly(results) {
     let groupedResults = _.groupBy(results, (result) => moment.unix(result).startOf('month'));
     return groupedResults
 }
 
+function sumProtocolCreditsMonthly(arr) {
+    let dataArr = []
+    let tempArr
+    toucanData.forEach(function(item) {
+        if (item['Issuance Date'] != null && typeof dataArr.find(({ date }) => date ===  convertDTUNIX(item['Issuance Date'])) == 'undefined') {
+            dataArr.push({'date': convertDTUNIX(item['Issuance Date']), 'y': item.Quantity})
+        } else {
+            let obj = dataArr.find(({ date }) => date ===  convertDTUNIX(item['Issuance Date']))
+            if (typeof obj != 'undefined') {
+                obj.y += item.Quantity
+            }
+        }
+        let sortedInput = dataArr.slice().sort((a, b) => a.date - b.date);
+        let tempSum = 0
+        let sortedArr = [sortedInput.at(0)]
+        sortedInput.forEach(function(item, idx) {
+            if (idx !== 0) {
+                tempSum += item.y
+                sortedArr.push({date: item.date, y: tempSum})
+            }
+        })
+        tempArr = sortedArr.map(el=>Object.values(el))
+    })
+    return tempArr
+}
+
 export { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
-         sumCarbonCreditsMonthly }
+         sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked }
