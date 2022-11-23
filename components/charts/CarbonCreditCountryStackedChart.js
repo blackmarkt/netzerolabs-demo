@@ -32,7 +32,7 @@ const CarbonCreditCountryStackedChart = ({ chartData }) => {
         return countryColors.filter(
             function(data){ return data.country == country }
         );
-      }
+    }
 
     var colorGradientArr = (function () {
         let dataArr = chartData
@@ -91,6 +91,10 @@ const CarbonCreditCountryStackedChart = ({ chartData }) => {
         xAxis: {
             lineWidth: 0,
             type: "datetime",
+            lineColor: 'transparent',
+            gridLineWidth: 0,
+            gridLineColor: 'transparent',
+            tickLength: 0,
             labels: {
                 // step:4,
                 style: {
