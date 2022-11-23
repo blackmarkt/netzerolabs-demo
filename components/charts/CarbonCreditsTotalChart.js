@@ -58,21 +58,23 @@ const CarbonCreditsTotalChart = ({ chartData }) => {
         },
         yAxis: {
             lineWidth: 0,
-                lineColor: 'black',
-                gridLineWidth: 0,
-                gridLineColor: 'transparent',
-                title: {
-                    text: 'tCO2e'
+            min: 1000000,
+            // type: 'logarithmic',
+            lineColor: 'black',
+            gridLineWidth: 0,
+            gridLineColor: 'transparent',
+            title: {
+                text: 'tCO2e'
+            },
+            labels: {
+                style: {
+                    fontSize: '0.6rem',
+                    color: '#616161',
                 },
-                labels: {
-                    style: {
-                        fontSize: '0.6rem',
-                        color: '#616161',
-                    },
-                    // formatter: function() {
-                    // return this.value;
-                    // }
-                }
+                // formatter: function() {
+                // return this.value;
+                // }
+            }
         },
         xAxis: {
             type: 'datetime',
