@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import CarbonCreditsTable from '../../components/credits/CarbonCreditsTable'
 import TopCountriesTable from '../../components/credits/TopCountriesTable'
 import TopProtocolsTable from '../../components/credits/TopProtocolsTable'
+import TopCarbonTypeTable from '../../components/credits/TopCarbonTypeTable'
 import CarbonCreditProtocolStackedChart from '../../components/charts/CarbonCreditProtocolStackedChart'
 import CarbonProtocolPieChart from '../../components/charts/CarbonProtocolPieChart'
 import CarbonCreditsTotalChart from '../../components/charts/CarbonCreditsTotalChart'
@@ -25,7 +26,7 @@ const CarbonCredits = () => {
     const [carbonTypeBreakdown, setCarbonTypeBreakdown] = useState(getCarbonTypeBreakdown())
     const [carbonTypeStacked, setCarbonTypeStacked] = useState(getTypeStacked())
 
-    console.log('TYPE STACKED CARBON ', carbonTypeStacked)
+    console.log('TYPE STACKED CARBON ', carbonTypeBreakdown)
 
     return (
         <div className={creditStyles.dashboardContainer}>
@@ -66,7 +67,7 @@ const CarbonCredits = () => {
                 <div className={creditStyles.subContainer}>
                     <div className={creditStyles.subLeftContainer}>
                         <div className={creditStyles.topCountriesContainer}>
-                            <h4 className={creditStyles.dashboardHeader}>Top Issuing Countries </h4>
+                            <h4 className={creditStyles.dashboardHeader}>Top Issuing Countries</h4>
                             <table className={creditStyles.chainTable}>
                                 <thead>
                                     <tr className={creditStyles.tableHeader}>
@@ -105,6 +106,33 @@ const CarbonCredits = () => {
                 <hr className={creditStyles.dashboardDivider}></hr>
                 <div className={creditStyles.subContainer}>
                     <div className={creditStyles.subLeftContainer}>
+                    <div className={creditStyles.topCountriesContainer}>
+                            <h4 className={creditStyles.dashboardHeader}>Top Project Categories</h4>
+                            <table className={creditStyles.chainTable}>
+                                <thead>
+                                    <tr className={creditStyles.tableHeader}>
+                                        {/* <th>
+                                            ID
+                                        </th> */}
+                                        <th>
+                                            Project Type
+                                        </th>
+                                        <th>
+                                            Quantity
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {carbonTypeBreakdown.map((obj, index) => {
+                                        if (index < 3) 
+                                            return ( 
+                                                <TopCarbonTypeTable key={index} {...obj}/>
+                                            )
+                                        return null
+                                    })}
+                                </tbody>
+                            </table>
+                        </div>
                         <div className={creditStyles.countriesPieContainer}>
                             <CarbonCreditsTypePieChart chartData={carbonTypeBreakdown}/>
                         </div>

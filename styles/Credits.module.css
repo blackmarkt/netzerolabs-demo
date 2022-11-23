@@ -173,6 +173,7 @@
 .chainTable {
     width: 100%;
     margin:1rem;
+    text-align: center;
     /* display: grid; */
     border-collapse: collapse;
 }

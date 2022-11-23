@@ -21,7 +21,7 @@ const projectTypeCats = {'Energy industries (renewable/non-renewable sources)': 
                         'Construction; Energy industries (renewable/non-renewable sources)': 'Renewable Energies (Construction)',
                         'Energy industries (renewable/non-renewable sources); Manufacturing industries': 'Renewable Energies (Manufacturing)',
                         'Chemical industry': 'Chemical',
-                        'Fugitive emissions from production and consumption of halocarbons and sulphur hexafluoride': 'Fugitive Emissions (Halocarbons, Sulphur Hexalfuoride',
+                        'Fugitive emissions from production and consumption of halocarbons and sulphur hexafluoride': 'Fugitive Emissions (Chemicals)',
                         'Energy distribution': 'Energy Distribution', 
                         'Metal production': 'Energy Distribution (Metals)',
                         'Mining/mineral production': 'Mining',
