@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
+import { projectTypeColors } from '../../data/carbonCreditData'
 
 const CarbonCreditsTypePieChart = ({ chartData }) => {
 
@@ -8,20 +9,35 @@ const CarbonCreditsTypePieChart = ({ chartData }) => {
         let dataArr = chartData
         if (typeof Highcharts === 'object') {
             for (let i=0; i<chartData.length; i+=1) {
-                dataArr[i]['color'] = {
-                    linearGradient:  { 
-                        x1: 0,
-                        y1: 0,
-                        x2: 1,
-                        y2: 1},
-                    stops: [
-                        [0, Highcharts.color('aquamarine').brighten((i - 3) / 12).get()],
-                        // [0, dataArr[i].color],
-                        [1, 'transparent']
-                    ]
+                let tempColor = projectTypeColors[dataArr[i]['type']]
+                console.log('TEMP COLOR ', tempColor)
+                if (typeof tempColor != 'undefined') {
+                    dataArr[i]['color'] = {
+                        linearGradient:  { 
+                            x1: 0,
+                            y1: 0,
+                            x2: 1,
+                            y2: 1},
+                        stops: [
+                            [0, tempColor],
+                            [1, 'transparent']
+                        ]
+                    }
+                } else {
+                    dataArr[i]['color'] = {
+                        linearGradient:  { 
+                            x1: 0,
+                            y1: 0,
+                            x2: 1,
+                            y2: 1},
+                        stops: [
+                            [0, Highcharts.color('aquamarine').brighten((i - 3) / 12).get()],
+                            [1, 'transparent']
+                        ]
+                    }
                 }
             }
-            console.log('COLOR ', dataArr)
+            console.log('STACKED TYPE COLOR ', dataArr)
             return dataArr
         }
     }());

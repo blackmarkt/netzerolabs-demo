@@ -8,7 +8,7 @@ const projectTypeCats = {'Energy industries (renewable/non-renewable sources)': 
                         'Fugitive emissions from fuels (solid, oil and gas); Mining/mineral production': 'Oil Fugitive Emissions/Mining',
                         'Agriculture Forestry and Other Land Use': 'Forestry',
                         'Waste handling and disposal': 'Waste Management', 
-                        'Manufacturing industries': 'Waste Disposal',
+                        'Manufacturing industries': 'Manufacturing',
                         'Energy demand; Waste handling and disposal': 'Energy Demand',
                         'Energy industries (renewable/non-renewable sources); Livestock, enteric fermentation, and manure management; Waste handling and disposal': 'Renewable Energy (Livestock)',
                         'Energy industries (renewable/non-renewable sources); Waste handling and disposal': 'Renewable Energy (Waste)',
@@ -29,6 +29,16 @@ const projectTypeCats = {'Energy industries (renewable/non-renewable sources)': 
                         'Chemical industry; Energy industries (renewable/non-renewable sources)': 'Renewable Energies (Chemical)',
                         'Energy industries (renewable/non-renewable sources); Livestock, enteric fermentation, and manure management': 'Renewable Energy (Livestock)',
                         'Energy industries (renewable/non-renewable sources); Fugitive emissions from fuels (solid, oil and gas)': 'Renewable Energy (Fugitive Emissions)'}
+
+const projectTypeColors = {'Renewable Energy': '#DAA520',
+                            'Forestry': 'green',
+                            'Renewable Energy (Waste)': '#FFD700',
+                            'Energy Demand':'#FFC000',
+                            'Renewable Energies (Manufacturing)': '#2E862B',
+                            'Chemical':'aqua',
+                            'Oil Fugitive Emissions':'#00000',
+                            'Waste Management': 'brown',
+                            'Manufacturing':'silver'}
 
 function getCarbonCreditData() {
     return toucanData
@@ -216,5 +226,30 @@ function getCarbonTypeBreakdown() {
     return sortedInput
 }
 
+function getTypeStacked(minYear=2020) {
+    let dataArr = []
+    toucanData.forEach(function(item) {
+        if (parseInt(item["Issuance Date"].split("-")[0]) >= minYear) {
+            if(item["Project Type"] != null && typeof dataArr.find(({ name }) => name === projectTypeCats[item['Project Type']]) == 'undefined') {
+                let obj = {}
+                obj = {"name":projectTypeCats[item['Project Type']], "data":[{date: convertDTUNIX(item['Issuance Date']), y: item.Quantity}]}
+                dataArr.push(obj)
+            } else {
+                let obj = dataArr.find(({ name }) => name === projectTypeCats[item['Project Type']]);
+                if(typeof obj != 'undefined') {
+                    obj.data.push({date: convertDTUNIX(item['Issuance Date']), y: item.Quantity})
+                }
+            }
+        }
+    })
+    dataArr.forEach(function(item) {
+        let tempData = sumDailyMonthly(item.data)
+        item.data = tempData.map(el=>Object.values(el))
+    })
+    console.log('Stacked DATA ', dataArr)
+    return dataArr
+}
+
 export { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
-         sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked, getCarbonTypeBreakdown }
+         sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked, getCarbonTypeBreakdown,
+         getTypeStacked, projectTypeColors }
