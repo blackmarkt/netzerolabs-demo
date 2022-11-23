@@ -59,7 +59,7 @@ const CarbonCreditsTotalChart = ({ chartData }) => {
         yAxis: {
             lineWidth: 0,
             min: 1000000,
-            // type: 'logarithmic',
+            type: 'logarithmic',
             lineColor: 'black',
             gridLineWidth: 0,
             gridLineColor: 'transparent',

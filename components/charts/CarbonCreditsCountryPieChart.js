@@ -91,7 +91,7 @@ const CarbonCreditsCountryPieChart = ({ chartData }) => {
             plotShadow: false,
             type: 'pie',
             backgroundColor: 'transparent',
-            margin: [40,10,40,40]
+            margin: [20,20,20,20]
         },
         credits: {
             enabled: false
