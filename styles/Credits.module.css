@@ -5,8 +5,15 @@
     .dashboardContainer {
         margin-top:1rem!important
     }
+    .dashboardLeftHeader {
+        width: 100%!important;
+    }
     .dashboardMainHeader {
-        font-size: 2rem!important;
+        font-size: 1.8rem!important;
+        margin: 0 !important;
+    }
+    .dashboardSubHeader {
+        vertical-align: top!important;
     }
     .dashboardHeaderContainer {
         display: revert!important;
@@ -102,6 +109,9 @@
 }
 .dashboardMainHeader {
     margin:0 0 1rem
+}
+.dashboardSubHeader {
+    font-size: 0.8rem;
 }
 .dashboardHeader {
     color:#616161;

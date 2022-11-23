@@ -22,7 +22,7 @@ const CarbonCredits = () => {
     return (
         <div className={creditStyles.dashboardContainer}>
             <div className={creditStyles.dashboardLeftHeader}>
-                <h2 className={creditStyles.dashboardMainHeader}>Carbon Credits Tracker (On-Chain)</h2>
+                <h2 className={creditStyles.dashboardMainHeader}>Carbon Credits Tracker <scan className={creditStyles.dashboardSubHeader}>(On-Chain)</scan></h2>
                 <p style={{"margin":"0", "padding": "0rem"}}>Last Updated 11/19/22</p>
             </div>
             <div className={creditStyles.dashboardRightHeader}>

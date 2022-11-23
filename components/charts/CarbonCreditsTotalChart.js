@@ -41,6 +41,7 @@ const CarbonCreditsTotalChart = ({ chartData }) => {
                     },
                     stops: [
                         [0, 'aqua'],
+                        [0, 'aquamarine'],
                         [1, 'transparent']
                     ]
                 },
