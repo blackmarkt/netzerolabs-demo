@@ -15,7 +15,7 @@ const Meta = ({ title, keywords, description, url }) => {
       <meta property="og:type" content="website" />
       <meta http-equiv="Content-Language" content="en" />
       <link rel='icon' href='/favicon.ico' />
-      {router.asPath != "/" ? (<title>{title} | {router.asPath.split("/").at(-1).replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())}</title>) 
+      {router.asPath != "/" ? (<title>{title} | {router.asPath.split("/").at(-1).replace('-', ' ').replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())}</title>) 
       : (<title>{title} | On Chain Carbon Accounting</title>)}
     </Head>
   )
