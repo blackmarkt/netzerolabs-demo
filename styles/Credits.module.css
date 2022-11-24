@@ -13,7 +13,10 @@
         margin: 0 !important;
     }
     .dashboardSubHeader {
+        font-size: 0.9rem!important;
         vertical-align: top!important;
+        display: block!important;
+        margin-bottom:0.8rem!important
     }
     .dashboardHeaderContainer {
         display: revert!important;
