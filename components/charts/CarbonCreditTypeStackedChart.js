@@ -44,7 +44,7 @@ const CarbonCreditTypeStackedChart = ({ chartData }) => {
 
     const options = {
         chart: {
-            type: 'area',
+            type: 'column',
             backgroundColor: 'transparent',
             margin: [10,20,20,60]
         },
