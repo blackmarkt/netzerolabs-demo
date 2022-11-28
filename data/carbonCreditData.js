@@ -2,6 +2,7 @@
 const _ = require("lodash")
 import moment from 'moment'
 import toucanData from './carbon_credits/toucan_vcus.json' assert {type: 'json'}
+import flowCarbonData from './carbon_credits/flowcarbon_credits.json' assert {type: 'json'}
 import { numberWithCommas, calculateTotalCarbonQty, convertDTUNIX } from './utils/utilFunctions.js'
 
 const projectTypeCats = {'Energy industries (renewable/non-renewable sources)': 'Renewable Energy',
@@ -42,6 +43,10 @@ const projectTypeColors = {'Renewable Energy': '#FFEA00',
 
 function getCarbonCreditData() {
     return toucanData
+}
+
+function getFlowCarbonCreditData() {
+    return flowCarbonData
 }
 
 function getTotalCarbonCreditsQty() {
@@ -125,6 +130,7 @@ function sumCarbonCreditsMonthly(arr) {
                 obj.y += item.Quantity
             }
         }
+        // console.log('UNIX DATe ', dataArr)
         let sortedInput = dataArr.slice().sort((a, b) => a.date - b.date);
         let tempSum = 0
         let sortedArr = [sortedInput.at(0)]
@@ -138,8 +144,10 @@ function sumCarbonCreditsMonthly(arr) {
                 // item.y += tempSum
             }
         })
+        // console.log('PRE-SORTED CC DATA ', sortedArr)
         tempArr = sortedArr.map(el=>Object.values(el))
     })
+    console.log('STACKED CC DATA ', tempArr)
     return tempArr
 }
 

@@ -26,7 +26,7 @@ const CarbonCredits = () => {
     const [carbonTypeBreakdown, setCarbonTypeBreakdown] = useState(getCarbonTypeBreakdown())
     const [carbonTypeStacked, setCarbonTypeStacked] = useState(getTypeStacked())
 
-    console.log('TYPE STACKED CARBON ', carbonTypeBreakdown)
+    console.log('MAIN STACKED CARBON ', sumCarbonCreditsArr)
 
     return (
         <div className={creditStyles.dashboardContainer}>
