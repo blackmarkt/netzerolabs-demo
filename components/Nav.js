@@ -12,7 +12,6 @@ const Nav = () => {
 
   const toggleDropdown = () => {
     setDropDownOpen(!dropDownOpen)
-    console.log('HOVER ', dropDownOpen);
   }
 
   const toggleHamburger = () => {
@@ -41,23 +40,8 @@ const Nav = () => {
                     {/* <i class="fa fa-caret-down"></i> */}
                     </button>
                     <NavDropDownMenu isOpen={dropDownOpen} />
-                    {/* <div className={navStyles.dropdownMenu}>
-                        <ul className="navListDesk">
-                            <l1>
-                                <a className="navListItemDesk" href="/blockchains">Blockchain (L1)</a>
-                            </l1>
-                            <l1>
-                                <a className="navListItemDesk" href="/carbon-credits">Carbon Credits</a>
-                            </l1>
-                        </ul>
-                    </div> */}
                 </div>
             </div>
-            {/* <Link href="/">
-                <button className={navStyles.buttonHead}>
-                    Trackers
-                </button>
-            </Link> */}
             <Link href="/">
                 <button className={navStyles.buttonHead}>
                     Services

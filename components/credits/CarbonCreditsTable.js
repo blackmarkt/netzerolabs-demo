@@ -1,18 +1,23 @@
 import Link from 'next/link'
+import React, { useEffect } from "react";
 import creditTable from '../../styles/CreditTable.module.css'
 import { numberWithCommas } from '../../data/emissionsData'
 import { projectTypeCats } from '../../data/carbonCreditData'
 
 const CarbonCreditsTable = ( props ) => {
+
+    const openExternalLink = url => {
+        window.open(url, '_blank', 'noopener,noreferrer')
+    }
     
     return (
-            <tr key={props['ID']} className={creditTable.tableRow}>
+            <tr key={props['ID']} className={[creditTable.tableRow, creditTable.navChainLink].join(" ")} onClick={() => openExternalLink(props['URL'])}>
                 <td className={creditTable.tableColEmission}>
-                    <a href={`${props['URL']}`} target="_blank" rel="noopener noreferrer">
-                        <div className={[creditTable.emissionsTxtMatte, creditTable.navChainLink].join(" ")}>
-                            {props['ID']}
-                        </div>
-                    </a>
+                    {/* <a href={`${props['URL']}`} target="_blank" rel="noopener noreferrer"> */}
+                    <div className={creditTable.emissionsTxtMatte}>
+                        {props['ID']}
+                    </div>
+                    {/* </a> */}
                 </td>
                 <td>
                     {/* <a href={`${props['URL']}`} target="_blank" rel="noopener noreferrer"> */}

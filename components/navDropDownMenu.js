@@ -1,17 +1,17 @@
+import Link from 'next/link'
 // import hamStyles from '../styles/Hamburger.module.css'
 
 const NavDropDownMenu = ({ isOpen }) => {
-    console.log('NAV HOVER ', isOpen)
 
     return (
         <>
             <div className="navDropDownMenu">
                 <ul className="navListDesk">
                     <l1>
-                        <a className="navListItemDesk" href="/blockchains">Blockchain (L1)</a>
+                        <Link className="navListItemDesk" href="/blockchains">Blockchain (L1)</Link>
                     </l1>
                     <l1>
-                        <a className="navListItemDesk" href="/carbon-credits">Carbon Credits</a>
+                        <Link className="navListItemDesk" href="/carbon-credits">Carbon Credits</Link>
                     </l1>
                 </ul>
             </div>

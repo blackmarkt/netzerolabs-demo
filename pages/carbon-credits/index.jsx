@@ -215,7 +215,7 @@ const CarbonCredits = () => {
                         </thead>
                         <tbody>
                             {carbonData.map((obj, index) => {
-                                if (index < 19) 
+                                if (index < carbonData.length) 
                                     return ( 
                                         <CarbonCreditsTable key={index} {...obj}/>
                                     )
