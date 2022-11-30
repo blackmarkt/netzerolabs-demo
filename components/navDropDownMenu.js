@@ -2,16 +2,17 @@ import Link from 'next/link'
 // import hamStyles from '../styles/Hamburger.module.css'
 
 const NavDropDownMenu = ({ isOpen }) => {
+    console.log('NAV HOVER ', isOpen)
 
     return (
         <>
             <div className="navDropDownMenu">
                 <ul className="navListDesk">
-                    <l1>
-                        <Link className="navListItemDesk" href="/blockchains">Blockchain (L1)</Link>
+                    <l1 className="navListItemDesk">
+                        <Link  href="/blockchains">Blockchain (L1)</Link>
                     </l1>
-                    <l1>
-                        <Link className="navListItemDesk" href="/carbon-credits">Carbon Credits</Link>
+                    <l1 className="navListItemDesk">
+                        <Link href="/carbon-credits">Carbon Credits</Link>
                     </l1>
                 </ul>
             </div>
@@ -19,7 +20,6 @@ const NavDropDownMenu = ({ isOpen }) => {
             <style jsx>{`
 
                 .navDropDownMenu {
-                    // display:none;
                     display: ${isOpen ? 'block' : 'none'};
                     position:absolute;
                     top:60%;

@@ -11,6 +11,7 @@ const Nav = () => {
   const [dropDownOpen, setDropDownOpen] = useState(false)  
 
   const toggleDropdown = () => {
+    console.log('NAV HOVER ', dropDownOpen)
     setDropDownOpen(!dropDownOpen)
   }
 
