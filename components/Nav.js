@@ -3,7 +3,7 @@ import Link from 'next/link'
 // import Image from 'next/Image'
 import navStyles from '../styles/Nav.module.css'
 import Hamburger from './Hamburger'
-import NavDropDownMenu from './NavDropDownMenu'
+import NavDropDownMenu from './navDropDownMenu'
 
 const Nav = () => {
 
