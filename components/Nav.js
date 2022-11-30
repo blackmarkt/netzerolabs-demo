@@ -1,9 +1,17 @@
+import React, { useState } from "react";
 import Link from 'next/link'
 // import Image from 'next/Image'
 import navStyles from '../styles/Nav.module.css'
-// import Net0LabsLogo from '../public/net0labs/net0labs_header.png'
+import Hamburger from './Hamburger'
 
 const Nav = () => {
+
+  const [hamburgerOpen, setHamburgerOpen] = useState(false)  
+
+  const toggleHamburger = () => {
+    setHamburgerOpen(!hamburgerOpen)
+  }
+
   return (
     <nav className={navStyles.nav}>
         <Link href='/blockchains'>
@@ -40,6 +48,119 @@ const Nav = () => {
                 </button>
             </div>
         </div>
+        <div className="mobileNav">
+            <ul className="navList">
+                <Link href="/blockchains">
+                    <li>
+                        <a className="navListItem" onClick={toggleHamburger}>
+                            Blockchain Tracker
+                        </a>
+                    </li>
+                </Link>
+                <Link href="/carbon-credits">
+                    <li>
+                        <a className="navListItem" onClick={toggleHamburger}>
+                            Carbon Credits Tracker
+                        </a>
+                    </li>
+                </Link>
+                <Link href="/">
+                    <li>
+                        <a className="navListItem" onClick={toggleHamburger}>
+                            Services
+                        </a>
+                    </li>
+                </Link>
+                <Link href="/about">
+                    <li>
+                        <a className="navListItem" onClick={toggleHamburger}>
+                            About
+                        </a>
+                    </li>
+                </Link>
+                {/* <li>Contact us</li> */}
+            </ul>
+        </div>
+        <div className={navStyles.mobileHamburgerMenu} onClick={toggleHamburger}>
+           <Hamburger isOpen={hamburgerOpen} />
+        </div>
+
+        <style jsx>{`
+            
+            .mobileNav {
+                display:none;
+                position:absolute;
+                top:60%;
+                right:2%;
+                background:#181818;
+                z-index:99;
+                padding: 0 0.5rem 1rem;
+                border-radius:4px;
+                animation:fadeIn 0.3s;
+                -webkit-animation: fadeIn 0.3s;
+                -moz-animation: fadeIn 0.3s;
+                -o-animation: fadeIn 0.3s;
+                -ms-animation: fadeIn 0.3s;
+                // transition: all 0.3s linear;
+                
+            }
+            .navListItem {
+                padding:1rem 0 1rem 1rem;
+                cursor:pointer
+            }
+            .mobileNav ul{
+                display:flex;
+                flex-wrap: wrap;
+                float: right;
+                margin: 0px;
+                padding: 0px;
+                overflow: hidden;
+            }
+            .mobileNav ul li{
+                display:flex;  
+                list-style:none;
+                list-style-type: none;
+                width:100%
+                // padding-right: 1rem;
+                // float:right
+            }
+            .navList {
+                width:14rem;
+                padding:1rem
+            }
+            @media only screen and (max-width:46em) {
+
+                .mobileNav {
+                    display: ${hamburgerOpen ? 'inline' : 'none'};
+                }
+            }
+
+            @keyframes fadeIn {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+              
+            @-moz-keyframes fadeIn {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+              
+            @-webkit-keyframes fadeIn {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+              
+            @-o-keyframes fadeIn {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+              
+            @-ms-keyframes fadeIn {
+                0% { opacity: 0; }
+                100% { opacity: 1; }
+            }
+
+            `}</style>
     </nav>
   )
 }

@@ -3,17 +3,21 @@
         width: 100%!important;
     }
     .imgHeader {
-        margin-left:0.8rem!important;
+        margin-left:0.4rem!important;
         height:50px!important
     }
     .headerRight {
-        top:30%!important
+        top:30%!important;
+        display: none!important;
     }
     .subHeaderRight {
         display: none!important;
     }
     .buttonHead {
         margin-right: revert!important;
+    }
+    .mobileHamburgerMenu {
+        display: inline!important;
     }
 }   
 .nav {
@@ -45,7 +49,7 @@
     font-weight: bold;
     opacity:0.25;
 }
-.headerRight {
+.headerRight, .mobileHamburgerMenu {
     float:right;
     position: absolute;
     top:50%;
@@ -53,6 +57,11 @@
     transform: translateY(-50%);
     right:0;
     display:flex;
+}
+.mobileHamburgerMenu {
+    display: none;
+    top:30%;
+    right:3%;
 }
 .buttonHead, .buttonHeadActive, .buttonHeadInactive {
     padding:0.7rem 0.8rem;

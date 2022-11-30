@@ -1,3 +1,17 @@
+@media only screen and (max-width:46em) {
+  .aboutHeader {
+    font-size:1.8rem!important
+  }
+  .aboutHeaderTxt {
+    font-size: 0.8rem!important;
+  }
+  .aboutMissionState {
+    font-size:1.4rem!important
+  }
+  .net0labsMask {
+    width:85%!important
+  }
+}
 .aboutContainer {
     height:70%;
     min-height:58vh;
