@@ -35,11 +35,28 @@
     float:left;
     cursor: pointer;
 }
+.navDropdown {
+    height:80px;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    font-family: inherit;
+}
+/* .dropdownMenu {
+    display: block;
+    position:absolute;
+    top:50%;
+    left:-10%;
+    text-decoration: none;
+    text-align: left;
+} */
 .btnLaunch {
+    position:relative;
+    top:50%;
     float:right;
     transform: translateY(-50%);
     right:0;
-    margin-top:3rem;
+    /* margin-top:3rem; */
     padding:0.7rem 0.5rem;
     background-color: transparent;
     border:solid white;
@@ -53,6 +70,7 @@
     float:right;
     position: absolute;
     top:50%;
+    height:80px;
     /* bottom:0; */
     transform: translateY(-50%);
     right:0;
@@ -73,10 +91,54 @@
     font-weight: bold;
     /* text-shadow:0 0 10px #fff; */
     border:none;
-    margin-right: 1.6rem;
+    margin-right: 2rem;
     cursor: pointer;
+}
+.buttonBackground {
+    height:100%;
+    cursor: pointer;
+}
+.buttonTracker {
+    height:100%;
+    padding:0.7rem 0.8rem;
+    background-color: transparent;
+    border-radius: 6px;
+    border:none;
+    margin-right: 2rem;
+    font-size:0.9rem;
+    font-weight: bold;
+    text-shadow:0 0 10px white!important;
+    /* color:rgb(255, 255, 208)!important; */
+    color:white!important;
+    animation: pulsate 3s infinite;
+    -ms-animation: pulsate 3s infinite;
+    -webkit-animation: pulsate 3s infinite;
+    /* -webkit-animation-iteration-count: infinite; */
+    opacity:1
 }
 .buttonAbout {
     position: relative!important;
-    top:30%!important
+    top:27%!important
+}
+@-webkit-keyframes pulsate {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0.1;
+    }
+    100% {
+        opacity:1;
+    }
+}
+@keyframes pulsate {
+    0% {
+        opacity:1;
+    }
+    50% {
+        opacity:0.1;
+    }
+    100% {
+        opacity:1;
+    }
 }

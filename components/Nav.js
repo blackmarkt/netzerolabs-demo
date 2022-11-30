@@ -3,10 +3,17 @@ import Link from 'next/link'
 // import Image from 'next/Image'
 import navStyles from '../styles/Nav.module.css'
 import Hamburger from './Hamburger'
+import NavDropDownMenu from './NavDropDownMenu'
 
 const Nav = () => {
 
-  const [hamburgerOpen, setHamburgerOpen] = useState(false)  
+  const [hamburgerOpen, setHamburgerOpen] = useState(false) 
+  const [dropDownOpen, setDropDownOpen] = useState(false)  
+
+  const toggleDropdown = () => {
+    setDropDownOpen(!dropDownOpen)
+    console.log('HOVER ', dropDownOpen);
+  }
 
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen)
@@ -27,17 +34,36 @@ const Nav = () => {
             />
         </Link>
         <div className={navStyles.headerRight}>
+            <div className={navStyles.buttonBackground} onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
+                <div className={navStyles.navDropdown}>
+                    <button className={navStyles.buttonTracker}>
+                        Trackers
+                    {/* <i class="fa fa-caret-down"></i> */}
+                    </button>
+                    <NavDropDownMenu isOpen={dropDownOpen} />
+                    {/* <div className={navStyles.dropdownMenu}>
+                        <ul className="navListDesk">
+                            <l1>
+                                <a className="navListItemDesk" href="/blockchains">Blockchain (L1)</a>
+                            </l1>
+                            <l1>
+                                <a className="navListItemDesk" href="/carbon-credits">Carbon Credits</a>
+                            </l1>
+                        </ul>
+                    </div> */}
+                </div>
+            </div>
+            {/* <Link href="/">
+                <button className={navStyles.buttonHead}>
+                    Trackers
+                </button>
+            </Link> */}
             <Link href="/">
                 <button className={navStyles.buttonHead}>
                     Services
                 </button>
             </Link>
             <div className={navStyles.subHeaderRight}>
-                {/* <Link href="/blockchains">
-                    <button className={[navStyles.buttonHead, navStyles.buttonAbout].join(" ")}>
-                        Tracker
-                    </button>
-                </Link> */}
                 <Link href="/about">
                     <button className={[navStyles.buttonHead, navStyles.buttonAbout].join(" ")}>
                         About
@@ -53,7 +79,7 @@ const Nav = () => {
                 <Link href="/blockchains">
                     <li>
                         <a className="navListItem" onClick={toggleHamburger}>
-                            Blockchain Tracker
+                            Blockchains (L1) Tracker
                         </a>
                     </li>
                 </Link>
@@ -108,6 +134,14 @@ const Nav = () => {
                 padding:1rem 0 1rem 1rem;
                 cursor:pointer
             }
+            .navListItemDesk {
+                padding:1rem 0 1rem 1rem;
+                cursor:pointer;
+                display:flex;  
+                list-style:none;
+                list-style-type: none;
+                width:100%
+            }
             .mobileNav ul{
                 display:flex;
                 flex-wrap: wrap;
@@ -124,9 +158,12 @@ const Nav = () => {
                 // padding-right: 1rem;
                 // float:right
             }
-            .navList {
+            .navList, .navListDesk {
                 width:14rem;
                 padding:1rem
+            }
+            .navListDesk {
+                width:20rem
             }
             @media only screen and (max-width:46em) {
 
