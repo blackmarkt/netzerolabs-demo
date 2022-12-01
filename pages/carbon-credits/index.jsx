@@ -10,10 +10,11 @@ import CarbonCreditCountryStackedChart from '../../components/charts/CarbonCredi
 import CarbonCreditsCountryPieChart from "../../components/charts/CarbonCreditsCountryPieChart"
 import CarbonCreditsTypePieChart from "../../components/charts/CarbonCreditsTypePieChart"
 import CarbonCreditTypeStackedChart from "../../components/charts/CarbonCreditTypeStackedChart"
+import CarbonCreditMap from '../../components/map/CarbonCreditMap'
 import creditStyles from '../../styles/Credits.module.css'
 import { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
          sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked, getCarbonTypeBreakdown,
-         getTypeStacked } from '../../data/carbonCreditData'
+         getTypeStacked, getFlowCarbonMapData } from '../../data/carbonCreditData'
 
 const CarbonCredits = () => {
     const [carbonData, setCarbonData] = useState(getCarbonCreditData)
@@ -25,8 +26,9 @@ const CarbonCredits = () => {
     const [protocolStack, setProtocolStack] = useState(getProtocolStacked())
     const [carbonTypeBreakdown, setCarbonTypeBreakdown] = useState(getCarbonTypeBreakdown())
     const [carbonTypeStacked, setCarbonTypeStacked] = useState(getTypeStacked())
+    const [carbonMapData, setCarbonMapData] = useState(getFlowCarbonMapData())
 
-    console.log('MAIN STACKED CARBON ', sumCarbonCreditsArr)
+    console.log('MAP CARBON DATA ', carbonMapData)
 
     return (
         <div className={creditStyles.dashboardContainer}>
@@ -63,7 +65,7 @@ const CarbonCredits = () => {
                 </div>
             </div>
             <h4 className={creditStyles.dashboardHeader}>Credits Breakdown</h4>
-            <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardOffsetsSubContainer].join(" ")}>
+            <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardOffsetsSubContainer, creditStyles.dashboardExtraContainer].join(" ")}>
                 <div className={creditStyles.subContainer}>
                     <div className={creditStyles.subLeftContainer}>
                         <div className={creditStyles.topCountriesContainer}>
@@ -98,6 +100,9 @@ const CarbonCredits = () => {
                         </div>
                     </div>
                     <div className={creditStyles.subRightContainer}>
+                        <div className={creditStyles.subMapContainer}>
+                            <CarbonCreditMap mapData={carbonMapData}/>
+                        </div>
                         <div className={creditStyles.emissionsChartContainer}>
                             <CarbonCreditCountryStackedChart chartData={carbonStackedCountry}/>
                         </div>

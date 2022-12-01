@@ -52,7 +52,7 @@
     .chainTable td:nth-child(10) {
         display:none!important;
     }
-    .subLeftContainer, .subRightContainer {
+    .subLeftContainer, .subRightContainer, .subMapContainer {
         width:100%!important;
         margin:0.5rem 0!important
     }
@@ -114,6 +114,13 @@
 }
 .dashboardOffsetsSubContainer {
     max-height: 1200px;
+}
+.dashboardExtraContainer {
+    max-height:1500px!important
+}
+.subMapContainer {
+    display: inline-block;
+    width:100%;
 }
 .subLeftContainer, .subRightContainer {
     display: inline-block;

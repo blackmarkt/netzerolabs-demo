@@ -3,6 +3,7 @@ const _ = require("lodash")
 import moment from 'moment'
 import toucanData from './carbon_credits/toucan_vcus.json' assert {type: 'json'}
 import flowCarbonData from './carbon_credits/flowcarbon_credits.json' assert {type: 'json'}
+import flowcarbon_geojson from './carbon_credits/flowcarbon_geojson.geojson' assert {type: 'json'}
 import { numberWithCommas, calculateTotalCarbonQty, convertDTUNIX } from './utils/utilFunctions.js'
 
 const projectTypeCats = {'Energy industries (renewable/non-renewable sources)': 'Renewable Energy',
@@ -41,12 +42,39 @@ const projectTypeColors = {'Renewable Energy': '#FFEA00',
                             'Waste Management': 'brown',
                             'Manufacturing':'gray'}
 
+var countryColors = [{country: 'China', color: '#B41F11'},
+                    {country: 'India', color: 'orange'},
+                    {country: 'Brazil', color: '#0C8C45'},
+                    {country: 'Turkey', color: '#760711'},
+                    {country: 'Myanmar', color: '#2E862B'},
+                    {country: 'Indonesia', color: '#3F3EFA'},
+                    {country: 'Canada', color: '#C2C2C2'},
+                    {country: 'Netherlands', color: '#F28E00'},
+                    {country: 'Colombia', color: '#EDC515'},
+                    {country: 'Belize', color: '#003A81'},
+                    {country: 'Bulgaria', color: '#861017'},
+                    {country: 'Congo', color: '#2485E7'},
+                    {country: 'Chile', color: '#EFDA00'},
+                    {country: 'Thailand', color: '#0349A0'},
+                    {country: 'Kenya', color: '#094034'},
+                    {country: 'South Korea', color: '#FFFFFF'},
+                    {country: 'Uruguay', color: 'yellow'},
+                    {country: 'Bolivia', color: '#BD332A'},
+                    {country: 'Cambodia', color: '#01127D'},
+                    {country: 'Guatemala', color: '#3389AF'},
+                    {country: 'Madagascar', color: '#B2A8A6'},
+                    {country: 'Viet Nam', color: '#EDED00'}]
+
 function getCarbonCreditData() {
     return toucanData
 }
 
 function getFlowCarbonCreditData() {
     return flowCarbonData
+}
+
+function getFlowCarbonMapData() {
+    return flowcarbon_geojson
 }
 
 function getTotalCarbonCreditsQty() {
@@ -258,6 +286,14 @@ function getTypeStacked(minYear=2020) {
     return dataArr
 }
 
+function getColorByCountry(country) {
+    return countryColors.filter(
+        function(data){ return data.country == country }
+    );
+}
+
+
+
 export { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
          sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked, getCarbonTypeBreakdown,
-         getTypeStacked, projectTypeColors, projectTypeCats }
+         getTypeStacked, getFlowCarbonMapData, projectTypeColors, projectTypeCats }
