@@ -131,6 +131,10 @@
     color:darkgray!important;
     text-shadow: none!important;
 }
+.subContainerTop {
+    padding-top:1rem;
+    vertical-align: top!important;
+}
 .subRightContainer {
     width:71%;
 }

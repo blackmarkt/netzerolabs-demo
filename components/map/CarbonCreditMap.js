@@ -46,10 +46,10 @@ const CarbonCreditMap = ({ mapData }) => {
                     'id': 'project-layer',
                     'type': 'circle',
                     'source': 'project-source',
-                    'minZoom': '0.15',
+                    'minZoom': '0.35',
                     'paint': {
                         'circle-color': 'red',
-                        'circle-blur':8,
+                        'circle-blur':6,
                         'circle-radius':10
                     }
                 });
@@ -57,7 +57,7 @@ const CarbonCreditMap = ({ mapData }) => {
             });
 
             const popupOffsets = {
-                'top': [0, -350],
+                'top': [0, -330],
                 'top-left': [0, 0],
                 'top-right': [0, 0],
             }

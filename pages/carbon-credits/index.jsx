@@ -28,7 +28,7 @@ const CarbonCredits = () => {
     const [carbonTypeStacked, setCarbonTypeStacked] = useState(getTypeStacked())
     const [carbonMapData, setCarbonMapData] = useState(getFlowCarbonMapData())
 
-    console.log('MAP CARBON DATA ', carbonMapData)
+    // console.log('MAP CARBON DATA ', carbonMapData)
 
     return (
         <div className={creditStyles.dashboardContainer}>
@@ -67,7 +67,7 @@ const CarbonCredits = () => {
             <h4 className={creditStyles.dashboardHeader}>Credits Breakdown</h4>
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardOffsetsSubContainer, creditStyles.dashboardExtraContainer].join(" ")}>
                 <div className={creditStyles.subContainer}>
-                    <div className={creditStyles.subLeftContainer}>
+                    <div className={[creditStyles.subLeftContainer, creditStyles.subContainerTop].join(" ")}>
                         <div className={creditStyles.topCountriesContainer}>
                             <h4 className={creditStyles.dashboardHeader}>Top Issuing Countries</h4>
                             <table className={creditStyles.chainTable}>
