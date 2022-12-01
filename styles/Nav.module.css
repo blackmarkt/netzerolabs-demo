@@ -107,6 +107,7 @@
     margin-right: 2rem;
     font-size:0.9rem;
     font-weight: bold;
+    cursor: pointer;
     text-shadow:0 0 10px white!important;
     /* color:rgb(255, 255, 208)!important; */
     color:white!important;
