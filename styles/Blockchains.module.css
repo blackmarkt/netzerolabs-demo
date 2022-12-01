@@ -8,6 +8,12 @@
     .dashboardMainHeader {
         font-size: 2rem!important;
     }
+    .dashboardLeftHeader {
+        width: 100%!important;
+    }
+    .dashboardRightHeader {
+        display: none!important;
+    }
     .dashboardHeaderContainer {
         display: revert!important;
     }

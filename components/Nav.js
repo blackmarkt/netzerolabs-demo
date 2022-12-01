@@ -6,9 +6,10 @@ import Hamburger from './Hamburger'
 import NavDropDownMenu from './navDropDownMenu'
 
 const Nav = () => {
-
   const [hamburgerOpen, setHamburgerOpen] = useState(false) 
   const [dropDownOpen, setDropDownOpen] = useState(false)  
+
+  const notionURL = 'https://www.notion.so/blackmarkt/Carbon-Accounting-Methodology-b2e03be009a945f680592ec7563107d6'
 
   const toggleDropdown = () => {
     console.log('NAV HOVER ', dropDownOpen)
@@ -18,6 +19,10 @@ const Nav = () => {
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen)
   }
+
+  const openExternalLink = url => {
+    window.open(url, '_blank', 'noopener,noreferrer')
+}
 
   return (
     <nav className={navStyles.nav}>
@@ -37,7 +42,7 @@ const Nav = () => {
             <div className={navStyles.buttonBackground} onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
                 <div className={navStyles.navDropdown}>
                     <button className={navStyles.buttonTracker}>
-                        Trackers
+                        Activity
                     {/* <i class="fa fa-caret-down"></i> */}
                     </button>
                     <NavDropDownMenu isOpen={dropDownOpen} />
@@ -75,6 +80,13 @@ const Nav = () => {
                         </a>
                     </li>
                 </Link>
+                {/* <Link href="#"> */}
+                    <li onClick={() => openExternalLink(notionURL)}>
+                        <a className="navListItem" onClick={toggleHamburger}>
+                            Methodology
+                        </a>
+                    </li>
+                {/* </Link> */}
                 <Link href="/">
                     <li>
                         <a className="navListItem" onClick={toggleHamburger}>

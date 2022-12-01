@@ -23,7 +23,7 @@ const Blockchains = () => {
             </div>
             <div className={styles.dashboardRightHeader}>
                 <a href="https://www.notion.so/blackmarkt/Carbon-Accounting-Methodology-b2e03be009a945f680592ec7563107d6" target="_blank" rel="noopener noreferrer">
-                    <p style={{"margin":"0", "padding": "0rem"}}>Methology &#x1f517;</p>
+                    <p style={{"margin":"0", "padding": "0rem"}}>Methodology</p>
                 </a>
             </div>
             <div className={styles.dashboardHeaderContainer}>
