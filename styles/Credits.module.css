@@ -144,10 +144,13 @@
 .dashboardSubHeader {
     font-size: 0.8rem;
 }
-.dashboardHeader {
+.dashboardHeader, .dashboardSubHeader {
     color:#616161;
     text-shadow: none!important;
     margin:1rem 0.5rem 0.6rem;
+}
+.dashboardSubHeader {
+    font-size:0.8rem
 }
 .emissionsLeftContainer, .emissionsRightContainer {
     display: inline-block;
@@ -193,7 +196,7 @@
 }
 .chainTable {
     width: 100%;
-    margin:1rem;
+    margin:1.5rem 0 2rem;
     text-align: center;
     /* display: grid; */
     border-collapse: collapse;

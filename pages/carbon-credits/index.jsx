@@ -100,6 +100,7 @@ const CarbonCredits = () => {
                         </div>
                     </div>
                     <div className={creditStyles.subRightContainer}>
+                        <h4 className={creditStyles.dashboardSubHeader}>Projects</h4>
                         <div className={creditStyles.subMapContainer}>
                             <CarbonCreditMap mapData={carbonMapData}/>
                         </div>
