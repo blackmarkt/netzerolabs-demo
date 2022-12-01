@@ -24,8 +24,8 @@ const CarbonCreditMap = ({ mapData }) => {
                 style: "mapbox://carbonMapStyles/marktblack/cl9ak59tt000715t2bb8k9ao2",
                 zoom:0.35,
                 // center: [-77.034084142948, 38.909671288923], 
-                minZoom:0.035,
-                interactive: false,
+                minZoom:0.34,
+                // interactive: false,
                 dragPan: false,
                 attributionControl: false
             });
@@ -46,18 +46,31 @@ const CarbonCreditMap = ({ mapData }) => {
                     'id': 'project-layer',
                     'type': 'circle',
                     'source': 'project-source',
-                    'minZoom': '0.35',
+                    // 'minZoom': '0.35',
                     'paint': {
-                        'circle-color': 'red',
-                        'circle-blur':6,
-                        'circle-radius':10
+                        // 'circle-color': 'red',
+                        'circle-blur':2.3,
+                        'circle-radius':30,
+                        'circle-color': [
+                            'match',
+                            ['get', 'country'],
+                            'Zambia', '#188401',
+                            'Indonesia', '#3f3efa',
+                            'Brazil', '#0c8c45',
+                            'Cambodia', '#01127d',
+                            'Peru', '#cf0f20',
+                            'Chile', '#efda00',
+                            'Colombia', '#edc515',
+                            'China', '#b41f11',
+                            /* other */ 'white'
+                            ]
                     }
                 });
 
             });
 
             const popupOffsets = {
-                'top': [0, -330],
+                'top': [0, -360],
                 'top-left': [0, 0],
                 'top-right': [0, 0],
             }
@@ -65,22 +78,57 @@ const CarbonCreditMap = ({ mapData }) => {
              // Create a popup, but don't add it to the map yet.
              const popup = new mapboxgl.Popup({
                 closeButton: false,
-                closeOnClick: false,
+                // closeOnClick: false,
                 className: 'map-popup',
                 anchor: 'top',
                 offset: popupOffsets,
             });
 
-            map.on('mouseenter', 'project-layer', (e) => {
+            const popupClick = new mapboxgl.Popup({
+                closeButton: false,
+                // closeOnClick: false,
+                className: 'map-popup',
+                anchor: 'top',
+                offset: popupOffsets,
+            });
+
+            map.on('click', 'project-layer', (e) => {
                 // Change the cursor style as a UI indicator.
                 map.getCanvas().style.cursor = 'pointer';
                  
                 // Copy coordinates array.
                 const coordinates = e.features[0].geometry.coordinates.slice();
                 const description = e.features[0].properties.name;
+                const category = e.features[0].properties.category;
+                const protocol = e.features[0].properties.protocol;
+                const url = e.features[0].properties.url;
                 const id = e.features[0].properties.id;
                  
-                popup.setLngLat(coordinates).setHTML('<p className={carbonMapStyles.mapTxt}>IP:</p>' + id).addClassName('map-popup').addTo(map);
+                popupClick.setLngLat(coordinates).setHTML('<p className={carbonMapStyles.mapTxt}>IP: ' + id + 
+                                                     '<a href="' + url + '" target="_blank">' +
+                                                     '</p><div className={carbonMapStyles.mapTxt}>' + description + 
+                                                    //  '</div><p className={carbonMapStyles.mapTxt}>' + category + 
+                                                     '</p></a><p className={carbonMapStyles.mapTxt}>' + protocol + 
+                                                     '</p>').addClassName('map-popup').addTo(map);
+            });
+
+            map.on('mouseenter', 'project-layer', (e) => {
+                map.getCanvas().style.cursor = 'pointer';
+
+                // Copy coordinates array.
+                const coordinates = e.features[0].geometry.coordinates.slice();
+                const description = e.features[0].properties.name;
+                const category = e.features[0].properties.category;
+                const protocol = e.features[0].properties.protocol;
+                const url = e.features[0].properties.url;
+                const id = e.features[0].properties.id;
+                 
+                popup.setLngLat(coordinates).setHTML('<p className={carbonMapStyles.mapTxt}>IP: ' + id + 
+                                                     '<a href="' + url + '" target="_blank">' +
+                                                     '</p><div className={carbonMapStyles.mapTxt}>' + description + 
+                                                    //  '</div><p className={carbonMapStyles.mapTxt}>' + category + 
+                                                     '</p></a><p className={carbonMapStyles.mapTxt}>' + protocol + 
+                                                     '</p>').addClassName('map-popup').addTo(map);
             });
                  
             map.on('mouseleave', 'project-layer', () => {

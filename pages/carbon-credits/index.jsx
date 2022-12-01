@@ -86,7 +86,7 @@ const CarbonCredits = () => {
                                 </thead>
                                 <tbody>
                                     {carbonCountry.map((obj, index) => {
-                                        if (index < 3) 
+                                        if (index < 9) 
                                             return ( 
                                                 <TopCountriesTable key={index} {...obj}/>
                                             )
