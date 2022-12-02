@@ -2,6 +2,9 @@
     .main {
         width:95%!important;
     }
+    .subContainerTop {
+        padding-top: 0!important;
+    }
     .dashboardContainer {
         margin-top:1rem!important
     }
@@ -15,11 +18,15 @@
         font-size: 2rem!important;
         margin: 0 !important;
     }
+    .dashboardHeader {
+        margin-bottom:1rem!important
+    }
     .dashboardSubHeader {
         font-size: 0.9rem!important;
         vertical-align: top!important;
         display: block!important;
-        margin-bottom:0.8rem!important
+        margin-bottom:0.8rem!important;
+        margin:0.5rem 0!important
     }
     .dashboardHeaderContainer {
         display: revert!important;
@@ -28,6 +35,10 @@
         display: inline-block!important;
         width:100%!important;
         margin:0.5rem 0!important;
+    }
+    .dashboardExtraContainer {
+        max-height: 3000px!important;
+        overflow: revert!important;
     }
     .chainTable {
         margin:0.3rem 0!important;
@@ -116,7 +127,7 @@
     max-height: 1200px;
 }
 .dashboardExtraContainer {
-    max-height:1500px!important
+    max-height:1500px
 }
 .subMapContainer {
     display: inline-block;
