@@ -12,6 +12,10 @@ const CarbonCreditMap = ({ mapData }) => {
     mapboxgl.accessToken = 
         "pk.eyJ1IjoibWFya3RibGFjayIsImEiOiJjanZzY2w2cnYwZzcxM3ltZjZyYmZvMzZmIn0.4nBm1lPx-HffkRCfaI4_uQ";
 
+    const openExternalLink = url => {
+        window.open(url, '_blank', 'noopener,noreferrer')
+    }
+
     // mapboxgl.accessToken = process.env.NEXT_MAPBOX_KEY;
     
     // console.log('MAP DATA ', mapData)
@@ -94,22 +98,24 @@ const CarbonCreditMap = ({ mapData }) => {
 
             map.on('click', 'project-layer', (e) => {
                 // Change the cursor style as a UI indicator.
-                map.getCanvas().style.cursor = 'pointer';
+                map.getCanvas().style.cursor = 'pointer'
+
+                openExternalLink(e.features[0].properties.url)
                  
                 // Copy coordinates array.
-                const coordinates = e.features[0].geometry.coordinates.slice();
-                const description = e.features[0].properties.name;
-                const category = e.features[0].properties.category;
-                const protocol = e.features[0].properties.protocol;
-                const url = e.features[0].properties.url;
-                const id = e.features[0].properties.id;
+                // const coordinates = e.features[0].geometry.coordinates.slice();
+                // const description = e.features[0].properties.name;
+                // const category = e.features[0].properties.category;
+                // const protocol = e.features[0].properties.protocol;
+                // const url = e.features[0].properties.url;
+                // const id = e.features[0].properties.id;
                  
-                popupClick.setLngLat(coordinates).setHTML('<p className={carbonMapStyles.mapTxt}>IP: ' + id + 
-                                                     '<a href="' + url + '" target="_blank">' +
-                                                     '</p><div className={carbonMapStyles.mapTxt}>' + description + 
-                                                    //  '</div><p className={carbonMapStyles.mapTxt}>' + category + 
-                                                     '</p></a><p className={carbonMapStyles.mapTxt}>' + protocol + 
-                                                     '</p>').addClassName('map-popup').addTo(map);
+                // popupClick.setLngLat(coordinates).setHTML('<p className={carbonMapStyles.mapTxt}>IP: ' + id + 
+                //                                      '<a href="' + url + '" target="_blank">' +
+                //                                      '</p><div className={carbonMapStyles.mapTxt}>' + description + 
+                //                                     //  '</div><p className={carbonMapStyles.mapTxt}>' + category + 
+                //                                      '</p></a><p className={carbonMapStyles.mapTxt}>' + protocol + 
+                //                                      '</p>').addClassName('map-popup').addTo(map);
             });
 
             map.on('mouseenter', 'project-layer', (e) => {
