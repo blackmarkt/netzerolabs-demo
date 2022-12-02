@@ -6,9 +6,16 @@ export default function About() {
             <div className={aboutStyles.aboutSubContainer}>
                 <h1 className={aboutStyles.aboutHeader}>About Us</h1>
                 <p className={aboutStyles.aboutHeaderTxt}>Our team has deep expertise at the intersections of Climate, Energy, Finance and Technology from UC Berkeley</p>
+                <div id="logo-container" className={aboutStyles.net0labsCertContainer}>
+                <video id="berkeley-vid" className={aboutStyles.logoMask} autoPlay muted loop playsInline preload="none">
+                    {/* <source src="/net0labs/net0labs_certification.mp4" type="video/mp4" /> */}
+                    <source src="./partnerships/berkeley_logo.mp4" type="video/mp4" />
+                    <source src="movie.ogg" type="video/ogg" />
+                </video>
+            </div>
                 <br></br>
                 <br></br>
-                <br></br>
+                {/* <br></br> */}
                 {/* <br></br> */}
                 <h1 className={aboutStyles.aboutHeader}>Our Climate Mission</h1>
                 <p className={aboutStyles.aboutHeaderTxt}>All Web3 companies, organizations, DAO's, etc... that have publicly launched tokens commit to the following 2 climate actions:</p>
