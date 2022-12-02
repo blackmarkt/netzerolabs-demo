@@ -192,6 +192,7 @@
 .countriesPieContainer {
     width:100%;
     height:58%;
+    margin: 1.6rem 0;
     display: inline-block;
 }
 .chainTable, .countriesTable {
