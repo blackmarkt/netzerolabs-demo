@@ -70,7 +70,7 @@ const CarbonCredits = () => {
                     <div className={[creditStyles.subLeftContainer, creditStyles.subContainerTop].join(" ")}>
                         <div className={creditStyles.topCountriesContainer}>
                             <h4 className={creditStyles.dashboardHeader}>Top Issuing Countries</h4>
-                            <table className={creditStyles.chainTable}>
+                            <table className={[creditStyles.chainTable, creditStyles.countriesTable].join(" ")}>
                                 <thead>
                                     <tr className={creditStyles.tableHeader}>
                                         {/* <th>

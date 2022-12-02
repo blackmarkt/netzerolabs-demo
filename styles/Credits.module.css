@@ -124,7 +124,7 @@
 }
 .subLeftContainer, .subRightContainer {
     display: inline-block;
-    width:28%;
+    width:31%;
     height:100%;
     text-align: center;
     vertical-align: middle;
@@ -136,7 +136,7 @@
     vertical-align: top!important;
 }
 .subRightContainer {
-    width:71%;
+    width:69%;
 }
 .dashboardMainHeader {
     margin:0 0 1rem
@@ -194,12 +194,15 @@
     height:58%;
     display: inline-block;
 }
-.chainTable {
+.chainTable, .countriesTable {
     width: 100%;
     margin:1.5rem 0 2rem;
     text-align: center;
     /* display: grid; */
     border-collapse: collapse;
+}
+.countriesTable th:nth-child(1) {
+    font-size: 0.9rem;
 }
 .chainTable tr td:first-child {
     padding: 0 1rem 0 0;
@@ -311,7 +314,7 @@
 }
 .leftChartContainer {
     vertical-align: top;
-    width:28%;
+    width:31%;
     /* box-shadow: 0px 1px 1px aquamarine, 0 0 8px #6AD0AE; */
     /* height:100% */
 }
@@ -322,7 +325,7 @@
     filter: drop-shadow(0 0 10px rgba(127, 255, 212, 0.4));
 }
 .dashboardDivider {
-    margin:1rem 1.5rem;
+    margin:2.4rem 1.5rem 1.3rem;
     border-top: 3px solid darkgray;
     opacity:0.1;
     border-radius: 6px;
