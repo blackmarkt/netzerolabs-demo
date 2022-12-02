@@ -50,11 +50,11 @@ const CarbonCreditMap = ({ mapData }) => {
                     'id': 'project-layer',
                     'type': 'circle',
                     'source': 'project-source',
-                    // 'minZoom': '0.35',
+                    // 'maxZoom': '5',
                     'paint': {
                         // 'circle-color': 'red',
-                        'circle-blur':2.3,
-                        'circle-radius':30,
+                        'circle-blur':4,
+                        'circle-radius':10,
                         'circle-color': [
                             'match',
                             ['get', 'country'],

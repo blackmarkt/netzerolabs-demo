@@ -14,7 +14,7 @@ import CarbonCreditMap from '../../components/map/CarbonCreditMap'
 import creditStyles from '../../styles/Credits.module.css'
 import { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
          sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked, getCarbonTypeBreakdown,
-         getTypeStacked, getFlowCarbonMapData } from '../../data/carbonCreditData'
+         getTypeStacked, getFlowCarbonMapData, getCarbonMapData } from '../../data/carbonCreditData'
 
 const CarbonCredits = () => {
     const [carbonData, setCarbonData] = useState(getCarbonCreditData)
@@ -26,9 +26,9 @@ const CarbonCredits = () => {
     const [protocolStack, setProtocolStack] = useState(getProtocolStacked())
     const [carbonTypeBreakdown, setCarbonTypeBreakdown] = useState(getCarbonTypeBreakdown())
     const [carbonTypeStacked, setCarbonTypeStacked] = useState(getTypeStacked())
-    const [carbonMapData, setCarbonMapData] = useState(getFlowCarbonMapData())
+    const [carbonMapData, setCarbonMapData] = useState(getCarbonMapData())
 
-    // console.log('MAP CARBON DATA ', carbonMapData)
+    console.log('MAP CARBON DATA ', carbonMapData)
 
     return (
         <div className={creditStyles.dashboardContainer}>

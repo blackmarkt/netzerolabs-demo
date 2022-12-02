@@ -4,6 +4,7 @@ import moment from 'moment'
 import toucanData from './carbon_credits/toucan_vcus.json' assert {type: 'json'}
 import flowCarbonData from './carbon_credits/flowcarbon_credits.json' assert {type: 'json'}
 import flowcarbon_geojson from './carbon_credits/flowcarbon_geojson.geojson' assert {type: 'json'}
+import toucan_geojson from './carbon_credits/toucan_geojson.geojson' assert {type: 'json'}
 import { numberWithCommas, calculateTotalCarbonQty, convertDTUNIX } from './utils/utilFunctions.js'
 
 const projectTypeCats = {'Energy industries (renewable/non-renewable sources)': 'Renewable Energy',
@@ -75,6 +76,12 @@ function getFlowCarbonCreditData() {
 
 function getFlowCarbonMapData() {
     return flowcarbon_geojson
+}
+
+function getCarbonMapData() {
+    const carbonMapGeoArr = flowcarbon_geojson.features.concat(toucan_geojson.features);
+    const carbonMapGeoJSON = {type: 'FeatureCollection', features: carbonMapGeoArr}
+    return carbonMapGeoJSON
 }
 
 function getTotalCarbonCreditsQty() {
@@ -296,4 +303,4 @@ function getColorByCountry(country) {
 
 export { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
          sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked, getCarbonTypeBreakdown,
-         getTypeStacked, getFlowCarbonMapData, projectTypeColors, projectTypeCats }
+         getTypeStacked, getFlowCarbonMapData, getCarbonMapData, projectTypeColors, projectTypeCats }
