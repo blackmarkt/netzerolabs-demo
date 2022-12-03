@@ -66,6 +66,22 @@ const CarbonCreditMap = ({ mapData }) => {
                             'Chile', '#efda00',
                             'Colombia', '#edc515',
                             'China', '#b41f11',
+                            'India', 'orange',
+                            'Turkey', '#760711',
+                            'Myanmar', '#2e862b',
+                            'Canada', '#c2c2c2',
+                            'Netherlands', '#f28e00',
+                            'Belize', '#003a81',
+                            'Bulgaria', '#861017',
+                            'Congo', '#2485e7',
+                            'Thailand', '#0349a0',
+                            'Kenya', '#094034',
+                            'South Korea', '#FFFFFF',
+                            'Uruguay', 'yellow',
+                            'Bolivia', '#BD332A',
+                            'Guatemala', '#3389AF',
+                            'Madagascar', '#B2A8A6',
+                            'Vietnam', '#EDED00',
                             /* other */ 'white'
                             ]
                     }
