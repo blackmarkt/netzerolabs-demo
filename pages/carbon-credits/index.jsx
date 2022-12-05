@@ -3,6 +3,7 @@ import CarbonCreditsTable from '../../components/credits/CarbonCreditsTable'
 import TopCountriesTable from '../../components/credits/TopCountriesTable'
 import TopProtocolsTable from '../../components/credits/TopProtocolsTable'
 import TopCarbonTypeTable from '../../components/credits/TopCarbonTypeTable'
+import OnChainTxnsTable from '../../components/credits/OnChainTxnsTable'
 import CarbonCreditProtocolStackedChart from '../../components/charts/CarbonCreditProtocolStackedChart'
 import CarbonProtocolPieChart from '../../components/charts/CarbonProtocolPieChart'
 import CarbonCreditsTotalChart from '../../components/charts/CarbonCreditsTotalChart'
@@ -28,10 +29,11 @@ const CarbonCredits = () => {
     const [carbonTypeStacked, setCarbonTypeStacked] = useState(getTypeStacked())
     const [carbonMapData, setCarbonMapData] = useState(getCarbonMapData())
 
-    console.log('MAP CARBON DATA ', carbonMapData)
+    // console.log('MAP CARBON DATA ', carbonMapData)
 
     return (
         <div className={creditStyles.dashboardContainer}>
+            <OnChainTxnsTable chartData={sumCarbonCreditsArr}/> 
             <div className={creditStyles.dashboardLeftHeader}>
                 <h2 className={creditStyles.dashboardMainHeader}>Carbon Credits Tracker <scan className={creditStyles.dashboardSubHeader}>(On-Chain)</scan></h2>
                 <p style={{"margin":"0", "padding": "0rem"}}>Last Updated 12/2/22</p>

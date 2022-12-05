@@ -2,7 +2,7 @@ import Link from 'next/link'
 // import hamStyles from '../styles/Hamburger.module.css'
 
 const NavDropDownMenu = ({ isOpen }) => {
-    console.log('NAV HOVER ', isOpen)
+    // console.log('NAV HOVER ', isOpen)
 
     return (
         <>

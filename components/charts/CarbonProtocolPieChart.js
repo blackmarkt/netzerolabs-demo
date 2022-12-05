@@ -9,9 +9,9 @@ const CarbonProtocolPieChart = ({ chartData }) => {
         let dataArr = chartData
         if (typeof Highcharts === 'object') {
             for (let i=0; i<chartData.length; i+=1) {
-                let tempColor = getProtocolColors(dataArr[i]['provider'])
-                if (typeof tempColor.color !== 'undefined') {
-                    // console.log('COLOR TEMP ', tempColor);
+                let tempColor = getProtocolColors(dataArr[i].provider)
+                console.log('PIE COLOR TEMP ', dataArr[i].provider, tempColor[0].color);
+                if (typeof tempColor.color != 'undefined') {
                     // console.log('COLOR TEMP 2', tempColor);
                     dataArr[i]['color'] = {
                         linearGradient:  { 
@@ -20,8 +20,19 @@ const CarbonProtocolPieChart = ({ chartData }) => {
                             x2: 1,
                             y2: 1},
                         stops: [
-                            // [0, Highcharts.color(tempColor[0].color).brighten((i - 3) / 12).get()],
-                            [0, dataArr[i].color],
+                            [0, tempColor[0].color],
+                            [1, 'transparent']
+                        ]
+                    }
+                } else {
+                    dataArr[i]['color'] = {
+                        linearGradient:  { 
+                            x1: 0,
+                            y1: 0,
+                            x2: 1,
+                            y2: 1},
+                        stops: [
+                            [0, Highcharts.color(tempColor[0].color).brighten((i - 3) / 12).get()],
                             [1, 'transparent']
                         ]
                     }

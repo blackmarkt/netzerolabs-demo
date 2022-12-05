@@ -43,7 +43,7 @@ const projectTypeColors = {'Renewable Energy': '#FFEA00',
                             'Waste Management': 'brown',
                             'Manufacturing':'gray'}
 
-var countryColors = [{country: 'China', color: '#B41F11'},
+const countryColors = [{country: 'China', color: '#B41F11'},
                     {country: 'India', color: 'orange'},
                     {country: 'Brazil', color: '#0C8C45'},
                     {country: 'Turkey', color: '#760711'},
@@ -66,7 +66,22 @@ var countryColors = [{country: 'China', color: '#B41F11'},
                     {country: 'Madagascar', color: '#B2A8A6'},
                     {country: 'Viet Nam', color: '#EDED00'}]
 
-var ProtocolColors = [
+const carbonContractAddressArr = [
+                                    {Chain: 'Polygon', Protocols: [
+                                        {Toucan: [
+                                            {BCT: '0x2F800Db0fdb5223b3C3f354886d907A671414A7F'}
+                                        ]},
+                                        {MOSS: [
+                                            {MCO2: '0xAa7DbD1598251f856C12f63557A4C4397c253Cea'}
+                                        ]},
+                                        {C3: [
+                                            {NBO: '0x6BCa3B77C1909Ce1a4Ba1A20d1103bDe8d222E48',
+                                            UBO: '0x2B3eCb0991AF0498ECE9135bcD04013d7993110c'}
+                                        ]}
+                                    ]}
+                                ] 
+
+const ProtocolColors = [
                         {provider: 'Toucan', color: '#FFFFFF'},
                      ]
 
@@ -299,7 +314,7 @@ function getTypeStacked(minYear=2020) {
         let tempData = sumDailyMonthly(item.data)
         item.data = tempData.map(el=>Object.values(el))
     })
-    console.log('Stacked DATA ', dataArr)
+    // console.log('Stacked DATA ', dataArr)
     return dataArr
 }
 
@@ -308,7 +323,6 @@ function getColorByCountry(country) {
         function(data){ return data.country == country }
     );
 }
-
 
 
 export { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
