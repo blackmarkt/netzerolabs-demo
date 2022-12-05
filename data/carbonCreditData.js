@@ -66,6 +66,10 @@ var countryColors = [{country: 'China', color: '#B41F11'},
                     {country: 'Madagascar', color: '#B2A8A6'},
                     {country: 'Viet Nam', color: '#EDED00'}]
 
+var ProtocolColors = [
+                        {provider: 'Toucan', color: '#FFFFFF'},
+                     ]
+
 function getCarbonCreditData() {
     return toucanData
 }
@@ -86,6 +90,12 @@ function getCarbonMapData() {
 
 function getTotalCarbonCreditsQty() {
     return numberWithCommas(calculateTotalCarbonQty(toucanData))
+}
+
+function getProtocolColors(provider) {
+    return ProtocolColors.filter(
+        function(data){ return data.provider == provider }
+    );
 }
 
 function getCountryBreakdown() {
@@ -303,4 +313,5 @@ function getColorByCountry(country) {
 
 export { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
          sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked, getCarbonTypeBreakdown,
-         getTypeStacked, getFlowCarbonMapData, getCarbonMapData, projectTypeColors, projectTypeCats }
+         getTypeStacked, getFlowCarbonMapData, getCarbonMapData, getProtocolColors,
+         projectTypeColors, projectTypeCats }

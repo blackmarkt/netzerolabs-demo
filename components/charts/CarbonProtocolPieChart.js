@@ -1,40 +1,44 @@
 import React, { useEffect } from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
+import { getProtocolColors } from '../../data/carbonCreditData'
 
 const CarbonProtocolPieChart = ({ chartData }) => {
 
     var colorGradientArr = (function () {
         let dataArr = chartData
         if (typeof Highcharts === 'object') {
-            // for (let i=0; i<chartData.length; i+=1) {
-            //     // console.log('COLOR TEMP ', tempColor);
-            //     // console.log('COLOR TEMP 2', tempColor);
-            //     dataArr[i]['color'] = {
-            //         linearGradient:  { 
-            //             x1: 0,
-            //             y1: 0,
-            //             x2: 1,
-            //             y2: 1},
-            //         stops: [
-            //             // [0, Highcharts.color(tempColor[0].color).brighten((i - 3) / 12).get()],
-            //             [0, dataArr[i].color],
-            //             [1, 'transparent']
-            //         ]
-            //     }
-            // }
-            dataArr[0]['color'] = {
-                                    linearGradient:  { 
-                                        x1: 0,
-                                        y1: 0,
-                                        x2: 1,
-                                        y2: 1},
-                                    stops: [
-                                        // [0, Highcharts.color(tempColor[0].color).brighten((i - 3) / 12).get()],
-                                        [0, dataArr[0].color],
-                                        [1, 'transparent']
-                                    ]
-                                }
+            for (let i=0; i<chartData.length; i+=1) {
+                let tempColor = getProtocolColors(dataArr[i]['provider'])
+                if (typeof tempColor.color !== 'undefined') {
+                    // console.log('COLOR TEMP ', tempColor);
+                    // console.log('COLOR TEMP 2', tempColor);
+                    dataArr[i]['color'] = {
+                        linearGradient:  { 
+                            x1: 0,
+                            y1: 0,
+                            x2: 1,
+                            y2: 1},
+                        stops: [
+                            // [0, Highcharts.color(tempColor[0].color).brighten((i - 3) / 12).get()],
+                            [0, dataArr[i].color],
+                            [1, 'transparent']
+                        ]
+                    }
+                }
+            }
+            // dataArr[0]['color'] = {
+            //                         linearGradient:  { 
+            //                             x1: 0,
+            //                             y1: 0,
+            //                             x2: 1,
+            //                             y2: 1},
+            //                         stops: [
+            //                             // [0, Highcharts.color(tempColor[0].color).brighten((i - 3) / 12).get()],
+            //                             [0, dataArr[0].color],
+            //                             [1, 'transparent']
+            //                         ]
+            //                     }
             // console.log('COLOR ', dataArr)
             return dataArr
         }

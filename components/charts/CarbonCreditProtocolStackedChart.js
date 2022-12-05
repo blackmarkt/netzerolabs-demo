@@ -1,61 +1,53 @@
 import React, { useEffect } from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
+import { getProtocolColors } from '../../data/carbonCreditData'
 
-var ProtocolColors = [
-                        {provider: 'Toucan', color: '#FFFFFF'},
-                     ]
 
 const CarbonCreditProtocolStackedChart = ({ chartData }) => {
-
-    function getProtocolColors(provider) {
-        return ProtocolColors.filter(
-            function(data){ return data.provider == provider }
-        );
-    }
 
     var colorGradientArr = (function () {
         let dataArr = chartData
         if (typeof Highcharts === 'object') {
-            // for (let i=0; i<chartData.length; i+=1) {
-            //     let tempColor = getProtocolColors(dataArr[i]['provider'])
-            //     if (tempColor.color !== 'undefined') {
-            //         dataArr[i]['color'] = {
-            //             linearGradient:  { 
-            //                 x1: 0,
-            //                 y1: 0,
-            //                 x2: 1,
-            //                 y2: 1},
-            //             stops: [
-            //                 [0, tempColor.color],
-            //                 [1, 'transparent']
-            //             ]
-            //         }
-            //     } else {
-            //         dataArr[i]['color'] = {
-            //             linearGradient:  { 
-            //                 x1: 0,
-            //                 y1: 0,
-            //                 x2: 1,
-            //                 y2: 1},
-            //             stops: [
-            //                 [0, Highcharts.color('white').brighten((i - 3) / 12).get()],
-            //                 [1, 'transparent']
-            //             ]
-            //         }
-            //     }
-            // }
-            dataArr[0]['color'] = {
-                                    linearGradient:  { 
-                                        x1: 0,
-                                        y1: 0,
-                                        x2: 1,
-                                        y2: 1},
-                                    stops: [
-                                        [0, '#FFFFFF'],
-                                        [1, 'transparent']
-                                    ]
-                                }
+            for (let i=0; i<chartData.length; i+=1) {
+                let tempColor = getProtocolColors(dataArr[i]['provider'])
+                if (typeof tempColor.color !== 'undefined') {
+                    dataArr[i]['color'] = {
+                        linearGradient:  { 
+                            x1: 0,
+                            y1: 0,
+                            x2: 1,
+                            y2: 1},
+                        stops: [
+                            [0, tempColor.color],
+                            [1, 'transparent']
+                        ]
+                    }
+                } else {
+                    dataArr[i]['color'] = {
+                        linearGradient:  { 
+                            x1: 0,
+                            y1: 0,
+                            x2: 1,
+                            y2: 1},
+                        stops: [
+                            [0, Highcharts.color('white').brighten((i - 3) / 12).get()],
+                            [1, 'transparent']
+                        ]
+                    }
+                }
+            }
+            // dataArr[0]['color'] = {
+            //                         linearGradient:  { 
+            //                             x1: 0,
+            //                             y1: 0,
+            //                             x2: 1,
+            //                             y2: 1},
+            //                         stops: [
+            //                             [0, '#FFFFFF'],
+            //                             [1, 'transparent']
+            //                         ]
+            //                     }
             // console.log('STACKED CHART COLOR ', dataArr)
             return dataArr
         }

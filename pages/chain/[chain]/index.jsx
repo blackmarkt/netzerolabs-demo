@@ -3,7 +3,6 @@ import React, { useState, useEffect, useLayoutEffect, useContext } from "react";
 import Map from '../../../components/map/Map'
 import Offices from '../../../components/dashboard/Offices'
 import CarbonOffsets from '../../../components/dashboard/CarbonOffsets'
-// import Axios from "axios"
 import dashboardStyles from '../../../styles/dashboard.module.css'
 import Image from 'next/image'
 // import Ethereum from '../../public/blockchains/ethereum.png'
