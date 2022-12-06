@@ -5,6 +5,7 @@ import toucanData from './carbon_credits/toucan_vcus.json' assert {type: 'json'}
 import flowCarbonData from './carbon_credits/flowcarbon_credits.json' assert {type: 'json'}
 import flowcarbon_geojson from './carbon_credits/flowcarbon_geojson.geojson' assert {type: 'json'}
 import toucan_geojson from './carbon_credits/toucan_geojson.geojson' assert {type: 'json'}
+import carbon_onchain_tx from './carbon_credits/transactions/carbon_onchain_tx.json' assert {type: 'json'}
 import { numberWithCommas, calculateTotalCarbonQty, convertDTUNIX } from './utils/utilFunctions.js'
 
 const projectTypeCats = {'Energy industries (renewable/non-renewable sources)': 'Renewable Energy',
@@ -97,6 +98,10 @@ function getFlowCarbonMapData() {
     return flowcarbon_geojson
 }
 
+function getCarbonTxs() {
+    return carbon_onchain_tx
+}
+
 function getCarbonMapData() {
     const carbonMapGeoArr = flowcarbon_geojson.features.concat(toucan_geojson.features);
     const carbonMapGeoJSON = {type: 'FeatureCollection', features: carbonMapGeoArr}
@@ -154,7 +159,7 @@ function getCountryStacked(minYear=2020) {
         let tempData = sumDailyMonthly(item.data)
         item.data = tempData.map(el=>Object.values(el))
     })
-    console.log('Stacked DATA ', dataArr)
+    // console.log('Stacked DATA ', dataArr)
     return dataArr
 }
 
@@ -207,7 +212,7 @@ function sumCarbonCreditsMonthly(arr) {
         // console.log('PRE-SORTED CC DATA ', sortedArr)
         tempArr = sortedArr.map(el=>Object.values(el))
     })
-    console.log('STACKED CC DATA ', tempArr)
+    // console.log('STACKED CC DATA ', tempArr)
     return tempArr
 }
 
@@ -233,7 +238,7 @@ function getProtocolStacked(minYear=2020) {
     let sortedInput = tempData.slice().sort((a, b) => a.date - b.date);
     let tempArr = tempData.map(el=>Object.values(el))
     // })
-    console.log('PROTOCOL DATA ', [{name:'Toucan', data: tempArr}])
+    // console.log('PROTOCOL DATA ', [{name:'Toucan', data: tempArr}])
     return [{name:'Toucan', data: tempArr}]
 }
 
@@ -327,5 +332,5 @@ function getColorByCountry(country) {
 
 export { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
          sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked, getCarbonTypeBreakdown,
-         getTypeStacked, getFlowCarbonMapData, getCarbonMapData, getProtocolColors,
+         getTypeStacked, getFlowCarbonMapData, getCarbonMapData, getProtocolColors, getCarbonTxs,
          projectTypeColors, projectTypeCats }

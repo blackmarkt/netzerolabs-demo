@@ -4,6 +4,7 @@ import TopCountriesTable from '../../components/credits/TopCountriesTable'
 import TopProtocolsTable from '../../components/credits/TopProtocolsTable'
 import TopCarbonTypeTable from '../../components/credits/TopCarbonTypeTable'
 import OnChainTxnsTable from '../../components/credits/OnChainTxnsTable'
+import OnChainTxTable from '../../components/credits/OnChainTxTable'
 import CarbonCreditProtocolStackedChart from '../../components/charts/CarbonCreditProtocolStackedChart'
 import CarbonProtocolPieChart from '../../components/charts/CarbonProtocolPieChart'
 import CarbonCreditsTotalChart from '../../components/charts/CarbonCreditsTotalChart'
@@ -15,7 +16,7 @@ import CarbonCreditMap from '../../components/map/CarbonCreditMap'
 import creditStyles from '../../styles/Credits.module.css'
 import { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
          sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked, getCarbonTypeBreakdown,
-         getTypeStacked, getFlowCarbonMapData, getCarbonMapData } from '../../data/carbonCreditData'
+         getTypeStacked, getFlowCarbonMapData, getCarbonMapData, getCarbonTxs } from '../../data/carbonCreditData'
 
 const CarbonCredits = () => {
     const [carbonData, setCarbonData] = useState(getCarbonCreditData)
@@ -28,8 +29,9 @@ const CarbonCredits = () => {
     const [carbonTypeBreakdown, setCarbonTypeBreakdown] = useState(getCarbonTypeBreakdown())
     const [carbonTypeStacked, setCarbonTypeStacked] = useState(getTypeStacked())
     const [carbonMapData, setCarbonMapData] = useState(getCarbonMapData())
+    const [carbonOnChainTx, setCarbonOnChainTx] = useState(getCarbonTxs())
 
-    // console.log('MAP CARBON DATA ', carbonMapData)
+    console.log('CARBON ONCHAIN DATA ', carbonOnChainTx)
 
     return (
         <div className={creditStyles.dashboardContainer}>
@@ -189,7 +191,7 @@ const CarbonCredits = () => {
                     </div>
                 </div>
             </div>
-            <h4 className={creditStyles.dashboardHeader}>Transactions</h4>
+            <h4 className={creditStyles.dashboardHeader}>Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(On-Chain Linked To Carbon Registries)</scan></h4>
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardCreditsTable].join(" ")}>
                 <div className={creditStyles.chainContainer}>
                     <table className={creditStyles.chainTable}>
@@ -232,9 +234,54 @@ const CarbonCredits = () => {
                         </tbody>
                     </table>
                 </div>
-                {/* <p className={[creditStyles.footNote, creditStyles.testnetNote].join(" ")}>Does not include Testnets</p> */}
             </div>
-            {/* <p className={creditStyles.footNote}>&#42; Ethereum merge on 9/15/22</p> */}
+            <h4 className={creditStyles.dashboardHeader}>On-Chain Transactions</h4>
+            <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardCreditsTable].join(" ")}>
+                <div className={creditStyles.chainContainer}>
+                    <table id="onchain-table" className={[creditStyles.chainTable, creditStyles.chainTxTable].join(" ")}>
+                        <thead>
+                            <tr className={creditStyles.tableHeader}>
+                                <th>
+                                    TxHash
+                                </th>
+                                <th>
+                                    Protocol
+                                </th>
+                                <th>
+                                    Token
+                                </th>
+                                <th>
+                                    Method
+                                </th>
+                                <th>
+                                    Block
+                                </th>
+                                <th>
+                                    Date/Time
+                                </th>
+                                <th>
+                                    From
+                                </th>
+                                <th>
+                                    To
+                                </th>
+                                <th>
+                                    Quantity 
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {carbonOnChainTx.map((obj, index) => {
+                                if (index < carbonOnChainTx.length) 
+                                    return ( 
+                                        <OnChainTxTable key={index} {...obj}/>
+                                    )
+                                return null
+                            })}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     );
 }

@@ -21,12 +21,19 @@
     .dashboardHeader {
         margin-bottom:1rem!important
     }
-    .dashboardSubHeader {
+    .dashboardSubHeader{
         font-size: 0.9rem!important;
         vertical-align: top!important;
         display: block!important;
         margin-bottom:0.8rem!important;
         margin:0.5rem 0!important
+    }
+    .tinyHeader {
+        display: inline-block!important;
+        vertical-align: top!important;
+        font-size:0.65rem!important;
+        margin-bottom:0.8rem!important;
+        margin:0.25rem 0!important
     }
     .dashboardHeaderContainer {
         display: revert!important;
@@ -62,6 +69,18 @@
     .chainTable td:nth-child(9), 
     .chainTable td:nth-child(10) {
         display:none!important;
+    }
+    .chainTxTable td:nth-child(3),
+    .chainTxTable th:nth-child(3),
+    .chainTxTable td:nth-child(5),
+    .chainTxTable th:nth-child(5),
+    .chainTxTable td:nth-child(6),
+    .chainTxTable th:nth-child(6) {
+        display:none!important;
+    }
+    .chainTxTable td:nth-child(9),
+    .chainTxTable th:nth-child(9) {
+        display:block!important
     }
     .subLeftContainer, .subRightContainer, .subMapContainer {
         width:100%!important;

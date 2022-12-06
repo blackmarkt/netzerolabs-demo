@@ -12,7 +12,7 @@ const OnChainTxnsTable = ( props ) => {
     let subscription = web3.eth.subscribe(
         "logs",
         {
-        // UniSwap
+        // BCT
         address: "0x2F800Db0fdb5223b3C3f354886d907A671414A7F",
         },
         function (error, result) {
@@ -25,7 +25,7 @@ const OnChainTxnsTable = ( props ) => {
         console.log(log);
     });
 
-    // console.log(subscription)
+    console.log('SUBSCRIPTION ', subscription)
 
 }
 
