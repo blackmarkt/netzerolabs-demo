@@ -16,12 +16,13 @@ const OnChainTxTable = ( props ) => {
     }
     
     return (
-            <tr key={props['Txhash']} className={[creditTable.tableRow, creditTable.navChainLink].join(" ")} onClick={() => openExternalLink(props['TX_URL'])}>
+            // <tr key={props['Txhash']} className={[creditTable.tableRow, creditTable.navChainLink].join(" ")}>
+            <tr key={props['Txhash']} className={[creditTable.tableRow, creditTable.navChainLink].join(" ")} onClick={() => openExternalLink(props['TX_URL'])}> 
                 <td className={creditTable.tableColEmission}>
-                    {/* <a href={`${props['URL']}`} target="_blank" rel="noopener noreferrer"> */}
-                    <div className={[creditTable.emissionsTxtMatte, creditTable.navChainLink].join(" ")}>
-                        {truncateStr(props['Txhash'])}
-                    </div>
+                    {/* <a href={`${props['TX_URL']}`} target="_blank" rel="noopener noreferrer"> */}
+                        <div className={[creditTable.emissionsTxtMatte, creditTable.navChainLink].join(" ")}>
+                            {truncateStr(props['Txhash'])}
+                        </div>
                     {/* </a> */}
                 </td>
                 <td>
@@ -71,7 +72,7 @@ const OnChainTxTable = ( props ) => {
                 </td>
                 <td className={creditTable.tableColEmission}>
                     <div className={creditTable.emissionsTxtMatte}>
-                        {truncateStr(props['Quantity'], 6)}
+                        {truncateStr(props['Quantity'], 8)}
                     </div>
                 </td>
             </tr>

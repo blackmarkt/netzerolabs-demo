@@ -70,8 +70,8 @@
     .chainTable td:nth-child(10) {
         display:none!important;
     }
-    .chainTxTable td:nth-child(3),
-    .chainTxTable th:nth-child(3),
+    .chainTxTable td:nth-child(2),
+    .chainTxTable th:nth-child(2),
     .chainTxTable td:nth-child(5),
     .chainTxTable th:nth-child(5),
     .chainTxTable td:nth-child(6),
