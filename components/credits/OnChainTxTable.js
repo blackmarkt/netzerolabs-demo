@@ -20,7 +20,7 @@ const OnChainTxTable = ( props ) => {
             <tr key={props['Txhash']} className={[creditTable.tableRow, creditTable.navChainLink].join(" ")} onClick={() => openExternalLink(props['TX_URL'])}> 
                 <td className={creditTable.tableColEmission}>
                     {/* <a href={`${props['TX_URL']}`} target="_blank" rel="noopener noreferrer"> */}
-                        <div className={[creditTable.emissionsTxtMatte, creditTable.navChainLink].join(" ")}>
+                        <div className={creditTable.emissionsTxtMatte}>
                             {truncateStr(props['Txhash'])}
                         </div>
                     {/* </a> */}
