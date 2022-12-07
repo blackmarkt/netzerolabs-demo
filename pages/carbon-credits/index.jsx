@@ -31,7 +31,7 @@ const CarbonCredits = () => {
     const [carbonMapData, setCarbonMapData] = useState(getCarbonMapData())
     const [carbonOnChainTx, setCarbonOnChainTx] = useState(getCarbonTxs())
 
-    console.log('CARBON ONCHAIN DATA ', carbonOnChainTx)
+    // console.log('CARBON ONCHAIN DATA ', carbonOnChainTx)
 
     return (
         <div className={creditStyles.dashboardContainer}>
@@ -191,50 +191,6 @@ const CarbonCredits = () => {
                     </div>
                 </div>
             </div>
-            <h4 className={creditStyles.dashboardHeader}>Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(On-Chain Linked To Carbon Registries)</scan></h4>
-            <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardCreditsTable].join(" ")}>
-                <div className={creditStyles.chainContainer}>
-                    <table className={creditStyles.chainTable}>
-                        <thead>
-                            <tr className={creditStyles.tableHeader}>
-                                <th>
-                                    ID
-                                </th>
-                                <th>
-                                    Provider
-                                </th>
-                                <th>
-                                    Type
-                                </th>
-                                <th>
-                                    Country
-                                </th>
-                                <th>
-                                    Date Issued
-                                </th>
-                                <th>
-                                    Quantity
-                                </th>
-                                <th>
-                                    Retired 
-                                </th>
-                                <th>
-                                    Retirement Address
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {carbonData.map((obj, index) => {
-                                if (index < carbonData.length) 
-                                    return ( 
-                                        <CarbonCreditsTable key={index} {...obj}/>
-                                    )
-                                return null
-                            })}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
             <h4 className={creditStyles.dashboardHeader}>On-Chain Transactions</h4>
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardCreditsTable].join(" ")}>
                 <div className={creditStyles.chainContainer}>
@@ -275,6 +231,50 @@ const CarbonCredits = () => {
                                 if (index < carbonOnChainTx.length) 
                                     return ( 
                                         <OnChainTxTable key={index} {...obj}/>
+                                    )
+                                return null
+                            })}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <h4 className={creditStyles.dashboardHeader}>Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(On-Chain Linked To Carbon Registries)</scan></h4>
+            <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardCreditsTable].join(" ")}>
+                <div className={creditStyles.chainContainer}>
+                    <table className={creditStyles.chainTable}>
+                        <thead>
+                            <tr className={creditStyles.tableHeader}>
+                                <th>
+                                    ID
+                                </th>
+                                <th>
+                                    Provider
+                                </th>
+                                <th>
+                                    Type
+                                </th>
+                                <th>
+                                    Country
+                                </th>
+                                <th>
+                                    Date Issued
+                                </th>
+                                <th>
+                                    Quantity
+                                </th>
+                                <th>
+                                    Retired 
+                                </th>
+                                <th>
+                                    Retirement Address
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {carbonData.map((obj, index) => {
+                                if (index < carbonData.length) 
+                                    return ( 
+                                        <CarbonCreditsTable key={index} {...obj}/>
                                     )
                                 return null
                             })}
