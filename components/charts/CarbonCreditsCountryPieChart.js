@@ -79,7 +79,7 @@ const CarbonCreditsCountryPieChart = ({ chartData }) => {
                     }
                 }
             }
-            console.log('COLOR ', dataArr)
+            // console.log('COLOR ', dataArr)
             return dataArr
         }
     }());

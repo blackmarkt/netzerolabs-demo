@@ -12,7 +12,7 @@ const Nav = () => {
   const notionURL = 'https://www.notion.so/blackmarkt/Carbon-Accounting-Methodology-b2e03be009a945f680592ec7563107d6'
 
   const toggleDropdown = () => {
-    console.log('NAV HOVER ', dropDownOpen)
+    // console.log('NAV HOVER ', dropDownOpen)
     setDropDownOpen(!dropDownOpen)
   }
 

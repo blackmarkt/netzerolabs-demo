@@ -10,7 +10,7 @@ const CarbonProtocolPieChart = ({ chartData }) => {
         if (typeof Highcharts === 'object') {
             for (let i=0; i<chartData.length; i+=1) {
                 let tempColor = getProtocolColors(dataArr[i].provider)
-                console.log('PIE COLOR TEMP ', dataArr[i].provider, tempColor[0].color);
+                // console.log('PIE COLOR TEMP ', dataArr[i].provider, tempColor[0].color);
                 if (typeof tempColor.color != 'undefined') {
                     // console.log('COLOR TEMP 2', tempColor);
                     dataArr[i]['color'] = {
