@@ -50,6 +50,8 @@
   .faqContainer {
     margin-top: 0rem!important;
     min-height: 100px!important;
+    margin-left: calc(50% - 50vw)!important;
+    width: 100vw!important;
   }
   .faqInnerContainer {
     width:90%!important;
@@ -80,7 +82,7 @@
   }
   .headerTxt {
     font-size:0.8rem!important;
-    margin:0!important;
+    margin:0.4rem 0 0!important;
   }
   .headerStatement, .headerStatementRight {
     font-size:1.4rem!important;
