@@ -191,7 +191,7 @@ const CarbonCredits = () => {
                     </div>
                 </div>
             </div>
-            <h4 className={creditStyles.dashboardHeader}>On-Chain Transactions</h4>
+            <h4 className={creditStyles.dashboardHeader}>On-Chain Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(December 2022)</scan></h4>
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardCreditsTable].join(" ")}>
                 <div className={creditStyles.chainContainer}>
                     <table id="onchain-table" className={[creditStyles.chainTable, creditStyles.chainTxTable].join(" ")}>
