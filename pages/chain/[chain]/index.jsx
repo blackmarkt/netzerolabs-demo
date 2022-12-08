@@ -52,7 +52,7 @@ const chain = ({ chainData }) => {
             </div>
             <div className={`${dashboardStyles.dashboardSubContainer} ${dashboardStyles[chainData.nav]}`}>
                 <div className={dashboardStyles.subContainer}>
-                <p className={dashboardStyles.subHeaderTxt}>Validator Count</p>
+                    <p className={dashboardStyles.subHeaderTxt}>Node/Validator Count</p>
                     <ul className={dashboardStyles.subEmissionsBar}>
                         <li>
                             {chainData.node_data.total_nodes != null ? (<div className={dashboardStyles.subEmissionsHeader}>{chainData.node_data.total_nodes}</div>) 
@@ -86,6 +86,7 @@ const chain = ({ chainData }) => {
                 <div className={dashboardStyles.subMapContainer}>
                     {/* <Map mapData={mapData}/> */}
                     <Map mapData={chainData.node_map_data}/>
+                    <p className={[dashboardStyles.footnotes, dashboardStyles.disclaimerNotes].join(" ")}>*Not all node/validators appear on map</p>
                 </div>
             </div>
             <h4 className={dashboardStyles.dashboardHeader}>Network <span className={dashboardStyles.subDashboardHeader}>(Scope 2)</span></h4>

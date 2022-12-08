@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import mapboxgl from 'mapbox-gl';
-import Axios from "axios"
 // import 'mapbox-gl/dist/mapbox-gl.css';
 import styles from '../../styles/Map.module.css'
 
@@ -81,7 +80,7 @@ const Map = ({ mapData }) => {
                 const description = e.features[0].properties.nodeId;
                 const ipAddress = e.features[0].properties.ipAddress.split(":")[0];
                  
-                popup.setLngLat(coordinates).setHTML('<p className={styles.mapTxt}>IP:</p>' + ipAddress).addClassName('map-popup').addTo(map);
+                popup.setLngLat(coordinates).setHTML('<p className={styles.mapTxt}></p>' + ipAddress).addClassName('map-popup').addTo(map);
             });
                  
             map.on('mouseleave', 'node-layer', () => {
@@ -93,7 +92,7 @@ const Map = ({ mapData }) => {
 
     return (
         <div className={styles.mapOuterContainer}>
-            <div ref={mapContainer} style={{ height: '100%', width:'85%' }} className={styles.mapContainer}/>  
+            <div ref={mapContainer} style={{ height: '95%', width:'85%' }} className={styles.mapContainer}/>  
         </div>
     );
 };

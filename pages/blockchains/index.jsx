@@ -1,4 +1,6 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react"
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
 import Emissions from '../../components/blockchains/Emissions'
 import BlockchainEmissionsChart from '../../components/charts/BlockchainEmissionsChart'
 import CumulativeBlockchainEmissionsChart from '../../components/charts/CumulativeBlockchainEmissionsChart'
@@ -67,7 +69,7 @@ const Blockchains = () => {
                                     <p className={styles.subHeadHeader}>(YTD)</p>
                                 </th>
                                 <th>
-                                    Validators
+                                    Nodes/Validators
                                     <p className={styles.subHeadHeader}>(Count)</p>
                                 </th>
                                 <th>

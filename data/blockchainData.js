@@ -15,6 +15,7 @@ import { numberWithCommas, calculateSum,
     solanaOfficeData, polygonOfficeData, celoOfficeData, alavancheOfficeData, nearOfficeData,
     polkadotOfficeData, binanceOfficeData, cardanoOfficeData, celoNumOffsets, getTotalOffsetsMonthly} from './emissionsData'
 import mapData from './eth_node_tracker_geojson_100722.geojson' assert {type: 'json'}
+import ethNodeData from './node_validators/eth_validators.geojson' assert {type: 'json'}
 import btcNodeData from './bitcoin_node_tracker_geojson_101822.geojson' assert {type: 'json'}
 import solNodeData from './solana_node_tracker_geojson_101822.geojson' assert {type: 'json'}
 import celoNodeData from './celo_node_tracker_geojson_110222.geojson' assert {type: 'json'}
@@ -160,11 +161,11 @@ const blockchainData = [
     },
     offices:ethereumOfficesData,
     node_data: {
-        total_nodes: numberWithCommas(mapData['features'].length),
+        total_nodes: numberWithCommas(ethNodeData['features'].length),
     },
     node_map_data: {
         map_color: '#8c8ea4',
-        map_data: mapData,
+        map_data: ethNodeData,
     }
     },
     {chain: 'Celo', 
@@ -417,7 +418,7 @@ const blockchainData = [
     },
     offices: polygonOfficeData,
     node_data: {
-        total_nodes: numberWithCommas(polygonValidators.length),
+        total_nodes: 358,
     },
     node_map_data: {
         map_color: '#8B42ED',
@@ -481,7 +482,7 @@ const blockchainData = [
     },
     offices: nearOfficeData,
     node_data: {
-        total_nodes: 126,
+        total_nodes: 811,
     },
     node_map_data: {
         map_color: '#FFFFFF',
