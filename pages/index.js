@@ -106,7 +106,7 @@ export default function Home() {
               <h1 className={styles.headerStatementRight}>Carbon Offsets & Futures</h1>
             </div>
           </div>
-          <div className={styles.homeImageContainer}>
+          <div className={[styles.homeImageContainer, styles.innerImageContainer].join(" ")}>
             <div className={styles.homeImageLeft}>
               <div id="net0labs-pledge" className={styles.net0labsPledgeContainer}>
                 <video id="net0labs-vid" className={styles.net0labsMask} autoPlay muted loop playsInline preload="none">

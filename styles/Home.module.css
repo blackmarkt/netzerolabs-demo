@@ -6,6 +6,9 @@
     max-height:620px!important;
     margin-top:3.5rem!important
   }
+  .innerImageContainer {
+    margin-top:6rem!important
+  }
   .earthContainer, .net0labsPledgeContainer {
     height:fit-content!important;
   }
@@ -31,7 +34,7 @@
     margin-top:2rem!important
   }
   .signaturesContainer {
-    margin-top:3rem!important
+    margin-top:1rem!important
   }
   .signImg {
     height:30px!important
