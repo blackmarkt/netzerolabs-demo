@@ -55,6 +55,11 @@ const CarbonCredits = () => {
                     <div className={`${creditStyles.topDashboard} ${creditStyles.totalEmissionsTxt}`}>252,198</div>
                     <div className={creditStyles.emissionsUnits}>tCO&#8322;e</div>
                     <p className={creditStyles.subDashboard}>Total Carbon Credits (Retired)</p>
+                </div>
+                <div className={`${creditStyles.grid} ${creditStyles.dashboardHeadSubContainer}`}>
+                    <div className={`${creditStyles.topDashboard} ${creditStyles.totalEmissionsTxtNA}`}>NA</div>
+                    {/* <div className={creditStyles.emissionsUnits}>tCO&#8322;e</div> */}
+                    <p className={creditStyles.subDashboard}>Avg Price Carbon Credits (per tCO&#8322;e)</p>
                 </div>      
             </div>
             <h4 className={creditStyles.dashboardHeader}>Overview</h4>
