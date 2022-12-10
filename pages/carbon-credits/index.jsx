@@ -19,7 +19,7 @@ import { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, get
          getTypeStacked, getFlowCarbonMapData, getCarbonMapData, getCarbonTxs, getTotalRetiredCCQty } from '../../data/carbonCreditData'
 
 const CarbonCredits = () => {
-    const [carbonData, setCarbonData] = useState(getCarbonCreditData)
+    const [carbonData, setCarbonData] = useState(getCarbonCreditData())
     const [totalCarbonQty, setTotalCarbonQty] = useState(getTotalCarbonCreditsQty())
     const [totalCarbonRetiredQty, setTotalCarbonRetiredQty] = useState(getTotalRetiredCCQty)
     const [carbonCountry, setCarbonCountry] = useState(getCountryBreakdown())

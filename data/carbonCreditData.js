@@ -91,7 +91,9 @@ const ProtocolColors = [
 const ToucanRetiredQty = 252198
 
 function getCarbonCreditData() {
-    return toucanData.concat(mossData)
+    let dataArr = toucanData.concat(mossData)
+    let sortedInput = dataArr.slice().sort((a, b) => new Date(b['Issuance Date']) - new Date(a['Issuance Date']));
+    return sortedInput
 }
 
 function getFlowCarbonCreditData() {
@@ -228,33 +230,31 @@ function sumCarbonCreditsMonthly(arr) {
 
 function getProtocolStacked(minYear=2020) {
     let dataArr = []
+    let dataArr2 = []
     toucanData.forEach(function(item) {
         if (parseInt(item["Issuance Date"].split("-")[0]) >= minYear) {
-            // if(item.Country != null && typeof dataArr.find(({ name }) => name === item.Country) == 'undefined') {
-            //     let obj = {}
-            //     obj = {"name":item.Country, "data":[{date: convertDTUNIX(item['Issuance Date']), y: item.Quantity}]}
-            //     dataArr.push(obj)
-            // } else {
-            //     let obj = dataArr.find(({ name }) => name === item.Country);
-            //     if(typeof obj != 'undefined') {
-            //         obj.data.push({date: convertDTUNIX(item['Issuance Date']), y: item.Quantity})
-            //     }
-            // }
             dataArr.push({date: convertDTUNIX(item['Issuance Date']), y: item.Quantity})
         }
     })
-    // dataArr.forEach(function(item) {
     let tempData = sumDailyMonthly(dataArr)
     let sortedInput = tempData.slice().sort((a, b) => a.date - b.date);
     let tempArr = tempData.map(el=>Object.values(el))
-    // })
-    // console.log('PROTOCOL DATA ', [{name:'Toucan', data: tempArr}])
-    return [{name:'Toucan', data: tempArr}]
+
+    mossData.forEach(function(item) {
+        if (parseInt(item["Issuance Date"].split("-")[0]) >= minYear) {
+            dataArr2.push({date: convertDTUNIX(item['Issuance Date']), y: item.Quantity})
+        }
+    })
+    let tempData2 = sumDailyMonthly(dataArr2)
+    let sortedInput2 = tempData2.slice().sort((a, b) => a.date - b.date);
+    let tempArr2 = tempData2.map(el=>Object.values(el))
+   
+    return [{provider:'Toucan', data: tempArr},{provider:'MOSS', data: tempArr2}]
 }
 
 function getProtocolBreakdown() {
     let tempProtocol = [{provider: 'Toucan', 'y':calculateTotalCarbonQty(toucanData), color: '#FFFFFF'},
-                        {provider: 'MOSS', 'y':calculateTotalCarbonQty(carbon_onchain_tx), color: '#DEF72D' }]
+                        {provider: 'MOSS', 'y':calculateTotalCarbonQty(mossData), color: '#DEF72D' }]
     return tempProtocol
 }
 

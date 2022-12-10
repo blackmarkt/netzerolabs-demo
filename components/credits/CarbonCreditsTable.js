@@ -6,6 +6,11 @@ import { projectTypeCats } from '../../data/carbonCreditData'
 
 const CarbonCreditsTable = ( props ) => {
 
+    function truncateStr(s, num=20) {
+        let trunc = s.toString().substr(0, num) + "\u2026";
+        return trunc
+    }
+
     const openExternalLink = url => {
         window.open(url, '_blank', 'noopener,noreferrer')
     }
@@ -57,7 +62,7 @@ const CarbonCreditsTable = ( props ) => {
                 <td>
                     <a href={`${props['Toucan Bridger']}`} target="_blank" rel="noopener noreferrer">
                         <div className={[creditTable.emissionsTxtMatte, creditTable.navChainLink].join(" ")}>
-                            {props['Retirement Beneficiary']}
+                            {truncateStr(props['Retirement Beneficiary'])}
                         </div>
                     </a>
                 </td>
