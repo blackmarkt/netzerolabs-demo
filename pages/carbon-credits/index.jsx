@@ -32,7 +32,7 @@ const CarbonCredits = () => {
     const [carbonMapData, setCarbonMapData] = useState(getCarbonMapData())
     const [carbonOnChainTx, setCarbonOnChainTx] = useState(getCarbonTxs())
 
-    console.log('PROTOCOL BREAKDOWN ', protocolBreakdown)
+    // console.log('PROTOCOL BREAKDOWN ', protocolBreakdown)
 
     return (
         <div className={creditStyles.dashboardContainer}>

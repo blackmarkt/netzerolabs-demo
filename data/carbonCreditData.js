@@ -131,8 +131,9 @@ function getProtocolColors(provider) {
 }
 
 function getCountryBreakdown() {
+    let totalData = toucanData.concat(mossData)
     let dataArr = []
-    toucanData.forEach(function(item) {
+    totalData.forEach(function(item) {
         if(item["Country"] != null && typeof dataArr.find(({ country }) => country === item.Country) == 'undefined') {
             // create new object with structure
             let obj = {}
@@ -193,10 +194,11 @@ function sumDailyMonthly(arr) {
     return tempArr
 }
 
-function sumCarbonCreditsMonthly(arr) {
+function sumCarbonCreditsMonthly() {
+    let totalData = toucanData.concat(mossData)
     let dataArr = []
     let tempArr
-    toucanData.forEach(function(item) {
+    totalData.forEach(function(item) {
         if (item['Issuance Date'] != null && typeof dataArr.find(({ date }) => date ===  convertDTUNIX(item['Issuance Date'])) == 'undefined') {
             dataArr.push({'date': convertDTUNIX(item['Issuance Date']), 'y': item.Quantity})
         } else {
@@ -264,9 +266,10 @@ function convertDailyMonthly(results) {
 }
 
 function sumProtocolCreditsMonthly(arr) {
+    let totalData = toucanData.concat(mossData)
     let dataArr = []
     let tempArr
-    toucanData.forEach(function(item) {
+    totalData.forEach(function(item) {
         if (item['Issuance Date'] != null && typeof dataArr.find(({ date }) => date ===  convertDTUNIX(item['Issuance Date'])) == 'undefined') {
             dataArr.push({'date': convertDTUNIX(item['Issuance Date']), 'y': item.Quantity})
         } else {
@@ -290,8 +293,9 @@ function sumProtocolCreditsMonthly(arr) {
 }
 
 function getCarbonTypeBreakdown() {
+    let totalData = toucanData.concat(mossData)
     let dataArr = []
-    toucanData.forEach(function(item) {
+    totalData.forEach(function(item) {
         if(item["Project Type"] != null && typeof dataArr.find(({ type }) => type === projectTypeCats[item['Project Type']]) == 'undefined') {
             // create new object with structure
             let obj = {}
@@ -311,8 +315,9 @@ function getCarbonTypeBreakdown() {
 }
 
 function getTypeStacked(minYear=2020) {
+    let totalData = toucanData.concat(mossData)
     let dataArr = []
-    toucanData.forEach(function(item) {
+    totalData.forEach(function(item) {
         if (parseInt(item["Issuance Date"].split("-")[0]) >= minYear) {
             if(item["Project Type"] != null && typeof dataArr.find(({ name }) => name === projectTypeCats[item['Project Type']]) == 'undefined') {
                 let obj = {}

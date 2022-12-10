@@ -11,7 +11,7 @@ const CarbonCreditProtocolStackedChart = ({ chartData }) => {
         if (typeof Highcharts === 'object') {
             for (let i=0; i<dataArr.length; i+=1) {
                 let tempColor = getProtocolColors(dataArr[i]['name'])
-                console.log('PROTOCOL STACKED COLOR ', dataArr[i], tempColor)
+                // console.log('PROTOCOL STACKED COLOR ', dataArr[i], tempColor)
                 if (typeof tempColor[0].color !== 'undefined') {
                     dataArr[i]['color'] = {
                         linearGradient:  { 
