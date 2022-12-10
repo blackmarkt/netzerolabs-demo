@@ -249,7 +249,7 @@ function getProtocolStacked(minYear=2020) {
     let sortedInput2 = tempData2.slice().sort((a, b) => a.date - b.date);
     let tempArr2 = tempData2.map(el=>Object.values(el))
    
-    return [{provider:'Toucan', data: tempArr},{provider:'MOSS', data: tempArr2}]
+    return [{name:'Toucan', data: tempArr},{name:'MOSS', data: tempArr2}]
 }
 
 function getProtocolBreakdown() {
