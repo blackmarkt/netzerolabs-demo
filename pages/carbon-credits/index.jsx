@@ -20,7 +20,7 @@ import { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, get
 
 const CarbonCredits = () => {
     const [carbonData, setCarbonData] = useState(getCarbonCreditData)
-    const [totalCarbonQty, setTotalCarbonQty] = useState(getTotalCarbonCreditsQty)
+    const [totalCarbonQty, setTotalCarbonQty] = useState(getTotalCarbonCreditsQty())
     const [totalCarbonRetiredQty, setTotalCarbonRetiredQty] = useState(getTotalRetiredCCQty)
     const [carbonCountry, setCarbonCountry] = useState(getCountryBreakdown())
     const [carbonStackedCountry, setCarbonStackedCountry] = useState(getCountryStacked())
@@ -32,7 +32,7 @@ const CarbonCredits = () => {
     const [carbonMapData, setCarbonMapData] = useState(getCarbonMapData())
     const [carbonOnChainTx, setCarbonOnChainTx] = useState(getCarbonTxs())
 
-    // console.log('CARBON ONCHAIN DATA ', carbonOnChainTx)
+    console.log('PROTOCOL BREAKDOWN ', protocolBreakdown)
 
     return (
         <div className={creditStyles.dashboardContainer}>
@@ -248,7 +248,7 @@ const CarbonCredits = () => {
                     </table>
                 </div>
             </div>
-            <h4 className={creditStyles.dashboardHeader}>Toucan Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(On-Chain Linked To Carbon Registries)</scan></h4>
+            <h4 className={creditStyles.dashboardHeader}>Web3 &harr; Web2 Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(On-Chain Linked To Carbon Registries)</scan></h4>
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardCreditsTable].join(" ")}>
                 <div className={creditStyles.chainContainer}>
                     <table className={creditStyles.chainTable}>

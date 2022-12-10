@@ -10,8 +10,8 @@ const CarbonProtocolPieChart = ({ chartData }) => {
         if (typeof Highcharts === 'object') {
             for (let i=0; i<chartData.length; i+=1) {
                 let tempColor = getProtocolColors(dataArr[i].provider)
-                // console.log('PIE COLOR TEMP ', dataArr[i].provider, tempColor[0].color);
-                if (typeof tempColor.color != 'undefined') {
+                console.log('PIE COLOR TEMP ', dataArr[i].provider, tempColor);
+                if (typeof tempColor[0].color != 'undefined') {
                     // console.log('COLOR TEMP 2', tempColor);
                     dataArr[i]['color'] = {
                         linearGradient:  { 
@@ -38,19 +38,7 @@ const CarbonProtocolPieChart = ({ chartData }) => {
                     }
                 }
             }
-            // dataArr[0]['color'] = {
-            //                         linearGradient:  { 
-            //                             x1: 0,
-            //                             y1: 0,
-            //                             x2: 1,
-            //                             y2: 1},
-            //                         stops: [
-            //                             // [0, Highcharts.color(tempColor[0].color).brighten((i - 3) / 12).get()],
-            //                             [0, dataArr[0].color],
-            //                             [1, 'transparent']
-            //                         ]
-            //                     }
-            // console.log('COLOR ', dataArr)
+            console.log('COLOR ', dataArr)
             return dataArr
         }
     }());
@@ -74,7 +62,7 @@ const CarbonProtocolPieChart = ({ chartData }) => {
             text: ''
         },
         tooltip: {
-            pointFormat: '{point.country}: <b>{point.percentage:.1f}%</b>'
+            pointFormat: '{point.provider}: <b>{point.percentage:.1f}%</b>'
             // pointFormat: '{series.name}: <b>0%</b>'
         },
         accessibility: {

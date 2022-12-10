@@ -22,7 +22,7 @@ const CarbonCreditsTable = ( props ) => {
                 <td>
                     {/* <a href={`${props['URL']}`} target="_blank" rel="noopener noreferrer"> */}
                         <div className={creditTable.emissionsTxtMatte}>
-                            Toucan
+                            {props['Provider']}
                         </div>
                     {/* </a> */}
                 </td>

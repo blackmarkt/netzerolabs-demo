@@ -2,6 +2,7 @@
 const _ = require("lodash")
 import moment from 'moment'
 import toucanData from './carbon_credits/toucan_vcus.json' assert {type: 'json'}
+import mossData from './carbon_credits/moss_verra.json' assert {type: 'json'}
 import flowCarbonData from './carbon_credits/flowcarbon_credits.json' assert {type: 'json'}
 import flowcarbon_geojson from './carbon_credits/flowcarbon_geojson.geojson' assert {type: 'json'}
 import toucan_geojson from './carbon_credits/toucan_geojson.geojson' assert {type: 'json'}
@@ -84,12 +85,13 @@ const carbonContractAddressArr = [
 
 const ProtocolColors = [
                         {provider: 'Toucan', color: '#FFFFFF'},
+                        {provider: 'MOSS', color: '#DEF72D'},
                      ]
 
 const ToucanRetiredQty = 252198
 
 function getCarbonCreditData() {
-    return toucanData
+    return toucanData.concat(mossData)
 }
 
 function getFlowCarbonCreditData() {
@@ -111,7 +113,7 @@ function getCarbonMapData() {
 }
 
 function getTotalCarbonCreditsQty() {
-    let toucanTotal = calculateTotalCarbonQty(toucanData)
+    let toucanTotal = calculateTotalCarbonQty(toucanData.concat(mossData))
     let otherTotal = calculateTotalCarbonQty(carbon_onchain_tx)
     return numberWithCommas(toucanTotal + otherTotal)
 }
@@ -251,7 +253,8 @@ function getProtocolStacked(minYear=2020) {
 }
 
 function getProtocolBreakdown() {
-    let tempProtocol = [{provider: 'Toucan', 'y':calculateTotalCarbonQty(toucanData), color: '#FFFFFF'}]
+    let tempProtocol = [{provider: 'Toucan', 'y':calculateTotalCarbonQty(toucanData), color: '#FFFFFF'},
+                        {provider: 'MOSS', 'y':calculateTotalCarbonQty(carbon_onchain_tx), color: '#DEF72D' }]
     return tempProtocol
 }
 
