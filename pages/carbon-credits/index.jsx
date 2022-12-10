@@ -16,11 +16,12 @@ import CarbonCreditMap from '../../components/map/CarbonCreditMap'
 import creditStyles from '../../styles/Credits.module.css'
 import { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
          sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked, getCarbonTypeBreakdown,
-         getTypeStacked, getFlowCarbonMapData, getCarbonMapData, getCarbonTxs } from '../../data/carbonCreditData'
+         getTypeStacked, getFlowCarbonMapData, getCarbonMapData, getCarbonTxs, getTotalRetiredCCQty } from '../../data/carbonCreditData'
 
 const CarbonCredits = () => {
     const [carbonData, setCarbonData] = useState(getCarbonCreditData)
     const [totalCarbonQty, setTotalCarbonQty] = useState(getTotalCarbonCreditsQty)
+    const [totalCarbonRetiredQty, setTotalCarbonRetiredQty] = useState(getTotalRetiredCCQty)
     const [carbonCountry, setCarbonCountry] = useState(getCountryBreakdown())
     const [carbonStackedCountry, setCarbonStackedCountry] = useState(getCountryStacked())
     const [sumCarbonCreditsArr, setSumCarbonCreditsArr] = useState(sumCarbonCreditsMonthly())
@@ -52,15 +53,19 @@ const CarbonCredits = () => {
                     <p className={creditStyles.subDashboard}>Total Carbon Credits (Bridged)</p>
                 </div>
                 <div className={`${creditStyles.grid} ${creditStyles.dashboardHeadSubContainer}`}>
-                    <div className={`${creditStyles.topDashboard} ${creditStyles.totalEmissionsTxt}`}>252,198</div>
+                    <div className={`${creditStyles.topDashboard} ${creditStyles.totalEmissionsTxt}`}>{totalCarbonRetiredQty}</div>
                     <div className={creditStyles.emissionsUnits}>tCO&#8322;e</div>
                     <p className={creditStyles.subDashboard}>Total Carbon Credits (Retired)</p>
                 </div>
                 <div className={`${creditStyles.grid} ${creditStyles.dashboardHeadSubContainer}`}>
-                    <div className={`${creditStyles.topDashboard} ${creditStyles.totalEmissionsTxtNA}`}>NA</div>
+                    <div className={`${creditStyles.topDashboard} ${creditStyles.totalEmissionsTxtNA} ${creditStyles.pulsate}`}>NA</div>
                     {/* <div className={creditStyles.emissionsUnits}>tCO&#8322;e</div> */}
                     <p className={creditStyles.subDashboard}>Avg Price Carbon Credits (per tCO&#8322;e)</p>
-                </div>      
+                </div> 
+                {/* <div className={`${creditStyles.grid} ${creditStyles.dashboardHeadSubContainer}`}>
+                    <div className={`${creditStyles.topDashboard} ${creditStyles.totalEmissionsTxtNA}`}>NA</div>
+                    <p className={creditStyles.subDashboard}>Total Carbon Credits (per tCO&#8322;e)</p>
+                </div>       */}
             </div>
             <h4 className={creditStyles.dashboardHeader}>Overview</h4>
             <div className={creditStyles.dashboardChartSubContainer}>
@@ -196,7 +201,7 @@ const CarbonCredits = () => {
                     </div>
                 </div>
             </div>
-            <h4 className={creditStyles.dashboardHeader}>On-Chain Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(December 2022)</scan></h4>
+            <h4 className={creditStyles.dashboardHeader}>MOSS & C3 Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(On-Chain No Link To Carbon Registries)</scan></h4>
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardCreditsTable].join(" ")}>
                 <div className={creditStyles.chainContainer}>
                     <table id="onchain-table" className={[creditStyles.chainTable, creditStyles.chainTxTable].join(" ")}>
@@ -243,7 +248,7 @@ const CarbonCredits = () => {
                     </table>
                 </div>
             </div>
-            <h4 className={creditStyles.dashboardHeader}>Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(On-Chain Linked To Carbon Registries)</scan></h4>
+            <h4 className={creditStyles.dashboardHeader}>Toucan Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(On-Chain Linked To Carbon Registries)</scan></h4>
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardCreditsTable].join(" ")}>
                 <div className={creditStyles.chainContainer}>
                     <table className={creditStyles.chainTable}>

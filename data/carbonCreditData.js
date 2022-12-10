@@ -86,6 +86,8 @@ const ProtocolColors = [
                         {provider: 'Toucan', color: '#FFFFFF'},
                      ]
 
+const ToucanRetiredQty = 252198
+
 function getCarbonCreditData() {
     return toucanData
 }
@@ -109,7 +111,13 @@ function getCarbonMapData() {
 }
 
 function getTotalCarbonCreditsQty() {
-    return numberWithCommas(calculateTotalCarbonQty(toucanData))
+    let toucanTotal = calculateTotalCarbonQty(toucanData)
+    let otherTotal = calculateTotalCarbonQty(carbon_onchain_tx)
+    return numberWithCommas(toucanTotal + otherTotal)
+}
+
+function getTotalRetiredCCQty() {
+    return numberWithCommas(ToucanRetiredQty + calculateTotalCarbonQty(carbon_onchain_tx))
 }
 
 function getProtocolColors(provider) {
@@ -333,4 +341,5 @@ function getColorByCountry(country) {
 export { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
          sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked, getCarbonTypeBreakdown,
          getTypeStacked, getFlowCarbonMapData, getCarbonMapData, getProtocolColors, getCarbonTxs,
+         getTotalRetiredCCQty,
          projectTypeColors, projectTypeCats }

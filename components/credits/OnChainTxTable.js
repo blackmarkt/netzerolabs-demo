@@ -11,6 +11,11 @@ const OnChainTxTable = ( props ) => {
         return trunc
     }
 
+    function truncateQty(s, num=8) {
+        let trunc = s.toString().substr(0, num);
+        return trunc
+    }
+
     const openExternalLink = url => {
         window.open(url, '_blank', 'noopener,noreferrer')
     }
@@ -72,8 +77,9 @@ const OnChainTxTable = ( props ) => {
                 </td>
                 <td className={creditTable.tableColEmission}>
                     <div className={creditTable.emissionsTxtMatte}>
-                        {truncateStr(props['Quantity'], 8)}
+                        {truncateQty(props['Quantity'], 6)}
                     </div>
+                    <div className={creditTable.emissionsUnits}>tCO&#8322;e</div>
                 </td>
             </tr>
     );
