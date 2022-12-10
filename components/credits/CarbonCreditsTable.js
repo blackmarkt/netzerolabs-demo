@@ -59,13 +59,21 @@ const CarbonCreditsTable = ( props ) => {
                         {props['Retirement/Cancellation Date']}
                     </div>
                 </td>
-                <td>
-                    <a href={`${props['Toucan Bridger']}`} target="_blank" rel="noopener noreferrer">
-                        <div className={[creditTable.emissionsTxtMatte, creditTable.navChainLink].join(" ")}>
-                            {truncateStr(props['Retirement Beneficiary'])}
+                {props['Retirement Beneficiary'] != 'NA' ? (
+                    <td>
+                        <a href={`${props['Toucan Bridger']}`} target="_blank" rel="noopener noreferrer">
+                            <div className={[creditTable.emissionsTxtMatte, creditTable.navChainLink].join(" ")}>
+                                {truncateStr(props['Retirement Beneficiary'])}
+                            </div>
+                        </a>
+                    </td>
+                ) : (
+                    <td>
+                        <div className={creditTable.emissionsTxtMatte}>
+                            {props['Retirement Beneficiary']}
                         </div>
-                    </a>
-                </td>
+                    </ td>
+                )}
             </tr>
     );
 }
