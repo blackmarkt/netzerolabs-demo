@@ -40,7 +40,7 @@ const CarbonCredits = () => {
             <OnChainTxnsTable chartData={sumCarbonCreditsArr}/> 
             <CarbonCreditPopup isOpen={true} />
             <div className={creditStyles.dashboardLeftHeader}>
-                <h2 className={creditStyles.dashboardMainHeader}>Carbon Credits Tracker <scan className={creditStyles.dashboardSubHeader}>(On-Chain)</scan></h2>
+                <h2 className={creditStyles.dashboardMainHeader}>Carbon Credits Tracker <scan className={creditStyles.dashboardSubHeader}>(Tokenized)</scan></h2>
                 <p style={{"margin":"0", "padding": "0rem"}}>Last Updated 12/2/22</p>
             </div>
             <div className={creditStyles.dashboardRightHeader}>

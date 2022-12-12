@@ -13,7 +13,7 @@ const CarbonCreditsTotalChart = ({ chartData }) => {
             // color: "#fff"
         },
         title: {
-            text: 'Total Carbon Offsets (Bridged)',
+            text: 'Total Carbon Credits (Bridged)',
             floating:true,
             y:0,
             style: {
