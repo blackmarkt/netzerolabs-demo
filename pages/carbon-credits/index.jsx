@@ -13,7 +13,7 @@ import CarbonCreditsCountryPieChart from "../../components/charts/CarbonCreditsC
 import CarbonCreditsTypePieChart from "../../components/charts/CarbonCreditsTypePieChart"
 import CarbonCreditTypeStackedChart from "../../components/charts/CarbonCreditTypeStackedChart"
 import CarbonCreditMap from '../../components/map/CarbonCreditMap'
-import CarbonCreditPopup from '../../components/popups/CarbonCreditPopup'
+import CarbonCreditPopup from '../../components/popups/carbonCreditPopup'
 import creditStyles from '../../styles/Credits.module.css'
 import { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
          sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked, getCarbonTypeBreakdown,
