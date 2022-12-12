@@ -13,6 +13,7 @@ import CarbonCreditsCountryPieChart from "../../components/charts/CarbonCreditsC
 import CarbonCreditsTypePieChart from "../../components/charts/CarbonCreditsTypePieChart"
 import CarbonCreditTypeStackedChart from "../../components/charts/CarbonCreditTypeStackedChart"
 import CarbonCreditMap from '../../components/map/CarbonCreditMap'
+import CarbonCreditPopup from '../../components/popups/CarbonCreditPopup'
 import creditStyles from '../../styles/Credits.module.css'
 import { getCarbonCreditData, getTotalCarbonCreditsQty, getCountryBreakdown, getCountryStacked,
          sumCarbonCreditsMonthly, getProtocolBreakdown, getProtocolStacked, getCarbonTypeBreakdown,
@@ -37,6 +38,7 @@ const CarbonCredits = () => {
     return (
         <div className={creditStyles.dashboardContainer}>
             <OnChainTxnsTable chartData={sumCarbonCreditsArr}/> 
+            <CarbonCreditPopup isOpen={true} />
             <div className={creditStyles.dashboardLeftHeader}>
                 <h2 className={creditStyles.dashboardMainHeader}>Carbon Credits Tracker <scan className={creditStyles.dashboardSubHeader}>(On-Chain)</scan></h2>
                 <p style={{"margin":"0", "padding": "0rem"}}>Last Updated 12/2/22</p>
@@ -201,7 +203,7 @@ const CarbonCredits = () => {
                     </div>
                 </div>
             </div>
-            <h4 className={creditStyles.dashboardHeader}>MOSS & C3 Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(On-Chain No Link To Carbon Registries)</scan></h4>
+            <h4 className={creditStyles.dashboardHeader}>Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(MOSS & C3)</scan></h4>
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardCreditsTable].join(" ")}>
                 <div className={creditStyles.chainContainer}>
                     <table id="onchain-table" className={[creditStyles.chainTable, creditStyles.chainTxTable].join(" ")}>
@@ -248,7 +250,7 @@ const CarbonCredits = () => {
                     </table>
                 </div>
             </div>
-            <h4 className={creditStyles.dashboardHeader}>Web3 &harr; Web2 Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(On-Chain Linked To Carbon Registries)</scan></h4>
+            <h4 className={creditStyles.dashboardHeader}>Web3 &harr; Web2 Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(On-Chain Bridged To Carbon Registries)</scan></h4>
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardCreditsTable].join(" ")}>
                 <div className={creditStyles.chainContainer}>
                     <table className={creditStyles.chainTable}>
