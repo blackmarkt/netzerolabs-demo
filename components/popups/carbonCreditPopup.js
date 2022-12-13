@@ -8,7 +8,7 @@ const CarbonCreditPopup = ({ isOpen }) => {
             <div className={carbonPopStyle.carbonPopupContainer}>
                 <h4 className={[carbonPopStyle.carbonAlertTxt, carbonPopStyle.pulsate].join(" ")}>ALERT: 
                     <a target="_blank" href="https://verra.org/verra-addresses-crypto-instruments-and-tokens/" className={carbonPopStyle.alertTxt}>
-                        VERRA prohits tokenization of credits (5/2022)
+                        VERRA prohibits tokenization of credits (5/2022)
                     </a>
                 </h4>
             </div>
