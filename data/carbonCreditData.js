@@ -3,6 +3,7 @@ const _ = require("lodash")
 import moment from 'moment'
 import toucanData from './carbon_credits/toucan_vcus.json' assert {type: 'json'}
 import mossData from './carbon_credits/moss_verra.json' assert {type: 'json'}
+import c3Data from './carbon_credits/c3_verra.json' assert {type: 'json'}
 import flowCarbonData from './carbon_credits/flowcarbon_credits.json' assert {type: 'json'}
 import flowcarbon_geojson from './carbon_credits/flowcarbon_geojson.geojson' assert {type: 'json'}
 import toucan_geojson from './carbon_credits/toucan_geojson.geojson' assert {type: 'json'}
@@ -86,12 +87,13 @@ const carbonContractAddressArr = [
 const ProtocolColors = [
                         {provider: 'Toucan', color: '#FFFFFF'},
                         {provider: 'MOSS', color: '#DEF72D'},
+                        {provider: 'C3', color: '#1DD06D'},
                      ]
 
 const ToucanRetiredQty = 252198
 
 function getCarbonCreditData() {
-    let dataArr = toucanData.concat(mossData)
+    let dataArr = toucanData.concat(mossData).concat(c3Data)
     let sortedInput = dataArr.slice().sort((a, b) => new Date(b['Issuance Date']) - new Date(a['Issuance Date']));
     return sortedInput
 }
@@ -115,7 +117,7 @@ function getCarbonMapData() {
 }
 
 function getTotalCarbonCreditsQty() {
-    let toucanTotal = calculateTotalCarbonQty(toucanData.concat(mossData))
+    let toucanTotal = calculateTotalCarbonQty(toucanData.concat(mossData).concat(c3Data))
     let otherTotal = calculateTotalCarbonQty(carbon_onchain_tx)
     return numberWithCommas(toucanTotal + otherTotal)
 }
@@ -131,7 +133,7 @@ function getProtocolColors(provider) {
 }
 
 function getCountryBreakdown() {
-    let totalData = toucanData.concat(mossData)
+    let totalData = toucanData.concat(mossData).concat(c3Data)
     let dataArr = []
     totalData.forEach(function(item) {
         if(item["Country"] != null && typeof dataArr.find(({ country }) => country === item.Country) == 'undefined') {
@@ -250,13 +252,25 @@ function getProtocolStacked(minYear=2020) {
     let tempData2 = sumDailyMonthly(dataArr2)
     let sortedInput2 = tempData2.slice().sort((a, b) => a.date - b.date);
     let tempArr2 = tempData2.map(el=>Object.values(el))
+
+    c3Data.forEach(function(item) {
+        if (parseInt(item["Issuance Date"].split("-")[0]) >= minYear) {
+            dataArr2.push({date: convertDTUNIX(item['Issuance Date']), y: item.Quantity})
+        }
+    })
+    let tempData3 = sumDailyMonthly(dataArr2)
+    let sortedInput3 = tempData3.slice().sort((a, b) => a.date - b.date);
+    let tempArr3 = tempData3.map(el=>Object.values(el))
    
-    return [{name:'Toucan', data: tempArr},{name:'MOSS', data: tempArr2}]
+    return [{name:'Toucan', data: tempArr},
+            {name:'MOSS', data: tempArr2},
+            {name:'C3', data: tempArr3}]
 }
 
 function getProtocolBreakdown() {
     let tempProtocol = [{provider: 'Toucan', 'y':calculateTotalCarbonQty(toucanData), color: '#FFFFFF'},
-                        {provider: 'MOSS', 'y':calculateTotalCarbonQty(mossData), color: '#DEF72D' }]
+                        {provider: 'MOSS', 'y':calculateTotalCarbonQty(mossData), color: '#DEF72D' },
+                        {provider: 'C3', 'y':calculateTotalCarbonQty(c3Data), color: '#1DD06D' }]
     return tempProtocol
 }
 
@@ -266,7 +280,7 @@ function convertDailyMonthly(results) {
 }
 
 function sumProtocolCreditsMonthly(arr) {
-    let totalData = toucanData.concat(mossData)
+    let totalData = toucanData.concat(mossData).concat(c3Data)
     let dataArr = []
     let tempArr
     totalData.forEach(function(item) {
@@ -315,7 +329,7 @@ function getCarbonTypeBreakdown() {
 }
 
 function getTypeStacked(minYear=2020) {
-    let totalData = toucanData.concat(mossData)
+    let totalData = toucanData.concat(mossData).concat(c3Data)
     let dataArr = []
     totalData.forEach(function(item) {
         if (parseInt(item["Issuance Date"].split("-")[0]) >= minYear) {
