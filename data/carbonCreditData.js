@@ -108,7 +108,7 @@ function getFlowCarbonMapData() {
 }
 
 function getCarbonTxs() {
-    let dataArr = carbon_onchain_tx.concat(nct_onchain_tx)
+    let dataArr = carbon_onchain_tx //.concat(nct_onchain_tx)
     let sortedInput = dataArr.slice().sort((a, b) => new Date(b['DateTime']) - new Date(a['DateTime']));
     return sortedInput
 }
