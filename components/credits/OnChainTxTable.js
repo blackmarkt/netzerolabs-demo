@@ -7,13 +7,21 @@ import { projectTypeCats } from '../../data/carbonCreditData'
 const OnChainTxTable = ( props ) => {
 
     function truncateStr(s, num=12) {
-        let trunc = s.toString().substr(0, num) + "\u2026";
-        return trunc
+        if (s == null) {
+            return 'NA'
+        } else {
+            let trunc = s.toString().substr(0, num) + "\u2026";
+            return trunc
+        }
     }
 
     function truncateQty(s, num=8) {
-        let trunc = s.toString().substr(0, num);
-        return trunc
+        if (s == null) {
+            return 'NA'
+        } else {
+            let trunc = s.toString().substr(0, num);
+            return trunc
+        }
     }
 
     const openExternalLink = url => {

@@ -8,6 +8,7 @@ import flowCarbonData from './carbon_credits/flowcarbon_credits.json' assert {ty
 import flowcarbon_geojson from './carbon_credits/flowcarbon_geojson.geojson' assert {type: 'json'}
 import toucan_geojson from './carbon_credits/toucan_geojson.geojson' assert {type: 'json'}
 import carbon_onchain_tx from './carbon_credits/transactions/carbon_onchain_tx.json' assert {type: 'json'}
+import nct_onchain_tx from './carbon_credits/transactions/nct_onchain_tx.json' assert {type: 'json'}
 import { numberWithCommas, calculateTotalCarbonQty, convertDTUNIX } from './utils/utilFunctions.js'
 
 const projectTypeCats = {'Energy industries (renewable/non-renewable sources)': 'Renewable Energy',
@@ -107,7 +108,9 @@ function getFlowCarbonMapData() {
 }
 
 function getCarbonTxs() {
-    return carbon_onchain_tx
+    let dataArr = carbon_onchain_tx.concat(nct_onchain_tx)
+    let sortedInput = dataArr.slice().sort((a, b) => new Date(b['DateTime']) - new Date(a['DateTime']));
+    return sortedInput
 }
 
 function getCarbonMapData() {
@@ -118,7 +121,7 @@ function getCarbonMapData() {
 
 function getTotalCarbonCreditsQty() {
     let toucanTotal = calculateTotalCarbonQty(toucanData.concat(mossData).concat(c3Data))
-    let otherTotal = calculateTotalCarbonQty(carbon_onchain_tx)
+    let otherTotal = calculateTotalCarbonQty(carbon_onchain_tx.concat(nct_onchain_tx))
     return numberWithCommas(toucanTotal + otherTotal)
 }
 
