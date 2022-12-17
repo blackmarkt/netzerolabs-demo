@@ -41,7 +41,7 @@ const CarbonCredits = () => {
             <CarbonCreditPopup isOpen={true} />
             <div className={creditStyles.dashboardLeftHeader}>
                 <h2 className={creditStyles.dashboardMainHeader}>Carbon Credits Tracker <scan className={creditStyles.dashboardSubHeader}>(Tokenized)</scan></h2>
-                <p style={{"margin":"0", "padding": "0rem"}}>Last Updated 12/2/22</p>
+                <p style={{"margin":"0", "padding": "0rem"}}>Last Updated 12/17/22</p>
             </div>
             <div className={creditStyles.dashboardRightHeader}>
                 <a href="https://www.notion.so/blackmarkt/Carbon-Accounting-Methodology-b2e03be009a945f680592ec7563107d6" target="_blank" rel="noopener noreferrer">
@@ -203,7 +203,7 @@ const CarbonCredits = () => {
                     </div>
                 </div>
             </div>
-            <h4 className={creditStyles.dashboardHeader}>Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(MOSS & C3)</scan></h4>
+            <h4 className={creditStyles.dashboardHeader}>Retired Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(Toucan, MOSS & C3)</scan></h4>
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardCreditsTable].join(" ")}>
                 <div className={creditStyles.chainContainer}>
                     <table id="onchain-table" className={[creditStyles.chainTable, creditStyles.chainTxTable].join(" ")}>
