@@ -111,7 +111,7 @@ function getFlowCarbonMapData() {
 }
 
 function getCarbonTxs() {
-    let dataArr = carbon_onchain_tx.concat(bct_onchain_tx).concat(mco2_nbo_ubo_onchain_tx)
+    let dataArr = nct_onchain_tx.concat(bct_onchain_tx).concat(mco2_nbo_ubo_onchain_tx)
     let sortedInput = dataArr.slice().sort((a, b) => new Date(b['DateTime']) - new Date(a['DateTime']));
     return sortedInput
 }
@@ -123,9 +123,9 @@ function getCarbonMapData() {
 }
 
 function getTotalCarbonCreditsQty() {
-    let toucanTotal = calculateTotalCarbonQty(toucanData.concat(mossData).concat(c3Data))
-    let otherTotal = calculateTotalCarbonQty(carbon_onchain_tx)
-    return numberWithCommas(toucanTotal + otherTotal)
+    let toucanTotal = calculateTotalCarbonQty(toucanData.concat(mossData).concat(c3Data).concat(nct_onchain_tx))
+    // let otherTotal = calculateTotalCarbonQty(carbon_onchain_tx)
+    return numberWithCommas(toucanTotal)
 }
 
 function getTotalRetiredCCQty() {
