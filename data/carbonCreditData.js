@@ -92,7 +92,8 @@ const ProtocolColors = [
                         {provider: 'C3', color: '#1DD06D'},
                      ]
 
-const ToucanRetiredQty = 252198
+const ToucanRetiredQty = 265851
+
 
 function getCarbonCreditData() {
     let dataArr = toucanData.concat(mossData).concat(c3Data)
@@ -127,7 +128,7 @@ function getTotalCarbonCreditsQty() {
 }
 
 function getTotalRetiredCCQty() {
-    return numberWithCommas(ToucanRetiredQty + calculateTotalCarbonQty(carbon_onchain_tx))
+    return numberWithCommas(ToucanRetiredQty)
 }
 
 function getProtocolColors(provider) {
