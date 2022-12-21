@@ -203,8 +203,7 @@ const CarbonCredits = () => {
                     </div>
                 </div>
             </div>
-            <h4 className={creditStyles.dashboardHeader}>Retired Transactions </h4>
-            {/* <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(Toucan, MOSS & C3)</scan>< */}
+            <h4 className={creditStyles.dashboardHeader}>Retired Transactions <scan className={[creditStyles.dashboardSubHeader, creditStyles.tinyHeader].join(" ")}>(Toucan, MOSS & C3)</scan></h4>
             <div className={[creditStyles.dashboardSubContainer, creditStyles.dashboardCreditsTable].join(" ")}>
                 <div className={creditStyles.chainContainer}>
                     <table id="onchain-table" className={[creditStyles.chainTable, creditStyles.chainTxTable].join(" ")}>

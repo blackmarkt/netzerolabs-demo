@@ -9,6 +9,7 @@ import flowcarbon_geojson from './carbon_credits/flowcarbon_geojson.geojson' ass
 import toucan_geojson from './carbon_credits/toucan_geojson.geojson' assert {type: 'json'}
 import carbon_onchain_tx from './carbon_credits/transactions/carbon_onchain_tx.json' assert {type: 'json'}
 import nct_onchain_tx from './carbon_credits/transactions/nct_onchain_tx.json' assert {type: 'json'}
+import mco2_nbo_ubo_onchain_tx from './carbon_credits/transactions/moss_c3_onchain_tx.json' assert {type: 'json'}
 import bct_onchain_tx from './carbon_credits/transactions/bct_onchain_tx.json' assert {type: 'json'}
 import { numberWithCommas, calculateTotalCarbonQty, convertDTUNIX } from './utils/utilFunctions.js'
 
@@ -110,7 +111,7 @@ function getFlowCarbonMapData() {
 }
 
 function getCarbonTxs() {
-    let dataArr = carbon_onchain_tx.concat(bct_onchain_tx)
+    let dataArr = carbon_onchain_tx.concat(bct_onchain_tx).concat(mco2_nbo_ubo_onchain_tx)
     let sortedInput = dataArr.slice().sort((a, b) => new Date(b['DateTime']) - new Date(a['DateTime']));
     return sortedInput
 }
