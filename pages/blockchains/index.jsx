@@ -21,7 +21,7 @@ const Blockchains = () => {
         <div className={styles.dashboardContainer}>
             <div className={styles.dashboardLeftHeader}>
                 <h2 className={styles.dashboardMainHeader}>Blockchain (L1) Emissions Tracker</h2>
-                <p style={{"margin":"0", "padding": "0rem"}}>Last Updated 12/17/22</p>
+                <p style={{"margin":"0", "padding": "0rem"}}>Last Updated 1/7/22</p>
             </div>
             <div className={styles.dashboardRightHeader}>
                 <a href="https://www.notion.so/blackmarkt/Carbon-Accounting-Methodology-b2e03be009a945f680592ec7563107d6" target="_blank" rel="noopener noreferrer">

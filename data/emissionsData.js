@@ -6190,9 +6190,9 @@ function calculateSum(arr) {
     return sum
 }
 
-function getTotalOffsetsMonthly(monthOffset) {
+function getTotalOffsetsMonthly(monthOffset, padding=2) {
     let currentDate = new Date()
-    let monthNumber = currentDate.getMonth() + 2;
+    let monthNumber = 12 + currentDate.getMonth() + padding;
     return monthOffset * monthNumber
 }
 

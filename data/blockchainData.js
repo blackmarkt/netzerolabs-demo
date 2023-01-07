@@ -199,7 +199,7 @@ const blockchainData = [
         supplies:null,
         misc:null,
     },
-    offsets:numberWithCommas(getTotalOffsetsMonthly(celoNumOffsets)),
+    offsets:numberWithCommas(getTotalOffsetsMonthly(celoNumOffsets, 3)),
     offsets_dollar:null,
     transactions_sum: numberWithCommas(calculateSum(getArrFromChartArr(celoTxData))),
     transaction_stats: {
