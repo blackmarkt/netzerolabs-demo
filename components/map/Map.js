@@ -77,10 +77,14 @@ const Map = ({ mapData }) => {
                  
                 // Copy coordinates array.
                 const coordinates = e.features[0].geometry.coordinates.slice();
-                const description = e.features[0].properties.nodeId;
+                const client = e.features[0].properties.client;
+                const host = e.features[0].properties.host;
                 const ipAddress = e.features[0].properties.ipAddress.split(":")[0];
                  
-                popup.setLngLat(coordinates).setHTML('<p className={styles.mapTxt}></p>' + ipAddress).addClassName('map-popup').addTo(map);
+                popup.setLngLat(coordinates).setHTML('<p className={styles.mapTxt}></p>' + ipAddress +
+                                                     '<p className={styles.mapTxt}></p>' + host +
+                                                     '<p className={styles.mapTxt}></p>' + client
+                                                    ).addClassName('map-popup').addTo(map);
             });
                  
             map.on('mouseleave', 'node-layer', () => {
