@@ -79,10 +79,12 @@ const Map = ({ mapData }) => {
                 const coordinates = e.features[0].geometry.coordinates.slice();
                 const client = e.features[0].properties.client;
                 const host = e.features[0].properties.host;
+                const country = e.features[0].properties.country;
                 const ipAddress = e.features[0].properties.ipAddress.split(":")[0];
                  
                 popup.setLngLat(coordinates).setHTML('<p className={styles.mapTxt}></p>' + ipAddress +
                                                      '<p className={styles.mapTxt}></p>' + host +
+                                                     '<p className={styles.mapTxt}></p>' + country +
                                                      '<p className={styles.mapTxt}></p>' + client
                                                     ).addClassName('map-popup').addTo(map);
             });

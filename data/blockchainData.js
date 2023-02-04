@@ -27,7 +27,7 @@ import polygonTxData from './transactions/polygon_tx.json' assert {type: 'json'}
 import avalancheTxData from './transactions/avalanche_tx.json' assert {type: 'json'}
 import celoTxData from './transactions/celo_tx.json' assert {type: 'json'}
 import ethereumTxData from './transactions/ethereum_tx.json' assert {type: 'json'}
-import celoValidators from './node_validators/celo_validators.json' assert {type: 'json'}
+// import celoValidators from './node_validators/celo_validators.json' assert {type: 'json'}
 import avaxValidators from './node_validators/avax_validators.json' assert {type: 'json'}
 import binanceValidators from './node_validators/binance_validators.json' assert {type: 'json'}
 import polkadotValidators from './node_validators/polkadot_validators.json' assert {type: 'json'}
